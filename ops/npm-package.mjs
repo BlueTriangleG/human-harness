@@ -16,7 +16,8 @@ const real = JSON.parse(readFileSync(join(dir, "package.json"), "utf8"));
 renameSync(join(dir, "package.json"), join(dir, "package.hh.json"));
 renameSync(join(dir, "package-lock.json"), join(dir, "package-lock.hh.json"));
 const pick = (keys) => Object.fromEntries(keys.filter((k) => real[k] !== undefined).map((k) => [k, real[k]]));
-// what npx needs to run bin/npx.mjs, which runs on any Node from 18 (setup brings Node 24 when the computer's is older)
+// what npx needs to run bin/human-harness.mjs: the installer it loads, bin/npx.mjs, runs on any Node from 18 (an older one
+// is told so, from Node 12.17 on), and setup brings Node 24 when the computer's is older
 writeFileSync(join(dir, "package.json"), `${JSON.stringify({
   ...pick(["name", "version", "description", "author", "license", "repository", "bin", "files"]),
   engines: { node: ">=18" },

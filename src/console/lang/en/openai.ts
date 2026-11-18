@@ -3,12 +3,14 @@ import type { openai as zh } from "../zh/openai.ts";
 
 export const openai: Strings<typeof zh> = {
   title: "Memory and learning",
-  lead: "With an OpenAI key it finds memories by meaning, and its notebook brings up the page it needs by itself. Without one it still works, searching by words.",
+  lead: "With an OpenAI key it finds memories by meaning, and its notebook (where it writes down, page by page, what it learns) brings up the page it needs by itself. Without one it still works, searching by words.",
   money: "OpenAI bills your own OpenAI account by use: an estimated few cents to a few tens of cents a day, and the notebook's judging stops at {limit} a day. An estimate; OpenAI's prices are what count.",
   moneyNoLimit: "OpenAI bills your own OpenAI account by use: an estimated few cents to a few tens of cents a day, and the notebook's judging has a daily cap. An estimate; OpenAI's prices are what count.",
   where: "The key is kept on this computer, in the role's own folder; only your account can read it (the role runs as your account too, so it can read it as well), and it is sent only to api.openai.com.",
   inputLabel: "OpenAI key",
   check: "Check",
+  getKey: "Make one at {link}: signed in to OpenAI, with credit on the account.",
+  needKey: "Paste a key first, then check.",
   checkCost: "Checking asks OpenAI three times, one of them free: less than a cent in all.",
   checking: "Checking…",
   save: "Check and save",

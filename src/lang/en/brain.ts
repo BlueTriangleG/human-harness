@@ -1001,7 +1001,10 @@ export const setup = {
   making: (id: string, dir: string) => `Making the role ${id} in ${dir}`,
   modulesOff: (names: string) => `These modules need something set up first and are off for now: ${names} (hh modules doctor says how to turn each on)`,
   noApp: "No app this time: the console in your browser works all the same. To have the app later, run hh modules install (it builds it with the Xcode Command Line Tools: xcode-select --install if they are missing).",
-  failed: (remove: string) => `Not installed: the lines above say where it stopped. Clear what was half done with ${remove}, fix it, and run ./setup again.`,
+  failed: (remove: string, again: string) => `Not installed: the lines above say where it stopped. Clear what was half done with ${remove}, fix it, and run ${again} again.`,
+  /** a step of installing failed, at the terminal: which, and that trying again keeps the role */
+  installStopped: (lines: string, dir: string) => `Setting it up stopped at this step:\n${lines}\nNothing was removed: ${dir} stays as it is, and trying again picks up from here. If the lines above point to the network or the disk, look at that first.`,
+  tryAgain: "Try again? [Y/n] ",
   doneApp: (app: string) => `app      ${app} (double-click it for the role's window; its permissions are given to it)`,
   doneConsole: (id: string) => `console  ${id} console (opens it in your browser)`,
   doneTalk: (id: string) => `talk     type in its window, or in a terminal: ${id} "hello"`,
@@ -1037,6 +1040,7 @@ export const remove = {
   grantsLeft: (bundle: string) => `The system permissions of ${bundle} are not cleared (that needs an administrator): remove its rows in System Settings → Privacy & Security`,
   left: (path: string) => `left: ${path}`,
   done: (id: string) => `The role ${id} is gone.`,
+  pathLineLeft: (file: string) => `That was the last role here. The line setup added to ${file} (marked "added by HH setup") is still there: it puts ~/.local/bin on PATH, where Claude Code's own claude is too if its installer put it there. If nothing else needs it, delete that line.`,
 };
 
 export const newRole = {
@@ -1155,7 +1159,7 @@ export const wizard = {
   termMake: (name: string) => `· making ${name}…`,
   termClose: "You can close this window now.",
   termDone: (name: string, talk: string) => `Done: ${name} is made, and sends you its first message in its window. Talk to it there, or in a terminal: ${talk}`,
-  termFailed: (why: string) => `It was not made: ${why}. The wizard can try again.`,
+  termFailed: (why: string, cleaned?: boolean) => `It was not made. Where it stopped:\n${why}\n${cleaned === undefined ? "" : cleaned ? "What was half made is removed. " : "What was half made could not all be removed. "}The wizard can try again.`,
   made: (id: string) => `the wizard is done: ${id} is made`,
   nothing: "the wizard is done: nothing was made",
   draftFailed: (why: string) => `${why}. Try again`,

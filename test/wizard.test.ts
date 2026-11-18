@@ -101,7 +101,7 @@ test("wizard: persona files from a preset card, or drafted (a model that is not 
 test("wizard: create streams its progress to the end, read before or after it starts, and answers with its last line; a failed one is removed again and can be tried again", async () => {
   let boom = true;
   const seen: SetUp[] = [];
-  const d = deps({ setUp: async (o) => { seen.push(o); o.progress?.("making", "make"); if (boom) { boom = false; throw new Error("npm failed"); } o.progress?.("its permission page is open", "grants"); return []; } });
+  const d = deps({ setUp: async (o) => { seen.push(o); o.progress?.("making", "make"); if (boom) { boom = false; throw Object.assign(new Error("npm failed\nClear what was half done with hh remove, and run ./setup again."), { why: "npm failed" }); } o.progress?.("its permission page is open", "grants"); return []; } });
   const { w, call } = await wizard(d);
   try {
     const lines$ = async (r: Response) => (await r.text()).split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l) as Record<string, unknown>);
@@ -110,7 +110,8 @@ test("wizard: create streams its progress to the end, read before or after it st
     const early = await call("/api/wizard/progress");
     const failed = await (await call("/api/wizard/create", { body: role })).json() as Record<string, unknown>;
     assert.equal(failed.retry, true);
-    assert.match(String(failed.error), /npm failed/);
+    assert.equal(failed.error, "npm failed", "why it stopped, without the terminal's advice to clear it and run ./setup");
+    assert.equal(failed.cleaned, true);
     assert.deepEqual((await lines$(early)).map((l) => l.step), ["make", "error"]);
     assert.deepEqual(d.removed, [seen[0]!.id], "the half-made role goes");
     const answer = await (await call("/api/wizard/create", { body: role })).json() as Record<string, unknown>;

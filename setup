@@ -1,8 +1,9 @@
 #!/bin/bash
 # ./setup [--lang zh|en] [--name <name>] [--owner <what it calls you>] [--id <id>] [--model opus|sonnet|haiku] [--yes]
-# From a fresh clone to a role running on this computer, in one command. First it checks what HH needs and, for anything
-# missing, says in one line how to get it and stops; without the Xcode Command Line Tools it goes on without the app (the
-# console in the browser works all the same). Then the packages (npm ci), and hh setup: the role, its app, its window.
+# From a fresh clone to a role running on this computer, in one command. First it checks what HH needs; what it can get
+# (Apple's Command Line Tools, its own Node, Claude Code, the short commands' folder on PATH) it offers to get, asking
+# first and naming where it comes from; for the rest it says in one line how to get it and stops. A step that fails on
+# the way (a download, npm ci) is asked again in place. Then the packages (npm ci), and hh setup: the role, its app, its window.
 set -euo pipefail
 cd "$(dirname "$0")"
 # what it says before HH runs, in one language: --lang's, else the terminal's (LANG), else both
@@ -11,12 +12,28 @@ pick=""; prev=""; for a in "$@"; do [ "$prev" != --lang ] || pick=$a; prev=$a; d
 say() { case "$pick" in en) printf '%s\n' "$1" ;; zh) printf '%s\n' "$2" ;; *) printf '%s\n%s\n' "$1" "$2" ;; esac; }
 stop() { { printf '\n'; say "$1" "$2"; } >&2; exit 1; }
 # ask "<en>" "<zh>": yes on Enter or y. With --yes the answer is yes (said so); with nobody at the terminal it is no
-yes=0; for a in "$@"; do [ "$a" != --yes ] || yes=1; done
+yes=0; prepare=0; for a in "$@"; do [ "$a" != --yes ] || yes=1; [ "$a" != --prepare ] || prepare=1; done
 ask() {
   if [ $yes = 1 ]; then say "$1 yes (--yes)" "$2 是（--yes）"; return 0; fi
   [ -t 0 ] || return 1
   local a; printf '\n%s ' "$(say "$1 [Y/n]" "$2 [Y/n]")"; read -r a || return 1
   case "$a" in ""|[yY]|[yY][eE][sS]|是|好) return 0 ;; *) return 1 ;; esac
+}
+# what to run to start over: what the person typed (bin/npx.mjs says when it was npx human-harness), else ./setup
+again=${HH_SETUP_AGAIN:-./setup}
+# the short commands' folder, and whether the person's own PATH has it (looked at before this run adds anything to PATH)
+bin="$HOME/.local/bin"
+case ":$PATH:" in *":$bin:"*|*":$bin/:"*) binOnPath=1 ;; *) binOnPath=0 ;; esac
+binOn() { case ":$PATH:" in *":$bin:"*) ;; *) export PATH="$bin:$PATH" ;; esac; }   # on PATH for the rest of this run
+# retry "<en>" "<zh>": a step failed (what failed and what to look at, in the words given); asked whether to try it again
+# here, and stops when not. tries counts the tries of the step at hand (set to 0 before it); with --yes, three in all
+retry() {
+  tries=$((tries + 1))
+  { printf '\n'; say "$1" "$2"; } >&2
+  [ $yes = 0 ] || [ $tries -lt 3 ] || stop "Tried 3 times (--yes): stopping. Run ${again} again once it is fixed; what is done already is kept." \
+    "试了 3 次（--yes），停下。修好以后再跑一次 ${again}，已经做好的不会重做。"
+  ask "Try again?" "再试一次？" || stop "Stopped here. Run ${again} again once it is fixed; what is done already is kept." \
+    "停在这里。修好以后再跑一次 ${again}，已经做好的不会重做。"
 }
 NOAPP=()
 linux=0; [ "$(uname)" = Linux ] && linux=1
@@ -26,72 +43,111 @@ if [ "$(uname)" = Darwin ]; then
     "HH needs macOS 14 (Sonoma) or newer; this Mac has $v." \
     "HH 要 macOS 14（Sonoma）或更新，这台是 ${v}。"
 fi
-if [ $linux = 1 ]; then command -v git >/dev/null || stop \
-  "git is missing: install it with your package manager (Ubuntu, Debian: sudo apt install git; Fedora: sudo dnf install git), then run ./setup again." \
-  "没有 git：用系统的包管理器装（Ubuntu、Debian：sudo apt install git；Fedora：sudo dnf install git），再跑一次 ./setup。"
+# Apple's Xcode Command Line Tools: git (a role's workspace is a git repository), Python for the role's scripts, swiftc
+# for its app. Without them /usr/bin/git and /usr/bin/python3 are stand-ins that open Apple's installer when run, so they
+# are asked about first. Yes: Apple's own installer (xcode-select --install), waited for here, checked every 5 seconds
+tools=1; [ "$(uname)" != Darwin ] || { xcode-select -p >/dev/null 2>&1 && xcrun --find swiftc >/dev/null 2>&1; } || tools=0
+clt() {
+  local s gone
+  while :; do
+    xcode-select --install >/dev/null 2>&1 || true
+    say "Apple's installer is open (if you do not see it, it may be behind this window): click Install, agree to Apple's license, and wait until it says the software was installed. This terminal goes on by itself once the tools are there." \
+      "苹果的安装窗口开了（看不到的话，可能在这个窗口后面）：点「安装」，同意苹果的许可协议，等它说「已安装软件」。装好以后，这个终端会自己接着往下走。"
+    s=0; gone=0
+    until xcode-select -p >/dev/null 2>&1 && xcrun --find swiftc >/dev/null 2>&1; do
+      sleep 5; s=$((s + 5))
+      if pgrep -qf 'Install Command Line Developer Tools'; then gone=0; else gone=$((gone + 5)); fi
+      [ $gone -lt 30 ] || break
+      [ $((s % 60)) != 0 ] || say "Still waiting for Apple's installer ($((s / 60)) min)." "还在等苹果的安装程序（$((s / 60)) 分钟）。"
+    done
+    if xcode-select -p >/dev/null 2>&1 && xcrun --find swiftc >/dev/null 2>&1; then
+      tools=1; say "The Command Line Tools are installed. Going on." "命令行工具装好了，接着往下走。"; return 0
+    fi
+    # one try with --yes: nobody may be there to click
+    [ $yes = 0 ] && ask "Apple's installer has closed, but the tools are not there (it was cancelled, or it did not finish). Open it again?" \
+      "苹果的安装窗口关了，但工具没装上（取消了，或者没装完）。再开一次？" || return 0
+  done
+}
+if [ $tools = 0 ] && ask "Apple's Xcode Command Line Tools are not on this Mac. HH needs them for git and Python, and to build the role's app. Install them now? macOS shows Apple's own installer (from Apple, through Software Update; about 5 to 20 minutes)." \
+    "这台 Mac 上没有苹果的 Xcode 命令行工具。HH 要用它带的 git 和 Python，生成角色的 app 也要用它。现在装吗？会弹出苹果自己的安装窗口（来自苹果，经软件更新下载；大约 5 到 20 分钟）。"; then
+  clt
 fi
-command -v git >/dev/null || stop \
-  "git is missing: install the Xcode Command Line Tools (xcode-select --install), then run ./setup again." \
-  "没有 git：先装 Xcode 命令行工具（xcode-select --install），再跑一次 ./setup。"
+if [ $linux = 1 ]; then command -v git >/dev/null || stop \
+  "git is missing: install it with your package manager (Ubuntu, Debian: sudo apt install git; Fedora: sudo dnf install git), then run ${again} again." \
+  "没有 git：用系统的包管理器装（Ubuntu、Debian：sudo apt install git；Fedora：sudo dnf install git），再跑一次 ${again}。"
+fi
+# without the Command Line Tools, /usr/bin/git is only their stand-in
+g=$(command -v git || true)
+[ -n "$g" ] && { [ "$g" != /usr/bin/git ] || [ $tools = 1 ]; } || stop \
+  "git is missing: it comes with Apple's Xcode Command Line Tools. Install them (run ${again} again and say yes when it asks, or xcode-select --install), then run ${again} again." \
+  "没有 git：它跟着苹果的 Xcode 命令行工具一起装。装好它（再跑一次 ${again}、问到时答「是」，或者 xcode-select --install），再跑一次 ${again}。"
 if [ $linux = 1 ]; then command -v node >/dev/null || stop \
-  "Node.js is missing: install Node.js 24.18 or newer from https://nodejs.org (the one your distribution ships is usually older), then run ./setup again." \
-  "没有 Node.js：从 https://nodejs.org 装 24.18 或更新的版本（系统自带的那个通常太旧），再跑一次 ./setup。"
+  "Node.js is missing: install Node.js 24.18 or newer from https://nodejs.org (the one your distribution ships is usually older), then run ${again} again." \
+  "没有 Node.js：从 https://nodejs.org 装 24.18 或更新的版本（系统自带的那个通常太旧），再跑一次 ${again}。"
 fi
 # Node.js 24.18 or newer. On a Mac whose own is older or missing, HH can have a Node of its own in ./node: nodejs.org's
 # release named in bin/node.pin, unpacked only when its sha256 is the one pinned there. Setup then runs on it, and the
 # role's jobs are written to run on it too (hh new keeps the node setup runs on), where no version manager switches it.
 recent() { "$1" -e 'const [a, b] = process.versions.node.split(".").map(Number); process.exit(a > 24 || (a === 24 && b >= 18) ? 0 : 1)' 2>/dev/null; }
-if [ -x node/bin/node ] && recent node/bin/node; then
+pin() { sed -n "s/^$1=//p" bin/node.pin; }
+# HH's own Node from another bin/node.pin (an upgrade of HH moved the pin): asked whether to take the pinned one; kept if not
+# (the old one stays in node/ until the new one is unpacked: the role's jobs run on it)
+own=""; fetch=0; [ -x node/bin/node ] && own=$(node/bin/node -p 'process.versions.node' 2>/dev/null)
+if [ -n "$own" ] && [ "$own" != "$(pin version)" ] && [ "$(uname)" = Darwin ] && ask \
+    "HH's own Node.js is ${own}; this HH runs on $(pin version). Download Node.js $(pin version) from nodejs.org (about 25 MB, checked against the sha256 HH carries) in its place?" \
+    "HH 自己的 Node.js 是 ${own}，这个版本的 HH 用 $(pin version)。从 nodejs.org 下 Node.js $(pin version)（约 25 MB，按 HH 带的 sha256 核对）换上？"; then fetch=1; fi
+if [ $fetch = 0 ] && [ -n "$own" ] && recent node/bin/node; then
   export PATH="$PWD/node/bin:$PATH"
-elif ! { command -v node >/dev/null && recent node; }; then
+elif [ $fetch = 1 ] || ! { command -v node >/dev/null && recent node; }; then
   have=$(node -p 'process.versions.node' 2>/dev/null || echo none)
   [ "$(uname)" = Darwin ] || stop \
-    "Node.js $have: HH needs 24.18 or newer (https://nodejs.org). Install it, then run ./setup again." \
-    "Node.js ${have}：HH 要 24.18 或更新（https://nodejs.org）。装好再跑一次 ./setup。"
-  pin() { sed -n "s/^$1=//p" bin/node.pin; }
+    "Node.js $have: HH needs 24.18 or newer (https://nodejs.org). Install it, then run ${again} again." \
+    "Node.js ${have}：HH 要 24.18 或更新（https://nodejs.org）。装好再跑一次 ${again}。"
   ver=$(pin version); plat=darwin-x64; [ "$(sysctl -n hw.optional.arm64 2>/dev/null)" = 1 ] && plat=darwin-arm64
   sum=$(pin "$plat"); url="https://nodejs.org/dist/v$ver/node-v$ver-$plat.tar.xz"
-  ask "HH runs on Node.js 24.18 or newer; this computer has $have. Download Node.js $ver from nodejs.org (about 25 MB, checked against the sha256 HH carries) into $PWD/node, for HH alone?" \
+  [ $fetch = 1 ] || ask "HH runs on Node.js 24.18 or newer; this computer has $have. Download Node.js $ver from nodejs.org (about 25 MB, checked against the sha256 HH carries) into $PWD/node, for HH alone?" \
       "HH 要 Node.js 24.18 或更新，这台电脑上是 ${have}。从 nodejs.org 下 Node.js ${ver}（约 25 MB，按 HH 带的 sha256 核对）放到 $PWD/node，只给 HH 用？" || stop \
-    "Not downloaded. Install Node.js 24.18 or newer yourself (https://nodejs.org), then run this again." \
-    "没有下。自己装 Node.js 24.18 或更新（https://nodejs.org），再跑一次。"
+    "Not downloaded. Install Node.js 24.18 or newer yourself (https://nodejs.org), then run ${again} again." \
+    "没有下。自己装 Node.js 24.18 或更新（https://nodejs.org），再跑一次 ${again}。"
   tmp=$(mktemp -d)
   say "Downloading $url" "下载 $url"
-  curl -fL --progress-bar -o "$tmp/node.tar.xz" "$url" || { rm -rf "$tmp"; stop \
-    "The download failed (above). Check the connection, then run this again." \
-    "下载失败（见上面）。查一下网络，再跑一次。"; }
+  tries=0
+  until curl -fL --progress-bar -o "$tmp/node.tar.xz" "$url"; do retry \
+    "Downloading Node.js stopped (curl says why just above). Check that this Mac is online (and the proxy, if you use one)." \
+    "下载 Node.js 中途停了（原因是 curl 在上面打的那一行）。看看这台 Mac 连上网了没有（用代理的话也看看代理）。"; done
   got=$(shasum -a 256 "$tmp/node.tar.xz" | cut -d' ' -f1)
   [ "$got" = "$sum" ] || { rm -rf "$tmp"; stop \
-    "What came down is not the Node.js HH expects (sha256 $got, not $sum): it was not unpacked, and is deleted. Run this again later, or install Node.js 24.18 or newer yourself." \
-    "下下来的不是 HH 要的那个 Node.js（sha256 是 ${got}，不是 ${sum}）：没有解开，已删掉。过一会儿再跑一次，或者自己装 Node.js 24.18 或更新。"; }
+    "What came down is not the Node.js HH expects (sha256 $got, not $sum): it was not unpacked, and is deleted. Run ${again} again later, or install Node.js 24.18 or newer yourself." \
+    "下下来的不是 HH 要的那个 Node.js（sha256 是 ${got}，不是 ${sum}）：没有解开，已删掉。过一会儿再跑一次 ${again}，或者自己装 Node.js 24.18 或更新。"; }
   tar -xJf "$tmp/node.tar.xz" -C "$tmp" && rm -rf node.part && mv "$tmp/node-v$ver-$plat" node.part && rm -rf node && mv node.part node
   rm -rf "$tmp"
   recent node/bin/node || stop "Node.js $ver in $PWD/node does not run here." "$PWD/node 里的 Node.js $ver 在这台电脑上跑不起来。"
-  say "Node.js $ver is in $PWD/node; HH runs on it." "Node.js $ver 放在了 $PWD/node，HH 用它。"
+  # --prepare: this is the copy made ready beside the HH in use, under a name of the moment; it goes into place after
+  if [ $prepare = 1 ]; then say "Node.js $ver is downloaded and checked; it goes into place with this HH." "Node.js ${ver} 下好了、核对过了，跟这份 HH 一起换上。"
+  else say "Node.js $ver is in $PWD/node; HH runs on it." "Node.js $ver 放在了 $PWD/node，HH 用它。"; fi
   export PATH="$PWD/node/bin:$PATH"
 fi
 # without the Command Line Tools the system's python3 is only a stub that offers to install them: not asked then
-tools=1; [ "$(uname)" != Darwin ] || { xcode-select -p >/dev/null 2>&1 && xcrun --find swiftc >/dev/null 2>&1; } || tools=0
 py=$(command -v python3 || true)
 if [ -z "$py" ] || { [ "$py" = /usr/bin/python3 ] && [ $tools = 0 ]; } || ! python3 -c 'import sys; sys.exit(sys.version_info < (3, 9))' 2>/dev/null; then
   [ $linux = 0 ] || stop \
-    "Python 3.9 or newer is missing: install it with your package manager (Ubuntu, Debian: sudo apt install python3 python3-venv; Fedora: sudo dnf install python3), then run ./setup again." \
-    "没有 Python 3.9 或更新：用系统的包管理器装（Ubuntu、Debian：sudo apt install python3 python3-venv；Fedora：sudo dnf install python3），再跑一次 ./setup。"
-  stop "Python 3.9 or newer is missing: install the Xcode Command Line Tools (xcode-select --install) or Python from python.org, then run ./setup again." \
-       "没有 Python 3.9 或更新：装 Xcode 命令行工具（xcode-select --install），或者从 python.org 装 Python，再跑一次 ./setup。"
+    "Python 3.9 or newer is missing: install it with your package manager (Ubuntu, Debian: sudo apt install python3 python3-venv; Fedora: sudo dnf install python3), then run ${again} again." \
+    "没有 Python 3.9 或更新：用系统的包管理器装（Ubuntu、Debian：sudo apt install python3 python3-venv；Fedora：sudo dnf install python3），再跑一次 ${again}。"
+  stop "Python 3.9 or newer is missing: it comes with Apple's Xcode Command Line Tools (run ${again} again and say yes when it asks, or xcode-select --install), or install Python from python.org; then run ${again} again." \
+       "没有 Python 3.9 或更新：它跟着苹果的 Xcode 命令行工具一起装（再跑一次 ${again}、问到时答「是」，或者 xcode-select --install），也可以从 python.org 装 Python；然后再跑一次 ${again}。"
 fi
 # the role's scripts run in a Python environment of its own: one is made here once to see that this python3 can
 venv=$(mktemp -d); python3 -m venv "$venv/v" >/dev/null 2>&1 && ok=1 || ok=0; rm -rf "$venv"
 [ $ok = 1 ] || [ $linux = 0 ] || stop \
-  "$py cannot make a Python environment (python3 -m venv fails): on Ubuntu and Debian that is a package of its own, sudo apt install python3-venv; then run ./setup again." \
-  "$py 建不了 Python 环境（python3 -m venv 失败）：Ubuntu、Debian 上它是单独的包，sudo apt install python3-venv，再跑一次 ./setup。"
+  "$py cannot make a Python environment (python3 -m venv fails): on Ubuntu and Debian that is a package of its own, sudo apt install python3-venv; then run ${again} again." \
+  "$py 建不了 Python 环境（python3 -m venv 失败）：Ubuntu、Debian 上它是单独的包，sudo apt install python3-venv，再跑一次 ${again}。"
 [ $ok = 1 ] || stop \
-  "$py cannot make a Python environment (python3 -m venv fails): put a working Python 3.9 or newer first on PATH (python.org has one), then run ./setup again." \
-  "$py 建不了 Python 环境（python3 -m venv 失败）：把一个好用的 Python 3.9 或更新放到 PATH 最前面（python.org 有），再跑一次 ./setup。"
+  "$py cannot make a Python environment (python3 -m venv fails): put a working Python 3.9 or newer first on PATH (python.org has one), then run ${again} again." \
+  "$py 建不了 Python 环境（python3 -m venv 失败）：把一个好用的 Python 3.9 或更新放到 PATH 最前面（python.org 有），再跑一次 ${again}。"
 # a role's jobs are systemd user units on Linux: its user manager must answer
 [ $linux = 0 ] || systemctl --user show-environment >/dev/null 2>&1 || stop \
-  "systemd's user manager does not answer here (systemctl --user), and a role runs as its user units: run ./setup in a login session (a desktop, or ssh) on a Linux that boots with systemd; in a container, one with systemd as its init." \
-  "这里 systemd 的用户管理器没有响应（systemctl --user），而角色是作为它的用户单元跑的：在登录会话里（桌面或 ssh）、用 systemd 启动的 Linux 上跑 ./setup；容器的话，要用 systemd 当 init 的那种。"
+  "systemd's user manager does not answer here (systemctl --user), and a role runs as its user units: run ${again} in a login session (a desktop, or ssh) on a Linux that boots with systemd; in a container, one with systemd as its init." \
+  "这里 systemd 的用户管理器没有响应（systemctl --user），而角色是作为它的用户单元跑的：在登录会话里（桌面或 ssh）、用 systemd 启动的 Linux 上跑 ${again}；容器的话，要用 systemd 当 init 的那种。"
 if [ "$(uname)" = Darwin ] && [ $tools = 0 ]; then
   say "No Xcode Command Line Tools (swiftc): going on without the role's app; its console opens in your browser. To get the app later: xcode-select --install, then hh modules install." \
     "没有 Xcode 命令行工具（swiftc）：这次不生成角色的 app，控制台在浏览器里开。以后要 app：xcode-select --install，再跑 hh modules install。"
@@ -99,10 +155,54 @@ if [ "$(uname)" = Darwin ] && [ $tools = 0 ]; then
   NOAPP=(--no-app)
 fi
 [ "$(uname)" = Darwin ] || NOAPP=(--no-app)
-command -v claude >/dev/null || stop \
-  "Claude Code is missing (the role thinks with it): curl -fsSL https://claude.ai/install.sh | bash, log in by running claude once, then run ./setup again." \
-  "没有 Claude Code（角色靠它想事情）：curl -fsSL https://claude.ai/install.sh | bash，跑一次 claude 登录，再跑一次 ./setup。"
+# Claude Code, which the role thinks with. Missing: asked whether to run Anthropic's official installer, which puts claude
+# in ~/.local/bin; that folder is then on PATH for the rest of this run (the role's jobs are written with this PATH)
+if ! command -v claude >/dev/null; then
+  ask "Claude Code is not installed, and the role thinks with it. Install it now with Anthropic's official installer? It runs: curl -fsSL https://claude.ai/install.sh | bash (the script comes from claude.ai; it puts claude in ~/.local/bin)." \
+      "没装 Claude Code，而角色靠它想事情。现在用 Anthropic 官方的安装脚本装吗？会运行：curl -fsSL https://claude.ai/install.sh | bash（脚本来自 claude.ai，会把 claude 放进 ~/.local/bin）。" || stop \
+    "Not installed. To install Claude Code yourself: curl -fsSL https://claude.ai/install.sh | bash (or see https://docs.claude.com/en/docs/claude-code/setup), then run ${again} again." \
+    "没有装。自己装 Claude Code：curl -fsSL https://claude.ai/install.sh | bash（或者看 https://docs.claude.com/en/docs/claude-code/setup），再跑一次 ${again}。"
+  tries=0
+  until curl -fsSL https://claude.ai/install.sh | bash && [ -x "$bin/claude" ]; do retry \
+    "Installing Claude Code did not finish, or claude is not in ~/.local/bin after it (the installer's own words are above). Check that this Mac is online (and the proxy, if you use one)." \
+    "Claude Code 没装完，或者装完以后 ~/.local/bin 里没有 claude（安装脚本自己的话在上面）。看看这台 Mac 连上网了没有（用代理的话也看看代理）。"; done
+  binOn
+  say "Claude Code is installed: $bin/claude. Going on." "Claude Code 装好了：$bin/claude。接着往下走。"
+fi
 # not logged in is no stop here: the wizard's login step, or the terminal's question, runs Claude Code's own sign-in
+
+# The short commands' folder: each role's command goes in ~/.local/bin (and Claude Code's own installer puts claude
+# there). Not on PATH on a Mac: asked whether to add one line, marked as HH's, at the end of the login shell's startup
+# file, once (a file that has HH's line, or puts ~/.local/bin on PATH already, is left as it is). docs/faq.md says how to
+# take it out; hh remove of the last role says it is there. Not on Linux, where ~/.profile usually has it already, nor
+# for an upgrade's --prepare (no role is made then)
+mark="# added by HH setup (Human Harness)"
+if [ $binOnPath = 0 ] && [ $linux = 0 ] && [ $prepare = 0 ]; then
+  rc=""
+  case "${SHELL##*/}" in
+    zsh) rc="$HOME/.zshrc" ;;
+    # a ~/.bash_profile made where there was none would hide ~/.profile from bash: that one, then
+    bash) rc="$HOME/.bash_profile"; [ -e "$rc" ] || [ ! -e "$HOME/.profile" ] || rc="$HOME/.profile" ;;
+  esac
+  line="export PATH=\"\$HOME/.local/bin:\$PATH\"  $mark: the folder of its short commands; delete this line to undo"
+  if [ -z "$rc" ]; then
+    say "Your shell (${SHELL:-none}) is not one HH adds to. To type the role's short command directly, put $bin on PATH in its settings." \
+      "你的 shell（${SHELL:-无}）HH 不会去改。想直接敲角色的短命令，就在它的设置里把 $bin 加到 PATH 上。"
+  elif grep -qsF "$mark" "$rc" || grep -qsE '^[^#]*\.local/bin' "$rc"; then
+    say "$rc puts $bin on PATH already: a new terminal window has it." "$rc 里已经把 $bin 放上 PATH 了：新开的终端窗口就有。"
+    binOn
+  elif ask "Each role gets a short command (its id: type it with what to say) in $bin, which is not on your PATH. Add it? HH puts one line, marked as HH's, at the end of $rc." \
+      "每个角色都有一个短命令（就是它的编号，后面跟要说的话），放在 $bin 里，而这个目录不在你的 PATH 上。加上吗？HH 会在 $rc 末尾加一行，带 HH 的标记。"; then
+    printf '\n%s\n' "$line" >> "$rc"
+    say "Added at the end of ${rc}: $line" "已加在 $rc 末尾：$line"
+    say "New terminal windows have it; this one does after: source $rc. To undo, delete that line." \
+      "新开的终端窗口就有了；这个窗口要先跑：source ${rc}。不要了就删掉那一行。"
+    binOn
+  else
+    say "Not added. The short command then works by its full path ($bin/<id>); to add it yourself, put this line at the end of ${rc}: export PATH=\"\$HOME/.local/bin:\$PATH\"" \
+      "没有加。短命令就只能连路径一起敲（$bin/<编号>）；想自己加的话，在 $rc 末尾放这一行：export PATH=\"\$HOME/.local/bin:\$PATH\""
+  fi
+fi
 
 if [ $linux = 1 ] && [ "$(loginctl show-user "$(id -un)" -p Linger --value 2>/dev/null)" = no ]; then
   printf '%s\n%s\n\n' \
@@ -111,5 +211,10 @@ if [ $linux = 1 ] && [ "$(loginctl show-user "$(id -un)" -p Linger --value 2>/de
 fi
 say "Installing HH's packages (npm ci): the first time about 140 MB to download, 330 MB on disk, most of it the Claude Code binary the Agent SDK brings; a minute or two on a good connection." \
     "安装 HH 用的包（npm ci）：第一次要下约 140 MB，装好约 330 MB，大半是 Agent SDK 自带的 Claude Code；网速正常的话一两分钟。"
-npm ci --ignore-scripts --no-audit --no-fund --loglevel=error
+tries=0
+until npm ci --ignore-scripts --no-audit --no-fund --loglevel=error; do retry \
+  "Installing HH's packages (npm ci) stopped: npm says why in the lines just above. Most often it is the network: check that this Mac is online (and the proxy or npm registry, if you set one)." \
+  "安装 HH 用的包（npm ci）中途停了：原因是 npm 在上面打的那几行。最常见的是网络：看看这台 Mac 连上网了没有（设过代理或 npm 源的话也看看）。"; done
+# --prepare (an upgrade getting a new copy ready beside the one in use): the checks, the Node and the packages, no role
+if [ $prepare = 1 ]; then say "Ready: $(node -p 'require("./package.json").version') on Node.js $(node -p 'process.versions.node')." "准备好了：$(node -p 'require("./package.json").version')，Node.js $(node -p 'process.versions.node')。"; exit 0; fi
 exec node src/cli.ts setup "$@" ${NOAPP[@]+"${NOAPP[@]}"}

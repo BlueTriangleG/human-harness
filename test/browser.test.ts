@@ -26,8 +26,10 @@ test("browser: what is signed in is the role's to say (browser.logins), else the
   const sha = (s: string) => createHash("sha256").update(s).digest("hex");
   const desc = (lang: string, logins?: string) => { setLang(lang); return browserTool({ regionId: "main", ...(logins ? { browser: { o: { logins } } } : {}) } as unknown as ToolContext).description; };
   try {
-    // sha256 of the descriptions at 01bed46de, when the Chinese pack still named the first role's two sites itself
-    assert.equal(sha(desc("zh", "B站、小红书的号都登着")), "0ad3b4657216d6861b32e226ad364a2331a1f60e4cf0164174016d518b77e3fe");
+    // sha256 of the Chinese description at 01bed46de, when the pack still said itself what was signed in there, those
+    // words swapped for the made-up ones here: the template is that text with a slot where they were (that a role's own
+    // words give what it read, byte for byte, is checked outside the repository, against its config)
+    assert.equal(sha(desc("zh", "工作用的谷歌账号登着")), "ce18b409fb2609a32b65074337883f13d8178343fc5a9a8a0a4b791de168754a");
     assert.equal(sha(desc("en")), "fcc9790f1cbd9bea866cb6b07e5f5578b43e22845b86bbaad4b0073102b4ddf0", "English, nothing set: as it was");
     assert.match(desc("zh"), /^你自己的 Chrome（你登过的网站会一直登着），/);
   } finally { setLang(TEST_LANG, TEST_NAMES); }

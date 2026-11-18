@@ -1,7 +1,7 @@
 // hhd：Human Harness 常驻进程。启动大脑、每 30 秒 tick 一次、开控制 socket。
 import { checkProviders } from "./providers.ts";
 import { restartStatus } from "./sleep/replay.ts";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { constants as perf, performance, PerformanceObserver, type PerformanceEntry } from "node:perf_hooks";
@@ -69,10 +69,15 @@ async function main(): Promise<void> {
   // The OpenAI key is read once, here (memory's vectors, the notebook's judge). One changed after (hh openai, the console's
   // settings) is taken up by restarting once she is calm, as a deploy is: see the tick below
   const bootKey = loadOpenAIKey(cfg.stateDir);
+  // The version of the code this hhd runs. An upgrade (npx human-harness) puts a new copy in the same folder; a role that is
+  // not deployed by repair (no deployed.json: repair restarts its own) takes it up by restarting once she is calm
+  const codeVersion = (): string | null => { try { return (JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), "..", "package.json"), "utf8")) as { version?: string }).version ?? null; } catch { return null; } };
+  const bootVersion = codeVersion();
   let mem: EventMemory | undefined;
   if (ev?.enabled) {
     const key = bootKey;
-    if (!key) log.warn("event memory: no OpenAI key in secrets.json, keyword search only");
+    // no key is a way to run the setup offers (skip it), not a fault: info, so it stays out of the console's bell
+    if (!key) log.info("event memory: no OpenAI key in secrets.json, keyword search only");
     // 人物卡模板（R17）：配置里的这个人格的卡；没配或配坏了就不开人物卡（写字段、钉原话都拒，不导出），hhd 照常起来
     const rawTemplate = cfg.memory?.people?.template;
     const peopleTemplate = templateOr(rawTemplate, (e) => log.error("people: memory.people.template invalid, person cards off", { error: e.message.slice(0, 300) }));
@@ -228,11 +233,17 @@ async function main(): Promise<void> {
       if (restartGate?.tick(() => restartStatus(brain.status(), brain.replayRunning)) === "restart") { log.info("repair: restarting for a deploy while she is calm", { snapshot: restartGate.snapshot }); await shutdown("restart"); }
       // the OpenAI key changed since hhd started: restarted once she is calm by a deploy's rule (calm checks in a row, not in
       // the quiet hours); launchd or systemd starts it again at once, and it starts with the key
-      else if (loadOpenAIKey(cfg.stateDir) !== bootKey) {
-        const rule = restartRules ?? { quiet: ["00:00", "00:00"] as [string, string], calmChecks: 3 };
-        keyCalm = calmNow(restartStatus(brain.status(), brain.replayRunning), Date.now(), cfg.schedule.timezone, rule.quiet) ? keyCalm + 1 : 0;
-        if (keyCalm >= rule.calmChecks) { log.info("openai: the key changed, restarting while she is calm to take it up", {}); await shutdown("restart"); }
-      } else keyCalm = 0;
+      else {
+        // the OpenAI key changed since hhd started, or (no repair deploys) the code under it was upgraded
+        const why = loadOpenAIKey(cfg.stateDir) !== bootKey ? "openai: the key changed, restarting while she is calm to take it up"
+          : !readDeployed(cfg.stateDir) && codeVersion() !== bootVersion ? "upgrade: the code was upgraded, restarting while she is calm to run it" : null;
+        if (!why) keyCalm = 0;
+        else {
+          const rule = restartRules ?? { quiet: ["00:00", "00:00"] as [string, string], calmChecks: 3 };
+          keyCalm = calmNow(restartStatus(brain.status(), brain.replayRunning), Date.now(), cfg.schedule.timezone, rule.quiet) ? keyCalm + 1 : 0;
+          if (keyCalm >= rule.calmChecks) { log.info(why, { from: bootVersion, to: codeVersion() }); await shutdown("restart"); }
+        }
+      }
     } catch (e) { log.warn("repair: restart gate failed", { error: String(e).slice(0, 200) }); }
     finally { ticking = false; }
     lap("restart");

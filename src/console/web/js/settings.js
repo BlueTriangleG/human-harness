@@ -21,7 +21,8 @@ async function loadPermissions(fresh) {
   const r = await fetch("/api/permissions" + (fresh ? "?fresh=1" : "")).then((x) => x.json()).catch((e) => ({ error: String(e) }));
   const grants = grantsLink();
   if (r.error) { box.replaceChildren(...[el("p", "hint offline", T("settings.failed", { error: r.error })), grants].filter(Boolean)); return; }
-  if (!r.configured) { box.replaceChildren(...[el("p", "hint", T("settings.notSet")), grants].filter(Boolean)); return; }
+  // no permissions check set up (every new role): what there is to do is in the app's own page
+  if (!r.configured) { box.replaceChildren(...[el("p", "hint", grants ? T("settings.notSet") : T("settings.notSetNoApp")), grants].filter(Boolean)); return; }
   const again = el("button", "precheck", T("settings.recheck"));
   again.addEventListener("click", () => { again.disabled = true; loadPermissions(true); });
   const head = el("div", "phead");

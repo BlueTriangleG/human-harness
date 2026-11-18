@@ -1068,7 +1068,10 @@ export const setup = {
   making: (id: string, dir: string) => `建角色 ${id}，放在 ${dir}`,
   modulesOff: (names: string) => `这几个模块要先另外设置，先关着：${names}（hh modules doctor 里写着怎么开）`,
   noApp: "这次不生成 app：在浏览器里用控制台就行。以后要 app，跑一次 hh modules install（它用 Xcode 命令行工具来编，没装的话先 xcode-select --install）。",
-  failed: (remove: string) => `没装成：上面写着停在哪一步。先用 ${remove} 清掉这次装了一半的，修好再跑一次 ./setup。`,
+  failed: (remove: string, again: string) => `没装成：上面写着停在哪一步。先用 ${remove} 清掉这次装了一半的，修好再跑一次 ${again}。`,
+  /** a step of installing failed, at the terminal: which, and that trying again keeps the role */
+  installStopped: (lines: string, dir: string) => `装到这一步停住了：\n${lines}\n什么都没删：${dir} 原样留着，再试一次会从这里接着装。上面要是提到网络或磁盘，先看看那边。`,
+  tryAgain: "再试一次？[Y/n] ",
   doneApp: (app: string) => `app    ${app}（双击打开就是她的窗口；她的权限都开在它身上）`,
   doneConsole: (id: string) => `控制台  ${id} console（在浏览器里打开）`,
   doneTalk: (id: string) => `说话    在窗口里打字，或者在终端里：${id} "你好"`,
@@ -1103,6 +1106,7 @@ export const remove = {
   grantsLeft: (bundle: string) => `${bundle} 的系统权限没清掉（要管理员）：在系统设置 → 隐私与安全性里，把它那几行删掉`,
   left: (path: string) => `留着：${path}`,
   done: (id: string) => `角色 ${id} 删干净了。`,
+  pathLineLeft: (file: string) => `这是这台电脑上最后一个角色。setup 加在 ${file} 里的那一行（带着「added by HH setup」的标记）还在：它把 ~/.local/bin 放上 PATH，Claude Code 用官方脚本装的话，claude 也在那里。别的都用不着它了，就删掉那一行。`,
 };
 
 export const newRole = {
@@ -1263,7 +1267,7 @@ export const wizard = {
   termMake: (name: string) => `· 正在建 ${name}…`,
   termClose: "可以关掉这个窗口了。",
   termDone: (name: string, talk: string) => `好了：${name} 建好了，会在它自己的窗口里先给你发第一条消息。在那里跟它说话，或者在终端里：${talk}`,
-  termFailed: (why: string) => `没建成：${why}。向导里可以再试一次。`,
+  termFailed: (why: string, cleaned?: boolean) => `没建成，停在这里：\n${why}\n${cleaned === undefined ? "" : cleaned ? "建了一半的已经删掉了。" : "建了一半的没删干净。"}向导里可以再试一次。`,
   made: (id: string) => `向导做完了：${id} 已经建好`,
   nothing: "向导做完了：什么都没建",
   draftFailed: (why: string) => `${why}。再试一次`,

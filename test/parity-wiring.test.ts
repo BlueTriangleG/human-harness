@@ -15,7 +15,7 @@ const TREE = resolve(fileURLToPath(import.meta.url), "../..");
 /** 钉着的哈希，只在这一处。改之前先照 CHANGED 说的做 */
 const PINNED = {
   /** src/hhd.ts 里 main() 整个函数的源码 */
-  hhdMain: "169642d6dd3bc6d6578c62b3148b0ab9abc1b491c1c788b662f623b5e76c3a6c",
+  hhdMain: "232c09dea7220fb2b8c5e8454c3539380c972ce859b5407b1d0455abc1f21999",
   /** src/control.ts 里 handle() 的 relay、sense、tell 三个 case 的源码（按这个先后，中间隔一个换行） */
   controlRelaySenseTell: "03ae0ce77aa1514a64cfbb585cfd3ec5d307fdb00677ea5be85d20fc1f7afd5b",
 };

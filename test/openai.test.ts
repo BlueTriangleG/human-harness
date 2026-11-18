@@ -190,7 +190,8 @@ test("openai: a new role with no key — memory and the notebook go by words, no
     assert.equal((await rt.rescan()).embedded, 0);
     const r = await rt.notes.associate("拉坯的时候泥坯总塌", { region: "main", binding: "wake" });
     assert.ok(r.pages.length > 0, JSON.stringify(r));
-    assert.deepEqual(logs.filter((l) => l.level !== "info").map((l) => l.msg), ["learning: no OpenAI key, keyword search only"]);
+    // no key is a choice, not a fault: nothing for the console's bell (it shows warnings and errors)
+    assert.deepEqual(logs.filter((l) => l.level !== "info").map((l) => l.msg), []);
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 

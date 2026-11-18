@@ -50,6 +50,7 @@
 .okey-verdict.bad, .okey .status.bad { color: var(--err); }
 .okey .status { margin: 8px 0 0; font-size: var(--fs-sm); }
 .okey-remove { margin-top: 14px; }
+.okey a { color: var(--say); }
 #nav button.keyhint::after { content: ""; display: inline-block; width: 6px; height: 6px; margin-left: 6px; border-radius: 50%; background: var(--think); vertical-align: middle; }
 @media (max-width: 720px) {
   #settingsview { padding: 10px 14px 24px; }

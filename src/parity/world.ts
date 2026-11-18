@@ -15,6 +15,8 @@
 //   note reads, and each tick's laps and event-loop utilisation for "tick slow": real time again, diagnostics only;
 // - The OpenAI key read once at start, and the restart once she is calm when secrets.json holds another (832490765):
 //   a replay never changes the role's secrets, so the world gives the key (or none) at the start and never restarts;
+//   likewise the restart once she is calm when the code under hhd was upgraded (package.json's version changed): a replay
+//   runs one version of the code from start to end;
 // - 进程信号的收尾（SIGTERM / SIGINT）：w.close() 照 shutdown 的先后停大脑、收电脑、关库。
 // - Starting and stopping the channels (channels.start / stop in hhd): the world connects nothing; scenarios hand messages to
 //   brain.fromChannel themselves. Their send is mirrored: it is the way out the replay records.
@@ -152,7 +154,7 @@ export async function buildWorld(o: WorldOpts): Promise<World> {
   let mem: EventMemory | undefined;
   if (ev?.enabled) {
     const key = loadOpenAIKey(cfg.stateDir);
-    if (!key) log.warn("event memory: no OpenAI key in secrets.json, keyword search only");
+    if (!key) log.info("event memory: no OpenAI key in secrets.json, keyword search only");
     const rawTemplate = cfg.memory?.people?.template;
     const peopleTemplate = templateOr(rawTemplate, (e) => log.error("people: memory.people.template invalid, person cards off", { error: e.message.slice(0, 300) }));
     if (rawTemplate === undefined) log.warn("people: no memory.people.template in config, person cards off");

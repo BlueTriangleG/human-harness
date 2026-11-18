@@ -327,7 +327,7 @@ export function makeLearning(
   if (!key && o.keywordWithoutKey === false) return undefined;   // 回放的世界：照没有退路以前那样不建
   if (!key) {
     // 和事件记忆一样有退路：没有 key 也建，联想只按字找（不花钱、不会失败）
-    log.warn("learning: no OpenAI key, keyword search only");
+    log.info("learning: no OpenAI key, keyword search only");   // a way to run, not a fault: stays out of the console's bell
     return createLearningRuntime({ ...common, embedder: null, judge: new KeywordDecisions(), vec: async () => null, keywordOnly: true });
   }
   const fetchImpl = o.fetchImpl ? { fetchImpl: o.fetchImpl } : {};

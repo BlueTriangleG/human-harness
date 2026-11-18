@@ -17,6 +17,9 @@ import { ROLE_MARK } from "./new.ts";
 import { B, setLang } from "./lang/index.ts";
 import { services, type ServiceManager } from "./services/index.ts";
 
+/** the mark on the line ./setup adds to the shell's startup file (~/.local/bin on PATH); the same words as there */
+export const PATH_LINE_MARK = "# added by HH setup (Human Harness)";
+
 export interface RemoveDeps {
   /** this user's service manager (its jobs), and its home */
   services: ServiceManager;
@@ -144,5 +147,11 @@ export async function removeCommand(argv: readonly string[], deps: RemoveDeps = 
     lines.push(tcc.code === 0 ? B.remove.grantsReset(`ai.hh.role.${id}`) : B.remove.grantsLeft(`ai.hh.role.${id}`));
   }
   lines.push(...why, ...left.map((p) => B.remove.left(p)), B.remove.done(id));
+  // the last role gone: the PATH line ./setup added stays (Claude Code's own claude may be in that folder too), and is named
+  if (!(await deps.services.list("ai.hh.")).length) {
+    for (const f of [".zshrc", ".bash_profile", ".profile"].map((n) => join(deps.home, n))) {
+      try { if (readFileSync(f, "utf8").includes(PATH_LINE_MARK)) lines.push(B.remove.pathLineLeft(f)); } catch { /* none there */ }
+    }
+  }
   return lines.join("\n");
 }

@@ -2853,7 +2853,7 @@ test("没有 OpenAI key：联想只按字找——和话题共有的字够多的
   assert.deepEqual((await rt.notes.associate("今天天气不错", { region: "main", binding: "wake" })).pages, []);
 });
 
-test("hhd 接线：没有 key 也建（只按字找）、记 warn；开关全关也建；有事件记忆就共用它的向量服务和线索缓存；告警记 error、写进 kv，控制台只标 24 小时内的", async () => {
+test("hhd 接线：没有 key 也建（只按字找）、记 info（不进铃铛）；开关全关也建；有事件记忆就共用它的向量服务和线索缓存；告警记 error、写进 kv，控制台只标 24 小时内的", async () => {
   const root = makeShelf({ "通用/验收/SKILL.md": COVER, "通用/验收/一.md": page("一") });
   const stateDir = tmpDir("hh-wire-state-");
   try {
@@ -2863,9 +2863,10 @@ test("hhd 接线：没有 key 也建（只按字找）、记 warn；开关全关
     const off = testConfig({ stateDir, schedule: { timezone: tz }, learning: { root, dailyUsd: 2 } });
     const on = testConfig({ stateDir, schedule: { timezone: tz }, learning: { root, dailyUsd: 2, enabled: true } });
 
-    // 没有 key：照样建（联想只按字找，见下一条测试），记一条 warn
+    // 没有 key：照样建（联想只按字找，见下一条测试），记一条 info：是能选的用法，不是毛病，不进控制台的铃铛
     assert.ok(makeLearning(off, openDb(":memory:"), undefined, log));
-    assert.ok(logs.some((l) => l.level === "warn" && l.msg === "learning: no OpenAI key, keyword search only"));
+    assert.ok(logs.some((l) => l.level === "info" && l.msg === "learning: no OpenAI key, keyword search only"));
+    assert.ok(!logs.some((l) => l.level === "warn"), "no key is no warning");
 
     // 有 key：开关全关也建（hh learn、夜里的工作单要用）
     writeFileSync(join(stateDir, "secrets.json"), JSON.stringify({ openaiKey: "sk-test" }));

@@ -3,7 +3,8 @@ import type { settings as zh } from "../zh/settings.ts";
 
 export const settings: Strings<typeof zh> = {
   loading: "Checking…",
-  notSet: "No system permission check is set up for this role (instance config console.permissionsCheck), so there is nothing to list.",
+  notSet: "Its permissions belong to its own app: open it with the button below, and it asks again for any still off.",
+  notSetNoApp: "Its permissions belong to its own app, and this role has no app on this Mac, so there is nothing to turn on here.",
   failed: "Could not check: {error}",
   checked: "Checked at {time}. The check runs as {user}; the system counts every command {me} runs against {program}.",
   recheck: "Check again",

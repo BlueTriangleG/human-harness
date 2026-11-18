@@ -98,29 +98,29 @@ const defaultDeps = (): InstallDeps => ({ run: runProcess, services: services() 
  * than what is installed. The service manager's jobs: hhd and the console (only with HH_CONFIG set, which they start with), each on
  * module's standalone timer and each of its services, under the role's labels.
  */
-/** What install did, step by step; failed: some step did not go through (the others still ran). start false: job files written, not loaded */
-export async function install(cfg: Config, mods: Modules, deps: InstallDeps = defaultDeps(), o: { start?: boolean } = {}): Promise<{ lines: string[]; failed: boolean; started: string[] }> {
-  let failed = false;
-  const lines: string[] = [];
+/**
+ * What install did, step by step; failed: some step did not go through (the others still ran), and errors are those steps'
+ * lines (what ./setup shows when it asks to try again). start false: job files written, not loaded
+ */
+export async function install(cfg: Config, mods: Modules, deps: InstallDeps = defaultDeps(), o: { start?: boolean } = {}): Promise<{ lines: string[]; failed: boolean; errors: string[]; started: string[] }> {
+  const lines: string[] = [], errors: string[] = [];
+  const fail = (line: string): void => { errors.push(line); lines.push(line); };
   const venv = join(cfg.stateDir, "venv");
   if (resolve(cfg.tools.python) === join(venv, "bin", "python") && !existsSync(cfg.tools.python)) {
     const r = await deps.run("python3", ["-m", "venv", venv], { timeoutMs: 120_000 });
-    if (r.code !== 0) failed = true;
-    lines.push(r.code === 0 ? B.modules.venvMade(venv) : B.modules.venvFailed(venv, r.stderr.trim().slice(-300)));
+    if (r.code === 0) lines.push(B.modules.venvMade(venv)); else fail(B.modules.venvFailed(venv, r.stderr.trim().slice(-300)));
   }
   for (const { spec, ctx } of mods.loaded) {
     if (!spec.requires?.python) continue;
     const r = await deps.run(cfg.tools.python, ["-m", "pip", "install", "-q", "-r", join(ctx.dir, spec.requires.python)], { timeoutMs: 600_000 });
-    if (r.code !== 0) failed = true;
-    lines.push(r.code === 0 ? B.modules.pipDone(spec.name) : B.modules.pipFailed(spec.name, r.stderr.trim().slice(-300)));
+    if (r.code === 0) lines.push(B.modules.pipDone(spec.name)); else fail(B.modules.pipFailed(spec.name, r.stderr.trim().slice(-300)));
   }
   for (const { spec, ctx } of mods.loaded) {
     if (!spec.requires?.npm) continue;
     const dir = resolve(ctx.dir, spec.requires.npm);
     if (!npmStale(dir)) continue;
     const r = await deps.run("npm", ["ci", "--ignore-scripts", "--omit=dev", "--no-audit", "--no-fund"], { cwd: dir, timeoutMs: 600_000 });
-    if (r.code !== 0) failed = true;
-    lines.push(r.code === 0 ? B.modules.npmDone(spec.name) : B.modules.npmFailed(spec.name, r.stderr.trim().slice(-300)));
+    if (r.code === 0) lines.push(B.modules.npmDone(spec.name)); else fail(B.modules.npmFailed(spec.name, r.stderr.trim().slice(-300)));
   }
   for (const { spec } of mods.loaded) {
     for (const l of skillLinks(cfg, mods.found.find((x) => x.name === spec.name)!)) {
@@ -130,7 +130,7 @@ export async function install(cfg: Config, mods: Modules, deps: InstallDeps = de
         mkdirSync(join(l.to, ".."), { recursive: true });
         symlinkSync(l.from, l.to);
         lines.push(`${spec.name}: ${B.modules.skillLinked(l.page)}`);
-      } catch (e) { failed = true; lines.push(`${spec.name}: ${B.modules.skillFailed(l.page, e instanceof Error ? e.message : String(e))}`); }
+      } catch (e) { fail(`${spec.name}: ${B.modules.skillFailed(l.page, e instanceof Error ? e.message : String(e))}`); }
     }
   }
   const labels = launchdLabels(cfg);
@@ -143,11 +143,11 @@ export async function install(cfg: Config, mods: Modules, deps: InstallDeps = de
   // the role's app starts every job (launchd.app): built and signed afresh, so a new name or avatar is in it
   if (cfg.launchd?.app) {
     const r = await makeApp(cfg, { build: deps.app, ask: deps.grants });
+    if (!r.ok) { fail(r.line); fail(B.modules.appNoJobs); return { lines, failed: true, errors, started: [] }; }
     lines.push(r.line);
-    if (!r.ok) { lines.push(B.modules.appNoJobs); return { lines, failed: true, started: [] }; }
   }
   const first = launcherOf(cfg);
-  try { mkdirSync(logs, { recursive: true }); } catch (e) { failed = true; lines.push(B.modules.logsFailed(logs, e instanceof Error ? e.message : String(e))); }
+  try { mkdirSync(logs, { recursive: true }); } catch (e) { fail(B.modules.logsFailed(logs, e instanceof Error ? e.message : String(e))); }
   const jobs: Job[] = mods.loaded.flatMap(({ spec }) => (spec.timers ?? []).filter((t) => t.standalone).map((t) => {
     const label = `${base}.${spec.name}.${t.name}`;
     return deps.services.timerJob(label, [...first, nodeBin(cfg), join(REPO, "src", "cli.ts"), "modules", "timer", spec.name, t.name], t.everyMs, env, join(logs, `${label}.log`));
@@ -165,11 +165,11 @@ export async function install(cfg: Config, mods: Modules, deps: InstallDeps = de
   const started: string[] = [];
   for (const r of await installJobs(jobs, deps.services, o.start !== false)) {
     if (r.state === "installed") started.push(r.label);
-    if (r.state === "failed") failed = true;
+    if (r.state === "failed") { fail(B.modules.jobFailed(r.label, r.error ?? "")); continue; }
     lines.push(r.state === "installed" ? B.modules.jobInstalled(r.label) : r.state === "written" ? B.modules.jobWritten(r.label, r.command ?? "")
-      : r.state === "same" ? B.modules.jobSame(r.label) : r.state === "running" ? B.modules.jobRunning(r.label) : r.state === "kept" ? B.modules.jobKept(r.label, deps.services.dir) : B.modules.jobFailed(r.label, r.error ?? ""));
+      : r.state === "same" ? B.modules.jobSame(r.label) : r.state === "running" ? B.modules.jobRunning(r.label) : B.modules.jobKept(r.label, deps.services.dir));
   }
-  return { lines, failed, started };
+  return { lines, failed: errors.length > 0, errors, started };
 }
 
 const within = (p: string, root: string): boolean => p.startsWith(root.endsWith("/") ? root : `${root}/`);

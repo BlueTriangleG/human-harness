@@ -15,11 +15,15 @@ You choose, and the role's use is billed the way that login is:
 
 - **Your Claude subscription** (Pro, Max, Team, …), **the default**: run `claude`, type `/login` and pick your Claude
   account. The role's use counts against your plan's usage limits, like your own use of Claude Code. HH is run on this
-  every day.
+  every day. How much: our longest-running agent, working through the day, uses roughly 5 to 10 % of a Max 20x plan's
+  weekly allowance a day, before helper sessions, which can add as much again. A full week of work takes about half of a
+  Max 20x week; on Max 5x, a quarter the size, it would run out in a few days. These are estimates from our own use.
 - **An Anthropic Console account** (an API key): run `claude`, type `/login` and pick the Anthropic Console account. The
   role's use is billed per token, at API prices. Not fully tried yet: HH takes this login, but its usage guard is built
   for subscriptions, so on this login it shows no usage and caps nothing; set a spend limit in the Console if you want
-  one.
+  one. How much: at API prices, roughly $10 to $100 a day on Sonnet and about twice that on Opus. That is an estimate
+  from our longest-running agent's use (two chat channels, weeks of memory); a new role starts lower, and helper
+  sessions are not included, so real costs run higher.
 - **Another provider's Anthropic-format endpoint** (advanced, experimental): not a login but a setting of the role,
   `models.providers` (see [Using another model](#using-another-model)). It has not been fully tried, and not on every
   model.
@@ -67,8 +71,10 @@ Why an app: macOS gives a permission to the program that asks for it, and everyt
 app, so the permissions are the app's. They are given once, and an update, a rebuild of the app or a new name keeps
 them.
 
-Without the Xcode Command Line Tools there is no app (nothing to build it with): `./setup` says so and opens the role's
-console in the browser instead. To get the app later: `xcode-select --install`, then
+Without the Xcode Command Line Tools there is no app (nothing to build it with). `./setup` (and `npx human-harness`)
+first asks whether to install them: yes opens Apple's own installer (`xcode-select --install`), and setup waits for it and
+goes on, with the app. Said no to, it goes on without the app when git and Python are there some other way, and opens the
+role's console in the browser instead. To get the app later: `xcode-select --install`, then
 `HH_CONFIG=~/HH/<id>/instance.json bin/hh modules install`.
 
 ## Pairing: why does the console know it is me?
@@ -93,6 +99,20 @@ works once, within a minute: if it opened in the wrong browser, switch the defau
 
 If the `<id>` command is not found, `./setup` put it in `~/.local/bin`, which is not on your PATH: use
 `HH_CONFIG=~/HH/<id>/instance.json bin/hh console --pair`.
+
+## The PATH line setup adds
+
+When `~/.local/bin` is not on your PATH, setup asks whether to add it. Yes puts one line at the end of `~/.zshrc` (zsh,
+the Mac's default shell; for bash, `~/.bash_profile`, or `~/.profile` when only that one is there):
+
+```sh
+export PATH="$HOME/.local/bin:$PATH"  # added by HH setup (Human Harness): the folder of its short commands; delete this line to undo
+```
+
+It is added once: a file that has it, or already puts `~/.local/bin` on PATH, is left as it is. New terminal windows have
+it. To take it out, delete that line (for example open `~/.zshrc` in a text editor, or
+`sed -i '' '/# added by HH setup/d' ~/.zshrc`) and open a new terminal window. `hh remove` does not touch it, because
+Claude Code's installer puts `claude` in the same folder; removing the last role says the line is still there.
 
 ## Removing a role
 

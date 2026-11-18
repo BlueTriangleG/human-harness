@@ -9,7 +9,7 @@ export const machine = {
   noAnswer: "它的控制台（端口 {port}）没有答应。",
   regions: "在忙的",
   allIdle: "都空着",
-  quota: "这周额度",
+  quota: "Claude 账号这周",
   load: "负载看守",
   loadLevel: { ok: "正常", tight: "偏紧", danger: "危险" },
   today: "今天",

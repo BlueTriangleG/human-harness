@@ -115,8 +115,8 @@ them does, the others know. More: [docs/how-it-works.md](docs/how-it-works.md) a
 | | Linux | Partly: no app yet, not checked end to end |
 | | WSL2, Windows | Not yet |
 | Software | Node.js 18+ (on a Mac HH brings its own Node 24 if needed; Linux needs 24.18+), Python 3.9+, Claude Code | Required; `./setup` checks each |
-| Claude login | Your Claude subscription | The default, in daily use; setup signs you in if needed |
-| | An Anthropic Console account (API key) | Not fully tried: no usage shown, no cap on spending |
+| Claude login | Your Claude subscription | The default, in daily use; setup signs you in if needed. Working all day, our longest-running agent uses roughly 5 to 10 % of a Max 20x plan's weekly allowance a day, before helpers (estimated from our own use); on a smaller plan it runs out in days |
+| | An Anthropic Console account (API key) | Not fully tried: no usage shown, no cap on spending. At API prices, roughly $10 to $100 a day on Sonnet and about twice that on Opus (estimated from our longest-running agent; a new Human starts lower; helpers not included) |
 | | Another provider's Anthropic-format endpoint | Experimental ([faq](docs/faq.md#using-another-model)) |
 | Learning, self-repair | | In daily use on HH's longest-running Human; repair's deploys need a shared repository set up by hand |
 | Channels | Its window, a terminal | Every Human has them |

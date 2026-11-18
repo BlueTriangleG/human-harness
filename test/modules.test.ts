@@ -367,6 +367,8 @@ export default defineModule({ name: "owl", summary: "hoots", requires: { python:
     writeFileSync(blocked, "");
     const bad = await install(cfg, mods, { run: async () => ({ code: 0, stdout: "", stderr: "" }), services: launchd({ dir: blocked, uid: 501, launchctl: async () => ({ code: 0, stderr: "" }) }) });
     assert.ok(bad.failed && bad.lines.some((l) => l.startsWith("ai.hh.aqing.owl.night ")) && bad.lines.some((l) => l === B.modules.venvMade(join(cfg.stateDir, "venv"))), bad.lines.join("\n"));
+    // what failed, apart (./setup shows these when it asks to try again): the jobs, not the steps that went through
+    assert.ok(bad.errors.length && bad.errors.every((l) => l.startsWith("ai.hh.aqing.")), bad.errors.join("\n"));
   } finally {
     if (saved === undefined) delete process.env.HH_CONFIG; else process.env.HH_CONFIG = saved;
     process.env.PATH = path;
@@ -403,6 +405,7 @@ export default defineModule({ name: "owl", summary: "hoots", timers: [{ name: "n
     const ask = async () => null;
     const noFolder = await install(cfg, mods, { run, services: svc(none), app: build, grants: ask });
     assert.ok(noFolder.failed && noFolder.lines.includes(B.modules.appNoFolder(join(home, "aqing"), userInfo().username)) && noFolder.lines.includes(B.modules.appNoJobs), noFolder.lines.join("\n"));
+    assert.deepEqual(noFolder.errors, [B.modules.appNoFolder(join(home, "aqing"), userInfo().username), B.modules.appNoJobs]);
     assert.equal(builds(), 0, "nothing is built before the owner makes the role's folder");
     assert.deepEqual(readdirSync(none), [], "no job points at an app that is not there");
     mkdirSync(join(home, "aqing"));

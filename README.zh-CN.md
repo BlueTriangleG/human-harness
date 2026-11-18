@@ -95,8 +95,8 @@ HH 是自己的一套框架：记忆、感官、目标、学习、人物、修�
 | | Linux | 部分能用：还没有 app，没从头到尾核过 |
 | | WSL2、Windows | 还不行 |
 | 软件 | Node.js 18+（在 Mac 上不够新时 HH 自己带一份 Node 24；Linux 要 24.18+）、Python 3.9+、Claude Code | 必须有；`./setup` 逐样查 |
-| Claude 登录 | 你的 Claude 订阅 | 默认，每天在用；没登录时 setup 会带你登录 |
-| | Anthropic Console 账号（API key） | 还没完整试过：不显示用量，也不限花费 |
+| Claude 登录 | 你的 Claude 订阅 | 默认，每天在用；没登录时 setup 会带你登录。我们跑得最久的那个 agent 整天干活，一天大约用掉 Max 20x 套餐周额度的 5% 到 10%，没算帮手（拿我们自己的用量估的）；小一档的套餐几天就用完 |
+| | Anthropic Console 账号（API key） | 还没完整试过：不显示用量，也不限花费。按 API 价，Sonnet 大约每天 10 到 100 美元，Opus 约是它的两倍（拿我们跑得最久的 agent 估的；新角色起步低一些；没算帮手） |
 | | 别家提供方的 Anthropic 格式接口 | 实验性（[常见问题](docs/faq.zh.md#换模型)） |
 | 学习、自我修复 | | 在 HH 跑得最久的那个 Human 上每天在用；修理的部署要手工搭的共享仓库 |
 | 通道 | 它的窗口、终端 | 每个 Human 都有 |

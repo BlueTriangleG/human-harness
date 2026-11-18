@@ -194,7 +194,7 @@ export interface Wizard { url: string; port: number; server: Server; closed: Pro
 
 /** what happens on the page, for the terminal that started the wizard to say (wizardCommand) */
 export type WizardEvent = { kind: "page" } | { kind: "persona" } | { kind: "login" } | { kind: "key" } | { kind: "make"; name: string } | { kind: "line"; text: string }
-  | { kind: "done"; name: string; talk: string } | { kind: "failed"; text: string };
+  | { kind: "done"; name: string; talk: string } | { kind: "failed"; text: string; cleaned?: boolean };
 
 /** Start the wizard's server; closed settles with what was made (or that nothing was) */
 export async function startWizard(o: { lang: string; app: boolean; tell?: (e: WizardEvent) => void }, deps: WizardDeps = system()): Promise<Wizard> {
@@ -244,9 +244,9 @@ export async function startWizard(o: { lang: string; app: boolean; tell?: (e: Wi
         ...(openaiKey ? { openaiKey } : {}),
       });
     } catch (e) {
-      // not half a role: what was made goes again
-      await deps.remove(id).catch(() => {});
-      throw e;
+      // not half a role: what was made goes again, and the page says whether it went
+      const cleaned = await deps.remove(id).then(() => true, () => false);
+      throw Object.assign(new Error((e as { why?: string }).why || (e instanceof Error ? e.message : String(e))), { cleaned });
     }
     const cfg = join(homedir(), "HH", id, "instance.json");
     const app = existsSync(cfg) ? (JSON.parse(readFileSync(cfg, "utf8")) as { launchd?: { app?: string } }).launchd?.app : undefined;
@@ -355,7 +355,13 @@ export async function startWizard(o: { lang: string; app: boolean; tell?: (e: Wi
       const beat = setInterval(() => put(res, " "), BEAT_MS);
       let last: Line;
       try { last = await create(b); }
-      catch (e) { last = { step: "error", text: "", done: false, error: e instanceof Error ? e.message : String(e), retry: true }; tell({ kind: "failed", text: last.error as string }); emit(last); }
+      catch (e) {
+        // cleaned: set when something had been made (true: removed again, false: not all of it)
+        const cleaned = (e as { cleaned?: boolean }).cleaned;
+        last = { step: "error", text: "", done: false, error: e instanceof Error ? e.message : String(e), retry: true, ...(cleaned === undefined ? {} : { cleaned }) };
+        tell({ kind: "failed", text: last.error as string, ...(cleaned === undefined ? {} : { cleaned }) });
+        emit(last);
+      }
       finally { clearInterval(beat); job.running = false; }
       if (!res.destroyed) res.end(JSON.stringify(last));
       return;
@@ -431,7 +437,7 @@ export async function wizardCommand(argv: readonly string[], deps: WizardDeps = 
     if (e.kind === "done") made = true;
     const W = B.wizard;
     say(e.kind === "page" ? W.termSeen : e.kind === "persona" ? W.termPersona : e.kind === "login" ? W.termLogin : e.kind === "key" ? W.termKey
-      : e.kind === "make" ? W.termMake(e.name) : e.kind === "line" ? `  ${e.text}` : e.kind === "done" ? W.termDone(e.name, e.talk) : W.termFailed(e.text));
+      : e.kind === "make" ? W.termMake(e.name) : e.kind === "line" ? `  ${e.text}` : e.kind === "done" ? W.termDone(e.name, e.talk) : W.termFailed(e.text, e.cleaned));
     // made: nothing left to wait for here. The window can be closed; a few seconds for the page to get its last line, then over
     if (e.kind === "done") { say(W.termClose); setTimeout(over, 5_000); }
   };

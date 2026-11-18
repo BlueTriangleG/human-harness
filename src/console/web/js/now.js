@@ -48,7 +48,8 @@ function renderStatus() {
       const fill = el("i");
       fill.style.width = Math.min(100, q.sevenDay) + "%";
       bar.append(fill);
-      nodes.push(line(T("now.quota"), el("b", null, q.sevenDay + "%"), bar));
+      // the Claude account's week, the owner's own use in it too: not what this Human alone has used
+      nodes.push(line(T("now.quota"), el("b", null, q.sevenDay + "%"), bar, el("span", "nsub", T("now.quotaWhose"))));
     } else nodes.push(line(T("now.quota"), el("span", "nsub", s.quota || T("now.quotaNone"))));
     const running = workers && workers.workers ? workers.workers.filter((w) => w.state === "running" || w.state === "busy").length : 0;
     const claims = (s.claims || []).slice(0, 3).map((c) => el("span", "nitem", c.topic));

@@ -1,16 +1,16 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileName, newRole, ROLE_MARK } from "../src/new.ts";
 import { firstRunConfig, idFrom, loginLine, namesComputer } from "../src/setup.ts";
 import { claudeLogIn, loginOf, withoutTerminal } from "../src/claude-login.ts";
-import { removeCommand, type RemoveDeps } from "../src/remove.ts";
+import { PATH_LINE_MARK, removeCommand, type RemoveDeps } from "../src/remove.ts";
 import { consoleUsageCache } from "../src/config.ts";
 import { commandRecord, MARK } from "../src/console/command.ts";
 import { placeOwnCommand } from "../src/console/open.ts";
-import { launchd } from "../src/services/launchd.ts";
+import { launchd, REPO } from "../src/services/launchd.ts";
 import { systemd } from "../src/services/systemd.ts";
 import { B, setLang } from "../src/lang/index.ts";
 import { tmpDir } from "./tmp.ts";
@@ -223,6 +223,24 @@ test("remove: the short command goes from where setup recorded it; a marked one 
   try { await removeCommand(["trial", "--yes"], deps(home, null, [])); } finally { process.env.PATH = path; }
   assert.ok(!existsSync(join(put, "trial")), "where it was put, though that is not on PATH now");
   assert.ok(existsSync(join(other, "trial")), "PATH is not searched");
+});
+
+test("remove: the last role gone, the PATH line ./setup added is named and left; while another role's job is there, not named", { skip: process.platform !== "darwin" }, async () => {
+  setLang("en");
+  assert.ok(readFileSync(join(REPO, "setup"), "utf8").includes(`mark="${PATH_LINE_MARK}"`), "the mark ./setup puts on its line");
+  const line = `\nexport PATH="$HOME/.local/bin:$PATH"  ${PATH_LINE_MARK}: the folder of its short commands; delete this line to undo\n`;
+  const notLast = tmpDir("hh-remove-");
+  role(notLast);
+  writeFileSync(join(notLast, ".zshrc"), line);
+  const out = await removeCommand(["trial", "--yes"], deps(notLast, null, []));
+  assert.ok(out.endsWith(B.remove.done("trial")), out);
+  const last = tmpDir("hh-remove-");
+  const { agents } = role(last);
+  rmSync(join(agents, "ai.hh.jarvis.hhd.plist"));
+  writeFileSync(join(last, ".zshrc"), line);
+  const out2 = await removeCommand(["trial", "--yes"], deps(last, null, []));
+  assert.ok(out2.endsWith(`${B.remove.done("trial")}\n${B.remove.pathLineLeft(join(last, ".zshrc"))}`), out2);
+  assert.equal(readFileSync(join(last, ".zshrc"), "utf8"), line, "the line itself is not touched");
 });
 
 test("new: a name becomes a file name without path separators, control characters or a leading dot", () => {

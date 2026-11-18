@@ -24,7 +24,13 @@ export function keyBlock(o) {
   const after = el("div", "okey-after");
   box.append(el("p", "okey-lead", T("openai.lead")));
   if (o.status) box.append(now);
-  box.append(row, el("p", "hint", T("openai.checkCost")), result, after,
+  // where a key comes from, with its link
+  const get = el("p", "hint");
+  T("openai.getKey", { link: "{link}" }).split(/\{link\}/).forEach((part, i) => {
+    if (i) { const a = el("a", null, "platform.openai.com/api-keys"); a.href = "https://platform.openai.com/api-keys"; a.target = "_blank"; a.rel = "noopener"; get.append(a); }
+    get.append(part);
+  });
+  box.append(row, el("p", "hint", T("openai.checkCost")), get, result, after,
     el("p", "hint", o.status ? T("openai.money", { limit: usd(1) }) : T("openai.moneyNoLimit")), el("p", "hint", T("openai.where")));
   const money = box.lastChild.previousSibling;
 
@@ -43,7 +49,7 @@ export function keyBlock(o) {
   const busy = (on, btn, label) => { checkBtn.disabled = on; if (saveBtn) saveBtn.disabled = on; btn.textContent = on ? T("openai.checking") : label; };
 
   // ---- the console: what it runs with now, keep a key, take it away ----
-  let saveBtn = null, polling = 0;
+  let saveBtn = null, polling = 0, kept = false;
   const paint = (s) => {
     const line = (k, v) => now.append(el("dt", null, k), el("dd", null, v));
     now.replaceChildren();
@@ -55,6 +61,7 @@ export function keyBlock(o) {
     }
     if (s.vectors && s.vectors.have != null) line(T("openai.now.vectors"), s.vectors.missing ? T("openai.vectors", { have: s.vectors.have, missing: s.vectors.missing }) : T("openai.vectorsDone", { have: s.vectors.have }));
     removeBtn.hidden = !s.set;
+    kept = !!s.set;
     o.onStatus?.(s);
   };
   const removeBtn = el("button", "okey-remove", T("openai.remove")); removeBtn.type = "button"; removeBtn.hidden = true;
@@ -101,7 +108,8 @@ export function keyBlock(o) {
   // ---- both: check the key typed (the console: the kept one when nothing is typed) ----
   checkBtn.addEventListener("click", async () => {
     const key = input.value.trim();
-    if (!key && !o.status) return;
+    // nothing typed: the console checks the kept key, when there is one; else say what to do
+    if (!key && !(o.status && kept)) { result.replaceChildren(); say(T("openai.needKey"), true); input.focus(); return; }
     busy(true, checkBtn, T("openai.check"));
     after.replaceChildren();
     try {

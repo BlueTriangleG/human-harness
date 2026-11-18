@@ -2,12 +2,14 @@
 // both pages, so one group of words; the wizard's strings.json carries it beside its own
 export const openai = {
   title: "记忆和学习",
-  lead: "有 OpenAI key，它按意思找回记忆，笔记本也会自己把用得着的那页翻出来；没有也能用，只是按字面找。",
+  lead: "有 OpenAI key，它按意思找回记忆；笔记本（它把学到的做法一页页记在里面）也会在用得着时自己把那页翻出来。没有也能用，只是按字面找。",
   money: "OpenAI 按用量收费，记在你自己的 OpenAI 账号上：估算一天几美分到几十美分，笔记本的判断每天最多 {limit}。只是估算，以 OpenAI 的价目为准。",
   moneyNoLimit: "OpenAI 按用量收费，记在你自己的 OpenAI 账号上：估算一天几美分到几十美分，笔记本的判断每天有上限。只是估算，以 OpenAI 的价目为准。",
   where: "key 存在这台电脑上、角色自己的目录里，只有你这个账号读得到（角色也在这个账号下跑，所以它也读得到），只发给 api.openai.com。",
   inputLabel: "OpenAI key",
   check: "检查",
+  getKey: "key 在 {link} 建，要先登录 OpenAI，账号里要有余额。",
+  needKey: "先贴一把 key，再点检查。",
   checkCost: "检查会问 OpenAI 三次，其中一次不花钱，加起来不到一美分。",
   checking: "在查……",
   save: "检查并保存",

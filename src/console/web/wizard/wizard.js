@@ -37,13 +37,18 @@ const st = {
   relation: "", preset: "", notes: "", files: null, from: "", edited: false, modules: {}, tier: "standard", made: null, making: false,
   login: null, openaiKey: null, openaiSkipped: false,
   named: false,   // the owner has typed a name: the suggested one is gone
+  tierPicked: false,   // the owner picked a model: the login card no longer sets it
+  idEdited: false,   // the owner typed a short name: it no longer follows the name
+  loginSure: false,   // "Claude Code is logged in, I'm sure": go on although no login could be read
 };
 /** no Claude login yet: nothing to think with, so the wizard goes no further than the usage step */
-const noLogin = () => (D?.login?.kind ?? "none") === "none";
+// (or the owner says it is logged in although it cannot be read here: an old Claude Code, one that answers oddly)
+const noLogin = () => !st.loginSure && ["none", "unknown"].includes(D?.login?.kind ?? "none");
 /** the card for the login found: its own card, the subscription when there is none yet, no card for another kind */
 const cardOf = (kind) => kind === "console" ? "console" : kind === "other" ? "" : "subscription";
 /** the login found, as a few words in a sentence */
 function loginWords(login) {
+  if ((login.kind === "none" || login.kind === "unknown") && st.loginSure) return T("tier.withUnread");
   return login.kind === "subscription" ? T("tier.withSubscription", { plan: login.plan ? T("tier.plan", { plan: login.plan }) : "" })
     : login.kind === "console" ? T("tier.withConsole") : T("tier.withOther");
 }
@@ -61,12 +66,12 @@ function nameChanged() {
   clearTimeout(idTimer);
   idTimer = setTimeout(async () => {
     const name = st.name.trim();
-    if (!name) { st.id = ""; st.initial = ""; card(); idLine(); return; }
+    if (!name) { if (!st.idEdited) st.id = ""; st.initial = ""; card(); idLine(); return; }
     const r = await api(`/api/wizard/id?name=${encodeURIComponent(name)}`).catch(() => null);
-    if (r && name === st.name.trim()) { st.id = r.id || ""; st.initial = r.initial || [...name][0]; st.color = r.color || st.color; card(); idLine(); }
+    if (r && name === st.name.trim()) { if (!st.idEdited) { st.id = r.id || ""; st.color = r.color || st.color; } st.initial = r.initial || [...name][0]; card(); idLine(); }
   }, 200);
   st.initial = [...st.name.trim()][0]?.toUpperCase() || "";
-  st.id = "";   // until the server names it: never the id of the name before
+  if (!st.idEdited) st.id = "";   // until the server names it: never the id of the name before
   card(); idLine();
 }
 
@@ -89,7 +94,29 @@ function card() {
   if (st.step >= 5) chips.append(el("span", null, T("tier." + st.tier)));
 }
 
-function idLine() { const p = document.getElementById("idline"); if (p) p.textContent = st.id ? T("human.id", { id: st.id }) : ""; }
+/** the short name's field and what it is for, or why the one typed cannot be it */
+function idLine(note, bad) {
+  const i = document.getElementById("idin"), h = document.getElementById("idline");
+  if (!i || !h) return;
+  if (!st.idEdited && document.activeElement !== i) i.value = st.id;
+  h.className = bad ? "hint bad" : "hint";
+  h.textContent = note ?? (st.id ? T("human.idHint", { id: st.id }) : "");
+}
+/** a short name typed: lower-case letters, digits and -, and free on this Mac (the server's free id for it is itself) */
+let idTyped = 0;
+function idChanged(v) {
+  st.idEdited = true;
+  const want = v.trim().toLowerCase();
+  clearTimeout(idTyped);
+  st.id = "";
+  if (!/^[a-z][a-z0-9-]{0,30}$/.test(want)) { idLine(T("human.idBad"), true); return; }
+  idTyped = setTimeout(async () => {
+    const r = await api(`/api/wizard/id?name=${encodeURIComponent(want)}`).catch(() => null);
+    if (!r) return;
+    if (r.id === want) { st.id = want; st.color = r.color || st.color; card(); idLine(); }
+    else idLine(T("human.idTaken", { id: want, free: r.id }), true);
+  }, 250);
+}
 
 /** one labelled field */
 function field(label, input, hint, tag = "label") {
@@ -149,8 +176,12 @@ const screens = {
     suggested.hidden = st.named;
     if (!st.named) queueMicrotask(() => name.select());
     const row = el("div", "row"); row.append(name, suggest);
-    const nf = field(T("human.name"), row); nf.append(suggested, el("p", "hint")); nf.lastChild.id = "idline";
+    const nf = field(T("human.name"), row); nf.append(suggested);
     f.append(nf);
+    // the short name the terminal calls it by (its command, its folder): from the name, or typed
+    const idIn = text(st.id, idChanged); idIn.id = "idin"; idIn.spellcheck = false; idIn.autocapitalize = "off";
+    const idf = field(T("human.idLabel"), idIn); idf.append(el("p", "hint")); idf.lastChild.id = "idline";
+    f.append(idf);
     f.append(field(T("human.pronouns"), text(st.pronouns, (v) => { st.pronouns = v; card(); }, T("human.pronounsPlaceholder"))));
     const file = el("input"); file.type = "file"; file.accept = "image/png,image/jpeg"; file.hidden = true;
     const up = el("button", null, T("human.upload")); up.type = "button"; up.addEventListener("click", () => file.click());
@@ -217,13 +248,17 @@ const screens = {
     const lead = found === "subscription" ? T("tier.foundSubscription", { plan: login.plan ? T("tier.plan", { plan: login.plan }) : "" })
       : found === "console" ? T("tier.foundConsole")
       : found === "other" ? T("tier.foundOther")
+      : found === "unknown" ? T("tier.foundUnknown", { said: login.said || "—" })
       : T("tier.foundNone");
-    f.append(el("h2", null, T("tier.title")), el("p", found === "none" ? "lead bad" : "lead", lead), el("h3", null, T("tier.login")));
-    const logins = [{ key: "subscription", title: T("tier.subscription"), about: T("tier.subscriptionAbout") }, { key: "console", title: T("tier.console"), about: T("tier.consoleAbout") }];
+    f.append(el("h2", null, T("tier.title")), el("p", found === "none" || found === "unknown" ? "lead bad" : "lead", lead), el("h3", null, T("tier.login")));
+    const logins = [{ key: "subscription", title: T("tier.subscription"), about: T("tier.subscriptionAbout") }, { key: "console", title: T("tier.console"), about: `${T("tier.consoleAbout")} ${T("tier.consoleCost")}` }];
     // the card picked is the login found until the owner picks the other one: only then the steps to switch
     st.login ??= cardOf(found);
+    // an Anthropic Console account is billed per token and HH caps nothing: its model starts at Saver, until one is picked
+    if (!st.tierPicked) st.tier = st.login === "console" ? "save" : "standard";
     const how = el("div", "how");
-    // failed: the sign-in came back without a login; its command, for the owner to run in a terminal
+    // failed: the sign-in came back without a login — its command, for the owner to run in a terminal, and whether it
+    // finished (then it is the reading that fails, not the sign-in)
     const showHow = (failed) => {
       how.hidden = st.login === found;
       const check = el("button", "check", T("tier.check")); check.type = "button";
@@ -239,17 +274,33 @@ const screens = {
         catch (e) { check.disabled = false; status.className = "status bad"; status.textContent = e.message; }
       });
       const row = el("div", "row"); row.append(check, status);
-      if (found !== "none") {
+      if (found !== "none" && found !== "unknown") {
         const keep = { claude: "{claude}", login: "{login}" };
         const steps = rich(st.login === "console" ? T("tier.pickConsole", keep) : T("tier.pickSubscription", keep), { claude: el("code", "cmd", "claude"), login: el("code", "cmd", "/login") });
         how.replaceChildren(el("b", null, T("tier.switch")), steps, row);
         return;
       }
+      // a way on, when the login cannot be read but the owner knows it is there
+      const sureLine = () => {
+        if (st.loginSure) return el("p", "hint", T("tier.goingOn"));
+        const sure = el("button", "link", T("tier.goOn")); sure.type = "button";
+        sure.addEventListener("click", () => { st.loginSure = true; render(); });
+        return sure;
+      };
+      const versionWords = (key) => rich(key === "unread" ? T("tier.unreadHow", { version: "{version}", update: "{update}" }) : T("tier.signedInUnread", { version: "{version}", update: "{update}" }),
+        { version: el("code", "cmd", "claude --version"), update: el("code", "cmd", "claude update") });
+      // Claude Code answered, but not with a login HH can read (an old one, an error): check it, or go on
+      if (found === "unknown") { how.replaceChildren(el("b", null, T("tier.unreadTitle")), versionWords("unread"), row, sureLine()); return; }
       // not logged in: the wizard's server runs Claude Code's own sign-in for the card picked; HH sees no credential
       const go = el("button", "primary", T("tier.signIn")); go.type = "button";
       const note = el("p", "hint", T("tier.signInNote"));
       const parts = [el("b", null, T("tier.logIn")), go, note];
-      if (failed) { const p = el("p"); p.append(T("tier.runThis") + " ", el("code", "cmd", failed)); parts.push(p, row); }
+      if (failed) {
+        const p = failed.finished ? versionWords("signed") : el("p");
+        if (!failed.finished) p.append(T("tier.runThis") + " ", el("code", "cmd", failed.command));
+        parts.push(p, row);
+      }
+      parts.push(sureLine());
       how.replaceChildren(...parts);
       go.addEventListener("click", async () => {
         go.disabled = true; go.textContent = T("tier.signingIn");
@@ -261,14 +312,14 @@ const screens = {
         catch (e) { back(e.message); return; }
         if (r.error) { back(r.error); return; }
         if (r.login && r.login.kind !== "none") { D.login = r.login; st.login = null; render(); return; }
-        showHow(r.command || "claude auth login");
+        showHow({ command: r.command || "claude auth login", finished: r.code === 0 });
       });
     };
-    f.append(choices("login", logins, st.login, (v) => { st.login = v; showHow(); }, true), how, el("p", "hint", T("tier.experimental")));
+    f.append(choices("login", logins, st.login, (v) => { st.login = v; if (st.tierPicked) showHow(); else render(); }, true), how, el("p", "hint", T("tier.experimental")));
     showHow();
     f.append(el("h3", null, T("tier.model")));
     const tiers = [{ key: "standard", title: T("tier.standard"), about: T("tier.standardAbout") }, { key: "save", title: T("tier.save"), about: T("tier.saveAbout") }];
-    f.append(choices("tier", tiers, st.tier, (v) => { st.tier = v; card(); }, true));
+    f.append(choices("tier", tiers, st.tier, (v) => { st.tier = v; st.tierPicked = true; card(); }, true));
   },
   memory(f) {
     // an OpenAI key, optional: checked here, kept only when the role is made (create's openaiKey)
@@ -280,7 +331,8 @@ const screens = {
     }));
   },
   grants(f) {
-    f.append(el("h2", null, T("grants.title")), el("p", "lead", T("grants.lead")), el("p", null, D.swiftc === false ? T("grants.noApp") : T("grants.how")));
+    const app = `~/Applications/HH/${st.id || "<id>"}/${st.name.trim() || "<name>"}.app`;
+    f.append(el("h2", null, T("grants.title")), el("p", "lead", T("grants.lead")), el("p", null, D.swiftc === false ? T("grants.noApp") : T("grants.how", { app })));
   },
   meet(f) {
     f.append(el("h2", null, T("meet.title")));
@@ -292,13 +344,22 @@ const screens = {
       const lead = (st.made.app ? T("meet.appOpen", { name }) + " " : "") + T("meet.doneLead", { who });
       f.replaceChildren(el("p", "big", T("meet.done", { name })), el("p", "lead", lead));
       if (!st.made.app && st.made.pair) {
+        // its console in a new tab: this page stays on what was made
         const b = el("button", "primary", T("meet.open", { name })); b.type = "button";
-        b.addEventListener("click", () => { location.href = st.made.pair; });
+        b.addEventListener("click", () => { window.open(st.made.pair, "_blank", "noopener"); });
         f.append(b);
       }
       const talk = el("div", "talk"); talk.append(el("h3", null, T("meet.talkTitle")));
       if (st.made.talk) { const t = el("p"); t.append(T("meet.talkTerminal") + " ", el("code", "cmd", st.made.talk)); talk.append(t); }
-      talk.append(el("p", null, T("meet.talkLater", { name })));
+      // the channels are set up from a terminal, with the HH that made it (its remove command says where it is)
+      const home = /^(.*)\/bin\/hh remove /.exec(st.made.remove || "")?.[1] || "";
+      const hh = home ? `${home}/bin/hh` : "hh", id = st.made.id || st.id;
+      talk.append(rich(T("meet.talkLater", { cmd: "{cmd}", docs: "{docs}" }), {
+        cmd: el("code", "cmd", `HH_CONFIG=~/HH/${id}/instance.json ${hh} channels add qq …`), docs: el("code", "cmd", home ? `${home}/docs/new-role.md` : "docs/new-role.md"),
+      }));
+      // how to find it again once this page is closed
+      const again = (st.made.talk || `${id} ""`).replace(/\s+"[^"]*"$/, "") + " console";
+      talk.append(rich(st.made.app ? T("meet.findAgain", { cmd: "{cmd}" }) : T("meet.findAgainNoApp", { cmd: "{cmd}" }), { cmd: el("code", "cmd", again) }));
       const p = el("p", "hint"); p.append(T("meet.remove", { name }) + " ", el("code", "cmd", st.made.remove));
       f.append(talk, p);
       return;
@@ -363,7 +424,7 @@ async function make() {
   st.making = false;
   if (r.error) {
     list.append(el("li", "bad", T("meet.failed", { error: r.error })));
-    if (r.cleaned !== false) list.append(el("li", null, T("meet.cleaned")));
+    if (r.cleaned) list.append(el("li", null, T("meet.cleaned")));
     foot(r.retry !== false);
     return;
   }
@@ -416,6 +477,7 @@ function render() {
 function go(d) {
   const n = Math.max(0, Math.min(STEPS.length - 1, st.step + d));
   // a name is needed before the steps that use it: the default stands in when the field was emptied
+  if (STEPS[st.step] === "human" && d > 0 && st.idEdited && !st.id) { idLine(T("human.idBad"), true); document.getElementById("idin")?.focus(); return; }
   if (STEPS[st.step] === "human" && d > 0 && !st.name.trim()) { st.name = T("human.names").split(",")[0]; nameChanged(); }
   if (STEPS[st.step] === "human" && d > 0 && !st.relation.trim()) st.relation = T("human.relationDefault");
   if (STEPS[st.step] === "you" && d > 0 && !st.owner.trim()) st.owner = D.owner || D.user || "";

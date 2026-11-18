@@ -11,7 +11,7 @@ export const machine: Strings<typeof zh> = {
   noAnswer: "Its console (port {port}) does not answer.",
   regions: "At work",
   allIdle: "all idle",
-  quota: "Quota this week",
+  quota: "Claude account this week",
   load: "Load guard",
   loadLevel: { ok: "fine", tight: "tight", danger: "danger" },
   today: "Today",

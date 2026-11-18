@@ -21,7 +21,7 @@ import { runProcess } from "./util/run.ts";
 import { launcherOf, REPO } from "./services/launchd.ts";
 import { services } from "./services/index.ts";
 
-const USAGE = "usage: hh setup [--wizard [--no-open] | --terminal] [--lang zh|en] [--name <name>] [--owner <what it calls you>] [--id <id>] [--model opus|sonnet|haiku] [--dir <path>] [--no-app] [--yes]";
+const USAGE = "usage: hh setup [--wizard | --terminal] [--no-open] [--lang zh|en] [--name <name>] [--owner <what it calls you>] [--id <id>] [--model opus|sonnet|haiku] [--dir <path>] [--no-app] [--yes]";
 export const TIERS = ["opus", "sonnet", "haiku"] as const;
 export type Tier = (typeof TIERS)[number];
 
@@ -86,7 +86,7 @@ export async function setupCommand(argv: readonly string[]): Promise<string> {
   const bare = new Set<string>();
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i]!;
-    if (k === "--no-app" || k === "--yes") { bare.add(k); continue; }
+    if (k === "--no-app" || k === "--yes" || k === "--no-open") { bare.add(k); continue; }
     if (!/^--(lang|name|owner|id|model|dir)$/.test(k) || argv[i + 1] === undefined) throw new Error(USAGE);
     flags[k.slice(2)] = argv[++i]!;
   }
@@ -114,7 +114,12 @@ export async function setupCommand(argv: readonly string[]): Promise<string> {
     if (p) process.stdout.write("\n");
     const name = flags.name ?? await q(B.setup.askName(B.setup.defaultName), B.setup.defaultName);
     const owner = flags.owner ?? await q(B.setup.askOwner(fullName()), fullName());
-    out = await setUp({ lang, name, owner, id: flags.id, model: flags.model as Tier | undefined, dir: flags.dir, app: !bare.has("--no-app"), openaiKey });
+    // a step of installing that fails is shown and asked again here (not with --yes or nobody at the terminal: then it stops)
+    const retry = p ? async (errors: string[], dir: string): Promise<boolean> => {
+      process.stdout.write(`\n${B.setup.installStopped(errors.map((l) => `  ${l}`).join("\n"), dir)}\n`);
+      return B.forms.setupYes.test(await p.ask(B.setup.tryAgain));
+    } : undefined;
+    out = await setUp({ lang, name, owner, id: flags.id, model: flags.model as Tier | undefined, dir: flags.dir, app: !bare.has("--no-app"), openConsole: !bare.has("--no-open"), openaiKey, retry });
   } finally { p?.close(); }
   return out.join("\n");
 }
@@ -142,6 +147,8 @@ export interface SetUp extends Pick<NewRole, "pronouns" | "relation" | "files" |
   openConsole?: boolean;
   /** the owner's OpenAI key, checked already (src/openai.ts): into the role's secrets.json before hhd first starts */
   openaiKey?: string;
+  /** installing stopped at a step (errors: those steps' lines): true to run it again, the role kept as it is (the terminal's question) */
+  retry?: (errors: string[], dir: string) => Promise<boolean>;
 }
 
 export async function setUp(o: SetUp): Promise<string[]> {
@@ -162,10 +169,14 @@ export async function setUp(o: SetUp): Promise<string[]> {
   if (o.openaiKey) { saveOpenAIKey(cfg.stateDir, o.openaiKey); lines.push(B.openai.saved(secretsFile(cfg.stateDir))); }
   step("install", B.setup.stepInstall);
   // the permission page opens inside install and waits for the owner: the wizard hears of it first
-  const r = await install(cfg, await loadModules(cfg), { run: runProcess, services: services(), grants: async (app) => { step("grants", B.setup.grantsWaiting); return askGrants(app); } });
+  // again as often as the owner asks: install can be run again, what went through stays as it is
+  const once = async () => install(cfg, await loadModules(cfg), { run: runProcess, services: services(), grants: async (app) => { step("grants", B.setup.grantsWaiting); return askGrants(app); } });
+  let r = await once();
+  while (r.failed && o.retry && await o.retry(r.errors, dir)) r = await once();
   lines.push(...r.lines);
   const remove = `${join(REPO, "bin", "hh")} remove ${id}`;
-  if (r.failed) throw new Error([...lines, B.setup.failed(remove)].join("\n"));
+  // the terminal's account ends with how to clear it and start again; the wizard clears it itself and shows only why
+  if (r.failed) throw Object.assign(new Error([...lines, B.setup.failed(remove, process.env.HH_SETUP_AGAIN || "./setup")].join("\n")), { why: (r.errors.length ? r.errors : r.lines).join("\n") });
   const own = placeOwnCommand(cfg);
   if (own) lines.push(own);
   const app = cfg.launchd?.app;

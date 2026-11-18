@@ -8,8 +8,8 @@ HH 经 Anthropic 的 Agent SDK 驱动官方的、未改动的 Claude Code。它�
 
 你自己选，角色用掉的额度跟着这个登录算：
 
-- **你的 Claude 订阅**（Pro、Max、Team……），**默认就是它**：跑 `claude`，输 `/login`，选你的 Claude 账号。角色用的算进你这个套餐的用量上限，和你自己用 Claude Code 一样。HH 每天都在这种登录上跑。
-- **Anthropic Console 账号**（API key）：跑 `claude`，输 `/login`，选 Anthropic Console 账号。按 token、按 API 价格计费。还没完整试过：HH 认这种登录，但它的额度把关是按订阅做的，这种登录下不显示用量，也不替你限花费；要限的话，在 Console 里自己设花费上限。
+- **你的 Claude 订阅**（Pro、Max、Team……），**默认就是它**：跑 `claude`，输 `/login`，选你的 Claude 账号。角色用的算进你这个套餐的用量上限，和你自己用 Claude Code 一样。HH 每天都在这种登录上跑。用多少：我们跑得最久的那个 agent 整天干活，一天大约用掉 Max 20x 套餐周额度的 5% 到 10%，这还没算帮手会话，算上可能再多一倍。干满一周大约用掉 Max 20x 一周的一半；Max 5x 只有它的四分之一，几天就用完。这是拿我们自己的用量估的。
+- **Anthropic Console 账号**（API key）：跑 `claude`，输 `/login`，选 Anthropic Console 账号。按 token、按 API 价格计费。还没完整试过：HH 认这种登录，但它的额度把关是按订阅做的，这种登录下不显示用量，也不替你限花费；要限的话，在 Console 里自己设花费上限。花多少：按 API 价，Sonnet 大约每天 10 到 100 美元，Opus 约是它的两倍。这是拿我们跑得最久的那个 agent 的用量估的（接着两个聊天通道、带着几周的记忆）；新角色起步会低一些；没算帮手会话，实际会更高。
 - **别家提供方的 Anthropic 格式接口**（进阶，实验性）：不是一种登录，而是角色的一项设置 `models.providers`（见[换模型](#换模型)）。还没完整试过，也不是每个模型都试过。
 
 只在终端里设的 key 或 token（`ANTHROPIC_API_KEY`、`CLAUDE_CODE_OAUTH_TOKEN`）到不了角色那里：它的任务在后台跑，看不到这些。Amazon Bedrock 和 Google Vertex AI 没列进来：只要设了它们的开关，Claude Code 就报已登录，什么都不查；HH 也没在它们上面试过。
@@ -38,7 +38,7 @@ HH 只从 Claude Code 自己报出来的数里读用量（每一轮的限流读�
 
 为什么要一个 app：macOS 把权限给提出申请的那个程序，而角色跑的所有东西都由它自己的 app 起，所以权限都算在这个 app 头上。开一次就够了，以后更新、重新生成 app、改名字都不用再开。
 
-没装 Xcode 命令行工具就生成不了 app：`./setup` 会说一声，改成在浏览器里打开角色的控制台。以后想要 app：先 `xcode-select --install`，再 `HH_CONFIG=~/HH/<id>/instance.json bin/hh modules install`。
+没装 Xcode 命令行工具就生成不了 app。`./setup`（还有 `npx human-harness`）会先问要不要装：答「是」就弹出苹果自己的安装窗口（`xcode-select --install`），setup 等它装完接着往下走，app 照样生成。答「不」的话，只要 git 和 Python 有别的来源，就不生成 app 接着装，改成在浏览器里打开角色的控制台。以后想要 app：先 `xcode-select --install`，再 `HH_CONFIG=~/HH/<id>/instance.json bin/hh modules install`。
 
 ## 配对：控制台怎么知道是我？
 
@@ -51,6 +51,16 @@ HH 只从 Claude Code 自己报出来的数里读用量（每一轮的限流读�
 `<id> console` 会在默认浏览器里打开角色的页面。要换浏览器：先把它设成默认浏览器（系统设置 → 桌面与程序坞 → 默认网页浏览器），再跑 `<id> console --pair`。这会给新浏览器配对，同时取消之前配过的所有客户端；角色的 app 下次打开时会自己重新配对。它打开的地址只能用一次、一分钟内有效：要是开到了别的浏览器里，换好默认浏览器再跑一次。
 
 找不到 `<id>` 这个命令，是因为 `./setup` 把它放进了 `~/.local/bin`，而这个目录不在你的 PATH 上。这时改用 `HH_CONFIG=~/HH/<id>/instance.json bin/hh console --pair`。
+
+## setup 加的那一行 PATH
+
+`~/.local/bin` 不在 PATH 上时，setup 会问要不要加上。答「是」就在 `~/.zshrc` 末尾加一行（zsh，Mac 默认的 shell；bash 的话加在 `~/.bash_profile`，只有 `~/.profile` 时加在它里面）：
+
+```sh
+export PATH="$HOME/.local/bin:$PATH"  # added by HH setup (Human Harness): the folder of its short commands; delete this line to undo
+```
+
+只加一次：文件里已经有这一行，或者本来就把 `~/.local/bin` 放上了 PATH，就不再动它。新开的终端窗口就有。不要了就删掉这一行（用文本编辑器打开 `~/.zshrc` 删，或者 `sed -i '' '/# added by HH setup/d' ~/.zshrc`），再新开一个终端窗口。`hh remove` 不会去删它，因为 Claude Code 的安装脚本也把 `claude` 放在这个目录里；删掉最后一个角色时，它会提一句这一行还在。
 
 ## 卸载角色
 

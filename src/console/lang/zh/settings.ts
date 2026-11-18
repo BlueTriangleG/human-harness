@@ -1,7 +1,8 @@
 // 设置：系统权限（web/js/settings.js）。数从运维的只读检查来；页面只读，按钮只是在主人的浏览器里打开系统设置
 export const settings = {
   loading: "正在查…",
-  notSet: "这个角色没配系统权限的检查（实例配置 console.permissionsCheck），这里没有可列的。",
+  notSet: "权限开在它自己的 app 上：点下面的按钮打开它，没开的会再问一次。",
+  notSetNoApp: "权限开在它自己的 app 上；这个角色在这台电脑上没有 app，这里没有要开的。",
   failed: "查不出来：{error}",
   checked: "{time} 查的。检查以 {user} 跑，系统把{me}跑的命令都算在 {program} 头上。",
   recheck: "重新查一遍",
