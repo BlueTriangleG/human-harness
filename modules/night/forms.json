@@ -1,0 +1,121 @@
+{
+  "speechScript": "",
+  "shareTag": "[ok to tell {name}]",
+  "guestHe": "he",
+  "guestHeSwap": [],
+  "senseHeader": "[senses]",
+  "systemNotice": "[system notice",
+  "lintSystemHeads": [
+    "[senses]",
+    "[system notice",
+    "[For your eyes only"
+  ],
+  "peopleTags": [
+    "Learned",
+    "Remembering",
+    "Main session"
+  ],
+  "tasteTag": "Taste",
+  "sleepCommit": "Night consolidation",
+  "dayCommit": "Daytime",
+  "materialHead": "Material: ",
+  "materialFull": "Material: complete",
+  "materialPartialHead": "Material: incomplete",
+  "materialPartial": "Material: incomplete (missing: {missing})",
+  "materialSep": "; ",
+  "pinTag": "[pinned]",
+  "lintHedge": "(?i)\\b(?:not sure|unsure|unconfirmed|to be confirmed|to be checked|unverified|reportedly|apparently|I heard|heard that|rumou?red|guess(?:ing|ed)?|maybe|perhaps|possibly|probably|likely|might|may be|seems?|seemingly|I think|supposedly|allegedly|no source|unclear|not clear|presumably|inferred|I wonder)\\b|[？?]",
+  "lintQuote": "\"([^\"\\n]{1,300})\"|“([^“”]{1,300})”",
+  "lintUnits": "(?i:milliseconds?|ms|seconds?|secs?|minutes?|mins?|hours?|hrs?|days?|weeks?|months?|years?|yrs?|episodes?|eps?|items?|times|words?|characters?|chars?|pages?|pictures?|photos?|posts?|articles?|rounds?|versions?|people|persons?|pieces?|copies|lines?|paragraphs?|sentences?|sections?|chapters?|seasons?|frames?|kilometres?|kilometers?|km|tokens?|views?|plays?|followers?|fans?|likes?|comments?|saves?|favou?rites?|points?|pts?)|GB|MB|KB|x",
+  "lintMoney": "(?i:dollars?|bucks?|AUD|USD)",
+  "lintDateStop": "(?i:seconds?|secs?|minutes?|mins?|hours?|hrs?|days?|weeks?|months?|years?|episodes?|items?|times|words?|pages?|rounds?|people|pieces?|lines?|chapters?|seasons?|km|points?|dollars?|bucks?)",
+  "lintDateWords": "(?i)\\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\\.?\\s+(\\d{1,2})(?:st|nd|rd|th)?\\b",
+  "lintOrdinal": "(?i)\\b(episode|ep|day|version|round|item|place|time|chapter|season|part|section|line)\\s?#?(\\d+)\\b",
+  "lintLarge": "(\\d+(?:\\.\\d+)?)\\s?(k|K|thousand)(?![A-Za-z])",
+  "lintWeekLabel": "\\b[Ww]eek\\s?\\d+\\s?(?:\\([^)]*\\))?",
+  "lintLabelRef": "(?:\\.py|\\.md|\\.json|AGENTS|MEMORY|SOUL|skills?/|manual|rules?|goal\\s?g?\\d*|\\bg\\d+|title|heading|section|field|button|menu|topic)\\s?(?:called|named|labell?ed)?\\s?$",
+  "lintVerb": "(?:said|says|say|asked|asks|replied|replies|answered|answers|told me|tells me|told us|wrote|writes|texted|messaged|commented|posted|added|repeated|shouted|yelled|complained|reminded me|pointed out|joked|laughed|exclaimed|noted|insisted|whispered|muttered)",
+  "lintAdv": "(?:(?:also|then|just|again|even|later|immediately|directly|casually|specially|kept|always|first)\\s)?",
+  "lintClaim": "\\(\\s*([^()\\s]{1,12}?)\\s?(?:said|says|told me|in (?:his|her|their) (?:own )?words|own words)\\s*\\)",
+  "lintSelfQuote": "\"([^\"\\n]{6,})\"|“([^”\\n]{6,})”",
+  "lintBookkeeping": "\\([^()]*\\bconsolidation\\b[^()]*\\)",
+  "lintWindowName": "\\d+[\\s-]?(?:days?|hours?)[\\s-]window",
+  "lintVerbTail": "[^\"“”.]{0,12}$",
+  "lintTopicHead": "^([^:\"“”.;]{1,40}):",
+  "lintSentenceEnd": "[;!?]|\\.(?!\\d)",
+  "lintNameTokensClaim": "\\b[A-Za-z]+\\d[A-Za-z0-9+]*\\b|\\b[A-Za-z][a-z]*[A-Z][A-Za-z0-9+]*\\b",
+  "lintNameTokens": "\\b[A-Za-z]+\\d[A-Za-z0-9+]*\\b|\\b[A-Za-z][a-z]*[A-Z][A-Za-z0-9+]*\\b",
+  "pronouns": {
+    "me": [
+      "i",
+      "you"
+    ],
+    "he": [
+      "he"
+    ],
+    "she": [
+      "she"
+    ],
+    "they": [
+      "they"
+    ]
+  },
+  "wordEdge": "\\b",
+  "lintSubjectAfter": " ,:;()\"“",
+  "lintClauseEnds": "\".;!?”",
+  "ownWords": "words",
+  "lintSourceWord": "source",
+  "lintMonths": [
+    "jan",
+    "feb",
+    "mar",
+    "apr",
+    "may",
+    "jun",
+    "jul",
+    "aug",
+    "sep",
+    "oct",
+    "nov",
+    "dec"
+  ],
+  "lintUnitsPlural": true,
+  "lintSelfLabels": [
+    "me",
+    "assistant"
+  ],
+  "lintUserLabels": [
+    "user"
+  ],
+  "digestQuote": "[\"“]([^\"“”\\n]{4,160})[\"”]",
+  "digestSpeech": "(?i)(\\b(?:said|says|asked|asks|replied|answered|told|wrote|texted|words)\\b|:)",
+  "sentHead": "^\\(to (?:[^()]|\\([^()]*\\))*\\) ",
+  "sentHeadName": "^\\(to ([^()]+?)\\)\\s*",
+  "sentBare": [],
+  "sleepMark": "Went to sleep",
+  "distillTodo": "to distil",
+  "distillDone": "distilled",
+  "stampWord": "written",
+  "loopsOpen": "In progress",
+  "storyWeek": "^##\\s*Week\\s*\\S+\\s*\\(\\s*(\\d{1,2})-(\\d{1,2})\\s*[–—\\-~～]+\\s*(\\d{1,2})-(\\d{1,2})\\s*\\)",
+  "storyAmend": [
+    "Correction",
+    "Added"
+  ],
+  "noteLesson": "Lesson",
+  "noteLessons": "Lessons",
+  "notePractices": "Practices",
+  "noteCover": [
+    "Summary",
+    "When to open"
+  ],
+  "noteArchive": "Archive",
+  "noteStatus": "unverified|learned|to verify|reliable|no longer used(?:\\([^)]*\\))?",
+  "noteDays": "Days",
+  "reportUnsure": "Unsure",
+  "reportKeywords": "keywords",
+  "superseded": "\\bbefore\\b.*?(?:→|->)\\s*now\\b",
+  "changelogBlock": "\"([^\"]+)\"",
+  "memoryCopyStart": "<!-- MEMORY.md copy: start -->",
+  "memoryCopyEnd": "<!-- MEMORY.md copy: end -->"
+}

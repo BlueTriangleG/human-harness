@@ -1,0 +1,3 @@
+#!/bin/sh
+# console-gate <passphrase> [port, default 7791] [console port, default 7790]: the console behind a passphrase, for a tunnel
+exec "$HH_BIN" modules run console console_gate.py "$@"

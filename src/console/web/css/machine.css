@@ -1,0 +1,34 @@
+/* 这台电脑: the roles on the left, the picked one's console beside them (its own page, in a frame); the monitor in its
+   place. Human.app (/?human) shows this page alone: no role's header or navigation around it. */
+#machineview { display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 0; }
+#mlist { list-style: none; margin: 0; padding: 10px 8px; border-right: 1px solid var(--grid); overflow: auto; }
+.mrole { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; border: 0; border-radius: 6px; background: none; padding: 8px 10px; color: var(--ink); cursor: pointer; }
+.mrole:hover { background: var(--panel); }
+.mrole[aria-pressed="true"] { background: var(--panel); box-shadow: inset 3px 0 0 var(--say); }
+.mwho { display: flex; flex-direction: column; min-width: 0; }
+.mwho b { font-size: var(--fs-3); font-weight: 600; }
+.msub { font-size: var(--fs-1); color: var(--muted); }
+.mdot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--m-idle); }
+.mdot.busy { background: var(--m-busy); } .mdot.asleep { background: var(--m-asleep); } .mdot.trouble, .mdot.down { background: var(--err); }
+:root { --m-idle: #2f8a4f; --m-busy: #2f6fb3; --m-asleep: #9aa3ad; }
+#mmain { position: relative; min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+#mframe { flex: 1; width: 100%; border: 0; min-height: 0; }
+#mempty { margin: 40px auto; }
+#monitor { overflow: auto; padding: 14px 18px; }
+.mcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+.mcard { border: 1px solid var(--grid); border-radius: 8px; padding: 10px 14px; background: var(--paper); }
+.mcard h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; font-size: var(--fs-4); }
+.mline { display: flex; gap: 10px; margin: 4px 0; font-size: var(--fs-2); }
+.mlabel { flex: none; width: 6em; color: var(--muted); }
+html:lang(en) .mlabel { width: 8.5em; }
+.mline .bad { color: var(--err); }
+.mquota { display: grid; grid-template-columns: auto minmax(80px, 1fr); align-items: center; gap: 10px; }
+.mspark { width: 100%; height: 24px; background: var(--panel); border-radius: 4px; }
+.mspark polyline { fill: none; stroke: var(--say); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+#monitor > .mline { margin-top: 14px; }
+body.human { grid-template: "content" minmax(0, 1fr) / minmax(0, 1fr); }
+body.human #top, body.human #nav, body.human .skip { display: none; }
+@media (max-width: 720px) {
+  #machineview { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(420px, 1fr); }
+  #mlist { border-right: 0; border-bottom: 1px solid var(--grid); display: flex; flex-wrap: wrap; gap: 4px; }
+}

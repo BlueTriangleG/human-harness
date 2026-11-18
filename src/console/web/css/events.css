@@ -1,0 +1,89 @@
+/* 事件记忆 */
+#memview { display: grid; grid-template-rows: auto 1fr; min-height: 0; }
+#ebar { padding: 10px 20px 8px; border-bottom: 1px solid var(--grid); display: grid; gap: 6px; }
+#estats { font-size: var(--fs-sm); color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 16px; }
+#estats b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+#estats .warn { color: var(--l-side); }
+.fadebar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; width: 260px; align-self: center; background: var(--grid); }
+.fadebar span { display: block; height: 100%; background: var(--l-hippo); }
+#ebody { display: grid; grid-template-columns: 420px minmax(0, 1fr); min-height: 0; }
+#ebody.wide { grid-template-columns: minmax(0, 1fr); }
+#elist { border-right: 1px solid var(--grid); overflow: auto; min-height: 0; background: var(--panel); }
+#ebody.wide #elist { display: none; }
+#edetail { overflow: auto; min-height: 0; padding: 16px 24px 40px; }
+#edetail > * { max-width: 900px; }
+.efilter { position: sticky; top: 0; z-index: 1; background: var(--panel); display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--grid); }
+.efilter input, .efilter select { font: inherit; font-size: var(--fs-sm); border: 1px solid var(--grid); border-radius: 6px; background: var(--paper); color: var(--ink); padding: 2px 6px; }
+.efilter input[type="search"] { flex: 1 1 150px; min-width: 0; }
+.efilter .n { width: 100%; font-size: var(--fs-s); color: var(--muted); }
+.erow { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 0 10px; padding: 7px 14px; width: 100%; text-align: left; background: none; border: none; border-bottom: 1px solid color-mix(in srgb, var(--grid) 70%, transparent); cursor: pointer; color: inherit; }
+.erow:hover { background: color-mix(in srgb, var(--grid) 40%, transparent); }
+.erow.sel { background: color-mix(in srgb, var(--l-hippo) 12%, transparent); box-shadow: inset 3px 0 0 var(--l-hippo); }
+.erow .ti { font-weight: 600; font-size: var(--fs-l); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.erow .gi { grid-column: 2 / -1; font-size: var(--fs-sm); color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.erow .mt { grid-column: 2 / -1; font-size: var(--fs-xs); color: var(--faint); }
+.erow .dt { font-size: var(--fs-xs); color: var(--faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* 淡忘：她现在想起这件事有多清楚，列表就有多清楚 */
+.c-gist { opacity: .82; } .c-title { opacity: .62; } .c-fold { opacity: .46; } .c-hidden { opacity: .32; }
+.imp { grid-row: 1 / span 3; width: 22px; height: 22px; border-radius: 5px; display: grid; place-items: center; font: 600 var(--fs-1) var(--sans); border: 1.5px solid var(--l-hippo); color: var(--l-hippo); margin-top: 1px; }
+.imp.i4 { background: color-mix(in srgb, var(--l-hippo) 22%, transparent); }
+.imp.i5 { background: var(--l-hippo); color: var(--paper); }
+.imp.i0, .imp.i1 { border-style: dashed; }
+.cl { display: inline-block; font-size: var(--fs-xs); border: 1px solid var(--grid); border-radius: 999px; padding: 0 8px; color: var(--muted); }
+#edetail h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+#edetail h3 small { font: var(--fs-1) var(--mono); color: var(--faint); font-weight: 400; }
+.emeta { display: flex; flex-wrap: wrap; gap: 2px 16px; font-size: var(--fs-sm); color: var(--muted); margin: 6px 0 10px; }
+.emeta b { color: var(--ink); font-weight: 600; }
+.esum { font: var(--fs-4)/1.85 var(--serif); margin: 8px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.egist { font-size: var(--fs-m); color: var(--muted); margin: 0 0 4px; }
+.ewhy { font-size: var(--fs-m); margin: 4px 0; padding-left: 10px; border-left: 3px solid var(--l-hippo); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--grid); border-radius: 999px; background: none; padding: 1px 10px; font-size: var(--fs-sm); cursor: pointer; color: var(--ink); }
+.chip small { color: var(--muted); margin-left: 4px; }
+.tlx { border-left: 2px solid var(--grid); margin-left: 6px; padding-left: 14px; }
+.ent { position: relative; padding: 6px 0 10px; }
+.ent::before { content: ""; position: absolute; left: -20px; top: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--panel); border: 2px solid var(--l-hippo); }
+.ent.k-said::before { background: var(--l-speech); border-color: var(--l-speech); }
+.ent.k-decided::before { background: var(--l-main); border-color: var(--l-main); }
+.ent.k-correction::before { border-color: var(--err); }
+.ent.focus { background: color-mix(in srgb, var(--l-hippo) 10%, transparent); border-radius: 6px; padding-left: 8px; margin-left: -8px; }
+/* 人物卡：一段一块，标出用量；现算的段淡一点；改动记录可以展开 */
+.psec h4 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.psec h4 .u { font: var(--fs-1) var(--mono); color: var(--faint); font-weight: 400; }
+.psec h4 .u.over { color: var(--err); }
+.pbody { font-size: var(--fs-l); line-height: 1.75; white-space: pre-wrap; overflow-wrap: anywhere; }
+.psec.computed .pbody { color: var(--muted); }
+.pnote { font-size: var(--fs-sm); color: var(--muted); border: 1px dashed var(--grid); border-radius: 6px; padding: 6px 10px; margin: 14px 0 0; }
+.ppend { border-left: 3px solid var(--l-side); padding: 4px 0 6px 10px; margin: 8px 0; }
+.ppend .t { font-size: var(--fs-m); font-weight: 600; }
+.ppend .stale { color: var(--err); font-size: var(--fs-sm); }
+.phist { border-bottom: 1px solid color-mix(in srgb, var(--grid) 70%, transparent); padding: 4px 0; font-size: var(--fs-m); }
+.phist summary { cursor: pointer; display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; }
+.phist summary .s { font-size: var(--fs-xs); border: 1px solid var(--grid); border-radius: 999px; padding: 0 7px; color: var(--muted); }
+.phist summary .s.current { border-color: var(--l-speech); color: var(--l-speech); }
+.phist summary .s.pending { border-color: var(--l-side); color: var(--l-side); }
+.phist summary .id { font: var(--fs-1) var(--mono); color: var(--faint); }
+.phist .pbody { margin: 6px 0 4px 14px; font-size: var(--fs-m); }
+.phist .ops { margin: 2px 0 6px 14px; font-size: var(--fs-s); color: var(--muted); }
+.ent .eh { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; font-size: var(--fs-sm); }
+.ent .eh .t { color: var(--faint); font-variant-numeric: tabular-nums; }
+.ent .eh .kd { font-weight: 600; color: var(--l-hippo); }
+.ent.k-said .eh .kd { color: var(--l-speech); }
+.ent.k-correction .eh .kd { color: var(--err); }
+.ent .eh .tt { font-weight: 600; font-size: var(--fs-m); color: var(--ink); }
+.ent .eh .id { font: var(--fs-1) var(--mono); color: var(--faint); }
+.ent .full { white-space: pre-wrap; overflow-wrap: anywhere; margin: 3px 0; }
+.ent.fixed .full { text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--err) 60%, transparent); color: var(--muted); }
+.ent .sub { font-size: var(--fs-s); color: var(--muted); }
+.ref { border: none; background: none; padding: 0 2px; font: var(--fs-1) var(--mono); color: var(--l-main); cursor: pointer; }
+.idlink { border: none; background: none; padding: 0; font: inherit; color: var(--l-hippo); cursor: pointer; text-decoration: underline dotted; }
+.qrow { padding: 8px 20px; border-bottom: 1px solid color-mix(in srgb, var(--grid) 70%, transparent); display: grid; grid-template-columns: 96px 120px minmax(0, 1fr); gap: 0 12px; font-size: var(--fs-m); }
+.qrow .t { color: var(--faint); font-size: var(--fs-s); font-variant-numeric: tabular-nums; }
+.qrow .qw { font-weight: 600; font-size: var(--fs-sm); overflow: hidden; text-overflow: ellipsis; }
+.qrow .qw small { display: block; font-weight: 400; color: var(--faint); font: var(--fs-1) var(--mono); }
+.qrow .x { white-space: pre-wrap; overflow-wrap: anywhere; }
+.oprow { border-top: 1px solid var(--grid); padding: 6px 0; font-size: var(--fs-sm); }
+.oprow .oh { display: flex; flex-wrap: wrap; gap: 2px 12px; }
+.oprow .oh b { font-weight: 600; }
+.oprow pre { margin: 4px 0 0; font: var(--fs-1)/1.5 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; color: var(--muted); }
+

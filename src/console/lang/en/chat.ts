@@ -1,0 +1,31 @@
+import type { Strings } from "../zh.ts";
+import type { chat as zh } from "../zh/chat.ts";
+
+export const chat: Strings<typeof zh> = {
+  paneLabel: "Talk with {me}",
+  placeholder: "Say something to {me}…",
+  send: "Send",
+  owner: "{owner}",
+  me: "{me}",
+  thinking: "Thinking",
+  tool: "Used {tool}",
+  toolRunning: "Using {tool}",
+  toolError: "{tool} failed",
+  input: "Input",
+  result: "Result",
+  working: "{me} is working…",
+  empty: "No conversation yet. Say something.",
+  loadFailed: "Cannot load the conversation: {error}",
+  sendFailed: "Not sent: {error}",
+  sending: "Sending…",
+  delivered: "Delivered",
+  deliveredBusy: "Delivered; {me} is busy with something else and answers once it sees it",
+  queued: "Delivered; {me} reads it on waking",
+  unseen: "Delivered; {me} reads it once the tool it is using returns",
+  notSent: "Not sent",
+  busyAnswering: "{me} is still answering you. What you say now goes in all the same: it sees it once the tool it is using returns, and what it misses in this turn it answers next.",
+  busyElse: "{me} is busy with something else. What you say now waits for that to finish; if it takes long, {me} is interrupted to answer you first.",
+  notPaired: "This browser is not paired yet, so it cannot talk. Type this in a terminal; once paired it opens on the talk page:",
+  disabled: "Talking is off for this console.",
+  pairFailed: "Pairing failed: {error}",
+};

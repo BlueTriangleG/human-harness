@@ -1,0 +1,3 @@
+#!/bin/sh
+# phone-start: boot this role's Android emulator and wait until it is up (scripts/phone_start.py, with the module's environment)
+exec "$HH_BIN" modules run phone phone_start.py "$@"

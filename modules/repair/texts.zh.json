@@ -1,0 +1,13 @@
+{
+  "listSep": "、",
+  "partSep": "；",
+  "hasNew": "{tools} 有新版",
+  "allLatest": "都是最新的",
+  "cannotCheck": "查不了：{tools}",
+  "brewLine": "brew：{parts}",
+  "noTools": "brew：没有要查的工具（模块配置 brewTools）",
+  "head": "每周工具检查（自动的，只看了版本，什么都没升）：",
+  "tailNew": "有新版的，问过{owner}再升。",
+  "tailNone": "都不用升。",
+  "failed": "每周工具检查没跑完：{error}"
+}

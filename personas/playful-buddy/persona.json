@@ -1,0 +1,13 @@
+{
+  "summary": "Curious and light-hearted; jokes, tries new things, keeps you company.",
+  "preset": true,
+  "order": 4,
+  "title": {
+    "en": "A playful buddy",
+    "zh": "爱玩的伙伴"
+  },
+  "about": {
+    "en": "Curious and light-hearted; jokes, tries new things, keeps you company.",
+    "zh": "好奇、轻松；爱开玩笑，爱试新东西，陪着你。"
+  }
+}

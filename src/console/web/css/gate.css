@@ -1,0 +1,81 @@
+/* 下意识：闸门（丘脑）一天的账 */
+#gatepane { display: grid; grid-template-rows: auto 1fr; min-height: 0; min-width: 0; }
+#gbar { padding: 10px 20px 8px; border-bottom: 1px solid var(--grid); display: grid; gap: 6px; }
+.gtop { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+#gtitle { font-size: var(--fs-l); font-weight: 600; color: var(--l-perception); margin-right: 6px; }
+#gtitle small { font-size: var(--fs-s); font-weight: 400; color: var(--muted); margin-left: 6px; }
+.gtop button { border: 1px solid var(--grid); border-radius: 6px; background: none; padding: 0 8px; font-size: var(--fs-sm); cursor: pointer; color: var(--muted); }
+.gtop button:disabled { opacity: .4; cursor: default; }
+#gdaylbl { font-size: var(--fs-m); font-weight: 600; font-variant-numeric: tabular-nums; }
+#gclose { margin-left: auto; }
+#gsum { font-size: var(--fs-sm); color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 8px; }
+#gsum > span + span::before { content: "·"; margin-right: 8px; color: var(--faint); }
+#gsum b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+#gbody { overflow: auto; min-height: 0; padding: 0 0 40px; }
+#gbody > .hint, #gbody > .gnote { margin: 8px 20px 0; }
+.gnote { font-size: var(--fs-sm); color: var(--l-side); }
+.grow { display: grid; grid-template-columns: 44px minmax(64px, 140px) minmax(64px, 104px) minmax(56px, 92px) minmax(56px, 1fr) 44px 40px; gap: 0 10px; padding: 6px 20px; border-bottom: 1px solid color-mix(in srgb, var(--grid) 70%, transparent); font-size: var(--fs-sm); align-items: baseline; }
+.grow.ghead { position: sticky; top: 0; z-index: 1; background: var(--paper); color: var(--faint); font-size: var(--fs-xs); padding-top: 8px; }
+.grow small { display: block; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); overflow-wrap: anywhere; }
+.grow .t { color: var(--faint); font-variant-numeric: tabular-nums; }
+.grow .gw { overflow-wrap: anywhere; min-width: 0; }
+.grow .gw b { font-weight: 600; color: var(--l-perception); margin-right: 4px; }
+.grow .gr, .grow .gv { font-weight: 600; min-width: 0; }
+.gr.r-fixed-main { color: var(--l-main); } .gr.r-rule { color: var(--l-side); } .gr.r-judge { color: var(--l-perception); }
+.gr.r-fallback { color: var(--err); } .gr.r-hands { color: var(--l-system); } .gr.r-pending { color: var(--faint); }
+.gv.v-main { color: var(--l-main); } .gv.v-digest { color: var(--l-hippo); } .gv.v-drop { color: var(--faint); font-weight: 400; }
+.grow .gy { color: var(--muted); overflow-wrap: anywhere; min-width: 0; }
+.grow .gu { color: var(--l-side); font-weight: 600; font-size: var(--fs-xs); }
+.grow .gd { color: var(--muted); font-size: var(--fs-xs); }
+.grow .gd.late { color: var(--l-side); font-weight: 600; }
+.grow .gx { grid-column: 2 / -1; margin-top: 2px; min-width: 0; }
+.grow .gx .txt { font-size: var(--fs-m); }
+.grow .gx .gblk { border-left: 2px solid var(--grid); padding-left: 6px; margin-top: 2px; }
+.gdo summary { color: var(--faint); font-size: var(--fs-s); cursor: pointer; }
+.gdo .txt { color: var(--muted); }
+.grow.priv { background: color-mix(in srgb, var(--grid) 22%, transparent); }
+.gpriv { color: var(--faint); font-size: var(--fs-sm); }
+
+@media (max-width: 1100px) {
+  .prow { grid-template-columns: 56px 120px minmax(0, 1fr) 60px; }
+  #ebody { grid-template-columns: 340px minmax(0, 1fr); }
+}
+@media (max-width: 820px) {
+  #ebody, #ebody.wide { display: block; }
+  #elist { border-right: none; border-bottom: 1px solid var(--grid); max-height: 50vh; }
+  #ebar, #edetail { padding-left: 16px; padding-right: 16px; }
+  .qrow { grid-template-columns: 1fr; padding: 8px 16px; }
+}
+@media (max-width: 820px) {
+  /* narrow: the open page scrolls as a whole under its head, its columns one under another */
+  #content > :not(#pagehead) { overflow: auto; }
+  #memleft { padding: 10px 12px 20px; }
+  #views, #views > div { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; min-width: 0; max-width: 100%; }   /* 视图多的那几页横着滑，不折成几行 */
+  #views::-webkit-scrollbar, #views > div::-webkit-scrollbar { display: none; }
+  #brainview { display: block; }
+  #brainpane { border-right: none; border-bottom: 1px solid var(--grid); padding: 8px 16px 18px; }
+  #brain { max-width: 460px; margin: 0 auto; }
+  #side { display: block; border-left: none; border-top: 1px solid var(--grid); }
+  #toolbar { padding: 10px 16px; }
+  #search { margin-left: 0; width: 100%; }
+  #timeline { overflow: visible; }
+  .e { grid-template-columns: 52px 30px minmax(0, 1fr); padding: 3px 16px 3px 10px; }
+  .e .who { grid-column: 1 / -1; grid-row: 1; }
+  .e .t { grid-column: 1; }
+  .e .verb { grid-column: 2; }
+  .e .body { grid-column: 3; }
+  .e:not(.first) .who { display: none; }
+  #drawer .e { grid-template-columns: 52px 30px minmax(0, 1fr); }
+  #gbar { padding: 10px 16px; }
+  #gbody { overflow: visible; }
+  .grow { grid-template-columns: 44px minmax(0, 1fr); padding: 6px 16px; }
+  .grow > * { grid-column: 2; }
+  .grow > .t { grid-column: 1; grid-row: 1 / span 8; }
+  .grow .gx { grid-column: 2; }
+  .grow.ghead { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #brain .region.busy .shape { animation: none; }
+  #brain .shape { transition: none; }
+  #drawer { transition: none; }
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Human</title>
+<link rel="stylesheet" href="/wizard/wizard.css">
+<script type="module" src="/wizard/wizard.js"></script>
+</head>
+<body>
+<!-- Create your Human: one step a screen on the right; on the left, the Human as it takes shape -->
+<aside id="card">
+  <div id="face" class="blank" aria-hidden="true"><span id="initial"></span><img id="photo" alt="" hidden></div>
+  <h1 id="cname"></h1>
+  <p id="cpron"></p>
+  <p id="crel"></p>
+  <p id="cchips"></p>
+</aside>
+<main id="main">
+  <header id="top">
+    <p id="title"></p>
+    <ol id="dots"></ol>
+  </header>
+  <form id="step" novalidate></form>
+  <footer id="foot">
+    <button type="button" id="back"></button>
+    <button type="submit" id="next" form="step"></button>
+  </footer>
+</main>
+</body>
+</html>

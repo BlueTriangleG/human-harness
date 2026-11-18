@@ -1,0 +1,1 @@
+Senses: every 20 seconds the sources defined by the loaded modules are checked and new events go to the gate, which decides whether to wake you. `senses --list` shows the sources, `senses --dry` what this round would report.

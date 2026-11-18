@@ -1,0 +1,1 @@
+Machine load (`load`): before heavy work run `load gate phone|cc|heavy` and start only on exit 0; `load room <kind>` says what to free when you open something yourself. At the danger line the minute patrol sheds load by itself (the phone first, then your biggest heavy job) and tells you why.

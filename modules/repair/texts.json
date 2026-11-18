@@ -1,0 +1,13 @@
+{
+  "listSep": ", ",
+  "partSep": "; ",
+  "hasNew": "{tools} can be upgraded",
+  "allLatest": "all up to date",
+  "cannotCheck": "could not check: {tools}",
+  "brewLine": "brew: {parts}",
+  "noTools": "brew: no tools to check (the module's brewTools setting)",
+  "head": "Weekly tool check (automatic; only the versions were looked at, nothing was upgraded):",
+  "tailNew": "Ask {owner} before upgrading what can be upgraded.",
+  "tailNone": "Nothing needs upgrading.",
+  "failed": "The weekly tool check did not finish: {error}"
+}

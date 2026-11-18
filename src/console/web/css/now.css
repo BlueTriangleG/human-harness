@@ -1,0 +1,48 @@
+/* 对话: the talk pane fills everything between the left column and a narrow status bar on the right; in the pane's
+   top right corner, which brain region is at work. A console without the talk pane keeps the same two columns. */
+#nowview { display: grid; grid-template-columns: minmax(0, 1fr) 220px; min-height: 0; }
+#talkcol { position: relative; display: flex; flex-direction: column; min-height: 0; min-width: 0; border-right: 1px solid var(--grid); }
+#talkcol > #chat { flex: 1; min-height: 0; }
+/* a browser the console does not know sees only how to pair it (start.js) */
+body.unpaired > :not(#unpaired) { display: none !important; }
+#talkoff, #unpaired { margin: 64px auto 0; padding: 0 20px; max-width: 46ch; text-align: center; color: var(--muted); font-size: var(--fs-3); }
+/* the one command to type, and a button that copies it */
+.cmdline { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; }
+.cmdline code { padding: 3px 8px; border: 1px solid var(--grid); border-radius: 6px; background: var(--panel); color: var(--ink); font-size: var(--fs-2); overflow-wrap: anywhere; }
+#status { overflow: auto; min-height: 0; padding: 10px 16px 16px; font-size: var(--fs-2); }
+
+/* the corner: a dot per region in its colour; a region at work has a turning ring; the words say what it is doing */
+#pulse { align-self: flex-end; display: flex; align-items: center; gap: 8px; margin: 8px 20px 0; padding: 2px 8px; border: 1px solid transparent; border-radius: 999px; background: none; color: var(--muted); font-size: var(--fs-1); cursor: pointer; max-width: 70%; }
+#pulse:hover { border-color: var(--grid); color: var(--ink); }
+#pulse.on { color: var(--ink); }
+#pulsedots { display: flex; gap: 5px; flex: none; }
+#pulsedots i { position: relative; width: 7px; height: 7px; border-radius: 50%; background: var(--lane); opacity: .3; }
+#pulsedots i.on { opacity: 1; }
+#pulsedots i.on::after { content: ""; position: absolute; inset: -3px; border: 1.5px solid var(--lane); border-top-color: transparent; border-radius: 50%; animation: pulse-turn .9s linear infinite; }
+#pulsetext { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@keyframes pulse-turn { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { #pulsedots i.on::after { animation: none; } }
+
+/* the bar: one row per thing, a small label above it */
+.nrow { padding: 10px 0; border-bottom: 1px solid var(--grid); display: flex; flex-direction: column; gap: 2px; }
+.nlabel { font-size: var(--fs-1); color: var(--muted); }
+.nrow b { font-size: var(--fs-3); font-weight: 600; }
+.nsub { margin: 0; font-size: var(--fs-1); color: var(--muted); overflow-wrap: anywhere; }
+.nitem { font-size: var(--fs-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nbar { height: 5px; border-radius: 3px; background: var(--grid); margin-top: 3px; overflow: hidden; }
+.nbar i { display: block; height: 100%; background: var(--say); }
+.nneed { padding: 10px 0; }
+.nneed > summary { cursor: pointer; font-size: var(--fs-2); color: var(--muted); }
+.nneed > summary b { margin-left: 4px; color: var(--ink); }
+.nneed > summary b.bad { color: var(--err); }
+.njump { display: block; width: 100%; text-align: left; border: 0; border-left: 3px solid var(--grid); background: none; padding: 3px 0 3px 8px; margin: 6px 0 0; font-size: var(--fs-2); color: var(--ink); cursor: pointer; }
+.njump:hover { border-left-color: var(--muted); background: var(--panel); }
+.njump.bad { border-left-color: var(--err); }
+@media (max-width: 720px) {
+  /* phone: the bar becomes one strip above the talk pane */
+  #nowview { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(420px, 1fr); }
+  #nowview > #status { order: -1; padding: 0 14px; border-bottom: 1px solid var(--grid); display: flex; flex-wrap: wrap; gap: 0 16px; }
+  #nowview .nrow { border-bottom: 0; padding: 6px 0; }
+  #talkcol { border-right: 0; }
+  #pulse { margin: 6px 10px 0; }
+}

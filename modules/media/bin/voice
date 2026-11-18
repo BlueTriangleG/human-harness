@@ -1,0 +1,3 @@
+#!/bin/sh
+# voice say "..." [--voice <name>] [--raw] | voice usage: this module's voice.py, with its environment
+exec "$HH_BIN" modules run media voice.py "$@"

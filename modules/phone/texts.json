@@ -1,0 +1,11 @@
+{
+  "usage": "Starts the Android emulator and returns once it has booted; says so if it is already on. Settings: avd (the emulator's name), port, memoryMb, window.\nWith the load gate (the load command found) it first makes room with `load room phone`, and does not start if there is not enough.",
+  "noAvd": "No emulator set up yet: write modules.phone.avd in the instance config (the manual Phone/phone, its page installing-the-emulator)",
+  "alreadyOn": "The phone is already on ({serial})",
+  "booted": "Booted ({serial}). The system is busy right after booting: wait half a minute before tapping apps",
+  "exited": "The emulator quit by itself without booting; see {log}",
+  "timedOut": "Booting timed out; see {log}",
+  "wizardTitle": "Android phone",
+  "wizardAbout": "An Android emulator it can use apps on.",
+  "wizardHow": "Needs the Android SDK and an emulator; then you log it in to the apps yourself."
+}

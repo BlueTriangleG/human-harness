@@ -1,0 +1,1 @@
+帮手（helper）：要花时间的活派给一个 Claude Code 会话做——`helper send <名字> "要它做什么"`，命令马上返回，它在后台干，干完了会叫醒你；它干活时再 send 就是插话。`helper show <名字>` 看它回了什么，`helper ls` 看所有帮手，`helper stop <名字>` 叫停。新开一个之前会先过负载闸，电脑紧时会拒绝。详细的翻手册 电脑/helpers。

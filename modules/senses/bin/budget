@@ -1,0 +1,3 @@
+#!/bin/sh
+# budget <command> ...: the weekly budget (pulse, snap, ...), the senses module's budget.py under its environment
+exec "$HH_BIN" modules run senses budget.py "$@"

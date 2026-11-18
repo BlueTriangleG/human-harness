@@ -1,0 +1,52 @@
+[
+ {
+  "file": "src/sleep/exam.ts",
+  "text": "/[\\s「#:]/",
+  "why": "A reference may carry a section name in corner brackets, the way the reference pack writes a section; the expression cuts the reference there. Whitespace and # in the same class cut it in any language."
+ },
+ {
+  "file": "src/sleep/examiner.ts",
+  "text": "/^(compress|fade|merge|rewrite|remove|archive|shorten|change|改写|降一级|挪进档案|压缩|合并|删|缩短|淡)/",
+  "why": "Recognises the verb a stage wrote in a change's op. It already accepts the English verbs (compress, merge, rewrite, …); the Chinese ones stay so that what a stage in the reference pack writes is still read."
+ },
+ {
+  "file": "src/sleep/lead.ts",
+  "text": "/[，。；！？、,.;!?\\n]/",
+  "why": "A language-neutral normaliser for the mechanical comparison of two texts: it covers Chinese and Latin punctuation (and Chinese digits) and writes nothing anyone reads."
+ },
+ {
+  "file": "src/sleep/lead.ts",
+  "text": "/[\\s，。；！？、,.;!?：:「」『』“”\"'‘’（）()《》〈〉<>—\\-…·]/g",
+  "why": "A language-neutral normaliser for the mechanical comparison of two texts: it covers Chinese and Latin punctuation (and Chinese digits) and writes nothing anyone reads."
+ },
+ {
+  "file": "src/sleep/lead.ts",
+  "text": "/[〇零一二两三四五六七八九]/g",
+  "why": "A language-neutral normaliser for the mechanical comparison of two texts: it covers Chinese and Latin punctuation (and Chinese digits) and writes nothing anyone reads."
+ },
+ {
+  "file": "src/sleep/teamrun.ts",
+  "text": "/[\\s「#]/",
+  "why": "A reference may carry a section name in corner brackets, the way the reference pack writes a section; the expression cuts the reference there. Whitespace and # in the same class cut it in any language."
+ },
+ {
+  "file": "src/sleep/things.ts",
+  "text": "/[\\s「#]/",
+  "why": "A reference may carry a section name in corner brackets, the way the reference pack writes a section; the expression cuts the reference there. Whitespace and # in the same class cut it in any language."
+ },
+ {
+  "file": "src/sleep/validate.ts",
+  "text": "/^[^\\s「#]+\\.(md|json|txt)/",
+  "why": "A reference may carry a section name in corner brackets, the way the reference pack writes a section; a file reference is cut there. Whitespace and # in the same place cut it in any language."
+ },
+ {
+  "file": "src/sleep/validate.ts",
+  "text": "「",
+  "why": "A reference may carry a section name in corner brackets, the way the reference pack writes a section; a file reference is cut there. Whitespace and # in the same place cut it in any language."
+ },
+ {
+  "file": "src/sleep/validate.ts",
+  "text": "/[\\s「#]/",
+  "why": "A reference may carry a section name in corner brackets, the way the reference pack writes a section; a file reference is cut there. Whitespace and # in the same place cut it in any language."
+ }
+]

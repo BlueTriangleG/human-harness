@@ -1,0 +1,3 @@
+#!/bin/sh
+# goals <command> ...: this module's goals.py, run by hh with the module's environment (goals --help lists the commands)
+exec "$HH_BIN" modules run goals goals.py "$@"

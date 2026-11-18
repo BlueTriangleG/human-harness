@@ -1,0 +1,1703 @@
+{
+  "env": {
+    "node": "24.22.1",
+    "icu": "78.3",
+    "zod": "4.6.7"
+  },
+  "associate: a cue that is only the message envelope brings nothing": {
+    "reply": "ff681ce617537c69/36"
+  },
+  "associate: a guest already recapped in this prefix gets only the moments": {
+    "reply": "7036f5a00831c88c/278"
+  },
+  "associate: a guest with no events has no recap (same text as associate: a guest already recapped in this prefix gets only the moments: pins the path)": {
+    "reply": "7036f5a00831c88c/278"
+  },
+  "associate: a guest's recap, then the moments": {
+    "reply": "7c244e564dfb0efc/752"
+  },
+  "associate: a moment that was corrected shows the correction": {
+    "reply": "f59f49cedf86bdfa/382"
+  },
+  "associate: a named person already in the moments is not recapped": {
+    "reply": "5100586f8f3394b5/196"
+  },
+  "associate: a person named in the cue is recapped after the moments": {
+    "reply": "3243d2318fe20f22/415"
+  },
+  "associate: a speaker nobody knows is nobody's guest (same text as associate: a guest already recapped in this prefix gets only the moments: pins the path)": {
+    "reply": "7036f5a00831c88c/278"
+  },
+  "associate: a vague cue and a vague last thing bring nothing (same text as associate: a cue that is only the message envelope brings nothing: pins the path)": {
+    "reply": "ff681ce617537c69/36"
+  },
+  "associate: a vague cue is tried again with what she last said (same text as associate: a named person already in the moments is not recapped: pins the path)": {
+    "reply": "5100586f8f3394b5/196"
+  },
+  "associate: an answer with no content brings nothing (same text as associate: a cue that is only the message envelope brings nothing: pins the path)": {
+    "reply": "ff681ce617537c69/36"
+  },
+  "associate: no speaker, only the moments (same text as associate: a guest already recapped in this prefix gets only the moments: pins the path)": {
+    "reply": "7036f5a00831c88c/278"
+  },
+  "associate: the guest's recap and a named person's recap share the room": {
+    "reply": "8be92d0e82a27cd2/829"
+  },
+  "associate: the owner as speaker is nobody's guest (same text as associate: a guest already recapped in this prefix gets only the moments: pins the path)": {
+    "reply": "7036f5a00831c88c/278"
+  },
+  "associate: the speaker's own earlier quote and her reply to it": {
+    "reply": "ff123f317f546fd1/442"
+  },
+  "associate: the text is cut at the budget": {
+    "reply": "6d9c1ca7f5e8ddd4/222"
+  },
+  "associate: touch off still gives the same text (same text as associate: a guest's recap, then the moments: pins the path)": {
+    "reply": "7c244e564dfb0efc/752"
+  },
+  "cardOf: a heading without a type mark keeps the state of the one before it": {
+    "reply": "bd7233135b2fed23/81"
+  },
+  "cardOf: empty text and text without a heading give nothing": {
+    "reply": "84f6b7190afac656/11"
+  },
+  "cardOf: settings, summaries and quotes are kept; details and the maintenance rules are not": {
+    "reply": "6aaf0fd7e41e4f90/152"
+  },
+  "cardOf: text before the first heading is dropped, blank runs shrink, a single # is no heading, a heading on the last line is kept": {
+    "reply": "06c37f2de53efa29/113"
+  },
+  "cluster: a small budget shrinks the event text and leaves little room for quote lines": {
+    "reply": "07e51d28ec9513d4/437"
+  },
+  "cluster: events and quote lines without a header, the same words twice give one quote line": {
+    "reply": "cec2e6b8361c08b8/2068"
+  },
+  "cluster: events and then the quote lines, with a header, as text and ids": {
+    "reply": "f0850b1b920e65ca/2152"
+  },
+  "cluster: nothing found": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "cluster: quote lines alone go under the header": {
+    "reply": "6ac559968fc2331d/171"
+  },
+  "cluster: quote lines alone without a header": {
+    "reply": "9df7469abee644b2/143"
+  },
+  "event: # ref in central memory only, cited by an entry, text cut at 160": {
+    "reply": "9b3517edbcdc19f7/528"
+  },
+  "event: # ref in central memory only, nobody cites it": {
+    "reply": "cc1d215975cd51ac/88"
+  },
+  "event: # ref in the quote layer, a long quote used once (same text as event: q ref, a long quote cut at 120, used once: pins the path)": {
+    "reply": "5e8b934a591d4f78/421"
+  },
+  "event: # ref in the quote layer, nobody cites it (same text as event: q ref, a quote nobody cites: pins the path)": {
+    "reply": "4ded50d0099f06f4/98"
+  },
+  "event: # ref in the quote layer, used by several entries": {
+    "reply": "6f84074b969bc6dc/203"
+  },
+  "event: # ref nobody has": {
+    "reply": "6c189fbc102606bf/14"
+  },
+  "event: a small quote budget stops each entry's quotes at the room": {
+    "reply": "1839681f246e4720/1884"
+  },
+  "event: an entry nobody has": {
+    "reply": "129bb58fdf99b2a5/100"
+  },
+  "event: an event id nobody has": {
+    "reply": "e6a88a2e60dfab12/99"
+  },
+  "event: by a few words that only one title contains": {
+    "reply": "bc24febc5e1ae949/483"
+  },
+  "event: by a sentence that contains one event's title (same text as event: by a title that is exactly one event's: pins the path)": {
+    "reply": "81f3df72ec209234/468"
+  },
+  "event: by a title nobody has": {
+    "reply": "95f0a10742be9bcc/112"
+  },
+  "event: by a title that is exactly one event's": {
+    "reply": "81f3df72ec209234/468"
+  },
+  "event: by a title that several events contain, the five nearest in length first": {
+    "reply": "07b4011f89420314/733"
+  },
+  "event: by entry id the entry is located": {
+    "reply": "0553b5bcda031e64/2804"
+  },
+  "event: by event id, with the quotes the entries cite": {
+    "reply": "353dc558f3b4243d/2781"
+  },
+  "event: by nothing in an empty memory": {
+    "reply": "faba16748328a3ba/94"
+  },
+  "event: by nothing, every event is a candidate": {
+    "reply": "12888455c4f7bb2b/733"
+  },
+  "event: by words only a summary has, found by full text": {
+    "reply": "6226defda79f23ca/216"
+  },
+  "event: c: ref in the quote layer (same text as event: # ref in the quote layer, used by several entries: pins the path)": {
+    "reply": "6f84074b969bc6dc/203"
+  },
+  "event: only the entries between from and to": {
+    "reply": "094dd7ec149b0bc4/2148"
+  },
+  "event: q ref, a long quote cut at 120, used once": {
+    "reply": "5e8b934a591d4f78/421"
+  },
+  "event: q ref, a quote nobody cites": {
+    "reply": "4ded50d0099f06f4/98"
+  },
+  "event: q ref, no such quote": {
+    "reply": "70dc958b8ad0aa81/19"
+  },
+  "event: q ref, the quote and where it was used": {
+    "reply": "40ec64ab608bfd0d/143"
+  },
+  "exam: a question with extra fields is put the same way": {
+    "reply": "e1e11ede06313a51/39"
+  },
+  "exam: how a question is put": {
+    "reply": "65ca377d74543b05/66"
+  },
+  "exam: the role text the brain gives the exam session": {
+    "reply": "0d22f1a40c2d1b94/571"
+  },
+  "foldAct: a command of exactly 80 characters is not cut": {
+    "reply": "738ebf55bc7d0694/165"
+  },
+  "foldAct: a command over 80 characters is cut with an ellipsis": {
+    "reply": "d0f4cac28cab56a3/174"
+  },
+  "foldAct: a command with a path": {
+    "reply": "067000d7b7746986/48"
+  },
+  "foldAct: a description wins over a command": {
+    "reply": "23614653e5fa576a/28"
+  },
+  "foldAct: a tool that already carries its prefix is left alone": {
+    "reply": "8de8c242913329a4/36"
+  },
+  "foldAct: a tool with neither path nor what (pick falls through)": {
+    "reply": "569a08e55781c11e/27"
+  },
+  "foldAct: escaped newline and quote inside a value": {
+    "reply": "d9ff47bea327e120/57"
+  },
+  "foldAct: notebook path and query": {
+    "reply": "db3e9da463a51ae3/62"
+  },
+  "foldAct: nothing to show but the tool": {
+    "reply": "c22dc3ed57a30756/14"
+  },
+  "foldAct: path, description and the tool by its real name": {
+    "reply": "52e6ebb0a347b6c6/73"
+  },
+  "foldAct: plain path and pattern, tool taken from the first word": {
+    "reply": "13ed4f1b3a64ba27/57"
+  },
+  "foldAct: url alone": {
+    "reply": "66224b9c2831d6ed/62"
+  },
+  "forMain: a goals script that cannot start only loses its part, and it is logged": {
+    "reply": "a3c1bca6d020db5a/191",
+    "rest": "cf6d8a1323bbef39/197"
+  },
+  "forMain: a goals script that exits with an error adds no goals": {
+    "reply": "a3c1bca6d020db5a/191",
+    "rest": "10f79542cb7dca61/78"
+  },
+  "forMain: a guest asks: the old profile card, a ledger change, what she said and promised": {
+    "reply": "4644295e311b0de1/1317",
+    "rest": "10f79542cb7dca61/78"
+  },
+  "forMain: a guest speaks with the notes on: no correction question, and with nothing said no context": {
+    "reply": "0ec87e02592e90f7/229",
+    "rest": "0ff216133040ac54/153"
+  },
+  "forMain: an unknown sender gets no card, but what she said is still listed": {
+    "reply": "70de76aa01352adb/353",
+    "rest": "10f79542cb7dca61/78"
+  },
+  "forMain: nobody asks: time, load and goals; asking again at once gives the time alone": {
+    "reply": "c06cb05ba5ba5142/393",
+    "rest": "10f79542cb7dca61/78"
+  },
+  "forMain: the owner asks: no card": {
+    "reply": "6b0bd4a10b74cc29/168",
+    "rest": "10f79542cb7dca61/78"
+  },
+  "forMain: the owner speaks with the notes on: the correction question goes along, and what she just said is the context": {
+    "reply": "4210a29bddd8ab37/438",
+    "rest": "6279f21139756e2b/316"
+  },
+  "ledgerChanges: a few new fact lines (list items, a star, a number, a table row); headings, too-short lines and old lines do not count; each is said once": {
+    "reply": "2224e50b5609712f/293"
+  },
+  "ledgerChanges: a line of 200 characters is whole, one of 201 is cut with an ellipsis": {
+    "reply": "d3279133c378f3e7/1276"
+  },
+  "ledgerChanges: exactly 15 new lines has no tail": {
+    "reply": "a8fa4f7fabded1be/998"
+  },
+  "ledgerChanges: nothing to say without a ledger, before the first prefix, when nothing changed, or when the ledger cannot be read": {
+    "reply": "a5a37b0287f748f2/29"
+  },
+  "ledgerChanges: over 15 new lines says how many more and where to look": {
+    "reply": "41ea2feca9f22358/1042"
+  },
+  "loadBrief: a file that is not JSON says nothing": {
+    "reply": "4f53cda18c2baa0c/2"
+  },
+  "loadBrief: a level the code does not know is written as it is": {
+    "reply": "c5b9332d7fac6769/222"
+  },
+  "loadBrief: danger without any reason": {
+    "reply": "97b54dc798e70106/207"
+  },
+  "loadBrief: exactly ten minutes old is still read": {
+    "reply": "0dc75375c954ff55/97"
+  },
+  "loadBrief: no status file says nothing": {
+    "reply": "4f53cda18c2baa0c/2"
+  },
+  "loadBrief: ok with a relief action": {
+    "reply": "915318f3741d1c73/160"
+  },
+  "loadBrief: ok, five top consumers cut to four, phone off": {
+    "reply": "995aebd0c50928a9/146"
+  },
+  "loadBrief: ok, no top consumers, phone on": {
+    "reply": "0dc305cbcd152d94/97"
+  },
+  "loadBrief: ten minutes and a second old is stale": {
+    "reply": "e409cb2bd7d53d78/84"
+  },
+  "loadBrief: tight with a recent automatic relief action": {
+    "reply": "336f05ffb2a1b25c/271"
+  },
+  "loadBrief: tight, with reasons and consumers, phone on": {
+    "reply": "09b879f0aa8d5ac7/272"
+  },
+  "lowInfo: every filler word is dropped, so a filler plus one real character has no content": {
+    "reply": "8c95afd796fdc0ee/504"
+  },
+  "lowInfo: two real characters are content, punctuation and emoji are not, the envelope is dropped": {
+    "reply": "143439c8f2f8a58c/320"
+  },
+  "memory approve: a pending clear removes the field": {
+    "reply": "27854906e59962e9/35",
+    "rest": "57ad06214fa87568/3282"
+  },
+  "memory approve: a pending set replaces the current text": {
+    "reply": "b05cc1c578269ded/53",
+    "rest": "092d7f96dfff1678/3540"
+  },
+  "memory approveWho: a name nobody registered throws": {
+    "reply": "bf4da53dde2481bf/34"
+  },
+  "memory approveWho: a person with nothing pending says so": {
+    "reply": "4f85ad4e025484e1/27",
+    "rest": "44d598d18946d4e3/2675"
+  },
+  "memory approveWho: a refusal that is not an Error is listed as it is (approveImpression replaced on the instance)": {
+    "reply": "bcf099cc69986a67/93",
+    "rest": "ccc5cf8b362766bb/3537"
+  },
+  "memory approveWho: one pending, approved, nothing skipped": {
+    "reply": "81f64317c0e3be6d/41",
+    "rest": "092d7f96dfff1678/3540"
+  },
+  "memory approveWho: three pendings are approved and a stale one is skipped with its reason": {
+    "reply": "3accdf3c424cb39b/244",
+    "rest": "729e6128edd7a2a1/6110"
+  },
+  "memory approveWho: when the only pending is stale, nothing is approved and the skip is listed (asked by key)": {
+    "reply": "f51ea0ab8b820694/175",
+    "rest": "35fbf75c976f38b8/3420"
+  },
+  "memory card: a direct write (import batch) while a pending is open drops the pending (被直接改过了)": {
+    "reply": "831805ac74891146/125",
+    "rest": "eae28b4101125fd8/3991"
+  },
+  "memory card: a guest's card made too large by a merge can be written smaller: 1540/1500, 先把别的字段收一收": {
+    "reply": "f4dde7a69474868e/110",
+    "rest": "58ca161b1e779724/9192"
+  },
+  "memory card: a new pending replaces an older one (被新的待批取代)": {
+    "reply": "0180f7d2d1bb3f6e/139",
+    "rest": "a8c0697150af373f/3993"
+  },
+  "memory card: a night text field is saved (60/150 字)": {
+    "reply": "b188c3ffd04218f3/61",
+    "rest": "1580bc7c7ccb68b5/3006"
+  },
+  "memory card: approver with nobody on the list says 人": {
+    "reply": "47d6f5bf71f527d4/77",
+    "rest": "ccc5cf8b362766bb/3537"
+  },
+  "memory card: approver with two owners on the list joins their keys with 或": {
+    "reply": "0596d16d343e806e/90",
+    "rest": "ccc5cf8b362766bb/3537"
+  },
+  "memory card: people not switched over, a night mem_person_set throws peopleOff": {
+    "reply": "23df896b86bbe087/91"
+  },
+  "memory card: people not switched over, the same mem_person_set in an import batch is written": {
+    "reply": "b188c3ffd04218f3/61",
+    "rest": "1580bc7c7ccb68b5/3006"
+  },
+  "memory card: people switched over, a night list field is saved (4/5 条, the card total 112/1500)": {
+    "reply": "7f55801880204c42/59",
+    "rest": "6386168203acf95e/3158"
+  },
+  "memory card: the owner's protect field over the card's cap says to write a proposal (SQL: one row's text made longer, the API cannot overfill an owner's card)": {
+    "reply": "35f08d68922d3aee/140",
+    "rest": "9706eb66c98feca2/15564"
+  },
+  "memory card: the owner's text and list fields use the owner's caps (300 字, 8 条, 4500 total)": {
+    "reply": "3d0d522ee2a45a30/129",
+    "rest": "a304403eefc7aeed/4664"
+  },
+  "memory card: the private detail field is cleared with a why": {
+    "reply": "19545c531408f7ab/33",
+    "rest": "de50723898e31ad3/3115"
+  },
+  "memory card: the private detail field is cleared, asked by the entity id (t0001) instead of the name (same text as memory card: the private detail field is cleared with a why: pins the path)": {
+    "reply": "19545c531408f7ab/33",
+    "rest": "de50723898e31ad3/3115"
+  },
+  "memory card: the same text again on a current field says nothing changed": {
+    "reply": "8ec2ff202485bc05/6",
+    "rest": "1580bc7c7ccb68b5/3006"
+  },
+  "memory card: the same text again on a pending field says it is still waiting for he": {
+    "reply": "d731d27e58566b82/79",
+    "rest": "ccc5cf8b362766bb/3537"
+  },
+  "memory card: the same text again on a pending field, no owner on the list, says it waits for 人": {
+    "reply": "328cf99ee7094840/78",
+    "rest": "ccc5cf8b362766bb/3537"
+  },
+  "memory card: waiting because cleared: 梗 cleared with a why": {
+    "reply": "95ab0801482610f1/66",
+    "rest": "66e46c92223c4739/3452"
+  },
+  "memory card: waiting because first: a night write on the field whose first version is still waiting (also drops it)": {
+    "reply": "f54371bb6d8f3f18/160",
+    "rest": "d36d9b115a6958ed/3390"
+  },
+  "memory card: waiting because forced: an import with forcePending writes a guest's 是谁 (第一版卡)": {
+    "reply": "fd9f59d1a0c568c4/69",
+    "rest": "c5ed4e696cfd2f04/3030"
+  },
+  "memory card: waiting because lost: 在乎什么 with all five lines replaced (丢了旧文 5/5 行)": {
+    "reply": "0c18ec76da868449/80",
+    "rest": "cc7f0a7ce2778735/3881"
+  },
+  "memory card: waiting because protect: the owner's 感觉 rewritten without the old line (with the tail about adding only)": {
+    "reply": "6a3b1778528aed1c/144",
+    "rest": "be07434200cb2b7d/3485"
+  },
+  "memory card: waiting because setting, cleared: 约定和边界 cleared with a why": {
+    "reply": "65c0c9a053314c1c/78",
+    "rest": "618cc27c5454afd8/3309"
+  },
+  "memory card: waiting because setting: 约定和边界 changed (and 'one owner' he in the approver)": {
+    "reply": "f5e54f5eb6ce7006/78",
+    "rest": "ccc5cf8b362766bb/3537"
+  },
+  "memory card: waiting because sweep: the third changed field of one person in one batch": {
+    "reply": "ebedd79fc9395be0/123",
+    "rest": "63dbcf1b10f9ad8a/6339"
+  },
+  "memory like: a candidate found through an entity's alias (叫「…」的那个)": {
+    "reply": "2da8647d7205d3a6/175",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: a candidate found through an entity's own name (叫「…」的那个)": {
+    "reply": "653f2dc740bf4f66/181",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: a dead embedder, a candidate list ends with the same sentence": {
+    "reply": "0217cbb8d69d28e4/275",
+    "rest": "dc9583e6e9a4e16c/2688"
+  },
+  "memory like: a dead embedder, a new like is created and the reply ends with the sentence 这次没法按意思找 (a warn is logged)": {
+    "reply": "b5f53c88d11c41b4/152",
+    "rest": "6b04d02542c218a4/3251"
+  },
+  "memory like: a dead embedder, a refusal ends with the same sentence": {
+    "reply": "9aeeaed1c9d4ac61/137",
+    "rest": "dc9583e6e9a4e16c/2688"
+  },
+  "memory like: a feeling over 80 characters on a new like (the stored gist ends with …)": {
+    "reply": "5125d948f59618e4/118",
+    "rest": "418ed6e6e5aa8f8d/3507"
+  },
+  "memory like: a new like whose name sits on an entity of two plain events (the sentence, and the reason with ；以前提过： in the store)": {
+    "reply": "d3a5353afd574521/209",
+    "rest": "1fe7975bbb87dd08/3645"
+  },
+  "memory like: a what of 23 characters with how like is too long for a title": {
+    "reply": "9e95ef2780cd9f89/161",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: a what that already carries the prefix is stripped before the title is built": {
+    "reply": "c58a616999f97581/100",
+    "rest": "c7a4611e22aa07c6/3153"
+  },
+  "memory like: again on a done dislike (title 又烦上了, reason 又烦上了, reply 改回)": {
+    "reply": "5701772dd4cd064e/83",
+    "rest": "1a49a434bd4b4a0a/2977"
+  },
+  "memory like: again on a done like (title 又喜欢上了, reason 又喜欢上了, reply 改回)": {
+    "reply": "365966cd7edd2591/86",
+    "rest": "f33ce3f95b84aeb2/2983"
+  },
+  "memory like: an empty what is fine when the event is given (feel on the tea)": {
+    "reply": "dac4e1e8193b5994/82",
+    "rest": "fc0f49858d98c647/2861"
+  },
+  "memory like: by meaning, a name that only a retired event has is not searched for either (the refusal comes with nothing asked)": {
+    "reply": "7984cba556d4a97a/101",
+    "rest": "262ef97acd30a716/2573"
+  },
+  "memory like: by meaning, a new like finds a candidate (the cue is what：feeling; the candidate and its cosine are logged)": {
+    "reply": "d6755f6af8557179/184",
+    "rest": "33bb7a55c536a6a0/2831"
+  },
+  "memory like: by meaning, an event given is not searched for": {
+    "reply": "0742f27a50b78eab/85",
+    "rest": "48d240d63abfec3b/2865"
+  },
+  "memory like: by meaning, an exact name is found without asking the embedder (feel on the tea)": {
+    "reply": "dac4e1e8193b5994/82",
+    "rest": "68247c44e22045c6/2868"
+  },
+  "memory like: by meaning, drop finds a candidate (the cue is what alone)": {
+    "reply": "14f16eea2041cdee/135",
+    "rest": "f04fcdef84450aae/2762"
+  },
+  "memory like: by meaning, fix finds a candidate (no feeling, so the cue is what alone)": {
+    "reply": "33b0549c347fd895/135",
+    "rest": "d7b24d45ead9f0d4/2750"
+  },
+  "memory like: by meaning, new=true is not searched for": {
+    "reply": "ed2ef895ca182cdb/106",
+    "rest": "68ce86ce33610418/3106"
+  },
+  "memory like: by meaning, nothing passes the threshold, so a new like is created and no sentence is added": {
+    "reply": "8e3d0a7fbb417bd7/100",
+    "rest": "f638cce735acc058/3281"
+  },
+  "memory like: dislike while a like of the same name is ongoing (the other side is mentioned, 还标着喜欢中)": {
+    "reply": "6b7f6d8ec17eae10/210",
+    "rest": "868f8bc43f3457f9/3126"
+  },
+  "memory like: drop with two candidates (which one to write as event)": {
+    "reply": "23b79fca4011ae64/183",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: event given, a retired one with how drop (no hint to note it anew)": {
+    "reply": "555aa4ce3efeec17/67",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: event given, a retired one with how feel (the hint: note it anew with how=like)": {
+    "reply": "a5e50cef0959db35/107",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: event given, a superseded one names what took its place": {
+    "reply": "9b2313ddffe51db5/79",
+    "rest": "ecedd99c0d16a7e5/2878"
+  },
+  "memory like: event given, a superseded one nobody took the place of (set by updateEvent, no superseded_by)": {
+    "reply": "4a14df7d166cfa7d/90",
+    "rest": "a83c59b57bd30282/2572"
+  },
+  "memory like: event given, an event that has no stance": {
+    "reply": "73c6cf43282e533e/124",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: event given, an id that is not there": {
+    "reply": "c2cdfed539489fab/25",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: event given, how dislike on a like (all four words of the refusal on the like side)": {
+    "reply": "1a45bb29f942a713/157",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: event given, how like on a dislike (all four words of the refusal on the dislike side)": {
+    "reply": "65f6198c2a48600a/154",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: feel on a dislike (title 又一下)": {
+    "reply": "0bf1c6511ae9c0db/82",
+    "rest": "7b6b5050965812fa/2867"
+  },
+  "memory like: feel on a like (title 又一下, the plain reply)": {
+    "reply": "dac4e1e8193b5994/82",
+    "rest": "a2c37f8ee5eb64d1/2867"
+  },
+  "memory like: feel with two candidates (no new=true hint)": {
+    "reply": "0a03ab15ecb87d75/193",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: fix with one candidate (it says which to write as event)": {
+    "reply": "e8ea959dcc355b09/129",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: like after drop of the same name (the retired namesake is mentioned)": {
+    "reply": "7cbda5d8cb5805e2/204",
+    "rest": "e8a56d9912fd58ff/3271"
+  },
+  "memory like: like on a done like (it comes back: reason 又喜欢上了, reply 改回)": {
+    "reply": "365966cd7edd2591/86",
+    "rest": "244ca74dbe03dd9f/2973"
+  },
+  "memory like: like while a dislike of the same name is ongoing (the other side is mentioned, 还在烦着)": {
+    "reply": "533b717a0e1c63da/216",
+    "rest": "c2279c7c743abcf5/3153"
+  },
+  "memory like: like with one candidate (the new=true hint)": {
+    "reply": "f7ef8193301f45fe/178",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: like with two candidates (the new=true hint and which one to write)": {
+    "reply": "fde7b8806c40790e/229",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: new=true while one of the same name exists": {
+    "reply": "2aabf2c39a4efa91/191",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: new=true while two of the same name exist (the names joined by 、)": {
+    "reply": "4f9d9e8e7cafd69e/233",
+    "rest": "ba54b3f38252a065/2887"
+  },
+  "memory like: no embedder at all, a new like says nothing about the search": {
+    "reply": "f71d7582d542fd52/109",
+    "rest": "c8bc46f98b549f75/3174"
+  },
+  "memory like: nothing found, feel (the first time is how=like or dislike)": {
+    "reply": "48cec84ef7829471/91",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: nothing found, fix (the name has to be the same, or write event)": {
+    "reply": "fd044be5a5d24ca1/85",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: over on a dislike (title 不烦了, reply 改成)": {
+    "reply": "02029c50a3cf82d1/89",
+    "rest": "54d02c5a0b5af176/3006"
+  },
+  "memory like: over on a like (title 腻了, the status goes to done with the feeling as the reason, reply 改成)": {
+    "reply": "cd78dc08d0f7306e/83",
+    "rest": "14f21f735fab63df/2991"
+  },
+  "memory like: over with a feeling over 80 characters (the reason of the status change ends with …)": {
+    "reply": "cd78dc08d0f7306e/83",
+    "rest": "4b9357d1adfeb996/3363"
+  },
+  "memory like: the first dislike creates the event (title 烦上了 on the feeling entry)": {
+    "reply": "2d9f8bbaba1a6eb1/115",
+    "rest": "174b4ea09779baf0/3183"
+  },
+  "memory like: the first like creates the event (title 喜欢上了 on the feeling entry, importance 3)": {
+    "reply": "d1ed11cc3b450b8e/106",
+    "rest": "5ba62f65d94fbfef/3159"
+  },
+  "memory like: the first like with importance 4 (the feeling is also the why)": {
+    "reply": "9b347af78501a18e/106",
+    "rest": "f9d64ededa602e0e/3165"
+  },
+  "memory like: the name matches only a retired event, how drop (without the hint)": {
+    "reply": "f58392d5d438fb24/61",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: the name matches only a retired event, how feel (with the hint)": {
+    "reply": "7984cba556d4a97a/101",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory like: the same feel twice without a tick (刚才已经记过这一下)": {
+    "reply": "5aa89e8ed13a2e6f/133",
+    "rest": "94005da17cf175d5/2876"
+  },
+  "memory like: two events of one side with the same name (feel lists both, with their labels)": {
+    "reply": "2c0872a186d647ca/205",
+    "rest": "ba54b3f38252a065/2887"
+  },
+  "memory likeCheck: a missing feeling wins over an empty what (same text as memory likeCheck: how like without a feeling: pins the path)": {
+    "reply": "283210085ec00f17/87",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: a missing why wins over a missing title and gist (same text as memory likeCheck: fix without a why: pins the path)": {
+    "reply": "4bd077dc43f4b0b8/47",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: an empty what wins over new with how feel (same text as memory likeCheck: an empty what without an event: pins the path)": {
+    "reply": "1f0e479cfa5b6034/75",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: an empty what without an event": {
+    "reply": "1f0e479cfa5b6034/75",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: drop without a why (a blank why is no why)": {
+    "reply": "e4e9460873b03e72/53",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: fix with a why but neither a title nor a gist": {
+    "reply": "0784ef31673e1573/50",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: fix without a why": {
+    "reply": "4bd077dc43f4b0b8/47",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: how feel with a blank feeling (same text as memory likeCheck: how like without a feeling: pins the path)": {
+    "reply": "283210085ec00f17/87",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: how like without a feeling": {
+    "reply": "283210085ec00f17/87",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: new with an event": {
+    "reply": "94ef919404b87205/91",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: new with how feel": {
+    "reply": "256c6ed11876db60/105",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: new with how feel wins over new with an event (same text as memory likeCheck: new with how feel: pins the path)": {
+    "reply": "256c6ed11876db60/105",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: region hippocampus cannot note a like (like)": {
+    "reply": "3783c70fb50256ca/75",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeCheck: region hippocampus, likeWithMeaning refuses before it asks the embedder (the asked list stays empty)": {
+    "reply": "3783c70fb50256ca/75",
+    "rest": "262ef97acd30a716/2573"
+  },
+  "memory likeCheck: the region wins over a missing feeling (same text as memory likeCheck: region hippocampus cannot note a like (like): pins the path)": {
+    "reply": "3783c70fb50256ca/75",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeEdit: a title that collides with another event of the same side": {
+    "reply": "305ff58ee20853ab/178",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeEdit: a title too long (the completed title is over 24 characters)": {
+    "reply": "101cb76b43d9de8b/129",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeEdit: a title with the own word and a bracket stays as written": {
+    "reply": "8799e114363eacc9/103",
+    "rest": "42eb88b4737e4baa/2676"
+  },
+  "memory likeEdit: a title with the own word, a space and one character after it counts as marked (the prefix test, not the remainder)": {
+    "reply": "35dda040a9d22958/89",
+    "rest": "26c163e9fa830cd6/2671"
+  },
+  "memory likeEdit: a title without a prefix is completed with the own word (喜欢 …)": {
+    "reply": "37db0f969954daf7/101",
+    "rest": "51102c70cbea4042/2674"
+  },
+  "memory likeEdit: drop by event (the reply; the store shows retired and the why as the reason)": {
+    "reply": "98e2dbc082d7c9fe/129",
+    "rest": "e184ff1db2f9f11b/2692"
+  },
+  "memory likeEdit: drop by the exact name": {
+    "reply": "8632c149893cfa48/123",
+    "rest": "af0a67be66b1eaa5/2686"
+  },
+  "memory likeEdit: fix a gist over 80 characters (cut with …)": {
+    "reply": "d74bc5185493d573/291",
+    "rest": "97dd5095c4320497/2851"
+  },
+  "memory likeEdit: fix the gist only": {
+    "reply": "4e6888f9cac48084/96",
+    "rest": "966dce77aa599907/2653"
+  },
+  "memory likeEdit: fix the title and the gist by event": {
+    "reply": "802af4fb9aebc840/161",
+    "rest": "7a8f0ce55fce6609/2647"
+  },
+  "memory likeEdit: fix the title only": {
+    "reply": "5d56f33436061bac/98",
+    "rest": "529df540cb89c03a/2677"
+  },
+  "memory likeEdit: nothing changed (the same title, no gist)": {
+    "reply": "7ce832d8ebd26976/63",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeEdit: on a dislike, a title that is the own word's name itself (喜欢你) is completed with the own word": {
+    "reply": "3f8069e241f392df/92",
+    "rest": "04967294bb9304fd/2665"
+  },
+  "memory likeEdit: on a like, a title that is the other word's name itself (烦恼) is completed, not refused": {
+    "reply": "565185647bae8321/92",
+    "rest": "df83fb8426899a5b/2671"
+  },
+  "memory likeEdit: the other side's word on a dislike is refused (不烦了, then how=like)": {
+    "reply": "70fd0557aa29b6d5/180",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeEdit: the other side's word on a like is refused (腻了, then how=dislike)": {
+    "reply": "75e9cf3dcc2672db/177",
+    "rest": "8e73b6c2bc7aadef/2566"
+  },
+  "memory likeKey: likeKey on the same eleven shapes (prefix, brackets, spaces and case gone)": {
+    "reply": "a6f221f0aeb0415b/470"
+  },
+  "memory likeKey: likeMatch exact (a title in every shape meets the name; either side may carry the word)": {
+    "reply": "632a71124addba60/496"
+  },
+  "memory likeKey: likeMatch near (one inside the other, either way round; the shorter at least two characters)": {
+    "reply": "849ebb2ad4a7f5fb/218"
+  },
+  "memory likeKey: likeMatch none (a one-character remainder is no name: 喜欢你 against 喜欢 你, 烦恼 against 烦 恼, one character against a title)": {
+    "reply": "84228a3fb949b8b4/225"
+  },
+  "memory likeKey: stripLikePrefix on eleven shapes of a title (a space or an opening bracket makes the word a prefix; 喜欢你, 烦恼 and an old title like 喜欢红糖姜茶 are names)": {
+    "reply": "c76dfa3e028ac0e6/577"
+  },
+  "memory myLikes: a like made by like has one feeling that is its gist (no 最近一下 part)": {
+    "reply": "e49370954e14481c/100"
+  },
+  "memory myLikes: an empty store": {
+    "reply": "43dc046a72447eed/39"
+  },
+  "memory myLikes: four groups; no feeling (the line has no 最近一下 part), a last feeling that is its gist, a later feeling that differs, a retired event left out": {
+    "reply": "9c633da6ed5f6ff9/1178"
+  },
+  "memory myLikes: no page argument is page 1 (same text as memory myLikes: over 4000 characters, page 1 stops at a whole line and ends with the tail (还有 40 件 …page=2): pins the path)": {
+    "reply": "204272e9933909f9/9709"
+  },
+  "memory myLikes: one group missing (the only 以前烦 is retired)": {
+    "reply": "3ec8ac42e031ae19/992"
+  },
+  "memory myLikes: over 4000 characters, page 1 stops at a whole line and ends with the tail (还有 40 件 …page=2)": {
+    "reply": "204272e9933909f9/9709"
+  },
+  "memory myLikes: page 2 starts inside a group (the head is printed again) and is held back by the room for the tail": {
+    "reply": "ae803f60c616e92b/9286"
+  },
+  "memory myLikes: page 99 does not exist (一共 3 页)": {
+    "reply": "9fb446bf03528e10/37"
+  },
+  "memory myLikes: the last page has no tail": {
+    "reply": "895c249124a495a8/3601"
+  },
+  "memory pending: a change with a lost line, a clear and a first version, with and without a why": {
+    "reply": "9fc294ab837ed8df/595",
+    "rest": "bff75164d88e5286/4335"
+  },
+  "memory pending: a private row shows neither its text nor its why (SQL: visibility of one pending row)": {
+    "reply": "6eb2d78af2346d68/80",
+    "rest": "348af7a653ee17fe/3142"
+  },
+  "memory pending: a stale row whose field has no current row any more (SQL: status of the replaced row)": {
+    "reply": "d452908cd7caa024/425",
+    "rest": "be37eabb19d8dfc9/3540"
+  },
+  "memory pending: a stale row whose replaced row is not there (merge: it replaces 空的, the field has a current one)": {
+    "reply": "84a546982c785b35/344",
+    "rest": "35fbf75c976f38b8/3420"
+  },
+  "memory pending: nothing pending": {
+    "reply": "4f7f3db88b56436f/21",
+    "rest": "44d598d18946d4e3/2675"
+  },
+  "memory pin: a pin that replaces another (the section is full at 3) says 换下了 …，": {
+    "reply": "55d23617288a7a6b/90",
+    "rest": "f5dd8cded1bf5ace/3802"
+  },
+  "memory pin: a private pin (the default for a guest) says 1/3 句，私聊": {
+    "reply": "e53b728e7bce72ca/72",
+    "rest": "3a53f63e9e622136/2956"
+  },
+  "memory pin: a public pin (private false) says 1/3 句 without 私聊": {
+    "reply": "a4aa4326b7bedb5b/63",
+    "rest": "7f06d60553b8e576/2947"
+  },
+  "memory pin: a quote said to 阿青 (我→阿青) in 记着的原话 says 1/40 句，私聊": {
+    "reply": "53064df16f96d74c/64",
+    "rest": "402e8297fcafa171/2950"
+  },
+  "memory pin: people not switched over, a night mem_quote_pin throws peopleOff (same text as memory card: people not switched over, a night mem_person_set throws peopleOff: pins the path)": {
+    "reply": "23df896b86bbe087/91"
+  },
+  "memory pin: people not switched over, the same mem_quote_pin in an import batch is written": {
+    "reply": "e53b728e7bce72ca/72",
+    "rest": "3a53f63e9e622136/2956"
+  },
+  "memory pin: the same quote again says it was already pinned": {
+    "reply": "4f63c675cbdfe43d/21",
+    "rest": "3a53f63e9e622136/2956"
+  },
+  "memory quotes: a cue nothing holds gives nothing": {
+    "reply": "4f53cda18c2baa0c/2"
+  },
+  "memory quotes: a limit of three keeps the first three": {
+    "reply": "2d27fe51020ddc7b/2978"
+  },
+  "memory quotes: every line that holds the cue, with and without a channel, 500 characters whole and 501 cut, the central line among them": {
+    "reply": "6f3febfce605d517/3915"
+  },
+  "memory quotes: olderOnly with two words keeps the lines with both, newest first, and leaves the central line out": {
+    "reply": "f8ef29fa34525084/397"
+  },
+  "memory quotes: olderOnly without words (empty, then only spaces) gives nothing": {
+    "reply": "84f6b7190afac656/11"
+  },
+  "memory quotes: who 我 keeps 我→阿青, 我→老林 and 我（笔记）": {
+    "reply": "2918d8f33feadfb0/381"
+  },
+  "memory quotes: who 阿青 keeps 阿青's lines, not 我→阿青 or 我（笔记）": {
+    "reply": "57d283031d14991b/434"
+  },
+  "memory quotesDay: a day that is not YYYY-MM-DD gives nothing": {
+    "reply": "b367995f9e022427/20"
+  },
+  "memory quotesDay: a day without lines gives nothing (same text as memory quotes: a cue nothing holds gives nothing: pins the path)": {
+    "reply": "4f53cda18c2baa0c/2"
+  },
+  "memory quotesDay: a day's lines by time, 500 whole and 501 cut, the early morning line of the next date in, the central line out": {
+    "reply": "09081815d5d1ca3d/3489"
+  },
+  "memory quotesDay: a limit of two keeps the last two": {
+    "reply": "5b930b591d47a218/231"
+  },
+  "memory quotesDay: the day before holds the line from 03:30 and the one from 9 in the morning": {
+    "reply": "c9ed6cf6207113af/246"
+  },
+  "memory quotesDay: who 我 keeps 我→阿青, 我（笔记）and 我→老林": {
+    "reply": "7695031de2056412/381"
+  },
+  "memory quotesDay: who 阿青 keeps only 阿青's": {
+    "reply": "c1eef6af7017d19d/136"
+  },
+  "memory recallEvent: from only, the newer entry": {
+    "reply": "0665d794875d5815/531"
+  },
+  "memory recallEvent: no range, the whole timeline of e0001": {
+    "reply": "95d9e29d362ac3f0/610"
+  },
+  "memory recallEvent: to only, the older entry": {
+    "reply": "cb2c020b927101a3/399"
+  },
+  "memory recallPeriod: a day and an end day": {
+    "reply": "b1a3019bd847c1b4/1385"
+  },
+  "memory recallPeriod: a time it cannot read says what it reads": {
+    "reply": "39f3180899d7b984/159"
+  },
+  "memory recallPeriod: the last ten days, no end day": {
+    "reply": "98695d791d920980/1208"
+  },
+  "memory reject: a pending is dropped and the current stays": {
+    "reply": "9ae6305efe24ca0a/47",
+    "rest": "8a649986fe9df2e2/3577"
+  },
+  "memory remember: a cue nothing matches": {
+    "reply": "3711131f4a7d2a54/111"
+  },
+  "memory remember: a known person (阿青) is no note (same text as memory remember: neither from nor to (the range is not read): pins the path)": {
+    "reply": "df1a1eb3a50df13f/2125"
+  },
+  "memory remember: a person the memory does not know is said so, then the events": {
+    "reply": "d66af914262bae41/2174"
+  },
+  "memory remember: an unknown person and nothing found: the note, then nothing": {
+    "reply": "179d4b0839c156ad/160"
+  },
+  "memory remember: from and to, a range that holds e0001 (same text as memory remember: neither from nor to (the range is not read): pins the path)": {
+    "reply": "df1a1eb3a50df13f/2125"
+  },
+  "memory remember: from only, a day after e0001's last news, so only the quote lines come back": {
+    "reply": "e93603c973a454d8/586"
+  },
+  "memory remember: neither from nor to (the range is not read)": {
+    "reply": "df1a1eb3a50df13f/2125"
+  },
+  "memory remember: to only, a range that holds e0001 (same text as memory remember: neither from nor to (the range is not read): pins the path)": {
+    "reply": "df1a1eb3a50df13f/2125"
+  },
+  "memory worklist: 41 ongoing likes (the first 40 listed, then the tail line 还有 1 件)": {
+    "reply": "3cffbf237fa19e42/8904"
+  },
+  "memory worklist: 41 quotes 31 minutes apart are 41 groups (the first 40 listed, then the tail line 还有 1 团)": {
+    "reply": "89498273b33a729c/10575"
+  },
+  "memory worklist: a full day with the people feature on and switched over (promote line and card digest after section 8; legacy kinds set by SQL)": {
+    "reply": "4fc74f7392b00d8f/8507"
+  },
+  "memory worklist: a full day with the people feature on but not switched over (no promote line, no card digest; same text as memory worklist: a full day, the legacy kinds project and topic set by SQL on mem_entity.kind (not yet organised): pins the path; legacy kinds set by SQL)": {
+    "reply": "b5818c5e0cc11822/7771"
+  },
+  "memory worklist: a full day, the legacy kinds project and topic set by SQL on mem_entity.kind (not yet organised)": {
+    "reply": "b5818c5e0cc11822/7771"
+  },
+  "memory worklist: an empty store (every none arm: no quotes, no events, no entities, no likes)": {
+    "reply": "9a1398895c324e29/1856"
+  },
+  "memory worklist: the same full day after markDay (the header says it was organised; legacy kinds set by SQL)": {
+    "reply": "6ea01430466ee8da/7831"
+  },
+  "memory write: mem_day_done in a clean night is noted until the night ends": {
+    "reply": "43e816efb0cfc1d0/83"
+  },
+  "memory write: mem_day_done in a stage that is clean takes effect when the stage lands": {
+    "reply": "2e160339a044b4b0/68"
+  },
+  "memory write: mem_day_done in a stage with an unrated thing is refused": {
+    "reply": "53d52af55d29548e/208"
+  },
+  "memory write: mem_day_done in an import batch (same text as memory write: mem_day_done in a clean night is noted until the night ends: pins the path)": {
+    "reply": "43e816efb0cfc1d0/83"
+  },
+  "memory write: mem_day_done refuses while two things of this night are unrated": {
+    "reply": "3d3c6c9ac90df5ad/246"
+  },
+  "memory write: mem_day_done with a day that is not a real day (2026-02-30, then empty)": {
+    "reply": "2af4b9e14aa9a8e1/155"
+  },
+  "memory write: mem_day_done with exactly thirty unrated lists them all": {
+    "reply": "852d29122d502c24/1310"
+  },
+  "memory write: mem_day_done with thirty-one unrated lists thirty and counts the rest": {
+    "reply": "bc2f4eaa1a83c501/1321"
+  },
+  "memory write: mem_entity_drop says the registration went and the events stayed": {
+    "reply": "ba7a03758d38c5fe/69"
+  },
+  "memory write: mem_entity_drop without a reason is refused by the store": {
+    "reply": "a749b4030080d8a0/40"
+  },
+  "memory write: mem_entity_merge says the merged name and what it is also called": {
+    "reply": "5e2fd7e203dd6a6e/58"
+  },
+  "memory write: mem_entity_merge when the merged row has no aliases (mergeEntities replaced on the instance by one that returns the row without them)": {
+    "reply": "2b4a409287f7e0ee/36"
+  },
+  "memory write: mem_entity_tag says what was hung on which event": {
+    "reply": "7736f9c89d4d94bf/34"
+  },
+  "memory write: mem_entity_upsert of a new thing with no importance and no alias": {
+    "reply": "0286a4e846fa0d92/65"
+  },
+  "memory write: mem_entity_upsert with an importance and two aliases": {
+    "reply": "c823fc492d794a98/89"
+  },
+  "memory write: mem_entries_add of entries the store all refuses says it recorded none": {
+    "reply": "fa68cee7e1630a82/104",
+    "rest": "41adc02c991621a6/2659"
+  },
+  "memory write: mem_entries_add of one new and one the store refuses (an event nobody has)": {
+    "reply": "32dead94641994b9/76",
+    "rest": "0e538e6a95074b12/2812"
+  },
+  "memory write: mem_entries_add of three new entries gives the range of ids": {
+    "reply": "3bd9f723afe669b7/36",
+    "rest": "f5b2f7f5bc52805d/3118"
+  },
+  "memory write: mem_entries_add of two new and one that was already there": {
+    "reply": "06475128634553ef/56",
+    "rest": "29356990febacf43/2965"
+  },
+  "memory write: mem_entries_add where the store refuses with something that is not an Error (addEntry replaced on the instance by one that throws a string)": {
+    "reply": "b71e22b4aa4ec06e/70",
+    "rest": "41adc02c991621a6/2659"
+  },
+  "memory write: mem_entry_add says the new id and event, and the same again says it was already there": {
+    "reply": "3bba135601a4a48e/88",
+    "rest": "e2f3ce0ffbc2d500/2812"
+  },
+  "memory write: mem_entry_add with no full and a source the import knows takes the line for its full": {
+    "reply": "835098cc84995841/30",
+    "rest": "05d3fdf2b8dd06fe/2973"
+  },
+  "memory write: mem_entry_add with no full and no source says the source is empty": {
+    "reply": "b599b350d73deb51/65"
+  },
+  "memory write: mem_entry_add with no full and two sources nobody knows lists both": {
+    "reply": "be39af633aa03a11/79"
+  },
+  "memory write: mem_entry_correct says the correction and what it corrects": {
+    "reply": "fa2a2476267734f1/59",
+    "rest": "08ce125586df711f/2817"
+  },
+  "memory write: mem_event_create says the new id and title": {
+    "reply": "553fa244010d80e7/48",
+    "rest": "7dcdb2a14890bd05/2853"
+  },
+  "memory write: mem_event_update says it is done": {
+    "reply": "87fd5a4eb25a79f9/18",
+    "rest": "9b2a83d2fcd34c57/2671"
+  },
+  "memory write: mem_link says what is linked to what (no note needed for followup)": {
+    "reply": "cb862794f56a2661/38"
+  },
+  "memory write: mem_merge says the timelines went to the kept event": {
+    "reply": "096a7d67d5522d27/40",
+    "rest": "d86f3e26be4df6bd/2662"
+  },
+  "memory write: mem_merge with no others and no reason (the lists default to empty, nothing moves)": {
+    "reply": "096a7d67d5522d27/40",
+    "rest": "41adc02c991621a6/2659"
+  },
+  "memory write: mem_retire says it no longer counts": {
+    "reply": "0dd67e1197d25f7c/45",
+    "rest": "d4c5c5a4101076d2/2659"
+  },
+  "memory write: mem_split not under makes a sibling of the same thread": {
+    "reply": "471b8dfb35e9b7ba/79",
+    "rest": "a3193ccd3efe5153/2823"
+  },
+  "memory write: mem_split under the event makes a child": {
+    "reply": "bf210e89f653930c/82",
+    "rest": "a3193ccd3efe5153/2823"
+  },
+  "memory write: mem_supersede says the old one is replaced": {
+    "reply": "d935c80e1af135e2/31",
+    "rest": "ad80ed542e7fbde9/2662"
+  },
+  "memory write: mem_unlink of a link that is not there": {
+    "reply": "5cd90045a1ce6a73/30"
+  },
+  "memory write: mem_unlink of a link that is there": {
+    "reply": "a546baec78d74762/12"
+  },
+  "memory write: no batch open in the day refuses and points to jot_down and like": {
+    "reply": "016687cd00fce125/123"
+  },
+  "midterm: a short stale line": {
+    "reply": "aba61b3f9a6a9a73/516"
+  },
+  "midterm: a stale line over 600 characters counts the rest": {
+    "reply": "69daed5c060037ac/1427"
+  },
+  "midterm: a tight budget cuts every section": {
+    "reply": "c1cb2634eed18b85/3771"
+  },
+  "midterm: an empty store": {
+    "reply": "40a790ea2152dc1e/160"
+  },
+  "midterm: before four in the morning her day began yesterday": {
+    "reply": "51d6bc3a63cef99c/1121"
+  },
+  "midterm: dated events in another time zone": {
+    "reply": "fc81064f6f907f6c/993"
+  },
+  "midterm: dated events, a past one, a retired one and a superseded one left out": {
+    "reply": "7b9fc4e12dd81f8a/993"
+  },
+  "midterm: dislikes only": {
+    "reply": "e0356ed7af49ec36/1343"
+  },
+  "midterm: dislikes only, more than fit": {
+    "reply": "83f2a947e3084fcf/1349"
+  },
+  "midterm: everything at once": {
+    "reply": "8d86c4f80cfbc270/5913"
+  },
+  "midterm: likes lines, a likes names line and a dislikes line": {
+    "reply": "5b7cc2f2b592cc4e/1449"
+  },
+  "midterm: likes overflow into names and the names are cut": {
+    "reply": "2c2cff060ae83afe/1449"
+  },
+  "midterm: likes overflow into names that all fit, dislikes get no room": {
+    "reply": "7d76fcda8664367b/1443"
+  },
+  "midterm: likes that all fit as lines": {
+    "reply": "c9a883da84c22d1b/1403"
+  },
+  "midterm: more recent events than fit list the rest by title": {
+    "reply": "22741287a4226085/9445"
+  },
+  "midterm: recent events, a big one with its children folded in, links and people, stale names": {
+    "reply": "5b98e1994f5e2aa3/2283"
+  },
+  "midterm: the owner's quotes, more than fit, with how to turn the pages": {
+    "reply": "2963c94d422a3389/3811"
+  },
+  "midterm: the owner's quotes, one over 300 characters, one in capitals, others' and old ones left out": {
+    "reply": "838fbb76f31fd194/1304"
+  },
+  "midterm: today's entries by the half hour, a retired event and an entry before four left out": {
+    "reply": "af7a9706ed9466e1/1617"
+  },
+  "parseExam: a blank q (same text as parseExam: an id that is not text: pins the path)": {
+    "reply": "0f2ec3d216c67ce0/34"
+  },
+  "parseExam: a good paper keeps the extra fields": {
+    "reply": "880506f99bfa594f/162"
+  },
+  "parseExam: a paper that is not an array": {
+    "reply": "ecf36b5830c26e87/48"
+  },
+  "parseExam: a question without an id names its place": {
+    "reply": "598c4d3fe4fb9e2d/34"
+  },
+  "parseExam: a question without q (same text as parseExam: a question without an id names its place: pins the path)": {
+    "reply": "598c4d3fe4fb9e2d/34"
+  },
+  "parseExam: a repeated id": {
+    "reply": "fc06107626fee75e/24"
+  },
+  "parseExam: an empty id (same text as parseExam: an id that is not text: pins the path)": {
+    "reply": "0f2ec3d216c67ce0/34"
+  },
+  "parseExam: an id that is not text": {
+    "reply": "0f2ec3d216c67ce0/34"
+  },
+  "parseRange: a date range in every separator": {
+    "reply": "2a81502e5cf5fa2a/634"
+  },
+  "parseRange: a date range with a date that cannot be": {
+    "reply": "779a8249f35a888a/43"
+  },
+  "parseRange: a single date, with and without a year, one in the future is last year's, one that is not a date": {
+    "reply": "b7ebe7a566204dc4/385"
+  },
+  "parseRange: another time zone, where it is already the next day": {
+    "reply": "5a08890f2852ddbc/384"
+  },
+  "parseRange: last month when it is January": {
+    "reply": "38d778166db2f0bb/131"
+  },
+  "parseRange: last month, this month in every wording": {
+    "reply": "71913e44187a626f/257"
+  },
+  "parseRange: last week, this week in every wording": {
+    "reply": "1dc63296758a179d/392"
+  },
+  "parseRange: nothing it knows": {
+    "reply": "571cab3805a05e8e/53"
+  },
+  "parseRange: the last N days": {
+    "reply": "efd428da155366e8/200"
+  },
+  "parseRange: today, the day before yesterday, yesterday and last night": {
+    "reply": "1c003f2cb6b6bfa2/341"
+  },
+  "period: a line longer than the page is cut": {
+    "reply": "9748f8e78937e1ce/172"
+  },
+  "period: a person the memory does not know": {
+    "reply": "84e7e85bf10fd96c/30"
+  },
+  "period: a retired event is still listed, with its label (status set by SQL)": {
+    "reply": "0df1883516158b25/1388"
+  },
+  "period: nothing in that stretch": {
+    "reply": "3e8121e3ce3cf006/35"
+  },
+  "period: one line per event, statuses, people, an unknown status": {
+    "reply": "b1a3019bd847c1b4/1385"
+  },
+  "period: only one person's events": {
+    "reply": "ab159d0b6b62fc6e/487"
+  },
+  "period: only the important events": {
+    "reply": "fddd6df374256b11/321"
+  },
+  "period: over three weeks is by week": {
+    "reply": "07b7c6f6f0d3ff91/580"
+  },
+  "period: paged, a page past the end is the last": {
+    "reply": "f3203222b37c6201/193"
+  },
+  "period: paged, the second page": {
+    "reply": "69d7d78d5dc6590e/638"
+  },
+  "period: weekly forced off on a long stretch": {
+    "reply": "d28faf06abb856d3/1811"
+  },
+  "period: weekly forced on a short stretch": {
+    "reply": "2522206dc26ae9c9/425"
+  },
+  "person: a name the memory does not know": {
+    "reply": "c4adac34842449c6/66"
+  },
+  "person: automatic recall leaves out a retired event and the ones already given": {
+    "reply": "4cd931bfa072065f/1240"
+  },
+  "person: card asked for, someone without a card has only the events line (same text as person: known, but nothing yet: pins the path)": {
+    "reply": "fef2b8fc70ec4b8a/51"
+  },
+  "person: card cut, no section fits": {
+    "reply": "dfa4f4a0078eac2c/262"
+  },
+  "person: card cut, the sections that do not fit are skipped and the later ones that fit are kept": {
+    "reply": "e5b3a2ff9d0b14ab/644"
+  },
+  "person: card, a guest with only computed parts names no file": {
+    "reply": "4d1baf6cb5044f15/735"
+  },
+  "person: card, a guest with stored fields names the file": {
+    "reply": "191b19d26725f5e9/3246"
+  },
+  "person: card, the owner gets a pointer, not a card": {
+    "reply": "e7f4698ba6a98e55/580"
+  },
+  "person: every event already given leaves nothing": {
+    "reply": "f38a5b8a769d372a/51"
+  },
+  "person: known, but nothing yet": {
+    "reply": "fef2b8fc70ec4b8a/51"
+  },
+  "person: only two events": {
+    "reply": "53c0f5777e71826b/1243"
+  },
+  "person: the recent events of someone, no card asked for": {
+    "reply": "721df2e8e7232b1f/2215"
+  },
+  "personCard: a guest whose stored card is all private gets nothing in a group and the card in a private chat": {
+    "reply": "35711b4d9e34ab27/112"
+  },
+  "personCard: a stored card in a group shows only the public face, once; the private face still comes afterwards": {
+    "reply": "2fa61d737a62eccc/301"
+  },
+  "personCard: a stored card in a private chat shows her own face, and only once": {
+    "reply": "017a1a5f9226884b/163"
+  },
+  "personCard: an old profile with nothing to keep gives nothing": {
+    "reply": "4f53cda18c2baa0c/2"
+  },
+  "personCard: no event memory at all, only the -us.md exists, no name in the registry": {
+    "reply": "f6f08cb1d7319b17/136"
+  },
+  "personCard: no stored card for her, so the old profile and its -us.md are read, and only once": {
+    "reply": "88fa85c5165b7e2a/329"
+  },
+  "personCard: nothing for the owner, an unknown sender, or a guest with neither a card nor a profile": {
+    "reply": "b367995f9e022427/20"
+  },
+  "quoteLine: with and without a channel, 120 characters whole, 121 cut, an unknown ref": {
+    "reply": "66d8fd5c9921575f/1355"
+  },
+  "recall around: by #number": {
+    "reply": "c55c3cfc88ada8cf/297"
+  },
+  "recall around: no number": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall around: not a number": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall around: the default limit around a row": {
+    "reply": "b2c94e5064be23be/4863"
+  },
+  "recall around: the rows around an act, with act and result labels": {
+    "reply": "df4d6e97ef2cd521/2247"
+  },
+  "recall day: a bad date": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall day: a day without rows": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall day: another time zone": {
+    "reply": "0959894de2bc78a1/4273"
+  },
+  "recall day: no date": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall day: the early hours belong to the day before": {
+    "reply": "5aa20791b1b5e14e/125"
+  },
+  "recall day: the rows of that day, from four in the morning": {
+    "reply": "82298044873bbf2e/4147"
+  },
+  "recall day: who a name": {
+    "reply": "f0c2983a49297130/1767"
+  },
+  "recall search: a clipped row, and the same row whole with full": {
+    "reply": "25f0c5edda848954/3826"
+  },
+  "recall search: a limit": {
+    "reply": "b3d36df89f0b62c1/2005"
+  },
+  "recall search: a limit from the options": {
+    "reply": "8f0714698fafddf4/1885"
+  },
+  "recall search: an empty query": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall search: another time zone": {
+    "reply": "898ee618f9113e2e/2126"
+  },
+  "recall search: every label of who (outside, a name, sent with a name, to only, neither, note, say, unsent say)": {
+    "reply": "fee47899863ba5d3/3025"
+  },
+  "recall search: no query at all": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall search: nothing matches": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall search: two words must both match": {
+    "reply": "c760311f0f4f71c0/367"
+  },
+  "recall search: who a name": {
+    "reply": "03997572b24b3670/137"
+  },
+  "recall search: who in capitals matches lower case": {
+    "reply": "d004e15b65d385c6/717"
+  },
+  "recall search: who is a name nobody has": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall search: who 我 asks for her own rows (same text as recall search: who in capitals matches lower case: pins the path)": {
+    "reply": "d004e15b65d385c6/717"
+  },
+  "recall show: a bad --from starts at the beginning": {
+    "reply": "5911958c89e023c8/79882"
+  },
+  "recall show: a long row, the first page (same text as recall show: a bad --from starts at the beginning: pins the path)": {
+    "reply": "5911958c89e023c8/79882"
+  },
+  "recall show: a negative --from starts at the beginning (same text as recall show: a bad --from starts at the beginning: pins the path)": {
+    "reply": "5911958c89e023c8/79882"
+  },
+  "recall show: a number nobody has": {
+    "reply": "8dff54632f6b6345/25"
+  },
+  "recall show: a row of a kind the other modes never list": {
+    "reply": "7bf95c249b5b4d8a/84"
+  },
+  "recall show: a think row": {
+    "reply": "65abddafb9bd6594/111"
+  },
+  "recall show: by #number": {
+    "reply": "8772c57885f9f833/113"
+  },
+  "recall show: by c:number": {
+    "reply": "25852697c1c90dae/109"
+  },
+  "recall show: no number": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall show: not a number": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall show: one row whole, by its number": {
+    "reply": "1077964edec860fb/2052"
+  },
+  "recall show: the last page has no tail": {
+    "reply": "86becc43ca4dbb01/3233"
+  },
+  "recall show: the second page with --from": {
+    "reply": "6e0be5d542417449/78108"
+  },
+  "recall: an unknown mode": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "recall: no mode": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "render children: a smaller maxChildren": {
+    "reply": "e2bc0f4468440b9f/621"
+  },
+  "render children: childrenFirst counts the line with the head": {
+    "reply": "1b7473f6495214b7/931"
+  },
+  "render children: exactly the default maximum has no ellipsis": {
+    "reply": "885baa76b6308c0f/928"
+  },
+  "render children: over the default maximum the line ends with an ellipsis (same text as render children: childrenFirst counts the line with the head: pins the path)": {
+    "reply": "1b7473f6495214b7/931"
+  },
+  "render entries: a budget too tight for the lines folds them": {
+    "reply": "507c6171bd8d1a80/559"
+  },
+  "render entries: a fold over one day names the day once": {
+    "reply": "43af167e50d084b7/539"
+  },
+  "render entries: a touched entry is clear again": {
+    "reply": "c8418005a53b4932/893"
+  },
+  "render entries: corrections that read the same, differ, carry their own date, are twice corrected, are orphans": {
+    "reply": "e908bac5c27e0c86/2400"
+  },
+  "render entries: gistEntries writes full entries as one sentence": {
+    "reply": "4d6e1ea2a6b7609b/599"
+  },
+  "render entries: hit entries go first": {
+    "reply": "e208f9b653cb6501/693"
+  },
+  "render entries: one entry per event folds the rest over several days (same text as render entries: a budget too tight for the lines folds them: pins the path)": {
+    "reply": "507c6171bd8d1a80/559"
+  },
+  "render entries: three clarities, a faded one left out, an old quote kept, the rest folded over several days": {
+    "reply": "add11499a2efb832/893"
+  },
+  "render events: a header line counts in the budget": {
+    "reply": "09a2b05ef912686e/1508"
+  },
+  "render events: compact writes every event as one sentence": {
+    "reply": "7dc352fad9ed4566/727"
+  },
+  "render events: next day, superseded by, parent, people, origin, and a head with none of them": {
+    "reply": "5fcd1bcbd437fece/1156"
+  },
+  "render events: no events": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "render events: the final cut when many events cannot fit": {
+    "reply": "c7dd25cefb0484f1/67"
+  },
+  "render events: the final cut when one head is longer than the budget": {
+    "reply": "fcab361426c56ece/33"
+  },
+  "render events: the five statuses and one the code does not know": {
+    "reply": "d818bca5859ea2ee/1468"
+  },
+  "render events: the four stance marks, a retired stance event has none": {
+    "reply": "e1d5bed6eb882b81/1514"
+  },
+  "render events: the same days in another time zone": {
+    "reply": "89cdd81c8b1334f4/1156"
+  },
+  "render events: the three levels, never active, pinned, brief": {
+    "reply": "c8712f772438e545/984"
+  },
+  "render fold: brief header": {
+    "reply": "9db831084f693b88/4459"
+  },
+  "render fold: inputs are not folded": {
+    "reply": "6f317a8e25a999f2/2377"
+  },
+  "render fold: kinds, an unsent say, an insight and a short result": {
+    "reply": "7cf28f1ab6077a65/1697"
+  },
+  "render fold: the fold flag": {
+    "reply": "54467914b815820d/4672"
+  },
+  "render fold: the fold mode with seqs": {
+    "reply": "a24f6c17525211a4/4863"
+  },
+  "render full: a small item limit cuts items and says where the whole is": {
+    "reply": "2a1ae5dc9e050649/1648"
+  },
+  "render full: an explicit full mode wins over the fold flag": {
+    "reply": "39fe8b33b9015565/8927"
+  },
+  "render full: brief header": {
+    "reply": "02eafbd89936ffe1/1455"
+  },
+  "render full: brief header with seqs": {
+    "reply": "207b43f99c063725/2254"
+  },
+  "render full: every arm of an input, time marks with and without the day": {
+    "reply": "bae8780a63f1faab/2275"
+  },
+  "render full: every kind, an unsent say, an insight, act names, a system line": {
+    "reply": "30164856da40d0a2/1566"
+  },
+  "render full: seqs on every line": {
+    "reply": "9efeb3e62be4b4b2/1711"
+  },
+  "render full: sync-only options do nothing in full mode (same text as render full: an explicit full mode wins over the fold flag: pins the path)": {
+    "reply": "39fe8b33b9015565/8927"
+  },
+  "render full: with viewer helper-b its own report is whole and the others are cut": {
+    "reply": "6d881028e991e8c1/3800"
+  },
+  "render full: with viewer main a report of another owner over 200 characters is cut, one with no owner (main's) is not": {
+    "reply": "13a8bf676b9e149e/3345"
+  },
+  "render full: without a viewer no helper report is cut by the helper rule": {
+    "reply": "ceedd5a8287f18ed/3986"
+  },
+  "render links: every relation, one the code does not know, and the fifth link cut": {
+    "reply": "f3353f47b02acb34/768"
+  },
+  "render marks: a fresh state marks the first line, then every half hour, and the day when it changed": {
+    "reply": "1342f4df2f94f4f3/924"
+  },
+  "render marks: a start state that marked the evening before": {
+    "reply": "22343a52081f45e4/529"
+  },
+  "render marks: a time zone with a different day line": {
+    "reply": "cfb6591971910547/930"
+  },
+  "render marks: the same state continued across two renders, and a fresh state for the second": {
+    "reply": "732afc9a079214c4/1775"
+  },
+  "render overflow: a keep event stays past maxEvents": {
+    "reply": "d059b68b6376aa6d/927"
+  },
+  "render overflow: a small budget moves events out": {
+    "reply": "76aa00c8f9176e19/383"
+  },
+  "render overflow: a small budget moves events out, overflowRoom reserved": {
+    "reply": "5da714c2c24aaeef/358"
+  },
+  "render overflow: events past maxEvents are listed by title": {
+    "reply": "d0aa381f5732bc50/724"
+  },
+  "render overflow: keepOrder leaves importance 5 where it is": {
+    "reply": "5865d69570c63184/1015"
+  },
+  "render overflow: overflowRoom fixes the line and cuts the titles": {
+    "reply": "c082ed1cd1065ebf/625"
+  },
+  "render overflow: overflowRoom with nothing to overflow": {
+    "reply": "c880b2417814c141/761"
+  },
+  "render overflow: the list is cut when the room is small": {
+    "reply": "d3f4c07b3a583ae7/272"
+  },
+  "render overflow: without keepOrder importance 5 goes first": {
+    "reply": "7cc2e896d81e85e1/1015"
+  },
+  "render sync: a helper report of another part is cut for its viewer": {
+    "reply": "2f14573eb98ec4e2/3411"
+  },
+  "render sync: an explicit sync mode wins over the fold flag": {
+    "reply": "653fe4aca23d7045/6131"
+  },
+  "render sync: brief header": {
+    "reply": "de9666d98f4f1a1a/5954"
+  },
+  "render sync: fullFor without a viewer": {
+    "reply": "8801b45da0afb4b1/6777"
+  },
+  "render sync: kinds, an unsent say, act names and a system line": {
+    "reply": "d2d7ce6c294624dc/1624"
+  },
+  "render sync: no viewer (same text as render sync: an explicit sync mode wins over the fold flag: pins the path)": {
+    "reply": "653fe4aca23d7045/6131"
+  },
+  "render sync: viewer main (same text as render sync: an explicit sync mode wins over the fold flag: pins the path)": {
+    "reply": "653fe4aca23d7045/6131"
+  },
+  "render sync: viewer main with thinkChars": {
+    "reply": "43e856b86c1dd552/5129"
+  },
+  "render sync: viewer main, fullFor another part, thinkChars and seqs": {
+    "reply": "f0a04e3ee0bf9993/7996"
+  },
+  "render: no entries": {
+    "reply": "e3b0c44298fc1c14/0"
+  },
+  "render: only an unsent mark leaves nothing to say": {
+    "reply": "4f53cda18c2baa0c/2"
+  },
+  "reverse: a name nobody has": {
+    "reply": "84e7e85bf10fd96c/30"
+  },
+  "reverse: a person in a few events, one without an end day": {
+    "reply": "066dc0d5df98fa7f/503"
+  },
+  "reverse: a person in exactly forty events": {
+    "reply": "1de6650416d9f0cc/5817"
+  },
+  "reverse: a person in no event": {
+    "reply": "7f2e7c8492ece29a/42"
+  },
+  "reverse: a person in over forty events, the rest counted": {
+    "reply": "13d26ecc63dc3724/5836"
+  },
+  "reverse: an event nobody has": {
+    "reply": "9667ca6507899df7/21"
+  },
+  "reverse: an event with all four roles, one the code does not know, a person only in the entries, two links": {
+    "reply": "1a52b43ecfda3ed0/255"
+  },
+  "reverse: an event with entities, without links": {
+    "reply": "d1eeaf49240d5478/98"
+  },
+  "reverse: an event with neither": {
+    "reply": "4bc2c88c50c61681/89"
+  },
+  "reverse: an event without entities, with a link": {
+    "reply": "614c091848c5f007/112"
+  },
+  "saidNote: a line over 80 characters is cut with an ellipsis, 80 is not, and a promise over 80 is cut without one": {
+    "reply": "2d0e967dd74d8746/1249"
+  },
+  "saidNote: a line still being sent is marked and explained": {
+    "reply": "0e59e39c5c3abbc7/331"
+  },
+  "saidNote: a promise nothing came after is listed": {
+    "reply": "76e8a4962a868645/397"
+  },
+  "saidNote: a real message from a later send settles the promise, so it is not listed": {
+    "reply": "7e9f17bea680c442/258"
+  },
+  "saidNote: a sticker, a short line, another promise or a bubble of the same send do not settle it": {
+    "reply": "cd643fa7c5a1a447/1794"
+  },
+  "saidNote: blank lines are left out of the quotes": {
+    "reply": "5c94f28a19d25866/156"
+  },
+  "saidNote: every wording of a promise (first six)": {
+    "reply": "e6bf3dbc375193f6/565"
+  },
+  "saidNote: nothing said in the last two hours": {
+    "reply": "84f6b7190afac656/11"
+  },
+  "saidNote: only the last 14 lines are quoted and only the last 6 promises listed": {
+    "reply": "4d13c33e2e9d552b/1402"
+  },
+  "saidNote: the other two wordings of a promise": {
+    "reply": "0fb67f949c8176e0/415"
+  },
+  "sentBody: a name with a bracket inside keeps its whole head": {
+    "reply": "3211ca6a1108142f/30"
+  },
+  "sentBody: a text without the head is returned as is": {
+    "reply": "a48f55f406275c6a/54"
+  },
+  "sentBody: the head of a sent line is removed": {
+    "reply": "c0183e0a7172dfef/30"
+  },
+  "timeLine: 03:30 is the small hours": {
+    "reply": "7f109f2a4af80e0f/49"
+  },
+  "timeLine: 08:30 is morning": {
+    "reply": "fcda69fb4b377437/49"
+  },
+  "timeLine: 12:30 is noon": {
+    "reply": "ed77dfdfd2426079/50"
+  },
+  "timeLine: 15:30 is afternoon": {
+    "reply": "119e94ae5b5e3596/50"
+  },
+  "timeLine: 20:30 is evening": {
+    "reply": "ceab672241e0a7e3/50"
+  },
+  "timeLine: 23:30 is late night": {
+    "reply": "1efa07c448173f2c/50"
+  },
+  "timeLine: the edge hours of every part of the day, midnight included": {
+    "reply": "e46baf0bb09d6f41/653"
+  },
+  "timeLine: the time zone decides the hour and the day": {
+    "reply": "cd73518076248b1d/151"
+  },
+  "truncate: a longer text is cut and says the full length and the number": {
+    "reply": "20ba42c7648b53dd/142"
+  },
+  "truncate: a short text is returned as is": {
+    "reply": "a53d055d13ca7587/18"
+  },
+  "truncate: a text of exactly the limit is returned as is": {
+    "reply": "33b723da47976ac4/84"
+  }
+}

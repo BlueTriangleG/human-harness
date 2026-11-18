@@ -1,0 +1,3 @@
+#!/bin/sh
+# sticker: the role's sticker library (add, browse, find, edit…), under this module's own environment
+exec "$HH_BIN" modules run stickers sticker.py "$@"

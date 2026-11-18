@@ -1,0 +1,3 @@
+#!/bin/sh
+# dispatch <dir> <what> -- <command…>: run a background job and wake the role when it ends
+exec "$HH_BIN" modules run helpers dispatch.sh "$@"

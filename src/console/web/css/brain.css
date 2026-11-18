@@ -1,0 +1,57 @@
+/* 大脑 */
+#brain { display: block; width: 100%; height: auto; }
+#brain .tissue { fill: var(--tissue); }
+#brain .sulcus { fill: none; stroke: var(--sulcus); stroke-width: 1.3; stroke-linecap: round; pointer-events: none; }
+#brain .outline { fill: none; stroke: var(--faint); stroke-width: 1.6; pointer-events: none; }
+#brain .region { cursor: pointer; outline: none; }
+#brain .shape {
+  fill: var(--lane); fill-opacity: calc(0.13 + var(--act, 0) * 0.62);
+  stroke: var(--panel); stroke-width: 1.5;
+  transition: fill-opacity .9s ease-out, opacity .2s;
+}
+#brain .region:hover .shape { fill-opacity: calc(0.28 + var(--act, 0) * 0.62); }
+#brain .region:focus-visible .shape { stroke: var(--ink); stroke-width: 2.5; }
+#brain .region.flash .shape { fill-opacity: .92; transition: none; }
+#brain .region.busy .shape { stroke: var(--lane); stroke-width: 3.5; animation: breathe 1.4s ease-in-out infinite; }
+#brain .region.closed .shape { fill-opacity: .06; }
+#brain .deep .shape { stroke: var(--lane); stroke-dasharray: 4 3; stroke-width: 1.4; }
+#brain .region.sel .shape { stroke: var(--ink); stroke-width: 2.8; stroke-dasharray: none; fill-opacity: calc(0.34 + var(--act, 0) * 0.6); }
+#brain.picking .region:not(.sel) { opacity: .5; }
+@keyframes breathe { 50% { stroke-opacity: .2; } }
+#brain .lbl { font: 600 13px var(--sans); fill: var(--ink); text-anchor: middle; pointer-events: none; }
+#brain .lbl.big { font-size: 21px; }
+#brain .lbl.num { font-size: 19px; }
+#brain .lbl.sm { font-size: var(--fs-xs); font-weight: 500; }
+#brain .lbl.group { font-size: var(--fs-m); fill: var(--muted); font-weight: 500; paint-order: stroke; stroke: var(--panel); stroke-width: 3px; stroke-linejoin: round; stroke-opacity: .8; }   /* 这几个字压在分界线上：垫一圈底色 */
+#others { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.rchip { border: 1px solid var(--grid); border-radius: 999px; background: none; padding: 1px 10px; font-size: var(--fs-s); cursor: pointer; color: var(--lane); }
+.rchip.sel { border-color: var(--ink); color: var(--ink); }
+
+/* 选中的脑区 */
+#card { border-top: 1px solid var(--grid); margin-top: 8px; padding-top: 10px; }
+#card h3 { color: var(--lane); display: flex; align-items: baseline; gap: 10px; }
+#card h3 small { font-size: var(--fs-s); font-weight: 400; color: var(--muted); }
+#card .what { margin: 2px 0 8px; color: var(--muted); font-size: var(--fs-m); }
+#card .facts { display: flex; flex-wrap: wrap; gap: 2px 16px; font-size: var(--fs-sm); }
+#card .facts span { color: var(--muted); }
+#card .facts b { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+#card .now { margin-top: 10px; font-size: var(--fs-m); }
+#card .now .k { color: var(--muted); font-size: var(--fs-s); margin-right: 6px; }
+#card .now .v { overflow-wrap: anywhere; }
+#card .now .v.mono { font-family: var(--mono); font-size: var(--fs-s); }
+#card .busyline { color: var(--lane); font-weight: 600; font-size: var(--fs-m); }
+
+/* 活动条 */
+#strip { margin-top: 16px; }
+.lane { display: grid; grid-template-columns: 72px minmax(0, 1fr); align-items: end; gap: 8px; height: 20px; cursor: pointer; border: none; background: none; padding: 0; width: 100%; text-align: left; }
+.lane span { font-size: var(--fs-s); color: var(--muted); align-self: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lane.sel span { color: var(--ink); font-weight: 600; }
+.trace {
+  display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 1px; height: 16px; align-items: end;
+  background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px);
+  background-size: calc(100% / 6) 100%;
+}
+.trace b { display: block; background: var(--lane); border-radius: 1px 1px 0 0; }
+.axis { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 8px; font-size: var(--fs-xxs); color: var(--faint); }
+.axis div { display: flex; justify-content: space-between; }
+

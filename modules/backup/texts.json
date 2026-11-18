@@ -1,0 +1,5 @@
+{
+  "wizardTitle": "Off-machine backup",
+  "wizardAbout": "Keeps a copy of its files somewhere other than this Mac.",
+  "wizardHow": "Set up its backup job once; its manual says how."
+}

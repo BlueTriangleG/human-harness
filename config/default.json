@@ -1,0 +1,140 @@
+{
+  "id": "",
+  "names": { "me": "", "owner": "", "notMe": [] },
+  "writingLanguage": "",
+  "personaFiles": ["IDENTITY.md", "SOUL.md", "USER.md", "MEMORY.md", "AGENTS.md"],
+  "models": {
+    "opus": "claude-opus-5-5",
+    "sonnet": "claude-sonnet-5-5",
+    "haiku": "claude-haiku-5-5"
+  },
+  "limits": {
+    "maxContextTokens": 600000,
+    "pageTokens": 300000,
+    "sleepyAtTokens": 150000,
+    "mustSleepAtTokens": 200000,
+    "idleMinutesBeforeSleep": 20,
+    "maxItemChars": 1500,
+    "rotationTailTokens": 20000,
+    "pageTurnFork": true,
+    "syncThinkChars": 120
+  },
+  "schedule": {
+    "focusSlots": [
+      "07:30",
+      "09:00",
+      "13:00",
+      "18:00"
+    ],
+    "focusMinutes": 30,
+    "nightSleep": "03:00",
+    "wanderEveryMinutes": 45,
+    "focusQuotaWeekMax": 90,
+    "remindEvidenceTools": [
+      "Bash",
+      "hands"
+    ]
+  },
+  "regions": {
+    "sideThreads": 2,
+    "perception": []
+  },
+  "kernel": {
+    "permissionMode": "bypassPermissions",
+    "allowedTools": [],
+    "builtinTools": ["Agent", "Bash", "Edit", "EnterWorktree", "ExitWorktree", "ListAgents", "Monitor", "Read", "SendMessage", "Skill", "TaskStop", "ToolSearch", "WebFetch", "WebSearch", "Write"],
+    "claudeExecutable": null,
+    "env": {},
+    "mcpServers": {}
+  },
+  "browser": {
+    "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "userDataDir": "browser"
+  },
+  "tools": {
+    "sendDryRun": true,
+    "python": "python3",
+    "wordListFile": "",
+    "extra": []
+  },
+  "channels": {},
+  "skills": {
+    "roots": [
+      "skills"
+    ],
+    "names": [],
+    "discover": "skills",
+    "exclude": []
+  },
+  "memory": {
+    "events": {
+      "enabled": true,
+      "inject": true,
+      "midterm": true,
+      "recognize": true
+    }
+  },
+  "learning": {
+    "enabled": false,
+    "inject": false,
+    "shelf": false,
+    "root": "skills",
+    "threshold": 0.7,
+    "askThreshold": 0.5,
+    "maxPages": 3,
+    "kWake": 10,
+    "kTask": 15,
+    "timeoutMs": 800,
+    "dailyUsd": 1,
+    "helperSkipBooks": [],
+    "remountTokens": 50000
+  },
+  "sleep": {
+    "flowFile": "scripts/sleep_flow/flow.json",
+    "commonFile": "scripts/sleep_flow/common.md",
+    "soulFile": "SOUL.md",
+    "lastGood": "sleep-flow.last-good.json",
+    "watchdogHours": 5,
+    "auditMinutes": 20,
+    "unitsPerPct": 5400000,
+    "weights": { "input": 1, "cacheRead": 0.1, "cacheWrite": 1.25, "output": 5, "model": { "opus": 1, "sonnet": 0.6, "haiku": 0.2 } },
+    "examScratch": "sleep-exam",
+    "examMinFree": 3,
+    "workDir": "sleep"
+  },
+  "parallel": {
+    "thresholdMin": 5,
+    "look": {
+      "maxLooks": 8,
+      "overFactor": 4,
+      "timeoutMin": 15
+    },
+    "busyChat": {
+      "windowMin": 15,
+      "count": 3,
+      "exchangeMin": 5
+    },
+    "quotaWeekMax": 97,
+    "urgentNote": {
+      "minGapMin": 10
+    }
+  },
+  "senses": {
+    "sources": { "chat": [], "public": [], "probe": [], "always": [], "hands": [] },
+    "logFile": ""
+  },
+  "gate": {
+    "enabled": true,
+    "digest": false,
+    "rulesFile": "gate.json",
+    "batchMax": 20,
+    "judgeTimeoutMs": 60000,
+    "dailyUnits": 2000000,
+    "convContext": 8,
+    "convContextMinutes": 120,
+    "workMaxAgeHours": 24,
+    "attachMax": 3,
+    "defaultWant": "",
+    "card": { "soul": [], "midterm": "exports/midterm.md", "midtermMaxChars": 0 }
+  }
+}

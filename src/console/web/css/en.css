@@ -1,0 +1,33 @@
+/* 英文界面的版式：英文的词比中文长。这里的每一条都只在 <html lang="en"> 下生效，中文界面的宽度、坐标、字号一处不动。 */
+/* 时间线：谁、做了什么那两列放宽（Consolidation、Received 这些装不进给两个汉字留的宽度） */
+html:lang(en) .e { grid-template-columns: 66px 98px 58px minmax(0, 1fr); }
+html:lang(en) #drawer .e { grid-template-columns: 66px 58px minmax(0, 1fr); }
+html:lang(en) #search { width: 170px; }
+/* 最近 60 分钟：脑区名那一列 */
+html:lang(en) .lane, html:lang(en) .axis { grid-template-columns: 96px minmax(0, 1fr); }
+/* 大脑图：字缩一号，位置不动 */
+html:lang(en) #brain .lbl { font-size: var(--fs-sm); paint-order: stroke; stroke: var(--panel); stroke-width: 2.5px; stroke-linejoin: round; stroke-opacity: .75; }
+html:lang(en) #brain .lbl.big { font-size: 21px; }
+html:lang(en) #brain.mem .lbl.big { font-size: var(--fs-xl); }
+html:lang(en) #brain .lbl.num { font-size: 19px; }
+html:lang(en) #brain .lbl.sm { font-size: var(--fs-s); }
+html:lang(en) #brain.mem .lbl.sm { font-size: 10px; }
+html:lang(en) #brain .lbl.group { font-size: var(--fs-sm); }
+/* 模型输入页：每一行左边的名字那一列（Claude Code: introduction 这种）放宽 */
+@media (min-width: 1101px) { html:lang(en) .prow { grid-template-columns: 64px 210px minmax(0, 1fr) 72px; } }
+/* 记忆地图：「Always in context」比「前缀」宽得多，后面那句往右让 */
+html:lang(en) #memmap .mnode[data-node="prefix"] .ns { transform: translateX(100px); }
+/* 大脑图上海马体那一块的字（Consolidation / Short-term memory）：往左上挪一点，不被皮层的边切掉 */
+html:lang(en) #brain .region.deep .lbl.sm { transform: translate(-26px, -7px); }
+@media (max-width: 820px) {
+  html:lang(en) .e, html:lang(en) #drawer .e { grid-template-columns: 52px 58px minmax(0, 1fr); }
+}
+/* 记忆地图：两个窄框（睡觉整理、慢记忆）的标题在英文下缩一号；连线旁的小字加一圈底色，压在线上也看得清 */
+html:lang(en) #memmap .mnode[data-node="sleep"] .nt, html:lang(en) #memmap .mnode[data-node="longterm"] .nt { font-size: var(--fs-s); }
+html:lang(en) #memmap .fl, html:lang(en) #memmap .tier { paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round; }
+/* 一页一页：这一页怎么结束的那行（→ system restart）在英文下可以折行 */
+html:lang(en) .pcol .pe { white-space: normal; }
+/* 闸门页「从哪来」那一列：英文按词折行，不从词中间断 */
+html:lang(en) .grow .gw { overflow-wrap: break-word; word-break: normal; hyphens: none; }
+/* 记忆地图左边两个框的标题（Incoming + thinking、Association & recall）缩一号 */
+html:lang(en) #memmap .mnode[data-node="sources"] .nt, html:lang(en) #memmap .mnode[data-node="recall"] .nt { font-size: var(--fs-sm); }

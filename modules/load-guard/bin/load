@@ -1,0 +1,3 @@
+#!/bin/sh
+# load: the load guard for the role's shell and for other modules' scripts, under this module's own environment
+exec "$HH_BIN" modules run load-guard load.py "$@"

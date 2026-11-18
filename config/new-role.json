@@ -1,0 +1,140 @@
+{
+  "_note": "What hh new writes into a new role's instance config on top of the framework's defaults (config/default.json stays as it is): all, then the role's language under lang. Values the first role tuned and every role should start with. gateRules is the starting rules file, written to the workspace at gate.rulesFile.",
+  "all": {
+    "schedule": {
+      "focusSlots": [],
+      "wanderEveryMinutes": 0
+    },
+    "learning": {
+      "enabled": true,
+      "inject": true,
+      "shelf": true,
+      "timeoutMs": 1500
+    },
+    "gate": {
+      "digest": true
+    }
+  },
+  "lang": {
+    "zh": {
+      "writingLanguage": "中文",
+      "memory": {
+        "promptFolds": [
+          {
+            "find": "stopped by a safety classifier",
+            "say": "（这一步当时没做成，先放着，别原样再来）",
+            "word": "那个检查"
+          },
+          {
+            "find": "safeguards stopped the response",
+            "say": "（这一步当时没做成，先放着，别原样再来）",
+            "word": "那个检查"
+          },
+          {
+            "find": "safeguards flagged this message",
+            "say": "（这一步当时没做成，先放着，别原样再来）",
+            "word": "那个检查"
+          },
+          {
+            "find": "安全检查在拦",
+            "say": "（这一步当时没做成，先放着，别原样再来）",
+            "word": "那个检查"
+          },
+          {
+            "find": "往外抄模型",
+            "say": "（这一步当时没做成，先放着，别原样再来）",
+            "word": "那个检查"
+          },
+          {
+            "find": "模型自带的那层安全检查",
+            "say": "（这一步当时没做成，先放着，别原样再来）",
+            "word": "那个检查"
+          },
+          {
+            "find": "安全分类器",
+            "say": "（这一步当时没做成，先放着，别原样再来）",
+            "word": "那个检查"
+          },
+          {
+            "find": "safety classifier",
+            "say": "（这一步当时没做成，先放着，别原样再来）",
+            "word": "那个检查"
+          }
+        ]
+      },
+      "outbound": {
+        "refuseLatinLines": true,
+        "tidyLines": true
+      }
+    },
+    "en": {
+      "writingLanguage": "English",
+      "memory": {
+        "promptFolds": [
+          {
+            "find": "stopped by a safety classifier",
+            "say": "(this step did not go through at the time; leave it, don't try it again as it was)",
+            "word": "that check"
+          },
+          {
+            "find": "safeguards stopped the response",
+            "say": "(this step did not go through at the time; leave it, don't try it again as it was)",
+            "word": "that check"
+          },
+          {
+            "find": "safeguards flagged this message",
+            "say": "(this step did not go through at the time; leave it, don't try it again as it was)",
+            "word": "that check"
+          },
+          {
+            "find": "safety classifier",
+            "say": "(this step did not go through at the time; leave it, don't try it again as it was)",
+            "word": "that check"
+          }
+        ]
+      }
+    }
+  },
+  "gateRules": {
+    "rules": [
+      {
+        "id": "quota",
+        "match": {
+          "src": [
+            "quota",
+            "budget",
+            "hh-quota"
+          ]
+        },
+        "action": "judge",
+        "when": "now",
+        "note": "quota and budget pulses: a quick look decides"
+      },
+      {
+        "id": "bili-public",
+        "match": {
+          "src": "bili"
+        },
+        "action": "judge",
+        "when": "now",
+        "note": "public replies and mentions on Bilibili"
+      },
+      {
+        "id": "phone-net",
+        "match": {
+          "src": "phone_net"
+        },
+        "action": "digest",
+        "note": "the phone's network: only in the day's digest"
+      },
+      {
+        "id": "watchdog",
+        "match": {
+          "src": "watchdog"
+        },
+        "action": "digest",
+        "note": "what the channel watchdog did: only in the day's digest"
+      }
+    ]
+  }
+}

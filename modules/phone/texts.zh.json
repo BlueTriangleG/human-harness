@@ -1,0 +1,11 @@
+{
+  "usage": "开安卓模拟器，等它开好再返回；已经开着就说一声。配置：avd（模拟器的名字）、port、memoryMb、window。\n有负载把关（load 命令找得到）就先 `load room phone` 腾地方，不够就不开。",
+  "noAvd": "还没配模拟器：实例配置里写 modules.phone.avd（手册 手机/phone 的「装模拟器」那页）",
+  "alreadyOn": "手机已经开着（{serial}）",
+  "booted": "开机了（{serial}）。刚开机系统很忙，等半分钟再点应用",
+  "exited": "模拟器自己退出了，没开起来，看 {log}",
+  "timedOut": "开机超时，看 {log}",
+  "wizardTitle": "安卓手机",
+  "wizardAbout": "一台它能用来开应用的安卓模拟器。",
+  "wizardHow": "要装 Android SDK 和模拟器，应用的登录由你来做。"
+}

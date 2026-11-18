@@ -1,0 +1,21 @@
+// 这台电脑：跑在这里的角色、点开的控制台、监视台（js/machine.js）
+export const machine = {
+  listLabel: "这台电脑上的角色",
+  frameTitle: "选中角色的控制台",
+  pick: "点左边一个角色，这里就是它的控制台。",
+  loadFailed: "读不出这台电脑上的角色：{error}",
+  roleSub: "{account} · {state}",
+  state: { down: "不答应", trouble: "今天出过事", asleep: "睡着", busy: "在忙", idle: "空着" },
+  noAnswer: "它的控制台（端口 {port}）没有答应。",
+  regions: "在忙的",
+  allIdle: "都空着",
+  quota: "这周额度",
+  load: "负载看守",
+  loadLevel: { ok: "正常", tight: "偏紧", danger: "危险" },
+  today: "今天",
+  todayCounts: "被停 {stops} · 被拒 {refusals} · 卡住 {blocks}",
+  lock: "重活锁",
+  lockFree: "空着",
+  lockStale: "{who}（拿锁的进程已经不在了）",
+  none: "没有",
+} as const;

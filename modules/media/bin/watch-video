@@ -1,0 +1,3 @@
+#!/bin/sh
+# watch-video <link> [--minutes N] [--no-audio] [--lang zh|en|ja|auto]: this module's watch.py, with its environment
+exec "$HH_BIN" modules run media watch.py "$@"

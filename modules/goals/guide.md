@@ -1,0 +1,1 @@
+Goals (`goals`): the role's own goals at four levels — dream, long, short, today (at most 3 active today). Each has a why and a done-when; `log` progress, `done` with evidence, `drop`, `block`. The wake-up brief shows them, and a goal left idle too long wakes the role.

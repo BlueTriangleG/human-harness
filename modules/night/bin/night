@@ -1,0 +1,5 @@
+#!/bin/sh
+# night <script> [args…]: one of the night's scripts (sleep_digest, sleep_apply, midterm, soul_build, memory_lint, recall,
+# hh_messages), as `night sleep_digest pending`, under this module's environment
+s=$1; shift
+exec "$HH_BIN" modules run night "$s.py" "$@"

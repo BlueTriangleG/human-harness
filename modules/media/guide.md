@@ -1,0 +1,1 @@
+Voice and video (media): `voice` turns a text into a voice message in the role's voice and returns the ogg path to send with message (asVoice=true); `watch_video` watches a Bilibili or YouTube video on this machine (info, bullet-comment peaks, a sheet of stills, the first minutes transcribed).

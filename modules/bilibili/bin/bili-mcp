@@ -1,0 +1,14 @@
+#!/bin/bash
+# The B站 MCP server (stdio), started by the kernel from the module's mcp declaration. Uses the module's own Python
+# environment, <module state>/venv (bin/setup.sh makes it).
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# the Python environment: BILI_VENV (HH resolves the config's venv, ModuleSpec.env), else <module state>/venv (bin/setup.sh)
+PY="${BILI_VENV:-${HH_MODULE_STATE:?}/venv}/bin/python"
+if [ ! -x "$PY" ]; then
+  echo "bili-mcp: 没有 $PY，先跑 $ROOT/bin/setup.sh" >&2
+  exit 1
+fi
+# ffmpeg 和本机转写在这些目录
+export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+export PYTHONUTF8=1
+exec "$PY" -E -s "$ROOT/server/main.py"

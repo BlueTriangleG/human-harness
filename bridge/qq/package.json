@@ -1,0 +1,12 @@
+{
+  "name": "hh-bridge-qq",
+  "private": true,
+  "type": "module",
+  "description": "HH's QQ bridge (bridge/qq/main.ts). Its dependencies live here, not in the repository's root package.json.",
+  "dependencies": {
+    "@tencent-connect/qqbot-nodejs": "1.0.4"
+  },
+  "overrides": {
+    "ws": "8.22.0"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "speechScript": "[\\u4e00-\\u9fff]",
+  "shareTag": "〔可说给{name}〕",
+  "guestHe": "他",
+  "guestHeSwap": [
+    [
+      "她",
+      "他"
+    ]
+  ],
+  "senseHeader": "[感官]",
+  "systemNotice": "[系统通知",
+  "lintSystemHeads": [
+    "[感官]",
+    "[系统",
+    "【只给你看】"
+  ],
+  "peopleTags": [
+    "新认识",
+    "记着",
+    "主会话那边"
+  ],
+  "tasteTag": "口味",
+  "sleepCommit": "睡眠整理",
+  "dayCommit": "白天",
+  "materialHead": "材料：",
+  "materialFull": "材料：完整",
+  "materialPartialHead": "材料：不完整",
+  "materialPartial": "材料：不完整（缺：{missing}）",
+  "materialSep": "；",
+  "pinTag": "〔不淡〕",
+  "lintHedge": "拿不准|存疑|待证实|待确认|待核实|待核|转述|据说|听说|猜|可能|也许|大概|应该是|应是|估计|不确定|没出处|不清楚|好像|似乎|疑似|未证实|待她说|待他说|或许|推测|推断|不知道是不是|[？?]",
+  "lintQuote": "「([^「」]{1,300})」|『([^『』]{1,300})』",
+  "lintUnits": "个月|小时|分钟|毫秒|秒|天|周|年|岁|集|期|条|个|次|字|页|张|篇|遍|号|轮|版|人|位|件|份|行|段|句|节|章|话|部|季|帧|倍|折|公里|km|GB|MB|KB|tokens?|点|播放|粉丝?|赞|评论|收藏|分",
+  "lintMoney": "刀|美元|美金|澳元|澳币|块钱|块|元钱|元(?![\\u4e00-\\u9fff])",
+  "lintDateStop": "个月|小时|分钟|秒|天|岁|集|期|条|个|次|字|页|张|篇|遍|轮|版|人|位|件|份|行|段|句|节|章|话|部|季|帧|倍|折|公里|km|点|分|万|千|刀|美元|美金|澳元|澳币|块|元",
+  "lintDateWords": "(?<!\\d)(\\d{1,2})月(\\d{1,2})[日号]",
+  "lintOrdinal": "第\\s?(\\d+)\\s?(集|期|天|版|轮|条|名|次|章|话|季|部|段|句|行)",
+  "lintLarge": "(\\d+(?:\\.\\d+)?)\\s?(万|千)(?=[字人次块元个粉播赞条]|token|[^\\u4e00-\\u9fff]|$)",
+  "lintWeekLabel": "第\\s?[\\d一二三四五六七八九十]+\\s?周\\s?(?:[（(][^）)]*[）)])?",
+  "lintLabelRef": "(?:\\.py|\\.md|\\.json|AGENTS|MEMORY|SOUL|skills?/|手册|规矩|目标\\s?g?\\d*|\\bg\\d+|标题|小节|节|字段|按钮|菜单|话题)\\s?(?:的|里的|里|叫)?\\s?$",
+  "lintVerb": "(?:说|问|回|答|讲|喊|骂|夸|吐槽|评论|留言|私信|追问|发来|原话|道|嘀咕|感叹|提醒|抱怨|吼|叮嘱|指出|补了一句|强调|嘱咐|反问|笑|吐槽说)",
+  "lintAdv": "(?:又|还|也|就|再|才|都|先|后来|当场|立刻|直接|马上|随口|专门|特意|一直|反复)?",
+  "lintClaim": "[（(]\\s*([^（）()\\s]{1,12}?)\\s?(?:本人)?\\s?(?:说的?|讲的?|自己说的?|原话)\\s*[）)]",
+  "lintSelfQuote": "「([^」\\n]{6,})」|“([^”\\n]{6,})”",
+  "lintBookkeeping": "[（(][^（）()]*睡眠整理[^（）()]*[）)]",
+  "lintWindowName": "\\d+\\s?(?:天|小时|日)窗口",
+  "lintVerbTail": "(?:了|过|着|道|一句|那句|到)?[^「」，,。]{0,6}$",
+  "lintTopicHead": "^([^：:「」。；]{1,40})[：:]",
+  "lintSentenceEnd": "[。；;]",
+  "lintNameTokensClaim": "[A-Za-z][A-Za-z0-9+]{1,}(?:\\s[A-Za-z0-9+]+)*",
+  "lintNameTokens": "[A-Za-z][A-Za-z0-9+]{2,}(?:\\s[A-Z0-9][A-Za-z0-9+]*)*",
+  "pronouns": {
+    "me": [
+      "我",
+      "你"
+    ],
+    "he": [
+      "他"
+    ],
+    "she": [
+      "她"
+    ],
+    "they": []
+  },
+  "wordEdge": "",
+  "lintSubjectAfter": "，,、：:）) 　被是",
+  "lintClauseEnds": "」。；;！!？?",
+  "ownWords": "原话",
+  "lintSourceWord": "依据",
+  "lintMonths": [],
+  "lintUnitsPlural": false,
+  "lintSelfLabels": [
+    "我",
+    "助手",
+    "assistant"
+  ],
+  "lintUserLabels": [
+    "用户",
+    "user"
+  ],
+  "digestQuote": "「([^「」]{4,160})」",
+  "digestSpeech": "(说|问|回|答|讲|喊|原话|：|:)",
+  "sentHead": "^（发给 [^）]*）",
+  "sentHeadName": "^[（(]发给\\s*([^）)]+?)[）)]\\s*",
+  "sentBare": [
+    "发给"
+  ],
+  "sleepMark": "去睡觉了",
+  "distillTodo": "待提炼",
+  "distillDone": "已提炼",
+  "stampWord": "写于",
+  "loopsOpen": "进行中",
+  "storyWeek": "^##\\s*第\\s*\\S+\\s*周[（(]\\s*(\\d{1,2})-(\\d{1,2})\\s*[–—\\-~～至到]+\\s*(\\d{1,2})-(\\d{1,2})\\s*[）)]",
+  "storyAmend": [
+    "更正",
+    "补记"
+  ],
+  "noteLesson": "教训",
+  "noteLessons": "教训",
+  "notePractices": "做法",
+  "noteCover": [
+    "简介",
+    "什么时候翻"
+  ],
+  "noteArchive": "归档",
+  "noteStatus": "没验证过|学会了|待验证|靠谱|不再用(?:（[^）]*）|\\([^)]*\\))?",
+  "noteDays": "犯的日子",
+  "reportUnsure": "拿不准",
+  "reportKeywords": "关键词",
+  "superseded": "以前.*?(?:→|->)",
+  "changelogBlock": "「([^」]+)」",
+  "memoryCopyStart": "<!-- MEMORY.md 副本：开始 -->",
+  "memoryCopyEnd": "<!-- MEMORY.md 副本：结束 -->"
+}

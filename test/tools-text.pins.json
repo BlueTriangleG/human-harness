@@ -1,0 +1,2358 @@
+{
+  "env": {
+    "node": "24.22.1",
+    "icu": "78.3",
+    "zod": "4.6.7"
+  },
+  "ack: a missing id refused by zod": {
+    "reply": "1b6d4bf3e98ae71f/119",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "ack: an id that is not hex": {
+    "reply": "98add5154d5d6138/55",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "ack: an id that is too long": {
+    "reply": "98add5154d5d6138/55",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "ack: an id that is too short": {
+    "reply": "98add5154d5d6138/55",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "ack: an id with spaces around it": {
+    "reply": "86709a51e3a39d1d/18",
+    "rest": "a9696533211fba6a/109"
+  },
+  "ack: the script says no": {
+    "reply": "f9f3388711c546c5/62",
+    "rest": "eb1cbe4be695e090/109"
+  },
+  "bridge: a message with a saved file, and a typed look-alike of the attachment line": {
+    "reply": "8780dbcf3501c7cb/50"
+  },
+  "bridge: a recipient the bridge cannot read": {
+    "reply": "e69459dd28e40ef3/60"
+  },
+  "bridge: no bridge is running": {
+    "reply": "17259976176ad076/96"
+  },
+  "bridge: the app is not connected": {
+    "reply": "449262fd0566a658/86"
+  },
+  "bridge: the app's own send throws": {
+    "reply": "d04ccf929b970128/50"
+  },
+  "bridge: the bridge takes the message and does not answer in time": {
+    "reply": "e08e87965402a08c/156"
+  },
+  "browser: a click on a ref that is gone says the page changed": {
+    "reply": "eb3a70d77e358942/75",
+    "rest": "6c6587722ab20d7c/87"
+  },
+  "browser: a long Error message is cut at 400 characters": {
+    "reply": "567ff5b1b8c50c2e/1180",
+    "rest": "474bd6966577e66c/88"
+  },
+  "browser: a navigation that is interrupted says the action probably worked": {
+    "reply": "3c94e86a113d3e20/230",
+    "rest": "7353223020c27c0c/168"
+  },
+  "browser: a tab that is not open": {
+    "reply": "aedf9e1a917e4e8c/70",
+    "rest": "c895eb969499ce61/35"
+  },
+  "browser: a thrown value that is not an Error": {
+    "reply": "e87224a3dcdf42ca/54",
+    "rest": "b2a6ce6a43a0ebb1/79"
+  },
+  "browser: an action outside the list reaches the closing line": {
+    "reply": "584c28320dd9b420/26",
+    "rest": "6abdb7d2307d4217/60"
+  },
+  "browser: an evaluate whose page went away says the action probably worked": {
+    "reply": "89aa0419008031b8/211",
+    "rest": "1532d942c5d2776d/182"
+  },
+  "browser: any other Error says 没做成 with its first line": {
+    "reply": "c1fef163a03d5d04/51",
+    "rest": "18a5bf8bb76495ed/93"
+  },
+  "browser: back": {
+    "reply": "50c76126633970ca/78",
+    "rest": "2316423aa88e8299/130"
+  },
+  "browser: click by coordinates": {
+    "reply": "055364710c31c7f8/82",
+    "rest": "1989fa9b7972e7b7/152"
+  },
+  "browser: click by ref": {
+    "reply": "055364710c31c7f8/82",
+    "rest": "24dcf251f0fe29d6/153"
+  },
+  "browser: click by ref with the ref= prefix": {
+    "reply": "055364710c31c7f8/82",
+    "rest": "a4c93b63cfa50e2e/153"
+  },
+  "browser: click by selector": {
+    "reply": "055364710c31c7f8/82",
+    "rest": "9bb672f4f9c24aa6/160"
+  },
+  "browser: click whose page-load wait times out still answers": {
+    "reply": "055364710c31c7f8/82",
+    "rest": "a4c93b63cfa50e2e/153"
+  },
+  "browser: click with nothing to click is refused": {
+    "reply": "26d7e521ef81b145/47",
+    "rest": "6abdb7d2307d4217/60"
+  },
+  "browser: click with x but no y is refused": {
+    "reply": "26d7e521ef81b145/47",
+    "rest": "6abdb7d2307d4217/60"
+  },
+  "browser: close a named tab that is not open": {
+    "reply": "0d6b616ddb2183de/70",
+    "rest": "a51fd83c64db9e01/35"
+  },
+  "browser: close a named tab when there is no current page": {
+    "reply": "293a8a559b1923dd/12",
+    "rest": "077f0e7dbfe8cee1/46"
+  },
+  "browser: close the current page": {
+    "reply": "dcc16329f1ae12e8/12",
+    "rest": "0d1cc6c4738d4984/45"
+  },
+  "browser: close with neither a tab nor a current page": {
+    "reply": "33119e3716c3a728/78",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "browser: evaluate returns a long string, default limit cuts it": {
+    "reply": "d66622d9af449bd8/24033",
+    "rest": "364d3849dc751096/188"
+  },
+  "browser: evaluate returns a string, cut by max": {
+    "reply": "f23c7522afa1a134/74",
+    "rest": "80a9002d16c87b0e/191"
+  },
+  "browser: evaluate returns an object, default limit": {
+    "reply": "bef9d4270f00f5bb/51",
+    "rest": "fd77d8cc9ad8371c/121"
+  },
+  "browser: evaluate returns nothing": {
+    "reply": "a7eea327ea1fe4bd/33",
+    "rest": "10b738776e7a81d9/174"
+  },
+  "browser: evaluate without js": {
+    "reply": "2881bf59fe3b852a/21",
+    "rest": "6abdb7d2307d4217/60"
+  },
+  "browser: focus": {
+    "reply": "1912291d95cc90d4/79",
+    "rest": "64e252d3cc7884d2/89"
+  },
+  "browser: navigate to a url": {
+    "reply": "4c37960ac8b59960/65",
+    "rest": "d2835e665ff81c01/164"
+  },
+  "browser: navigate without a url": {
+    "reply": "1ad3d704708186f8/22",
+    "rest": "7f042e7bf3729b68/60"
+  },
+  "browser: no answer for 120 seconds": {
+    "reply": "d287f67bdeac841e/135",
+    "rest": "49ca906b98ee7c98/29"
+  },
+  "browser: no browser in this context": {
+    "reply": "7f1a29ce1c2d745c/24",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "browser: open with a url": {
+    "reply": "8304947e51b7647b/81",
+    "rest": "bcca67f9cc3d473b/151"
+  },
+  "browser: open without a url": {
+    "reply": "49d73a5545bada32/46",
+    "rest": "83d237fe1672809d/43"
+  },
+  "browser: press a key": {
+    "reply": "e60d46f358ae5f60/18",
+    "rest": "a68b1d28deab7d4f/91"
+  },
+  "browser: press without a key": {
+    "reply": "daac6a675509fd05/19",
+    "rest": "6abdb7d2307d4217/60"
+  },
+  "browser: screenshot of one element": {
+    "reply": "4079b16c96785568/63",
+    "rest": "efe00436ebcde66b/164"
+  },
+  "browser: screenshot of one element, full asked (jpeg name, element wins)": {
+    "reply": "ade53d8d97232df4/64",
+    "rest": "8795f48c3690ebc5/167"
+  },
+  "browser: screenshot visible part as png": {
+    "reply": "4079b16c96785568/63",
+    "rest": "1e8b73570ebdaf13/158"
+  },
+  "browser: screenshot whole page as jpeg": {
+    "reply": "ade53d8d97232df4/64",
+    "rest": "342803f9c5cd050e/186"
+  },
+  "browser: snapshot cut by max": {
+    "reply": "30bb0cf751c5126f/149",
+    "rest": "15917cd926dc0d11/117"
+  },
+  "browser: snapshot with max larger than the text": {
+    "reply": "bc3c3c1922e62533/198",
+    "rest": "15917cd926dc0d11/117"
+  },
+  "browser: snapshot, default limit": {
+    "reply": "bc3c3c1922e62533/198",
+    "rest": "15917cd926dc0d11/117"
+  },
+  "browser: start when it was already open": {
+    "reply": "8ab1f8ed621757bc/27",
+    "rest": "0f665dc221ac1b17/29"
+  },
+  "browser: start when it was not open": {
+    "reply": "120d8305ee815564/21",
+    "rest": "0f665dc221ac1b17/29"
+  },
+  "browser: status when not running": {
+    "reply": "e44ec26093f5b266/48",
+    "rest": "49ca906b98ee7c98/29"
+  },
+  "browser: status when running, three tabs": {
+    "reply": "eec0875d1360f2b1/35",
+    "rest": "4c0839d69b7563de/42"
+  },
+  "browser: stop closes the browser": {
+    "reply": "78a60ad7d466b6fc/18",
+    "rest": "7c910fc6848fd304/50"
+  },
+  "browser: stop refused while one side thought is using it": {
+    "reply": "9fbe0dd4a44a80ee/139",
+    "rest": "0e92b6e13d9e0c9d/38"
+  },
+  "browser: stop refused while the front and a side thought are using it": {
+    "reply": "7ef268cb134e4d0a/157",
+    "rest": "96f38d4714117925/40"
+  },
+  "browser: stop when it was not open": {
+    "reply": "60340c2118f3f143/27",
+    "rest": "7c910fc6848fd304/50"
+  },
+  "browser: tabs marks the current one, titles empty / missing / given": {
+    "reply": "c34f16933dfcaad4/201",
+    "rest": "e3e859de57d4ff57/54"
+  },
+  "browser: tabs when this thought has no current page": {
+    "reply": "cf4849b79f1f9cb9/68",
+    "rest": "113b3c9deb876097/36"
+  },
+  "browser: tabs with nothing open": {
+    "reply": "e807137aea554d73/27",
+    "rest": "99e7af60e093974c/27"
+  },
+  "browser: type fills": {
+    "reply": "6a91826e5fd72b7a/12",
+    "rest": "22e1c15a6840c499/106"
+  },
+  "browser: type slowly": {
+    "reply": "6a91826e5fd72b7a/12",
+    "rest": "3a861ead0c75a7f6/127"
+  },
+  "browser: type slowly then submit": {
+    "reply": "3c43ab9cd8dc2474/90",
+    "rest": "e79a23694b737d04/175"
+  },
+  "browser: type then submit": {
+    "reply": "3c43ab9cd8dc2474/90",
+    "rest": "2abac547e3431160/146"
+  },
+  "browser: type with a target but no text": {
+    "reply": "19de9025f9f518f6/45",
+    "rest": "6abdb7d2307d4217/60"
+  },
+  "browser: type with no target": {
+    "reply": "19de9025f9f518f6/45",
+    "rest": "6abdb7d2307d4217/60"
+  },
+  "browser: upload to the first file box on the page": {
+    "reply": "b3f16fac4c446635/49",
+    "rest": "e6442ef0e0b6d256/137"
+  },
+  "browser: upload to the given box": {
+    "reply": "49c15a38769807c1/86",
+    "rest": "df6f6782276c789d/170"
+  },
+  "browser: upload with an empty file list": {
+    "reply": "2daf1295414e20c7/22",
+    "rest": "6abdb7d2307d4217/60"
+  },
+  "browser: upload without files": {
+    "reply": "2daf1295414e20c7/22",
+    "rest": "6abdb7d2307d4217/60"
+  },
+  "browser: wait for a time, ms over the cap": {
+    "reply": "80237f602378bed9/12",
+    "rest": "c6994096793df895/86"
+  },
+  "browser: wait for a time, with ms": {
+    "reply": "80237f602378bed9/12",
+    "rest": "f921a5b3400aef8f/85"
+  },
+  "browser: wait for text, default ms": {
+    "reply": "68567145ebf2317b/36",
+    "rest": "6b60ceddb0ef3b4f/112"
+  },
+  "browser: wait for text, ms over the cap": {
+    "reply": "1c1ba57b7315f76d/30",
+    "rest": "1cf55c52c180b6c8/106"
+  },
+  "browser: wait for text, with ms": {
+    "reply": "5346c61377677cc0/30",
+    "rest": "8cd84a63de3cf72d/105"
+  },
+  "browser: wait with ms 20000 times out at 35 seconds": {
+    "reply": "d02540fa963a8272/134",
+    "rest": "a1672d385267d7a7/33"
+  },
+  "browser: wait with neither text nor ms": {
+    "reply": "80237f602378bed9/12",
+    "rest": "6b788a497e9f6db1/85"
+  },
+  "browser: wait with no ms times out at 30 seconds": {
+    "reply": "16161e82f0f6d08a/134",
+    "rest": "a1672d385267d7a7/33"
+  },
+  "commit: a long git error is cut at 200 characters": {
+    "reply": "bc4602b0fed9838c/728",
+    "rest": "9d58ea558b2714e9/283"
+  },
+  "commit: git add and git commit both succeed": {
+    "reply": "ae283c1e2f6cd1f0/64",
+    "rest": "498f42b545d2b442/275"
+  },
+  "commit: git add fails": {
+    "reply": "e3f2dc07ac5f35a2/197",
+    "rest": "fc8e239734c2448e/120"
+  },
+  "commit: git commit fails": {
+    "reply": "b043757c5cf8d518/187",
+    "rest": "600f18194e2f7edb/291"
+  },
+  "computer: a close that throws a non-Error is only a warning": {
+    "reply": "e455057fa45ed02a/52",
+    "rest": "21235b60d10ddd1c/479"
+  },
+  "computer: a close the gateway refuses is logged, and the next error says so (until one succeeds)": {
+    "reply": "2f9457cee7a04b20/305",
+    "rest": "30403d1db73b9d93/1268"
+  },
+  "computer: a close with no answer is only a warning": {
+    "reply": "a2915f6351dc891f/92",
+    "rest": "6bb40ee7f40fcfcb/941"
+  },
+  "computer: a disconnected gateway is not asked to close": {
+    "reply": "e455057fa45ed02a/52",
+    "rest": "520c9cb092a329ca/189"
+  },
+  "computer: a long error is cut at 400 characters": {
+    "reply": "29edeb1ac85b620f/1276",
+    "rest": "9f5ba16931ca75f7/539"
+  },
+  "computer: a screenshot is saved to a file": {
+    "reply": "7cd97bd0750c6e2a/317",
+    "rest": "73a22732e6746a6b/515"
+  },
+  "computer: another Error says 没做成": {
+    "reply": "a2915f6351dc891f/92",
+    "rest": "a3ff43e54318703f/552"
+  },
+  "computer: executionId of a Chinese seed": {
+    "reply": "b19c31e56f781e79/36"
+  },
+  "computer: executionId of a path seed": {
+    "reply": "0a43c02e9084c5f1/36"
+  },
+  "computer: executionId of an empty seed": {
+    "reply": "f476a5a164ea39a0/36"
+  },
+  "computer: executionId of the default seed": {
+    "reply": "c444e87361de931c/36"
+  },
+  "computer: her own executionId is replaced, the other parameters ride along": {
+    "reply": "7ee4ebf40b17b969/53",
+    "rest": "18b20d2b5fc2485e/408"
+  },
+  "computer: images nested in arrays and objects, and values that stay as they are": {
+    "reply": "cc054f3bb692a105/9474",
+    "rest": "f1ae3331bc02f4bb/388"
+  },
+  "computer: no gateway": {
+    "reply": "b105b4a8a381f49f/56",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "computer: no node at all (the close still goes to the last node used)": {
+    "reply": "8fd169fb7c62dde4/119",
+    "rest": "b3d50ab90c72b91a/562"
+  },
+  "computer: no node has computer.act, the active node is used": {
+    "reply": "e455057fa45ed02a/52",
+    "rest": "8c2401f59e061bcb/364"
+  },
+  "computer: node.list fails with an Error, the close still goes to the last node": {
+    "reply": "f6b67dd33a9a1e9f/91",
+    "rest": "b3d50ab90c72b91a/562"
+  },
+  "computer: node.list throws a non-Error": {
+    "reply": "4039b01e21fd37dd/118",
+    "rest": "b3d50ab90c72b91a/562"
+  },
+  "computer: only an active node is listed": {
+    "reply": "e455057fa45ed02a/52",
+    "rest": "e9f4aef06e7b79d2/364"
+  },
+  "computer: something that is not an Error": {
+    "reply": "d5832a1a285c778d/124",
+    "rest": "9f5ba16931ca75f7/539"
+  },
+  "computer: the answer is cut at 6000 characters": {
+    "reply": "e9361ed18a84b9e4/18006",
+    "rest": "f80ebd1d20ebc487/377"
+  },
+  "computer: the computer is busy": {
+    "reply": "a820b3da77e85be7/164",
+    "rest": "d01963dd68b184b2/364"
+  },
+  "computer: the desktop is locked": {
+    "reply": "f722c31752299ebb/71",
+    "rest": "ea82aa58baf7364d/377"
+  },
+  "computer: the node that has computer.act is chosen": {
+    "reply": "e455057fa45ed02a/52",
+    "rest": "d01963dd68b184b2/364"
+  },
+  "def hh/ack": {
+    "reply": "bca2f95fe2524cbb/778"
+  },
+  "def hh/browser": {
+    "reply": "c5a1e8901e724673/3392"
+  },
+  "def hh/browser, its logins named by the role": {
+    "reply": "34cb878a810be64a/3389"
+  },
+  "def hh/computer": {
+    "reply": "42e34405229fb855/1311"
+  },
+  "def hh/done_with": {
+    "reply": "bbe675cb252ebf41/1608"
+  },
+  "def hh/hands": {
+    "reply": "d505f3404f4a0d20/1279"
+  },
+  "def hh/jot_down": {
+    "reply": "d56551d3c823a591/1217"
+  },
+  "def hh/message": {
+    "reply": "6fbcf5bd719d886a/2473"
+  },
+  "def hh/mull_over": {
+    "reply": "2e1319cd7f003e6a/777"
+  },
+  "def hh/on_it": {
+    "reply": "49783c5a1eee4aab/1597"
+  },
+  "def hh/people_i_know": {
+    "reply": "37ed19c9807cb4a7/2519"
+  },
+  "def hh/recall": {
+    "reply": "3138c5373e248931/1004"
+  },
+  "def hh/remind": {
+    "reply": "63332e28d4646ed5/1995"
+  },
+  "def hh/reminders": {
+    "reply": "7b5f779492650a1c/1215"
+  },
+  "def hh/set_bar": {
+    "reply": "1f4035a0d2d4fd60/1426"
+  },
+  "def hh/sticker": {
+    "reply": "b5337f7ccd562a06/2315"
+  },
+  "def hh/think_it_over": {
+    "reply": "dcd0463abd64d2ed/820"
+  },
+  "def hh/what_do_i_know": {
+    "reply": "e02d5345614594b6/923"
+  },
+  "def hh/what_reaches_me": {
+    "reply": "7b1e0699074319c6/3605"
+  },
+  "def mem-no-template/mem_person_set": {
+    "reply": "75724beb845f30cc/2691"
+  },
+  "def mem-no-template/mem_quote_pin": {
+    "reply": "2eba18167dc85985/3473"
+  },
+  "def mem/learn_check": {
+    "reply": "f8d0130d9d8d018f/1839"
+  },
+  "def mem/learn_worklist": {
+    "reply": "85d518e5fba9b487/614"
+  },
+  "def mem/like": {
+    "reply": "6d1de1b02abc52d7/5379"
+  },
+  "def mem/mem_day_done": {
+    "reply": "35b516b2f914613a/533"
+  },
+  "def mem/mem_entity_drop": {
+    "reply": "2f66ed81d57d514b/765"
+  },
+  "def mem/mem_entity_merge": {
+    "reply": "5372760928981903/926"
+  },
+  "def mem/mem_entity_tag": {
+    "reply": "882c2e6ebb4c5845/1502"
+  },
+  "def mem/mem_entity_upsert": {
+    "reply": "8ef53691f61884fd/3332"
+  },
+  "def mem/mem_entries_add": {
+    "reply": "3145572d228baba9/3174"
+  },
+  "def mem/mem_entry_add": {
+    "reply": "e3707a9ab61cc399/3043"
+  },
+  "def mem/mem_entry_correct": {
+    "reply": "4d817781a9ce0b30/1217"
+  },
+  "def mem/mem_event_create": {
+    "reply": "b51d628fec9e4f3f/6546"
+  },
+  "def mem/mem_event_update": {
+    "reply": "8365a706843be0f2/2916"
+  },
+  "def mem/mem_link": {
+    "reply": "d763129bd6a90ce3/1202"
+  },
+  "def mem/mem_merge": {
+    "reply": "cd37b87db21e1e7a/888"
+  },
+  "def mem/mem_person_set": {
+    "reply": "28d827518c1f0ccf/4787"
+  },
+  "def mem/mem_quote_pin": {
+    "reply": "77c0563ebb5987f7/4021"
+  },
+  "def mem/mem_retire": {
+    "reply": "373cb8f497c3c109/650"
+  },
+  "def mem/mem_split": {
+    "reply": "236bc8b55576eb08/7449"
+  },
+  "def mem/mem_supersede": {
+    "reply": "a17aa327662cee04/764"
+  },
+  "def mem/mem_unlink": {
+    "reply": "a10590fe07f07468/1022"
+  },
+  "def mem/mem_worklist": {
+    "reply": "f4b1509a8608a1a1/746"
+  },
+  "def mem/my_likes": {
+    "reply": "6d8bfb6428e8a1f7/908"
+  },
+  "def mem/recall_event": {
+    "reply": "136679954154ab77/948"
+  },
+  "def mem/recall_period": {
+    "reply": "3ee4fbb95135f86d/1211"
+  },
+  "def mem/recall_person": {
+    "reply": "f0adea0911023e08/897"
+  },
+  "def mem/remember": {
+    "reply": "a1db0a7cb158b33a/934"
+  },
+  "def module goals/goals": {
+    "reply": "903577f03a1271b2/748"
+  },
+  "def module media/voice": {
+    "reply": "30b32b9c40009d0f/1174"
+  },
+  "def module media/watch_video": {
+    "reply": "a7f21f4df07fd206/1779"
+  },
+  "def no-mem/learn_check": {
+    "reply": "f8d0130d9d8d018f/1839"
+  },
+  "def no-mem/learn_worklist": {
+    "reply": "85d518e5fba9b487/614"
+  },
+  "def scratch/checked": {
+    "reply": "45f681bc9dc024ca/1993"
+  },
+  "def scratch/looked_again": {
+    "reply": "45bb482922a6fdf4/804"
+  },
+  "deliver: a picture times out, the re-ask waits 150 seconds": {
+    "reply": "d261f20c9efc9452/48",
+    "rest": "b6179db2d56fe964/448"
+  },
+  "deliver: cannot connect once, the second try goes through": {
+    "reply": "d261f20c9efc9452/48",
+    "rest": "b7f6328e96ea1a5c/234"
+  },
+  "deliver: cannot connect twice (an Error)": {
+    "reply": "c3a13483f0942b5e/86",
+    "rest": "b7f6328e96ea1a5c/234"
+  },
+  "deliver: cannot connect twice (not an Error)": {
+    "reply": "11b64510a9c759ff/87",
+    "rest": "b7f6328e96ea1a5c/234"
+  },
+  "deliver: connection dropped": {
+    "reply": "0dacad943b4703dd/168",
+    "rest": "2cf84600c394d7fc/124"
+  },
+  "deliver: dry run": {
+    "reply": "4d13d0fca33db362/62",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "deliver: media only, no text": {
+    "reply": "d261f20c9efc9452/48",
+    "rest": "969768a5588661ff/130"
+  },
+  "deliver: no gateway": {
+    "reply": "3383691bfcfa53f7/57",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "deliver: refused by the gateway": {
+    "reply": "a76a1be2203f535a/72",
+    "rest": "2cf84600c394d7fc/124"
+  },
+  "deliver: sent, with every option": {
+    "reply": "d261f20c9efc9452/48",
+    "rest": "089e8a85869e52c4/243"
+  },
+  "deliver: the answer is empty": {
+    "reply": "e9ae5f6cd307caa5/20",
+    "rest": "2cf84600c394d7fc/124"
+  },
+  "deliver: the role has no channel at all": {
+    "reply": "81fae300c260a336/104",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "deliver: timeout, the re-ask cannot connect": {
+    "reply": "21478f38a2462af4/247",
+    "rest": "233123cea86d6b8f/320"
+  },
+  "deliver: timeout, the re-ask confirms (logged)": {
+    "reply": "d261f20c9efc9452/48",
+    "rest": "2073e00476868623/318"
+  },
+  "deliver: timeout, the re-ask confirms (no logger)": {
+    "reply": "d261f20c9efc9452/48",
+    "rest": "35acdc69130b71d0/238"
+  },
+  "deliver: timeout, the re-ask drops": {
+    "reply": "25bcb2fee1f3e798/259",
+    "rest": "233123cea86d6b8f/320"
+  },
+  "deliver: timeout, the re-ask is refused (logged)": {
+    "reply": "2aa312567046b6b8/99",
+    "rest": "bd1851b9f37ae04f/333"
+  },
+  "deliver: timeout, the re-ask is refused (no logger)": {
+    "reply": "2aa312567046b6b8/99",
+    "rest": "35acdc69130b71d0/238"
+  },
+  "deliver: timeout, the re-ask throws a non-Error": {
+    "reply": "555144439f6a2db5/248",
+    "rest": "233123cea86d6b8f/320"
+  },
+  "deliver: timeout, the re-ask times out (logged)": {
+    "reply": "3298598869082146/235",
+    "rest": "233123cea86d6b8f/320"
+  },
+  "deliver: timeout, the re-ask times out (no logger)": {
+    "reply": "3298598869082146/235",
+    "rest": "35acdc69130b71d0/238"
+  },
+  "direct: categoryMissing with an empty shelf": {
+    "reply": "aa916600c168ed96/33"
+  },
+  "direct: categoryMissing with the shelf's categories": {
+    "reply": "cba55a337b9849ba/81"
+  },
+  "direct: notesUnreadable": {
+    "reply": "7b2f984afd0f94d3/81"
+  },
+  "goals: a missing args list refused by zod": {
+    "reply": "a87ed20c8cec1a2b/122",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "goals: add whose why has no value": {
+    "reply": "195c7688d51ee146/76",
+    "rest": "2edd2224e625dec3/197"
+  },
+  "goals: add with a level and no title": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "5d6662d4f643823c/108"
+  },
+  "goals: add with a why": {
+    "reply": "9019d9c18c61cf62/115",
+    "rest": "a8589f86681ff40f/402"
+  },
+  "goals: add with nothing": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "6af89c3cdca24ce9/92"
+  },
+  "goals: add with the other options and an unknown one": {
+    "reply": "3645362611deaf4d/109",
+    "rest": "c4f39676c6915ea2/420"
+  },
+  "goals: add without a why": {
+    "reply": "b04f5b951fb89b7c/91",
+    "rest": "3f7090cc4dd9bcc7/238"
+  },
+  "goals: another subcommand does not look up notes": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "d8e8a4595e43b366/59"
+  },
+  "goals: block on a goal with an empty why": {
+    "reply": "550e71c9b9860a10/88",
+    "rest": "312b8b659cb81deb/203"
+  },
+  "goals: log looks up the goal's title and why": {
+    "reply": "bae0021dab1c9446/109",
+    "rest": "73b28226e24def8a/238"
+  },
+  "goals: log on a goal that is not in the file": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "04d867ce36b72124/146"
+  },
+  "goals: log on a goal with no title": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "554e8f4e12aa176c/144"
+  },
+  "goals: log with a goals.json that has no goals": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "50592adebd4121d1/144"
+  },
+  "goals: log with a goals.json that is not JSON": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "bac7f421545ccdb8/132"
+  },
+  "goals: log with no goals.json": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "8f3f4b86d6cff709/138"
+  },
+  "goals: ls does not look up notes": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "bd433c4ec9639a7c/52"
+  },
+  "goals: no way to look up notes": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "67ecd5566b4e4f26/102"
+  },
+  "goals: the notes lookup finds nothing": {
+    "reply": "9833ae110898e9fe/33",
+    "rest": "24e2e43aed61e80b/245"
+  },
+  "goals: the script fails, no notes": {
+    "reply": "a70e9bfd0b1d8849/43",
+    "rest": "766267b74969c2fe/105"
+  },
+  "hands: an action outside the list refused by zod": {
+    "reply": "5a42dd18666cee01/132",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "hands: ls": {
+    "reply": "4f3dbad2d25163dd/48",
+    "rest": "0333e117e8ac3321/107"
+  },
+  "hands: no output at all": {
+    "reply": "ba6ff29297aa3383/27",
+    "rest": "0333e117e8ac3321/107"
+  },
+  "hands: send with a model": {
+    "reply": "11ea08363a5b2ddf/25",
+    "rest": "117d544d718d8ba3/177"
+  },
+  "hands: send with an empty name": {
+    "reply": "5193e6cf0c44f9dc/28",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "hands: send with the default model": {
+    "reply": "11ea08363a5b2ddf/25",
+    "rest": "3a4314e8f5a6d7e1/171"
+  },
+  "hands: send without a model": {
+    "reply": "11ea08363a5b2ddf/25",
+    "rest": "754583d10994368e/157"
+  },
+  "hands: send without a name": {
+    "reply": "5193e6cf0c44f9dc/28",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "hands: send without a text": {
+    "reply": "5193e6cf0c44f9dc/28",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "hands: show": {
+    "reply": "9272aa592091bd35/37",
+    "rest": "a3d81c5ddccd2ec5/127"
+  },
+  "hands: stop": {
+    "reply": "11ea08363a5b2ddf/25",
+    "rest": "7b430bd6c953a97f/127"
+  },
+  "hands: the script fails": {
+    "reply": "2e5e343a1acf4969/46",
+    "rest": "74a8444d77b997b5/130"
+  },
+  "jot_down: a plain note": {
+    "reply": "25d13fdb4a477fb7/12",
+    "rest": "6ee5677fd46eaa0c/68"
+  },
+  "jot_down: an urgent note": {
+    "reply": "25d13fdb4a477fb7/12",
+    "rest": "86939024d2d29055/100"
+  },
+  "jot_down: urgent false is the same as plain": {
+    "reply": "25d13fdb4a477fb7/12",
+    "rest": "7234b786c4c4e1c9/53"
+  },
+  "know: a missing topic refused by zod": {
+    "reply": "9c684a55ea4ba8d7/133",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "know: a topic with a category": {
+    "reply": "2bf166193f5285f4/84",
+    "rest": "1fce5442351c4a17/73"
+  },
+  "know: a topic without a category": {
+    "reply": "a63203ebb74dcdfb/63",
+    "rest": "5305cc384fcd8680/69"
+  },
+  "know: an empty category counts as none": {
+    "reply": "7cb3b77d79fd63e1/42",
+    "rest": "ac20ce714700e6d4/48"
+  },
+  "know: no notebook to ask": {
+    "reply": "637fb793503e5330/39",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "mem: a store that throws a non-Error says 没做成": {
+    "reply": "3f13b0acfb5678d1/42"
+  },
+  "mem: a store that throws an Error says 没做成": {
+    "reply": "9206661812c243a1/34"
+  },
+  "mem: allowed list keeps only the named tools, in order of the table": {
+    "reply": "05b1c248eeb09014/37"
+  },
+  "mem: learn_check rejects a candidate of an unknown kind": {
+    "reply": "82437f40a91ff5ca/153"
+  },
+  "mem: learn_check that throws a non-Error": {
+    "reply": "165b4c67f9bdf896/45"
+  },
+  "mem: learn_check that throws an Error": {
+    "reply": "c7f11fec8bfb1738/66"
+  },
+  "mem: learn_check with the notebook": {
+    "reply": "9ab3a05823b59d7e/375"
+  },
+  "mem: learn_check with the notebook off": {
+    "reply": "8f5a5e54c0e260c9/39"
+  },
+  "mem: learn_check with the notebook off and no memory at all": {
+    "reply": "8f5a5e54c0e260c9/39"
+  },
+  "mem: learn_worklist that throws a non-Error at once": {
+    "reply": "165b4c67f9bdf896/45"
+  },
+  "mem: learn_worklist that throws an Error at once": {
+    "reply": "c7f11fec8bfb1738/66"
+  },
+  "mem: learn_worklist whose promise rejects with a non-Error": {
+    "reply": "8c05c4c227dad503/54"
+  },
+  "mem: learn_worklist whose promise rejects with an Error": {
+    "reply": "09d27c6ed866642a/54"
+  },
+  "mem: learn_worklist with the notebook": {
+    "reply": "930c79b1ba62270a/25"
+  },
+  "mem: learn_worklist with the notebook off": {
+    "reply": "a992bc67dc0a017e/51"
+  },
+  "mem: learn_worklist with the notebook off and no memory at all": {
+    "reply": "a992bc67dc0a017e/51"
+  },
+  "mem: like called without what reaches the handler with an empty name": {
+    "reply": "73f13d305e0fecb7/93"
+  },
+  "mem: like how=again": {
+    "reply": "b25077f40b96da41/146"
+  },
+  "mem: like how=drop": {
+    "reply": "2b5e89c6cb990bf5/126"
+  },
+  "mem: like how=feel": {
+    "reply": "77fc13d87e5d2d2e/145"
+  },
+  "mem: like how=fix": {
+    "reply": "b5cabd94f55e3e37/174"
+  },
+  "mem: like how=over": {
+    "reply": "504c152830cb77e8/145"
+  },
+  "mem: like in the hippocampus region": {
+    "reply": "c76fe8606b23856d/131"
+  },
+  "mem: like new=false is left out": {
+    "reply": "9990728289a07705/387"
+  },
+  "mem: like rejects an unknown how": {
+    "reply": "cd027df1d16e6fa4/154"
+  },
+  "mem: like with every argument": {
+    "reply": "7d33484de6a86bc4/398"
+  },
+  "mem: like with importance zero and no event": {
+    "reply": "b868aeb0580559cb/145"
+  },
+  "mem: mem_event_create rejects a missing title": {
+    "reply": "b718b61710a0f452/135"
+  },
+  "mem: mem_person_set by day (not writable) and the store accepts": {
+    "reply": "975d68cc5407065a/184"
+  },
+  "mem: mem_person_set by day and the store refuses with a non-Error": {
+    "reply": "31dbf7d15be8b277/45"
+  },
+  "mem: mem_person_set by day and the store refuses with an Error": {
+    "reply": "c4c08638bbe8aba5/36"
+  },
+  "mem: mem_person_set by night (writable) and the store accepts": {
+    "reply": "975d68cc5407065a/184"
+  },
+  "mem: mem_person_set by night and the store refuses with a non-Error": {
+    "reply": "7367f07526fdd86f/48"
+  },
+  "mem: mem_person_set by night and the store refuses with an Error": {
+    "reply": "b7a8218b1b91b55d/79"
+  },
+  "mem: mem_person_set without a template still answers": {
+    "reply": "975d68cc5407065a/184"
+  },
+  "mem: mem_quote_pin by day (not writable) and the store accepts": {
+    "reply": "71bec4291e4dc1fc/214"
+  },
+  "mem: mem_quote_pin by day and the store refuses with a non-Error": {
+    "reply": "31dbf7d15be8b277/45"
+  },
+  "mem: mem_quote_pin by day and the store refuses with an Error": {
+    "reply": "c4c08638bbe8aba5/36"
+  },
+  "mem: mem_quote_pin by night (writable) and the store accepts": {
+    "reply": "71bec4291e4dc1fc/214"
+  },
+  "mem: mem_quote_pin by night and the store refuses with a non-Error": {
+    "reply": "8fdffca3efb55d71/45"
+  },
+  "mem: mem_quote_pin by night and the store refuses with an Error": {
+    "reply": "e479c750a695759a/76"
+  },
+  "mem: mem_quote_pin rejects a missing quote": {
+    "reply": "38dec9345eca4e46/132"
+  },
+  "mem: mem_quote_pin without a template still answers": {
+    "reply": "71bec4291e4dc1fc/214"
+  },
+  "mem: mem_worklist": {
+    "reply": "1270fa6ecf4c4bbd/23"
+  },
+  "mem: my_likes page 3": {
+    "reply": "b0826bc3fe73d75a/11"
+  },
+  "mem: my_likes without a page": {
+    "reply": "f6a43b796ac6db8b/11"
+  },
+  "mem: recall_event in region audit-2026-11-04-people-1-1": {
+    "reply": "81ed8435aa50f72c/131"
+  },
+  "mem: recall_event in region coord-2026-11-04": {
+    "reply": "171e16ab5923311f/120"
+  },
+  "mem: recall_event in region deep": {
+    "reply": "9df4a238d8da1bfb/94"
+  },
+  "mem: recall_event in region exam": {
+    "reply": "a70e46ce540579f8/108"
+  },
+  "mem: recall_event in region exam-2026-11-04-3": {
+    "reply": "5ec98573321124e3/121"
+  },
+  "mem: recall_event in region hippocampus": {
+    "reply": "37d794e7248361e5/84"
+  },
+  "mem: recall_event in region importer": {
+    "reply": "515dc8a348b3a9ec/112"
+  },
+  "mem: recall_event in region lead-2026-11-04": {
+    "reply": "5ba06203d8ea8bf6/119"
+  },
+  "mem: recall_event in region main": {
+    "reply": "9473d9277af65760/77"
+  },
+  "mem: recall_event in region review-2026-11-04-a": {
+    "reply": "3982a6ca003cddc9/123"
+  },
+  "mem: recall_event in region sleep-2026-10-28-people-1": {
+    "reply": "546f63166bee60a3/98"
+  },
+  "mem: recall_event without a time range": {
+    "reply": "de7537ae97d549b9/49"
+  },
+  "mem: recall_period with a page only": {
+    "reply": "a2b236664c3333af/38"
+  },
+  "mem: recall_period with every filter": {
+    "reply": "4a9ca31e771c5240/76"
+  },
+  "mem: recall_period with importance zero": {
+    "reply": "6445806ae8229878/43"
+  },
+  "mem: recall_period with the time only": {
+    "reply": "8fe50865f8f3cb23/26"
+  },
+  "mem: recall_person in the importer region leaves no trace": {
+    "reply": "ed8c59a080f1389f/41"
+  },
+  "mem: recall_person with a count": {
+    "reply": "3051dae5d437d9b2/28"
+  },
+  "mem: recall_person without a count": {
+    "reply": "731072d4fd1ab5bb/31"
+  },
+  "mem: remember in the exam region leaves no trace": {
+    "reply": "3e35d9618db7d48a/90"
+  },
+  "mem: remember with a cue only": {
+    "reply": "2850f82b71d6a248/58"
+  },
+  "mem: remember with empty filters drops them": {
+    "reply": "728d0e45f44c0609/55"
+  },
+  "mem: remember with every filter, in the main line": {
+    "reply": "680dda97b30383ac/135"
+  },
+  "mem: the exported tool name lists": {
+    "reply": "061ff0072e6dd6a0/719"
+  },
+  "mem: without memory only the two learn tools can be had": {
+    "reply": "5e09c0a34e0c363f/32"
+  },
+  "mem: without memory the allowed list still filters": {
+    "reply": "e4c23da2aee21973/15"
+  },
+  "mem: write tool mem_day_done": {
+    "reply": "fde05f14c01c01fe/57"
+  },
+  "mem: write tool mem_entity_drop": {
+    "reply": "934227d1b820d2b6/138"
+  },
+  "mem: write tool mem_entity_merge": {
+    "reply": "1b59d6c0351312a0/102"
+  },
+  "mem: write tool mem_entity_tag": {
+    "reply": "b9e5a73819ef34da/117"
+  },
+  "mem: write tool mem_entity_upsert": {
+    "reply": "36ef86812fa819f5/243"
+  },
+  "mem: write tool mem_entries_add": {
+    "reply": "891260c639cfc3c8/337"
+  },
+  "mem: write tool mem_entry_add": {
+    "reply": "122b83cbed3ff18e/301"
+  },
+  "mem: write tool mem_entry_correct": {
+    "reply": "e022b6945611c0e7/193"
+  },
+  "mem: write tool mem_event_create": {
+    "reply": "531915cf076453e9/551"
+  },
+  "mem: write tool mem_event_update": {
+    "reply": "84183dc2de0575db/267"
+  },
+  "mem: write tool mem_link": {
+    "reply": "1c9e64d364416b2e/105"
+  },
+  "mem: write tool mem_merge": {
+    "reply": "d98265d1b0fc90bd/116"
+  },
+  "mem: write tool mem_person_set": {
+    "reply": "975d68cc5407065a/184"
+  },
+  "mem: write tool mem_quote_pin": {
+    "reply": "71bec4291e4dc1fc/214"
+  },
+  "mem: write tool mem_retire": {
+    "reply": "a4d7332f72c21282/76"
+  },
+  "mem: write tool mem_split": {
+    "reply": "c9205154c67091e7/246"
+  },
+  "mem: write tool mem_supersede": {
+    "reply": "f53b931cee23d8f3/96"
+  },
+  "mem: write tool mem_unlink": {
+    "reply": "2ae2ae8325346db6/104"
+  },
+  "mem: write tool mem_worklist": {
+    "reply": "1270fa6ecf4c4bbd/23"
+  },
+  "message: a channel the role is not connected to": {
+    "reply": "be79e39d3c042784/91",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "message: a long answer is cut at 500 characters": {
+    "reply": "9477f673dfb4d2e9/1436",
+    "rest": "bb69154a2bb1e224/143"
+  },
+  "message: a missing channel is refused by zod": {
+    "reply": "42ddd7c225a6dbff/128",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "message: a name with no number on that channel stays a name": {
+    "reply": "a51671c286a06232/24",
+    "rest": "22c5c8826f17fd22/130"
+  },
+  "message: a picture times out, the re-ask waits longer and confirms": {
+    "reply": "a51671c286a06232/24",
+    "rest": "19a2860aa51fda54/506"
+  },
+  "message: a picture without text": {
+    "reply": "a51671c286a06232/24",
+    "rest": "1769493404583bc8/195"
+  },
+  "message: a text to a person by name": {
+    "reply": "a51671c286a06232/24",
+    "rest": "1df91a0754596e6a/185"
+  },
+  "message: an empty text": {
+    "reply": "a51671c286a06232/24",
+    "rest": "58f3b2e3e8660a39/106"
+  },
+  "message: asVoice false is not sent on": {
+    "reply": "a51671c286a06232/24",
+    "rest": "c105ee82efbaf88b/202"
+  },
+  "message: dry run": {
+    "reply": "fe9402eb2825e3bb/42",
+    "rest": "a1f7a353ca672048/52"
+  },
+  "message: neither text nor picture": {
+    "reply": "a51671c286a06232/24",
+    "rest": "ea81171c2f725509/117"
+  },
+  "message: no channel, no message tool": {
+    "reply": "bb7f6e43496aeb19/186"
+  },
+  "message: no gateway connection": {
+    "reply": "9a8a4557571a920f/36",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "message: no name resolver, the target is sent as written": {
+    "reply": "a51671c286a06232/24",
+    "rest": "4425ca194acf937f/151"
+  },
+  "message: text, picture, reply and voice over QQ": {
+    "reply": "a51671c286a06232/24",
+    "rest": "bb8512b53a5a9ba1/316"
+  },
+  "message: the check before sending holds it back": {
+    "reply": "9c5843c4be2be2ec/63",
+    "rest": "a0e4c1c1e57fc75d/70"
+  },
+  "message: the check before sending lets it through": {
+    "reply": "a51671c286a06232/24",
+    "rest": "28a12ae3ed80de5d/302"
+  },
+  "message: the connection dropped, not re-asked": {
+    "reply": "9aac15905989fbc2/128",
+    "rest": "24ba451dbb7493c4/111"
+  },
+  "message: the gateway answers with nothing": {
+    "reply": "e3b0c44298fc1c14/0",
+    "rest": "720fb372efdb4946/143"
+  },
+  "message: the gateway names the conversation it recognised": {
+    "reply": "92d024fc77fbab21/66",
+    "rest": "676a18f6633d085e/207"
+  },
+  "message: the gateway refuses": {
+    "reply": "3269df18054a1dda/51",
+    "rest": "326e93766157d364/108"
+  },
+  "message: the role's own channels": {
+    "reply": "6674803e48e2fded/2517"
+  },
+  "message: timeout and the connection drops on the re-ask": {
+    "reply": "ffafdd445d02d430/217",
+    "rest": "969e9a0c95eb04d3/294"
+  },
+  "message: timeout and the re-ask cannot connect": {
+    "reply": "30966ff615a96e90/205",
+    "rest": "8443ca4882079286/288"
+  },
+  "message: timeout and the re-ask confirms": {
+    "reply": "a51671c286a06232/24",
+    "rest": "44446b29112035d6/342"
+  },
+  "message: timeout and the re-ask has no answer either": {
+    "reply": "388567a9d73fa125/193",
+    "rest": "5630bf871b0edcd7/300"
+  },
+  "message: timeout and the re-ask is refused": {
+    "reply": "1892b34da407f69e/78",
+    "rest": "3cdb4d9e3520a962/301"
+  },
+  "message: timeout, then something that is not an Error": {
+    "reply": "15438d0a627cae0c/206",
+    "rest": "f3d5bd432edd3930/306"
+  },
+  "module stickers: the weekly hunt reminder, a week after the last": {
+    "reply": "922d1d853e4c0328/250"
+  },
+  "names: every variant builds exactly the tools listed for it, in the listed order": {
+    "reply": "2689367b205c16ce/2"
+  },
+  "order hh": {
+    "reply": "7e063a6be336a51c/206"
+  },
+  "order mem": {
+    "reply": "7badc3241642a7e2/414"
+  },
+  "people: add a blank name": {
+    "reply": "3f70f17be9652d86/18",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add a name in letters, the key made from it": {
+    "reply": "e5b04bca0e7f114f/32",
+    "rest": "b86d8fcf7418e0bb/1353"
+  },
+  "people: add a name that is already in the list": {
+    "reply": "eacf31b6911d031d/66",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add a name that is not text": {
+    "reply": "3f70f17be9652d86/18",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add a number that is already in the list": {
+    "reply": "dc3010cc5714d38b/64",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add an entry the checks refuse": {
+    "reply": "aeac43f189b8986e/41",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add an entry without a name": {
+    "reply": "3f70f17be9652d86/18",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add the owner level": {
+    "reply": "9e87582eabea2f33/44",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add under a key that is taken": {
+    "reply": "856ffe1fa41caf59/92",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add under the owner's key": {
+    "reply": "3908312566032f26/44",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add under the owner's key after the owner was cut from the file": {
+    "reply": "3908312566032f26/44",
+    "rest": "89d9737b46cb5f51/719"
+  },
+  "people: add when git add fails": {
+    "reply": "c9f7a435a1ea7f7f/140",
+    "rest": "d910307f5e8c2e63/1202"
+  },
+  "people: add when the approved base cannot be read": {
+    "reply": "6728fef1083970b6/34",
+    "rest": "ca1bcc88842b1460/1355"
+  },
+  "people: add when the file cannot be read": {
+    "reply": "f0c404021239155e/166",
+    "rest": "49df29ff4d19bad4/66"
+  },
+  "people: add when the file cannot be written (an Error)": {
+    "reply": "3fb162f916186fac/36",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add when the file cannot be written (not an Error)": {
+    "reply": "1b66c0e5ad04738c/54",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add when the file is not an object": {
+    "reply": "781e18d513275cfc/115",
+    "rest": "8dbf6ff50d7de8b0/30"
+  },
+  "people: add when there is no file yet": {
+    "reply": "6728fef1083970b6/34",
+    "rest": "14141402418fabb0/394"
+  },
+  "people: add with a key that has a space": {
+    "reply": "3de73ab5c117f9c2/72",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add with a key that is too long": {
+    "reply": "d9040a92baede788/108",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add with a key that starts with _": {
+    "reply": "ac6b5018c388f7fd/71",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add with an empty key": {
+    "reply": "7e9253a33b2da6ee/79",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: add with handles and a number, the key made from the name": {
+    "reply": "5b1f03a9a98cdf81/114",
+    "rest": "f20787977808b472/1690"
+  },
+  "people: add with no ids and the guest level written out": {
+    "reply": "1aab26a0892724ec/30",
+    "rest": "25b1afb83bf3e2e2/1351"
+  },
+  "people: add with permissions above the guest level": {
+    "reply": "84d3116165b51955/126",
+    "rest": "b67c7c6e72716709/1577"
+  },
+  "people: add without an entry": {
+    "reply": "8126cd54619363ec/39",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: an action outside the list (no zod)": {
+    "reply": "dcf2d7767dd6be67/18",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: an action outside the list is refused by zod": {
+    "reply": "e731561b178bcccc/145",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: list": {
+    "reply": "40339b34c27dc2a8/345",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: list of an empty registry": {
+    "reply": "3141e8b93f7289e4/18",
+    "rest": "acba5bb5a31ede96/30"
+  },
+  "people: list with a privacy and a trust that are not text (no base)": {
+    "reply": "d4786c73a340cebd/214",
+    "rest": "c20bb5fed14e1c62/445"
+  },
+  "people: list with entries that have no name and no privacy": {
+    "reply": "24cdf05a9ae37c95/224",
+    "rest": "90201040778ed92d/397"
+  },
+  "people: no registry (an add is not tried)": {
+    "reply": "4b0d9f142ac7287c/51",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "people: no registry (list)": {
+    "reply": "4b0d9f142ac7287c/51",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "people: remove a key that is not there": {
+    "reply": "80e398209aecdf38/46",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: remove a key whose entry is not an object": {
+    "reply": "f278026356861f5b/45",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: remove a person": {
+    "reply": "71ce91a97b7ff162/45",
+    "rest": "59e715a69d754f5c/1130"
+  },
+  "people: remove a person, git commit fails": {
+    "reply": "d373ebaac566fdf6/168",
+    "rest": "e1460aa95f31e6c2/1130"
+  },
+  "people: remove the owner": {
+    "reply": "3908312566032f26/44",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: remove with a key that has a space": {
+    "reply": "9595bbfa8b4c95fb/71",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: remove without a key": {
+    "reply": "5a6afd33894929cc/20",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update a field with a long text": {
+    "reply": "6311669b15411e85/146",
+    "rest": "2ac393fe91be88f4/1712"
+  },
+  "people: update a key that is not there": {
+    "reply": "80e398209aecdf38/46",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update a key whose entry is not an object": {
+    "reply": "f278026356861f5b/45",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update a person who carries a number nobody approved": {
+    "reply": "2c2631c02f2ea0cc/116",
+    "rest": "d15c1fce2811b3a0/1012"
+  },
+  "people: update a platform name and a field": {
+    "reply": "48a461287f46ec3c/89",
+    "rest": "0f85f1831c65fe8a/1531"
+  },
+  "people: update an elevated person with a new number": {
+    "reply": "b153eb127f3c65c9/83",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update an elevated person with a number the base has": {
+    "reply": "9547178ff9251910/48",
+    "rest": "d13ce445c2b45952/1352"
+  },
+  "people: update by deleting a platform with null": {
+    "reply": "476c68ff82dfc9e8/53",
+    "rest": "f1b2a49a344807b0/1313"
+  },
+  "people: update by taking the unapproved number away": {
+    "reply": "5320052aaa99ebae/48",
+    "rest": "1c0de11db0b1440e/1352"
+  },
+  "people: update the owner": {
+    "reply": "3908312566032f26/44",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update to a name that is already in the list": {
+    "reply": "492b69b0d2ad7888/68",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update to a number that is another person's": {
+    "reply": "eb3defeb40ae9f5a/64",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update to the owner level": {
+    "reply": "9e87582eabea2f33/44",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update to what it already is": {
+    "reply": "b14202ffb4838a40/36",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update when the file cannot be read": {
+    "reply": "f0c404021239155e/166",
+    "rest": "49df29ff4d19bad4/66"
+  },
+  "people: update with a key that starts with _": {
+    "reply": "ccd7e182849b323d/70",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update with a permission that is cut and a real change": {
+    "reply": "4fc75e75fb8baa8c/90",
+    "rest": "01b12652560c04c7/1436"
+  },
+  "people: update with a permission that is cut and nothing else": {
+    "reply": "09f74c801cf08cb2/33",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update with an entry the checks refuse": {
+    "reply": "03e04bef2e2679cc/38",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update without a key": {
+    "reply": "13befac35c3e4023/113",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "people: update without an entry": {
+    "reply": "13befac35c3e4023/113",
+    "rest": "a5d244ce0b058a56/991"
+  },
+  "recall: around finds it, no quote library": {
+    "reply": "fddb68d36e38bd61/52",
+    "rest": "e7671d1e78a27846/45"
+  },
+  "recall: around finds it, quote library present": {
+    "reply": "fddb68d36e38bd61/52",
+    "rest": "e7671d1e78a27846/45"
+  },
+  "recall: around finds nothing, no quote library, the script answers": {
+    "reply": "e24eea39b87e3788/46",
+    "rest": "4ce87f6de8798b23/133"
+  },
+  "recall: around finds nothing, quote library present": {
+    "reply": "49e1403a237a0fb5/12",
+    "rest": "e7671d1e78a27846/45"
+  },
+  "recall: day finds both": {
+    "reply": "4649a2967ad5b1c6/135",
+    "rest": "adabe37071768d98/104"
+  },
+  "recall: day finds nothing": {
+    "reply": "2db7155a075f8501/24",
+    "rest": "12f0333403095fa1/83"
+  },
+  "recall: day finds only the central ones": {
+    "reply": "fddb68d36e38bd61/52",
+    "rest": "12f0333403095fa1/83"
+  },
+  "recall: day finds only the older ones": {
+    "reply": "bbe8ead876c34838/54",
+    "rest": "12f0333403095fa1/83"
+  },
+  "recall: day with no date": {
+    "reply": "2db7155a075f8501/24",
+    "rest": "b4793b8d77e49baf/60"
+  },
+  "recall: day with no way to read the older day": {
+    "reply": "2db7155a075f8501/24",
+    "rest": "333c43854bed73a5/47"
+  },
+  "recall: no quote library and the script fails": {
+    "reply": "9c79c78e0f309dd0/112",
+    "rest": "91c2a0bc8dcca512/159"
+  },
+  "recall: search ending in --who without a value": {
+    "reply": "63195298b5701245/63",
+    "rest": "168a29c00a7b5e70/88"
+  },
+  "recall: search finds both, older ones only asked for": {
+    "reply": "7647fc352c6cbb1a/144",
+    "rest": "f1d176fbc8c656bc/115"
+  },
+  "recall: search finds nothing": {
+    "reply": "9de5ca4b6a9b5601/76",
+    "rest": "aee47172dc2a50bb/80"
+  },
+  "recall: search finds nothing locally, no quote library, the script answers": {
+    "reply": "e24eea39b87e3788/46",
+    "rest": "67d6b2c75a836380/155"
+  },
+  "recall: search finds only the central ones": {
+    "reply": "fddb68d36e38bd61/52",
+    "rest": "a24f7af1d7c8ebcd/94"
+  },
+  "recall: search finds only the older ones": {
+    "reply": "63195298b5701245/63",
+    "rest": "aee47172dc2a50bb/80"
+  },
+  "recall: search with no keyword": {
+    "reply": "9de5ca4b6a9b5601/76",
+    "rest": "ecf8d272d8774b88/65"
+  },
+  "remind: a focus that loops": {
+    "reply": "c4884699fe71a97d/72",
+    "rest": "e8364a05dd890f62/119"
+  },
+  "remind: a focus with minutes": {
+    "reply": "bf3c6dd1c104efce/63",
+    "rest": "28802fbe741639e1/115"
+  },
+  "remind: a focus with the default 30 minutes": {
+    "reply": "20ef636ff2c36395/63",
+    "rest": "1667d095023ded82/115"
+  },
+  "remind: a loop shorter than 30 minutes": {
+    "reply": "e9feb8354e08e827/29",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "remind: a loop that cannot be read": {
+    "reply": "11f8852d876d6015/53",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "remind: a time that cannot be read": {
+    "reply": "a7281248aec95552/78",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "remind: already done today, but no way to record it": {
+    "reply": "3c1c3a2446b01a2c/127",
+    "rest": "15dad695ea48a76f/161"
+  },
+  "remind: an empty every is no loop": {
+    "reply": "cc50d37ecf9ae6f3/43",
+    "rest": "2a9c34394ce39c80/157"
+  },
+  "remind: daily in the small hours, already done today": {
+    "reply": "ea4add507abae6d0/98",
+    "rest": "816e4eb5b441e8c3/175"
+  },
+  "remind: daily in the small hours, first time still in the HH day": {
+    "reply": "fceb7cf6a8c2aa3c/126",
+    "rest": "ab2b541b9e1d7e18/161"
+  },
+  "remind: daily, already done today": {
+    "reply": "96641ce6b35272f9/99",
+    "rest": "383d9297f9b2361e/175"
+  },
+  "remind: daily, first time later today": {
+    "reply": "3c1c3a2446b01a2c/127",
+    "rest": "15dad695ea48a76f/161"
+  },
+  "remind: daily, first time tomorrow": {
+    "reply": "e55813f7d16ed789/57",
+    "rest": "a754f673b043c487/161"
+  },
+  "remind: every 2 hours, already done today": {
+    "reply": "474dfc4c637e0fb9/111",
+    "rest": "9cfaa93cff5a831a/174"
+  },
+  "remind: every 2 hours, first time today": {
+    "reply": "1a8827d227ea4e12/139",
+    "rest": "e4547edcc6b60d83/160"
+  },
+  "remind: every 45 minutes": {
+    "reply": "6a3aa718ad3900fd/140",
+    "rest": "9cc506ac80dbf766/160"
+  },
+  "remind: kind=remind spelled out": {
+    "reply": "cc50d37ecf9ae6f3/43",
+    "rest": "2a9c34394ce39c80/157"
+  },
+  "remind: minutes below 5 refused by zod": {
+    "reply": "9004109c8f30b5e8/113",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "remind: no time refused by zod": {
+    "reply": "606b0f965e71ec0c/124",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "remind: once, a full time": {
+    "reply": "418b7f58ec090f87/43",
+    "rest": "43f9a473a9761501/157"
+  },
+  "remind: once, in 40 minutes": {
+    "reply": "fc2a5abaf07f67c9/43",
+    "rest": "39a3c0feb47cc797/157"
+  },
+  "remind: once, in Melbourne's time zone": {
+    "reply": "1e05dcd5e2d57dfe/43",
+    "rest": "c7091e22cc81b3cb/157"
+  },
+  "remind: once, right now": {
+    "reply": "9e65f1afa92052dd/43",
+    "rest": "f2fff55d885b54ee/157"
+  },
+  "reminders: an action outside the list refused by zod": {
+    "reply": "fd97604b931135a7/131",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: cancel a long one (cut at 40 characters)": {
+    "reply": "ededa8040b074a57/142",
+    "rest": "c55002427e8b8966/28"
+  },
+  "reminders: cancel a number that is not there": {
+    "reply": "dcf3af7f9c3a8982/61",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: cancel a short one": {
+    "reply": "c0af90a7320074ea/70",
+    "rest": "75caa3ec1ca625b9/28"
+  },
+  "reminders: cancel one of the owner's focus": {
+    "reply": "d2526678276381d0/42",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: cancel one of the owner's reminders": {
+    "reply": "6b6ad62b16872d5e/42",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: cancel when the context cannot unschedule": {
+    "reply": "c0af90a7320074ea/70",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: cancel without a number": {
+    "reply": "46ac8c6859861496/50",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: done a number that is not there": {
+    "reply": "dcf3af7f9c3a8982/61",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: done on a daily one due later today": {
+    "reply": "bf797c481d4ff98a/77",
+    "rest": "ae846cb42d92bfba/28"
+  },
+  "reminders: done on a daily one that is not due today": {
+    "reply": "a719744a1ad08c00/92",
+    "rest": "ee794dc2fb4f53ec/28"
+  },
+  "reminders: done on a daily one when nothing can record it": {
+    "reply": "bf797c481d4ff98a/77",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: done on a daily one whose time has passed": {
+    "reply": "0c8b6fc6f18547ed/77",
+    "rest": "3841177cc6b5fce0/28"
+  },
+  "reminders: done on a focus": {
+    "reply": "a747d214e5b0b82b/127",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: done on a one-off": {
+    "reply": "41182ba6852e94ca/82",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: done on an every-2-hours one": {
+    "reply": "a6a478cbec39400c/83",
+    "rest": "6159f2979c1c1b49/28"
+  },
+  "reminders: done without a number": {
+    "reply": "b621112938aaaebb/56",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: ls in Melbourne's time zone": {
+    "reply": "cf3177d53a02362e/857",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: ls when the context cannot list": {
+    "reply": "11d415d57500f9e4/30",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: ls with every kind of item": {
+    "reply": "9b3380f0e67c7a30/857",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: ls with nothing scheduled": {
+    "reply": "11d415d57500f9e4/30",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "reminders: ls without a way to read when each was done": {
+    "reply": "98100b85c0ee342c/340",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "rules: add a rule": {
+    "reply": "ae283c1e2f6cd1f0/64",
+    "rest": "c16ee842fd81d652/1655"
+  },
+  "rules: add a rule at place 2": {
+    "reply": "2bf294ca86b532e6/64",
+    "rest": "3bd3801bc05876da/1655"
+  },
+  "rules: add a rule for the fixed sources only": {
+    "reply": "3fa87523e04f8c8f/92",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: add a rule the checks refuse": {
+    "reply": "b66407a270acc620/55",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: add a rule whose id is taken": {
+    "reply": "f86223efe6ea4543/55",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: add at a place that is too far": {
+    "reply": "cdd2955e5754731e/29",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: add when git add fails": {
+    "reply": "77142f5b7256422a/170",
+    "rest": "3096e4b935da5df8/1500"
+  },
+  "rules: add when git commit fails": {
+    "reply": "b043757c5cf8d518/187",
+    "rest": "e48372a34cd08b86/1655"
+  },
+  "rules: add when the file cannot be read": {
+    "reply": "b4cb31ac2105a448/166",
+    "rest": "49df29ff4d19bad4/66"
+  },
+  "rules: add when the file cannot be written (an Error)": {
+    "reply": "3fb162f916186fac/36",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: add when the file cannot be written (not an Error)": {
+    "reply": "1b66c0e5ad04738c/54",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: add when there is no rules file yet": {
+    "reply": "ae283c1e2f6cd1f0/64",
+    "rest": "38642175abcb98af/531"
+  },
+  "rules: add without a rule": {
+    "reply": "aa6ae9c3218b7c7b/94",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: an action outside the list (no zod)": {
+    "reply": "dcf2d7767dd6be67/18",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: an action outside the list is refused by zod": {
+    "reply": "e57c99d9ed9710d4/158",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: edit a rule": {
+    "reply": "dd2abd21e33ad2a7/61",
+    "rest": "a6d506d6b22e5841/1262"
+  },
+  "rules: edit a rule that is not there": {
+    "reply": "de04f27c893bcf9a/62",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: edit into a rule the checks refuse": {
+    "reply": "50ba5ae5069d56d6/55",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: edit to an id that is taken": {
+    "reply": "30ec80b5f2df0c52/62",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: edit without a rule": {
+    "reply": "e494069f384baa55/83",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: edit without an id": {
+    "reply": "e494069f384baa55/83",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: list the rules in the file": {
+    "reply": "04bfc7a1fd6fb1d6/1027",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: list when the file cannot be read": {
+    "reply": "365b655f1aa4f0cf/1102",
+    "rest": "49df29ff4d19bad4/66"
+  },
+  "rules: list when the file has no rules array": {
+    "reply": "26ddc7bd130fc28e/1058",
+    "rest": "ccd467824b79503e/41"
+  },
+  "rules: list when there is no rules file yet": {
+    "reply": "53514b94486e8e95/597",
+    "rest": "d1a5705ffb0a36cd/37"
+  },
+  "rules: list with entries that do not take effect": {
+    "reply": "76721baa2234b8cc/868",
+    "rest": "5d5bcc1f39464b55/306"
+  },
+  "rules: move a rule": {
+    "reply": "70fd340fbbb5d8df/58",
+    "rest": "8b814b25896ca311/1440"
+  },
+  "rules: move a rule that is not there": {
+    "reply": "de04f27c893bcf9a/62",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: move too far": {
+    "reply": "f56086a5bbb1e8dc/29",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: move without a place": {
+    "reply": "838d229cd5d44d0d/57",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: move without an id": {
+    "reply": "838d229cd5d44d0d/57",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: remove a rule": {
+    "reply": "7ebed9d6a348b8af/21",
+    "rest": "f2fbd4c86d619627/1193"
+  },
+  "rules: remove a rule that is not there": {
+    "reply": "de04f27c893bcf9a/62",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: remove a rule, git commit fails": {
+    "reply": "54938df4b9c9378e/144",
+    "rest": "1df64923a9e1b2c3/1193"
+  },
+  "rules: remove without an id": {
+    "reply": "389b3d1cc0268a35/19",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: the gate is off (an add is not tried)": {
+    "reply": "8f09547b01b7fd22/72",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "rules: the gate is off (list)": {
+    "reply": "8f09547b01b7fd22/72",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "rules: try an id that is not there": {
+    "reply": "7a429930a2182869/56",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: try one rule by its id": {
+    "reply": "146c40c8330c2bc5/620",
+    "rest": "4a4b5cc240028f82/1190"
+  },
+  "rules: try over 30 days": {
+    "reply": "5b1db7e8247bc7d4/587",
+    "rest": "bfcc86cd876a112d/1191"
+  },
+  "rules: try over no events": {
+    "reply": "3f853c40d81993e2/292",
+    "rest": "4a4b5cc240028f82/1190"
+  },
+  "rules: try the current rules": {
+    "reply": "8d3f30fb02cf19af/586",
+    "rest": "4a4b5cc240028f82/1190"
+  },
+  "rules: try when the events cannot be read": {
+    "reply": "9d7c87c0db6235ac/44",
+    "rest": "4a4b5cc240028f82/1190"
+  },
+  "rules: try with a new rule at place 2": {
+    "reply": "c67ba7c206452c09/759",
+    "rest": "4a4b5cc240028f82/1190"
+  },
+  "rules: try with a new rule at the front": {
+    "reply": "48ce0d6fcdb6590e/759",
+    "rest": "4a4b5cc240028f82/1190"
+  },
+  "rules: try with a place that is too far": {
+    "reply": "24fc2448c64dc1a1/32",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: try with a rule that has no id": {
+    "reply": "29d9bb946777ee72/36",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: try with a rule the checks refuse": {
+    "reply": "bf7d99fd76b0bc11/61",
+    "rest": "329c9dbbc50f4c7d/1171"
+  },
+  "rules: try with an edit of a rule that exists": {
+    "reply": "c358edfcab40d990/758",
+    "rest": "4a4b5cc240028f82/1190"
+  },
+  "rules: try with an id and a rule, the rule's id is the one counted": {
+    "reply": "48ce0d6fcdb6590e/759",
+    "rest": "4a4b5cc240028f82/1190"
+  },
+  "scratch: checked with a verdict of an unknown kind is refused by zod": {
+    "reply": "5b316d3145e2be00/143"
+  },
+  "scratch: checked with an empty list": {
+    "reply": "061dc3a2e5c7e436/6"
+  },
+  "scratch: checked with every kind of verdict": {
+    "reply": "061dc3a2e5c7e436/6"
+  },
+  "scratch: checked without the list (no zod)": {
+    "reply": "061dc3a2e5c7e436/6"
+  },
+  "scratch: looked_again with every argument": {
+    "reply": "061dc3a2e5c7e436/6"
+  },
+  "scratch: looked_again with met only": {
+    "reply": "061dc3a2e5c7e436/6"
+  },
+  "scratch: looked_again without met is refused by zod": {
+    "reply": "6151476b17854250/130"
+  },
+  "stickers dest: a QQ group is never rerouted": {
+    "reply": "8cd41979f8e5f2ab/104"
+  },
+  "stickers dest: a QQ number but channel=whatsapp": {
+    "reply": "11c0abfb78336b78/104"
+  },
+  "stickers dest: a QQ number heard 55 minutes and a millisecond ago (rerouted)": {
+    "reply": "32ec4529eb4d5a34/77"
+  },
+  "stickers dest: a QQ number heard exactly 55 minutes ago (window still open)": {
+    "reply": "c372090aa1f2c889/106"
+  },
+  "stickers dest: a QQ number heard two hours ago (rerouted)": {
+    "reply": "32ec4529eb4d5a34/77"
+  },
+  "stickers dest: a QQ number never heard from, nobody knows it": {
+    "reply": "5e613124d67ddfe2/102"
+  },
+  "stickers dest: a QQ number never heard from, person has WhatsApp (rerouted)": {
+    "reply": "32ec4529eb4d5a34/77"
+  },
+  "stickers dest: a QQ number never heard from, person has no WhatsApp": {
+    "reply": "778166293e91875e/106"
+  },
+  "stickers dest: a QQ number, heard a minute ago": {
+    "reply": "778166293e91875e/106"
+  },
+  "stickers dest: a WhatsApp number": {
+    "reply": "83cc967c8bb80386/74"
+  },
+  "stickers dest: a WhatsApp number but channel=qqbot": {
+    "reply": "ea2bf2d52daf8477/76"
+  },
+  "stickers dest: a WhatsApp number with channel=whatsapp": {
+    "reply": "83cc967c8bb80386/74"
+  },
+  "stickers dest: a blank to counts as no to": {
+    "reply": "c18295d45305e43a/78"
+  },
+  "stickers dest: another person by name, QQ asked": {
+    "reply": "778166293e91875e/106"
+  },
+  "stickers dest: another person by name, WhatsApp by default": {
+    "reply": "2ec1711ca4ee6b1d/78"
+  },
+  "stickers dest: another person, no number on that channel": {
+    "reply": "2fbdcd8e6438f92a/40"
+  },
+  "stickers dest: default is the person being talked to": {
+    "reply": "c18295d45305e43a/78"
+  },
+  "stickers dest: name without a resolver": {
+    "reply": "d18f46829e6364c8/46"
+  },
+  "stickers dest: no chat and no to": {
+    "reply": "b760953d32311dd1/96"
+  },
+  "stickers dest: no currentChat function, no to": {
+    "reply": "b760953d32311dd1/96"
+  },
+  "stickers dest: no currentChat function, to given": {
+    "reply": "2ec1711ca4ee6b1d/78"
+  },
+  "stickers dest: no lastHeardFrom function counts as never heard": {
+    "reply": "32ec4529eb4d5a34/77"
+  },
+  "stickers dest: no nameOf function, name falls back to the chat name": {
+    "reply": "c18295d45305e43a/78"
+  },
+  "stickers dest: no nameOf function, other target has no name": {
+    "reply": "83cc967c8bb80386/74"
+  },
+  "stickers dest: the chat has no name, asked for QQ": {
+    "reply": "1b950e43014c474d/40"
+  },
+  "stickers dest: the chat is QQ, asked for WhatsApp": {
+    "reply": "c18295d45305e43a/78"
+  },
+  "stickers dest: the chat is QQ, same channel": {
+    "reply": "c372090aa1f2c889/106"
+  },
+  "stickers dest: the chat is WhatsApp, asked for QQ (fresh)": {
+    "reply": "c372090aa1f2c889/106"
+  },
+  "stickers dest: the chat is WhatsApp, asked for QQ, no resolver": {
+    "reply": "b33ecf331da3c2f0/40"
+  },
+  "stickers dest: the chat is WhatsApp, asked for QQ, person has no QQ": {
+    "reply": "2fbdcd8e6438f92a/40"
+  },
+  "stickers dest: the chat is on another channel (telegram)": {
+    "reply": "b760953d32311dd1/96"
+  },
+  "stickers dest: to is another person's number while chatting with 阿青": {
+    "reply": "2ec1711ca4ee6b1d/78"
+  },
+  "stickers dest: to is the chat name": {
+    "reply": "c18295d45305e43a/78"
+  },
+  "stickers dest: to is the chat target with an upper-case prefix and a lower-case id (QQ)": {
+    "reply": "c372090aa1f2c889/106"
+  },
+  "stickers dest: unknown name, QQ asked": {
+    "reply": "f33578168aac4eb0/52"
+  },
+  "stickers dest: unknown name, default channel": {
+    "reply": "5907cea7e6cd9a52/58"
+  },
+  "stickers: QQ window passed, rerouted to WhatsApp and sent": {
+    "reply": "e0d46cea940b7c7f/147",
+    "rest": "353f4e1fa1f9f879/444"
+  },
+  "stickers: a bare number as to (no zod) is refused as an unknown name": {
+    "reply": "952f33ff281a6eaa/38"
+  },
+  "stickers: blank mood and empty ref": {
+    "reply": "fd170fc114859899/60",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "stickers: channel outside the enum is refused by zod": {
+    "reply": "b9fc51f2ecb7b2dd/128",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "stickers: connection dropped is not stuck, the next one is sent": {
+    "reply": "806a0c8531d667ec/242",
+    "rest": "2954976140e90d4e/560"
+  },
+  "stickers: destination mismatch": {
+    "reply": "d52a71d569231dc0/64",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "stickers: dry run sends nothing and counts nothing": {
+    "reply": "2aeb3ac75874a38b/114",
+    "rest": "07cdc3c2c5e9efc4/290"
+  },
+  "stickers: gateway refuses the first, second is sent": {
+    "reply": "c9b0518f95ad9e5f/165",
+    "rest": "2954976140e90d4e/560"
+  },
+  "stickers: gateway refuses the only one": {
+    "reply": "81107b4004643f72/93",
+    "rest": "1c838e92cd366edf/291"
+  },
+  "stickers: item without an id is sent but not counted": {
+    "reply": "3e152ec774b460d9/63",
+    "rest": "8dcde59eda0faf5a/354"
+  },
+  "stickers: mood split on commas, spaces and 、": {
+    "reply": "8a47104e311870cd/66",
+    "rest": "de8cfd4770e29174/474"
+  },
+  "stickers: mood to the person being talked to": {
+    "reply": "8a47104e311870cd/66",
+    "rest": "ed90d79c2541840c/453"
+  },
+  "stickers: neither mood nor ref": {
+    "reply": "fd170fc114859899/60",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "stickers: no destination": {
+    "reply": "d07e3edc0522a955/84",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "stickers: no gateway and not a dry run": {
+    "reply": "9d1a168616a22ded/147",
+    "rest": "17507f1ec5e5ff11/159"
+  },
+  "stickers: no items and no items key at all": {
+    "reply": "7d13fbe524069c8a/63",
+    "rest": "66930e9d539bd4ae/159"
+  },
+  "stickers: no items, empty errors list falls through to the mood message": {
+    "reply": "71276f03751dd29e/57",
+    "rest": "c5acc828d02865cb/156"
+  },
+  "stickers: no items, empty nearest moods": {
+    "reply": "7d13fbe524069c8a/63",
+    "rest": "66930e9d539bd4ae/159"
+  },
+  "stickers: no items, errors listed": {
+    "reply": "5c45e1d83502f488/57",
+    "rest": "17507f1ec5e5ff11/159"
+  },
+  "stickers: no items, nearest moods offered": {
+    "reply": "07a6a6eab4e6a4c6/99",
+    "rest": "66930e9d539bd4ae/159"
+  },
+  "stickers: no nameOf, the reply falls back to the chat name": {
+    "reply": "8a47104e311870cd/66",
+    "rest": "353f4e1fa1f9f879/444"
+  },
+  "stickers: prepare errors ride along with a sent item": {
+    "reply": "5ae33423219048ae/101",
+    "rest": "f7992e2905e80312/448"
+  },
+  "stickers: prepare failed with a code and stderr": {
+    "reply": "f62d25718316b74b/70",
+    "rest": "17507f1ec5e5ff11/159"
+  },
+  "stickers: prepare printed nothing and exited 0": {
+    "reply": "30d5402d6b1f6262/51",
+    "rest": "17507f1ec5e5ff11/159"
+  },
+  "stickers: prepare printed something that is not JSON": {
+    "reply": "e9e468e37400ac99/54",
+    "rest": "17507f1ec5e5ff11/159"
+  },
+  "stickers: ref list, trimmed, blanks dropped": {
+    "reply": "8a47104e311870cd/66",
+    "rest": "43da629a5ac483ab/467"
+  },
+  "stickers: rerouted and the send fails": {
+    "reply": "4793b102f9ac2ab8/174",
+    "rest": "1c838e92cd366edf/291"
+  },
+  "stickers: rerouted with the re-ask unsure": {
+    "reply": "87fa1951dccf41fb/316",
+    "rest": "4896b5313516c068/505"
+  },
+  "stickers: sent over QQ, label in the reply": {
+    "reply": "61ed8f23fe6117d9/60",
+    "rest": "8f003d4f1d434020/500"
+  },
+  "stickers: timeout and no answer to the re-ask on the last one": {
+    "reply": "141e75df3e2e7ec5/331",
+    "rest": "a09e00e3ad524d28/752"
+  },
+  "stickers: timeout and no answer to the re-ask, the rest are held back": {
+    "reply": "e8acb2045029b06c/337",
+    "rest": "4896b5313516c068/505"
+  },
+  "stickers: timeout and the re-ask is refused, the rest go on": {
+    "reply": "51dde168343941c3/192",
+    "rest": "d02d505e299ba629/787"
+  },
+  "stickers: timeout then the re-ask confirms": {
+    "reply": "cbb2f2442419d4f5/96",
+    "rest": "7120a105af8d37a8/843"
+  },
+  "stickers: to a QQ group": {
+    "reply": "81f11d92fc1446ab/98",
+    "rest": "e49a8b97bdb5c962/501"
+  },
+  "stickers: to a stranger's number, the reply names the number": {
+    "reply": "184bfee7c9f1777d/71",
+    "rest": "292db55831bbcbbd/444"
+  },
+  "stickers: to another person by name over QQ": {
+    "reply": "546511986487b2a8/60",
+    "rest": "c40fee3dfb8537f6/500"
+  },
+  "stickers: two items sent, ids recorded, one without a gif flag": {
+    "reply": "cbb2f2442419d4f5/96",
+    "rest": "fb4abe5ffe9947b6/631"
+  },
+  "stickers: unknown person asked for": {
+    "reply": "61def4ff335ef3ff/46",
+    "rest": "1ef885cbdcf0c12f/14"
+  },
+  "time: parseEvery \" 45 m \"": {
+    "reply": "cfbaf9755c48a0f4/7"
+  },
+  "time: parseEvery \"\"": {
+    "reply": "74234e98afe7498f/4"
+  },
+  "time: parseEvery \"0h\"": {
+    "reply": "e9feb8354e08e827/29"
+  },
+  "time: parseEvery \"1.5h\"": {
+    "reply": "5bca1a64608c8eec/51"
+  },
+  "time: parseEvery \"10m\"": {
+    "reply": "e9feb8354e08e827/29"
+  },
+  "time: parseEvery \"1h\"": {
+    "reply": "c48664a448d8a63d/7"
+  },
+  "time: parseEvery \"24h\"": {
+    "reply": "619d6a33617fad34/8"
+  },
+  "time: parseEvery \"29m\"": {
+    "reply": "e9feb8354e08e827/29"
+  },
+  "time: parseEvery \"2H\"": {
+    "reply": "736a6a4d9c0c7357/49"
+  },
+  "time: parseEvery \"2h\"": {
+    "reply": "d70c1a6008327f18/7"
+  },
+  "time: parseEvery \"30m\"": {
+    "reply": "37bf94938358f1fd/7"
+  },
+  "time: parseEvery \"daily \"": {
+    "reply": "beb12ad051b9ee8e/53"
+  },
+  "time: parseEvery \"daily\"": {
+    "reply": "619d6a33617fad34/8"
+  },
+  "time: parseEvery \"weekly\"": {
+    "reply": "11f8852d876d6015/53"
+  },
+  "time: parseEvery undefined": {
+    "reply": "74234e98afe7498f/4"
+  },
+  "time: parseWhen \"   \" at 10:00 UTC": {
+    "reply": "04eb6fa2d8f5953d/72"
+  },
+  "time: parseWhen \"  +15m  \" at 10:00 UTC": {
+    "reply": "fa68fdbefc38d4f2/38"
+  },
+  "time: parseWhen \"\" at 10:00 UTC": {
+    "reply": "b4deb723da3037e3/69"
+  },
+  "time: parseWhen \"+0m\" at 10:00 UTC": {
+    "reply": "46490adb322558f4/38"
+  },
+  "time: parseWhen \"+2h\" at 10:00 UTC": {
+    "reply": "32e39d68503b743c/38"
+  },
+  "time: parseWhen \"+40m\" at 10:00 UTC": {
+    "reply": "c62f86090854a6e0/38"
+  },
+  "time: parseWhen \"+90 m\" at 10:00 UTC": {
+    "reply": "d08a5d9988ab1f51/38"
+  },
+  "time: parseWhen \"02:00\" at 02:00 UTC": {
+    "reply": "ad708360d264290a/38"
+  },
+  "time: parseWhen \"03:30\" at 02:00 UTC": {
+    "reply": "04db960d4f543ea1/38"
+  },
+  "time: parseWhen \"10:00\" at 10:00 UTC": {
+    "reply": "894baf39c810df2e/38"
+  },
+  "time: parseWhen \"15:00\" at 10:00 Australia/Melbourne": {
+    "reply": "46379fa1ab27ad09/38"
+  },
+  "time: parseWhen \"15:00\" at 10:00 UTC": {
+    "reply": "75064992d9a76657/38"
+  },
+  "time: parseWhen \"2026-11-14 08:30\" at 10:00 UTC": {
+    "reply": "4a58f76aed38cedf/38"
+  },
+  "time: parseWhen \"2026-11-14\" at 10:00 UTC": {
+    "reply": "a94c7e00fe9e8ba6/38"
+  },
+  "time: parseWhen \"2026-11-14T08:30:00+11:00\" at 10:00 Australia/Melbourne": {
+    "reply": "b2e576297e7be562/38"
+  },
+  "time: parseWhen \"2026-11-14T08:30:00Z\" at 10:00 UTC": {
+    "reply": "4a58f76aed38cedf/38"
+  },
+  "time: parseWhen \"23:59\" at 10:00 UTC": {
+    "reply": "417f648b9da48204/38"
+  },
+  "time: parseWhen \"9:30\" at 10:00 UTC": {
+    "reply": "de329456cebd5f02/38"
+  },
+  "time: parseWhen \"later\" at 10:00 UTC": {
+    "reply": "97db863861d54f84/74"
+  },
+  "time: parseWhen \"下周三\" at 10:00 UTC": {
+    "reply": "a7281248aec95552/78"
+  },
+  "time: whenLabel both in the small hours (2026-11-13T03:00 from 2026-11-13T02:00 UTC)": {
+    "reply": "41d5b8ba63658f74/11"
+  },
+  "time: whenLabel earlier the same day (2026-11-13T07:00 from 2026-11-13T10:00 UTC)": {
+    "reply": "a128b50fbb7b7aef/12"
+  },
+  "time: whenLabel next day (2026-11-14T09:00 from 2026-11-13T10:00 UTC)": {
+    "reply": "0960cc7cf670e2d4/12"
+  },
+  "time: whenLabel next day in Melbourne (2026-11-13T22:00 from 2026-11-13T10:00 Australia/Melbourne)": {
+    "reply": "0960cc7cf670e2d4/12"
+  },
+  "time: whenLabel now in the small hours (2026-11-13T10:00 from 2026-11-13T02:00 UTC)": {
+    "reply": "e266083f82fb2dd0/11"
+  },
+  "time: whenLabel same day (2026-11-13T15:00 from 2026-11-13T10:00 UTC)": {
+    "reply": "e0e00eb9266536e8/12"
+  },
+  "time: whenLabel small hours of the next calendar day (2026-11-14T02:00 from 2026-11-13T10:00 UTC)": {
+    "reply": "f4aceaf549f0b6f6/11"
+  },
+  "time: whenLabel three days on (2026-11-16T10:00 from 2026-11-13T10:00 UTC)": {
+    "reply": "a60091a6977b4653/11"
+  },
+  "time: whenLabel yesterday (2026-11-12T10:00 from 2026-11-13T10:00 UTC)": {
+    "reply": "59069060f9ab15ce/11"
+  }
+}

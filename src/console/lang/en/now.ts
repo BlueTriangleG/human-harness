@@ -1,0 +1,29 @@
+import type { Strings } from "../zh.ts";
+import type { now as zh } from "../zh/now.ts";
+
+export const now: Strings<typeof zh> = {
+  label: "{me} now",
+  state: "State",
+  busy: "answering",
+  idle: "free",
+  quota: "This week's usage",
+  quotaNone: "No reading yet",
+  doing: "On hand",
+  doingNone: "Nothing in progress",
+  helpers: "{n} {n|helper|helpers} running",
+  attention: "Needs you",
+  hhdSilent: "hhd is not answering: {me} gets no messages now",
+  rules: "{n} {n|problem|problems} in the gate's rules",
+  incidents: "Stopped or refused {n} {n|time|times} in 24 hours",
+  blocked: "hhd stuck {n} {n|time|times} in 24 hours",
+  todos: "{n} {n|thing waits|things wait} for {me} to wake up",
+  registry: "{n} {n|change|changes} to people and tools in 14 days",
+  talkOff: "Talking is not on for this console yet. Type this in a terminal; the browser gets paired and opens on this page:",
+  copy: "Copy",
+  copied: "Copied",
+  pulseLabel: "{what}. Open the activity page",
+  pulseIdle: "all free",
+  pulseThink: "{name} thinking",
+  pulseTool: "{name} calling {tool}",
+  pulseBusy: "{name} busy",
+};

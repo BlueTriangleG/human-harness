@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="{{@lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{shell.title}}</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/web/css/base.css">
+<link rel="stylesheet" href="/web/css/brain.css">
+<link rel="stylesheet" href="/web/css/timeline.css">
+<link rel="stylesheet" href="/web/css/side.css">
+<link rel="stylesheet" href="/web/css/memory.css">
+<link rel="stylesheet" href="/web/css/prompt.css">
+<link rel="stylesheet" href="/web/css/events.css">
+<link rel="stylesheet" href="/web/css/gate.css">
+<link rel="stylesheet" href="/web/css/health.css">
+<link rel="stylesheet" href="/web/css/notebook.css">
+<link rel="stylesheet" href="/web/css/en.css">
+<link rel="stylesheet" href="/web/css/now.css">
+<link rel="stylesheet" href="/web/css/settings.css">
+<link rel="stylesheet" href="/web/css/machine.css">
+<link rel="stylesheet" href="/web/app/chat.css">
+</head>
+<body>
+<div id="unpaired" hidden><p id="unpairedtext"></p><p class="cmdline"><code id="unpairedcmd"></code><button class="pcopy" id="unpairedcopy">{{now.copy}}</button></p></div>
+<a class="skip" href="#content">{{shell.skip.content}}</a>
+<header id="top">
+  <h1>{{shell.heading}}</h1>
+  <span class="state" id="state" role="status">{{shell.state.connecting}}</span>
+  <span id="corner">
+    <span id="demo" title="{{shell.demoTitle}}" hidden>{{shell.demo}}</span>
+    <!-- warnings and errors as notifications (js/notify.js) -->
+    <button id="bell" aria-haspopup="dialog" aria-expanded="false" aria-controls="notes" aria-label="{{shell.notes.label}}"><span class="bico" aria-hidden="true"></span><span id="bellcount" hidden></span></button>
+  </span>
+  <div id="notes" role="dialog" aria-label="{{shell.notes.label}}" hidden>
+    <div class="nhead"><b>{{shell.notes.label}}</b><button id="notesread">{{shell.notes.markRead}}</button></div>
+    <div id="noteslist"></div>
+  </div>
+</header>
+<!-- the five pages (js/nav.js): each is one of the panes below, or one view of it -->
+<nav id="nav" aria-label="{{shell.navLabel}}">
+  <button data-page="now" aria-current="page">{{shell.nav.now}}</button>
+  <button data-page="activity">{{shell.nav.activity}}</button>
+  <button data-page="memory">{{shell.nav.memory}}</button>
+  <button data-page="notes">{{shell.nav.notes}}</button>
+  <button data-page="run">{{shell.nav.run}}</button>
+  <button data-page="machine">{{shell.nav.machine}}</button>
+  <button data-page="settings">{{shell.nav.settings}}</button>
+</nav>
+<main id="content" tabindex="-1">
+<div id="pagehead">
+  <h2 id="ptitle">{{shell.nav.now}}</h2>
+  <!-- 每一页里的几个视图：都在这一个位置、一个样子；哪一页开着就露出哪一组 -->
+  <nav id="views" aria-label="{{shell.viewsLabel}}">
+    <div id="pviews" role="group" aria-label="{{shell.viewsLabel}}" hidden></div>
+    <div id="pregions" role="group" aria-label="{{prompt.regionsLabel}}" hidden></div>
+    <div id="eviews" role="group" aria-label="{{events.viewsLabel}}" hidden></div>
+    <div id="nviews" role="group" aria-label="{{notebook.viewsLabel}}" hidden>
+      <button data-nview="all" aria-pressed="true">{{notebook.views.all}}</button>
+      <button data-nview="stale" aria-pressed="false">{{notebook.views.stale}}</button>
+      <button data-nview="orphans" aria-pressed="false">{{notebook.views.orphans}}</button>
+      <button data-nview="deep" aria-pressed="false">{{notebook.views.deep}}</button>
+    </div>
+    <div id="hviews" role="group" aria-label="{{health.viewsLabel}}" hidden>
+      <button data-hview="day" aria-pressed="true">{{health.views.day}}</button>
+      <button data-hview="week" aria-pressed="false">{{health.views.week}}</button>
+    </div>
+  </nav>
+</div>
+<!-- 此刻: talk with the role (js/now.js and /web/app/chat.js), how it is now and what wants the owner -->
+<section id="nowview" aria-labelledby="ptitle">
+  <div id="talkcol">
+    <!-- which brain region is at work, turning while it is; click for the activity page (js/now.js) -->
+    <a class="skip" id="toinput" href="#chat">{{shell.skip.input}}</a>
+    <button id="pulse"><span id="pulsedots"></span><span id="pulsetext"></span></button>
+    <div id="chat" role="region" aria-label="{{chat.paneLabel}}" hidden></div>
+    <div id="talkoff" hidden><p>{{now.talkOff}}</p><p class="cmdline"><code id="talkcmd"></code><button class="pcopy" id="talkcopy">{{now.copy}}</button></p></div>
+  </div>
+  <aside id="status" aria-label="{{now.label}}"><p class="hint">{{common.loading}}</p></aside>
+</section>
+<section id="brainview" hidden aria-labelledby="ptitle">
+  <section id="brainpane" aria-label="{{brain.paneLabel}}">
+    <svg id="brain" viewBox="20 24 560 456" role="group" aria-label="{{brain.map.label}}">
+      <defs>
+        <clipPath id="cerebrum">
+          <path d="M62,228 C48,150 98,72 190,50 C275,30 390,34 460,72 C530,110 572,180 560,250 C552,296 522,318 478,322 C452,324 432,322 414,318 C398,346 352,370 300,368 C248,366 205,348 190,322 C186,306 178,296 166,292 C130,290 96,276 80,260 C70,250 64,240 62,228 Z"/>
+        </clipPath>
+      </defs>
+      <!-- 脑干：外界进来的 -->
+      <g class="region" data-src="外界" data-mem="central" tabindex="0" role="button" style="--lane: var(--l-outer)">
+        <title>{{brain.map.outerTitle}}</title>
+        <path class="shape" d="M388,318 C402,326 418,326 430,330 C432,372 430,420 432,476 L394,476 C396,432 398,384 388,318 Z"/>
+        <text class="lbl" x="412" y="436" data-mlabel="{{brain.map.memOuter}}">{{regions.outer.name}}</text>
+      </g>
+      <!-- 小脑：系统自动发生的事 -->
+      <g class="region" data-src="system" data-mem="skills" tabindex="0" role="button" style="--lane: var(--l-system)">
+        <title>{{brain.map.systemTitle}}</title>
+        <path class="shape" d="M428,326 C446,314 492,316 522,320 C554,324 574,348 564,376 C550,406 494,414 460,400 C438,390 430,368 428,346 Z"/>
+        <path class="sulcus" d="M440,346 C470,336 520,338 556,350 M444,366 C478,358 520,360 552,372 M454,386 C482,382 512,384 536,392"/>
+        <text class="lbl" x="500" y="362" data-mlabel="{{brain.map.memSystem}}">{{regions.system.name}}</text>
+      </g>
+      <!-- 大脑皮层 -->
+      <path class="tissue" d="M62,228 C48,150 98,72 190,50 C275,30 390,34 460,72 C530,110 572,180 560,250 C552,296 522,318 478,322 C452,324 432,322 414,318 C398,346 352,370 300,368 C248,366 205,348 190,322 C186,306 178,296 166,292 C130,290 96,276 80,260 C70,250 64,240 62,228 Z"/>
+      <g clip-path="url(#cerebrum)">
+        <g class="region" data-src="main" data-mem="page" tabindex="0" role="button" style="--lane: var(--l-main)">
+          <title>{{brain.map.mainTitle}}</title>
+          <path class="shape" d="M0,0 L338,0 C326,100 300,170 292,250 C246,252 204,270 166,292 L0,340 Z"/>
+          <text class="lbl big" x="178" y="168" data-mlabel="{{brain.map.memMain}}" data-mx="200">{{regions.main.name}}</text>
+        </g>
+        <g class="region memonly" data-mem="self" tabindex="0" role="button" style="--lane: var(--l-main)">
+          <title>{{brain.map.selfTitle}}</title>
+          <path class="shape" d="M0,0 L132,0 C120,90 116,170 126,252 L0,330 Z"/>
+          <text class="lbl" x="98" y="160">{{brain.map.selfLine1}}</text>
+          <text class="lbl" x="98" y="178">{{brain.map.selfLine2}}</text>
+        </g>
+        <!-- 顶叶：「同时在做」配了几个画几条（brain.js 照服务端给的脑区画，形状在 sides.js） -->
+        <g id="sides"></g>
+        <!-- 枕叶：慢慢想 -->
+        <g class="region" data-src="deep" data-mem="" tabindex="0" role="button" style="--lane: var(--l-deep)">
+          <title>{{brain.map.deepTitle}}</title>
+          <path class="shape" d="M478,0 L600,0 L600,340 L502,290 C492,220 486,140 478,0 Z"/>
+          <text class="lbl sm" x="527" y="196" data-mlabel="">{{regions.deep.name}}</text>
+        </g>
+        <!-- 下意识 = 闸门（丘脑）：不是中央记忆里的一个来源，点开看闸门的账 -->
+        <g class="region" data-gate="1" data-mem="longterm" tabindex="0" role="button" style="--lane: var(--l-perception)">
+          <title>{{brain.map.gateTitle}}</title>
+          <path class="shape" d="M166,292 C220,262 300,248 380,252 C432,255 472,268 502,290 L600,340 L600,480 L140,480 Z"/>
+          <text class="lbl" x="300" y="286" data-mlabel="{{brain.map.memGate}}">{{regions.gate.name}}</text>
+        </g>
+        <g class="region" data-src="speech" data-mem="" tabindex="0" role="button" style="--lane: var(--l-speech)">
+          <title>{{brain.map.speechTitle}}</title>
+          <path class="shape" d="M168,290 C176,262 214,240 254,238 C276,238 282,250 276,259 C246,262 206,274 168,292 Z"/>
+          <text class="lbl sm" x="228" y="259" data-mlabel="">{{regions.speech.name}}</text>
+        </g>
+        <g class="region deep" data-src="hippocampus" data-mem="blocks" tabindex="0" role="button" style="--lane: var(--l-hippo)">
+          <title>{{brain.map.hippocampusTitle}}</title>
+          <path class="shape" d="M256,334 C284,310 338,302 380,306 C404,308 420,298 426,284 C434,294 430,316 412,322 C380,332 332,326 298,342 C282,350 262,348 256,334 Z"/>
+          <text class="lbl sm" x="346" y="351" data-mlabel="{{brain.map.memHippocampus}}">{{regions.hippocampus.name}}</text>
+        </g>
+        <!-- 最后那条沟回在「慢慢想」的字那里断开（原来整条穿过去，把字划了一道） -->
+        <path class="sulcus" d="M118,112 C156,124 204,112 246,90 M96,196 C146,202 206,190 266,170 M120,250 C150,246 186,236 214,222 M508,110 C513,126.8 517.7,145.4 521.6,165 M529.6,217.1 C530.7,228 531.6,239 532,250"/>
+        <text class="lbl group" x="408" y="96" data-mlabel="{{brain.map.memSide}}">{{regions.side.group}}</text>
+      </g>
+      <path class="outline" d="M62,228 C48,150 98,72 190,50 C275,30 390,34 460,72 C530,110 572,180 560,250 C552,296 522,318 478,322 C452,324 432,322 414,318 C398,346 352,370 300,368 C248,366 205,348 190,322 C186,306 178,296 166,292 C130,290 96,276 80,260 C70,250 64,240 62,228 Z"/>
+    </svg>
+    <div id="others"></div>
+    <div id="card"></div>
+    <div id="strip" aria-label="{{brain.strip.label}}"></div>
+  </section>
+  <section id="tlpane">
+    <div id="toolbar">
+      <span id="scope"></span>
+      <span id="kinds"></span>
+      <span id="innerbox"></span>
+      <input id="search" type="search" placeholder="{{timeline.search}}">
+    </div>
+    <div id="tlwrap">
+      <div id="timeline" tabindex="0" aria-live="off"><p class="hint">{{common.loading}}</p></div>
+      <button id="newpill"></button>
+    </div>
+  </section>
+  <section id="gatepane" hidden aria-label="{{gate.paneLabel}}">
+    <div id="gbar">
+      <div class="gtop">
+        <span id="gtitle">{{regions.gate.name}}<small>{{gate.subtitle}}</small></span>
+        <span class="gtop" role="group" aria-label="{{gate.dayLabel}}">
+          <button id="gprev" title="{{gate.prev}}">{{gate.prevButton}}</button>
+          <b id="gdaylbl"></b>
+          <button id="gnext" title="{{gate.next}}">{{gate.nextButton}}</button>
+          <button id="gtoday">{{common.today}}</button>
+        </span>
+        <button id="gclose">{{gate.back}}</button>
+      </div>
+      <div id="gsum"></div>
+    </div>
+    <div id="gbody"></div>
+  </section>
+  <section id="mempane" hidden aria-label="{{memory.paneLabel}}">
+    <div id="mdetail" aria-live="polite"></div>
+    <div id="memleft">
+    <svg id="memmap" viewBox="20 8 990 452" role="group" aria-label="{{memory.map.label}}">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L10,5 L0,10 z"/></marker>
+      </defs>
+      <text class="tier" x="40" y="26">{{memory.map.tierCarry}}</text>
+      <g class="mnode" data-node="prefix" tabindex="0" role="button" aria-label="{{memory.map.prefix}}" style="--c: var(--l-main)">
+        <rect class="box" x="40" y="36" width="900" height="88" rx="10"/>
+        <text class="nt" x="58" y="62">{{memory.map.prefix}}</text>
+        <text class="ns" x="100" y="62">{{memory.map.prefixSub}}</text>
+        <text class="nv" id="mm-prefix-total" x="922" y="64" text-anchor="end"></text>
+        <g id="mm-prefix-bar"></g>
+      </g>
+      <text class="tier" x="40" y="160">{{memory.map.tierNow}}</text>
+      <g class="mnode" data-node="sources" tabindex="0" role="button" aria-label="{{memory.map.sourcesLabel}}" style="--c: var(--l-outer)">
+        <rect class="box" x="40" y="170" width="150" height="112" rx="10"/>
+        <text class="nt" x="56" y="196">{{memory.map.sources}}</text>
+        <text class="nv" id="mm-src" x="56" y="234"></text>
+        <text class="ns" x="56" y="262">{{memory.map.sourcesSub}}</text>
+      </g>
+      <g class="mnode" data-node="page" tabindex="0" role="button" aria-label="{{memory.map.page}}" style="--c: var(--l-perception)">
+        <rect class="box" x="250" y="170" width="220" height="112" rx="10"/>
+        <text class="nt" id="mm-page-title" x="266" y="196">{{memory.map.page}}</text>
+        <text class="nv" id="mm-page-num" x="266" y="228"></text>
+        <rect class="track" x="266" y="240" width="188" height="10" rx="5"/>
+        <rect class="fill" id="mm-page-fill" x="266" y="240" width="0" height="10" rx="5"/>
+        <text class="ns" id="mm-page-sub" x="266" y="270"></text>
+      </g>
+      <g class="mnode" data-node="blocks" tabindex="0" role="button" aria-label="{{memory.map.blocks}}" style="--c: var(--l-hippo)">
+        <rect class="box" x="530" y="170" width="220" height="112" rx="10"/>
+        <text class="nt" id="mm-blocks-title" x="546" y="196">{{memory.map.blocks}}</text>
+        <g id="mm-blocks-stack"></g>
+        <text class="ns" id="mm-blocks-tok" x="734" y="226" text-anchor="end"></text>
+        <rect class="track" x="546" y="240" width="188" height="10" rx="5"/>
+        <rect class="fill" id="mm-blocks-fill" x="546" y="240" width="0" height="10" rx="5"/>
+        <g id="mm-blocks-marks"></g>
+        <text class="ns" id="mm-blocks-sub" x="546" y="274"></text>
+      </g>
+      <g class="mnode" data-node="sleep" tabindex="0" role="button" aria-label="{{memory.map.sleep}}" style="--c: var(--l-hippo)">
+        <rect class="box" x="800" y="170" width="140" height="112" rx="10"/>
+        <text class="nt" x="816" y="196">{{memory.map.sleep}}</text>
+        <text class="ns" id="mm-sleep-1" x="816" y="224"></text>
+        <text class="ns" id="mm-sleep-2" x="816" y="246"></text>
+        <text class="ns" id="mm-sleep-3" x="816" y="268"></text>
+      </g>
+      <text class="tier" x="40" y="326">{{memory.map.tierStore}}</text>
+      <g class="mnode" data-node="recall" tabindex="0" role="button" aria-label="{{memory.map.recall}}" style="--c: var(--l-speech)">
+        <rect class="box" x="40" y="332" width="150" height="112" rx="10"/>
+        <text class="nt" x="56" y="358">{{memory.map.recall}}</text>
+        <text class="nv" id="mm-recall" x="56" y="396"></text>
+        <text class="ns" id="mm-recall-sub" x="56" y="424"></text>
+      </g>
+      <g class="mnode" data-node="central" tabindex="0" role="button" aria-label="{{memory.map.centralLabel}}" style="--c: var(--l-outer)">
+        <rect class="box" x="250" y="332" width="500" height="112" rx="10"/>
+        <text class="nt" x="266" y="358">{{memory.map.central}}</text>
+        <text class="nv" id="mm-central" x="266" y="396"></text>
+        <text class="ns" id="mm-central-sub" x="266" y="424"></text>
+      </g>
+      <g class="mnode" data-node="longterm" tabindex="0" role="button" aria-label="{{memory.map.longtermLabel}}" style="--c: var(--l-side)">
+        <rect class="box" x="800" y="332" width="140" height="112" rx="10"/>
+        <text class="nt" x="816" y="358">{{memory.map.longterm}}</text>
+        <text class="nv" id="mm-lt" x="816" y="396"></text>
+        <text class="ns" id="mm-lt-sub" x="816" y="424"></text>
+      </g>
+      <path class="flow" d="M190,226 H246" marker-end="url(#arr)"/><text class="fl" x="219" y="218">{{memory.map.flowWrite}}</text>
+      <path class="flow" d="M470,226 H526" marker-end="url(#arr)"/><text class="fl" x="499" y="218">{{memory.map.flowTurn}}</text>
+      <path class="flow" d="M640,170 V128" marker-end="url(#arr)"/><text class="fl" x="680" y="153">{{memory.map.flowToPrefix}}</text>
+      <path class="flow" d="M750,226 H796" marker-end="url(#arr)"/><text class="fl" x="774" y="218">{{memory.map.flowSleep}}</text>
+      <path class="flow" d="M360,282 V328" marker-end="url(#arr)"/><text class="fl" x="410" y="310">{{memory.map.flowKeep}}</text>
+      <path class="flow" d="M742,332 C764,312 790,300 810,286" marker-end="url(#arr)"/><text class="fl" x="756" y="306">{{memory.map.flowToday}}</text>
+      <path class="flow" d="M870,282 V328" marker-end="url(#arr)"/><text class="fl" x="902" y="310">{{memory.map.flowWrite}}</text>
+      <path class="flow" d="M940,388 H970 V80 H944" marker-end="url(#arr)"/><text class="fl" x="988" y="232" writing-mode="tb">{{memory.map.flowReread}}</text>
+      <path class="flow" d="M250,388 H194" marker-end="url(#arr)"/><text class="fl" x="222" y="380">{{memory.map.flowLook}}</text>
+      <path class="flow" d="M160,332 V286" marker-end="url(#arr)"/><text class="fl" x="126" y="306">{{memory.map.flowRemember}}</text>
+    </svg>
+    <div id="mpages"></div>
+    </div>
+  </section>
+  <aside id="side" aria-label="{{side.label}}">
+    <h2 id="workersh">{{side.workersTitle}}</h2>
+    <input id="wfilter" type="search" placeholder="{{side.workersFilter}}" aria-label="{{side.workersFilter}}" hidden>
+    <div id="workers"><p class="hint">{{common.loading}}</p></div>
+    <h2>{{side.learnTitle}}</h2>
+    <div id="learn"><p class="hint">{{common.loading}}</p></div>
+  </aside>
+</section>
+<section id="promptview" hidden aria-label="{{shell.views.input}}">
+  <div id="pbar">
+    <div id="psess"></div>
+  </div>
+  <div id="pbody"></div>
+</section>
+<section id="memview" hidden aria-label="{{shell.views.events}}">
+  <div id="ebar">
+    <div id="estats"></div>
+  </div>
+  <div id="ebody">
+    <div id="elist"></div>
+    <div id="edetail" aria-live="polite"></div>
+  </div>
+</section>
+<section id="notebookview" hidden aria-label="{{shell.nav.notes}}">
+  <div id="nbmain">
+    <p class="hint" id="nbsum">{{common.loading}}</p>
+    <div id="nbwrap"><div id="nbscroll"><svg id="nbmap" role="group" aria-label="{{notebook.mapLabel}}"></svg></div></div>
+    <p class="hint" id="nbmore" hidden></p>
+    <div id="nblegend"></div>
+    <p class="hint" id="nbnote">{{notebook.footnote}}</p>
+  </div>
+  <aside id="nbside" aria-live="polite"></aside>
+</section>
+<section id="healthview" hidden aria-label="{{shell.nav.run}}">
+  <div id="hbody"><p class="hint">{{common.loading}}</p></div>
+</section>
+<section id="machineview" hidden aria-labelledby="ptitle">
+  <ul id="mlist" aria-label="{{machine.listLabel}}"></ul>
+  <div id="mmain"><iframe id="mframe" title="{{machine.frameTitle}}" hidden></iframe><div id="monitor" hidden></div><p id="mempty" class="hint">{{machine.pick}}</p></div>
+</section>
+<section id="settingsview" hidden aria-labelledby="ptitle">
+  <h3 class="sblock">{{shell.lang.label}}</h3>
+  <div id="langs" role="group" aria-label="{{shell.lang.label}}"></div>
+  <h3 class="sblock" id="okeyhead" hidden>{{openai.title}}</h3>
+  <div id="okey" hidden></div>
+  <h3 class="sblock">{{shell.views.permissions}}</h3>
+  <div id="perms" aria-live="polite"></div>
+</section>
+</main>
+<div id="drawer" role="dialog" aria-modal="false" aria-labelledby="dtitle">
+  <header>
+    <h1 id="dtitle"></h1>
+    <span class="quota" id="dsub"></span>
+    <button class="close" id="dclose">{{common.close}}</button>
+  </header>
+  <div id="dsteps"></div>
+</div>
+<script type="application/json" id="hh-data">{{@data}}</script>
+<!-- 页面脚本是 ES 模块：入口是 start.js，它 import 的别的文件在这里先列出来让浏览器并着取（也是 web.ts 那张名单的次序） -->
+<link rel="modulepreload" href="/web/js/owner.js">
+<link rel="modulepreload" href="/web/js/i18n.js">
+<link rel="modulepreload" href="/web/js/core.js">
+<link rel="modulepreload" href="/web/js/sent.js">
+<link rel="modulepreload" href="/web/js/timeline.js">
+<link rel="modulepreload" href="/web/js/sides.js">
+<link rel="modulepreload" href="/web/js/brain.js">
+<link rel="modulepreload" href="/web/js/toolbar.js">
+<link rel="modulepreload" href="/web/js/topbar.js">
+<link rel="modulepreload" href="/web/js/side.js">
+<link rel="modulepreload" href="/web/js/gate.js">
+<link rel="modulepreload" href="/web/js/drawer.js">
+<link rel="modulepreload" href="/web/js/memory.js">
+<link rel="modulepreload" href="/web/js/prompt.js">
+<link rel="modulepreload" href="/web/js/events.js">
+<link rel="modulepreload" href="/web/js/health.js">
+<link rel="modulepreload" href="/web/js/shelfmap.js">
+<link rel="modulepreload" href="/web/js/notebook.js">
+<link rel="modulepreload" href="/web/js/now.js">
+<link rel="modulepreload" href="/web/js/settings.js">
+<link rel="modulepreload" href="/web/js/openai.js">
+<link rel="modulepreload" href="/web/js/machine.js">
+<link rel="modulepreload" href="/web/js/notify.js">
+<link rel="modulepreload" href="/web/js/nav.js">
+<script type="module" src="/web/js/start.js"></script>
+<script type="module" src="/web/app/chat.js"></script>
+</body>
+</html>

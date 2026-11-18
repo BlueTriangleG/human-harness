@@ -1,0 +1,6057 @@
+[
+ {
+  "at": "src/sleep/bank.ts:249",
+  "path": "sleep.bank.seedLabel",
+  "params": 2,
+  "want": "第 ⟨0⟩ 道（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/bank.ts:249",
+  "path": "sleep.bank.seedNoId",
+  "want": "无 id"
+ },
+ {
+  "at": "src/sleep/bank.ts:250",
+  "path": "sleep.bank.seedMissing",
+  "params": 2,
+  "want": "⟨0⟩缺 ⟨1⟩"
+ },
+ {
+  "at": "src/sleep/bank.ts:250",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/bank.ts:251",
+  "path": "sleep.bank.seedBadImportance",
+  "params": 1,
+  "want": "⟨0⟩importance 要是 1 到 5 的整数"
+ },
+ {
+  "at": "src/sleep/bank.ts:253",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/consistency.ts:37",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/consistency.ts:108",
+  "path": "sleep.consistency.previewFailed",
+  "want": "注入预览没拼成"
+ },
+ {
+  "at": "src/sleep/consistency.ts:139",
+  "path": "sleep.consistency.noPaper",
+  "params": 2,
+  "want": "考生 ⟨0⟩-⟨1⟩ 两次都没交卷"
+ },
+ {
+  "at": "src/sleep/consistency.ts:146",
+  "path": "sleep.consistency.noGrades",
+  "params": 1,
+  "want": "判分 ⟨0⟩ 两次都没交"
+ },
+ {
+  "at": "src/sleep/consistency.ts:150",
+  "path": "sleep.consistency.noVerdictFor",
+  "params": 1,
+  "want": "判分 before 没给 ⟨0⟩ 判定"
+ },
+ {
+  "at": "src/sleep/consistency.ts:151",
+  "path": "sleep.consistency.noVerdict",
+  "want": "判分没给这道题判定"
+ },
+ {
+  "at": "src/sleep/consistency.ts:248",
+  "path": "sleep.consistency.continuityNoPaper",
+  "params": 1,
+  "want": "考生 continuity⟨0⟩ 两次都没交卷"
+ },
+ {
+  "at": "src/sleep/consistency.ts:252",
+  "path": "sleep.consistency.detailId",
+  "params": 2,
+  "want": "⟨0⟩#细节⟨1⟩"
+ },
+ {
+  "at": "src/sleep/consistency.ts:255",
+  "path": "sleep.consistency.continuityNoGrades",
+  "params": 1,
+  "want": "判分 continuity⟨0⟩ 两次都没交"
+ },
+ {
+  "at": "src/sleep/consistency.ts:259",
+  "path": "sleep.consistency.continuityNoVerdict",
+  "params": 2,
+  "want": "判分 continuity⟨0⟩ 没给 ⟨1⟩ 判定"
+ },
+ {
+  "at": "src/sleep/consistency.ts:262",
+  "path": "sleep.consistency.detailId",
+  "params": 2,
+  "want": "⟨0⟩#细节⟨1⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/coordinator.ts:33",
+  "path": "sleep.coordinator.silent",
+  "want": "协调没回，按规矩走"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:46",
+  "path": "sleep.coordinator.note",
+  "params": 2,
+  "want": "前额叶（⟨0⟩）：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:47",
+  "path": "sleep.coordinator.silentFor",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:50",
+  "path": "sleep.coordinator.said",
+  "params": 1,
+  "want": "前额叶：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:52",
+  "path": "sleep.coordinator.wantedPass",
+  "params": 2,
+  "want": "前额叶想让「⟨0⟩」过，但有验证没过，按⟨1⟩算"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:52",
+  "path": "sleep.coordinator.redo",
+  "want": "重做"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:52",
+  "path": "sleep.coordinator.defer",
+  "want": "推迟"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:57",
+  "path": "sleep.coordinator.redoNoWhy",
+  "params": 1,
+  "want": "前额叶要「⟨0⟩」重做但没写为什么，照过"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:58",
+  "path": "sleep.coordinator.redoNoRounds",
+  "params": 2,
+  "want": "前额叶要「⟨0⟩」重做，但没有轮数了，照过：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:59",
+  "path": "sleep.coordinator.said",
+  "params": 1,
+  "want": "前额叶：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/coordinator.ts:61",
+  "path": "sleep.coordinator.deferPassed",
+  "params": 1,
+  "want": "前额叶要推迟「⟨0⟩」，但验证都过了，不能推迟，照过"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:118",
+  "path": "sleep.coordinator.alreadyDecided",
+  "want": "这份简报已经定过了。"
+ },
+ {
+  "at": "src/sleep/coordinator.ts:120",
+  "path": "sleep.marks.received",
+  "want": "收到。"
+ },
+ {
+  "at": "src/sleep/exam.ts:161",
+  "path": "sleep.exam.unknownIds",
+  "params": 1,
+  "want": "这几个题号对不上：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/exam.ts:161",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/exam.ts:162",
+  "path": "sleep.exam.notYet",
+  "params": 2,
+  "want": "还没⟨0⟩的：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/exam.ts:162",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/exam.ts:164",
+  "path": "sleep.exam.resubmit",
+  "params": 1,
+  "want": "⟨0⟩。照卷子上的题号（q:…）再交这几道就行，会跟前面交的合在一起。"
+ },
+ {
+  "at": "src/sleep/exam.ts:164",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/exam.ts:184",
+  "path": "sleep.exam.emptyAnswers",
+  "want": "交的是空的，answers 里要有每道题的回答。"
+ },
+ {
+  "at": "src/sleep/exam.ts:193",
+  "path": "sleep.exam.answered",
+  "want": "答"
+ },
+ {
+  "at": "src/sleep/exam.ts:193",
+  "path": "sleep.marks.received",
+  "want": "收到。"
+ },
+ {
+  "at": "src/sleep/exam.ts:205",
+  "path": "sleep.exam.emptyQuestions",
+  "want": "交的是空的，questions 里要有题。"
+ },
+ {
+  "at": "src/sleep/exam.ts:209",
+  "path": "sleep.exam.refusedOne",
+  "params": 3,
+  "want": "第 ⟨0⟩ 道（⟨1⟩）：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/exam.ts:212",
+  "path": "sleep.exam.noneTaken",
+  "params": 1,
+  "want": "一道都没收：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/exam.ts:212",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/exam.ts:214",
+  "path": "sleep.exam.someTaken",
+  "params": 2,
+  "want": "收下 ⟨0⟩ 道；这几道没收：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/exam.ts:214",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/exam.ts:214",
+  "path": "sleep.marks.received",
+  "want": "收到。"
+ },
+ {
+  "at": "src/sleep/exam.ts:227",
+  "path": "sleep.marks.received",
+  "want": "收到。"
+ },
+ {
+  "at": "src/sleep/exam.ts:290",
+  "path": "sleep.exam.emptyGrades",
+  "want": "交的是空的，grades 里要有每道题的判定。"
+ },
+ {
+  "at": "src/sleep/exam.ts:305",
+  "path": "sleep.exam.graded",
+  "want": "判"
+ },
+ {
+  "at": "src/sleep/exam.ts:305",
+  "path": "sleep.marks.received",
+  "want": "收到。"
+ },
+ {
+  "at": "src/sleep/examiner.ts:19",
+  "path": "sleep.examiner.notExamined",
+  "want": "考试没考完"
+ },
+ {
+  "at": "src/sleep/examiner.ts:104",
+  "path": "sleep.examiner.layerName.resident",
+  "want": "常驻"
+ },
+ {
+  "at": "src/sleep/examiner.ts:104",
+  "path": "sleep.examiner.layerName.searchable",
+  "want": "查得到"
+ },
+ {
+  "at": "src/sleep/examiner.ts:104",
+  "path": "sleep.examiner.layerName.archive",
+  "want": "只在仓库"
+ },
+ {
+  "at": "src/sleep/examiner.ts:107",
+  "path": "sleep.examiner.verdictName.right",
+  "want": "对"
+ },
+ {
+  "at": "src/sleep/examiner.ts:107",
+  "path": "sleep.examiner.verdictName.partial",
+  "want": "部分对"
+ },
+ {
+  "at": "src/sleep/examiner.ts:107",
+  "path": "sleep.examiner.verdictName.wrong",
+  "want": "错"
+ },
+ {
+  "at": "src/sleep/examiner.ts:132",
+  "path": "sleep.examiner.archiveUnfound",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）的路径:行出处整理前都查不到，不能挪进只在仓库，按查得到考"
+ },
+ {
+  "at": "src/sleep/examiner.ts:133",
+  "path": "sleep.examiner.archiveNoSource",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）没有路径:行出处，不能挪进只在仓库，按查得到考"
+ },
+ {
+  "at": "src/sleep/examiner.ts:169",
+  "path": "sleep.examiner.noSnapshot",
+  "want": "runner 没给这一次的快照和材料"
+ },
+ {
+  "at": "src/sleep/examiner.ts:220",
+  "path": "sleep.examiner.sourceNewToday",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）的路径:行出处是今天新加的行，按查得到考"
+ },
+ {
+  "at": "src/sleep/examiner.ts:220",
+  "path": "sleep.examiner.sourceUnfound",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）的路径:行出处整理前都查不到，按查得到考"
+ },
+ {
+  "at": "src/sleep/examiner.ts:287",
+  "path": "sleep.examiner.hiddenFailed",
+  "want": "暗题没出成"
+ },
+ {
+  "at": "src/sleep/examiner.ts:369",
+  "path": "sleep.examiner.oneLayerOnly",
+  "params": 5,
+  "want": "⟨0⟩（⟨1⟩）的 affects 一次只能挪一层：⟨2⟩ → ⟨3⟩，按⟨4⟩算"
+ },
+ {
+  "at": "src/sleep/examiner.ts:415",
+  "path": "sleep.examiner.retired",
+  "params": 1,
+  "want": "已申请退休：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/examiner.ts:560",
+  "path": "sleep.examiner.privateField",
+  "params": 1,
+  "want": "私密字段，不出题：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/examiner.ts:566",
+  "path": "sleep.examiner.compressNoQuestion",
+  "params": 1,
+  "want": "⟨0⟩ 要压缩，但没有出题"
+ },
+ {
+  "at": "src/sleep/examiner.ts:567",
+  "path": "sleep.examiner.affectsNotOn",
+  "params": 1,
+  "want": "⟨0⟩ 的 affects 点名的题不挂在它上面"
+ },
+ {
+  "at": "src/sleep/examiner.ts:568",
+  "path": "sleep.examiner.affectsRetired",
+  "params": 1,
+  "want": "⟨0⟩ 的 affects 点名的题已申请退休，不算出了题"
+ },
+ {
+  "at": "src/sleep/examiner.ts:569",
+  "path": "sleep.examiner.affectsMissing",
+  "params": 1,
+  "want": "⟨0⟩ 的 affects 点名的题不存在"
+ },
+ {
+  "at": "src/sleep/examiner.ts:583",
+  "path": "sleep.examiner.rewroteNoQuestion",
+  "params": 1,
+  "want": "⟨0⟩ 删掉或改写了内容，但没有出题"
+ },
+ {
+  "at": "src/sleep/examiner.ts:593",
+  "path": "sleep.examiner.tooFewQuestions",
+  "params": 3,
+  "want": "⟨0⟩ 删掉或改写了 ⟨1⟩ 处内容，挂在它上面的题只有 ⟨2⟩ 道，要 ⟨1⟩ 道（每一处一道）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:598",
+  "path": "sleep.examiner.placesIn",
+  "params": 2,
+  "want": "⟨0⟩ ⟨1⟩ 处"
+ },
+ {
+  "at": "src/sleep/examiner.ts:598",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/examiner.ts:599",
+  "path": "sleep.examiner.scatteredOne",
+  "params": 3,
+  "want": "⟨0⟩ 改动太散：⟨1⟩ 处，只要求 ⟨2⟩ 道"
+ },
+ {
+  "at": "src/sleep/examiner.ts:599",
+  "path": "sleep.examiner.scatteredMany",
+  "params": 4,
+  "want": "改动太散：⟨0⟩，一共 ⟨1⟩ 处，只要求 ⟨2⟩ 道⟨3⟩"
+ },
+ {
+  "at": "src/sleep/examiner.ts:599",
+  "path": "sleep.examiner.perFileOne",
+  "want": "（每个文件至少 1 道）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:606",
+  "path": "sleep.examiner.tooFewScatteredOne",
+  "params": 4,
+  "want": "⟨0⟩ 删掉或改写了 ⟨1⟩ 处内容，挂在它上面的题只有 ⟨2⟩ 道，要 ⟨3⟩ 道（每一处一道）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:607",
+  "path": "sleep.examiner.tooFewScatteredMany",
+  "params": 4,
+  "want": "删掉或改写了 ⟨0⟩，一共 ⟨1⟩ 处，挂在这些文件上的题只有 ⟨2⟩ 道，要 ⟨3⟩ 道（改动太散，一共只要求 ⟨3⟩ 道）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:634",
+  "path": "sleep.final.noReason",
+  "want": "没说原因",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/examiner.ts:694",
+  "path": "sleep.final.noReason",
+  "want": "没说原因",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/examiner.ts:755",
+  "path": "sleep.final.noPaper",
+  "params": 2,
+  "want": "考生 ⟨0⟩-⟨1⟩ 两次都没交卷",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/examiner.ts:756",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:763",
+  "path": "sleep.final.refsFound",
+  "want": "出处都查得到",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/examiner.ts:763",
+  "path": "sleep.final.refsMissing",
+  "want": "有出处查不到",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/examiner.ts:772",
+  "path": "sleep.final.noGrades",
+  "params": 1,
+  "want": "判分 ⟨0⟩ 两次都没交",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/examiner.ts:774",
+  "path": "sleep.final.noVerdict",
+  "want": "判分没给这道题判定",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/examiner.ts:832",
+  "path": "sleep.examiner.regressed",
+  "params": 4,
+  "want": "倒退：⟨0⟩（⟨1⟩；标准答案：⟨2⟩）⟨3⟩"
+ },
+ {
+  "at": "src/sleep/examiner.ts:832",
+  "path": "sleep.examiner.beforeReason",
+  "params": 1,
+  "want": "（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:833",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/examiner.ts:841",
+  "path": "sleep.examiner.wrongNotHere",
+  "params": 2,
+  "want": "抽到的题整理后答错（不挂在这一段改的东西上，不算这一段的）：⟨0⟩（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:842",
+  "path": "sleep.examiner.wrongBefore",
+  "params": 1,
+  "want": "整理前也答不出：⟨0⟩，题可能出得不好"
+ },
+ {
+  "at": "src/sleep/examiner.ts:843",
+  "path": "sleep.examiner.partBefore",
+  "params": 1,
+  "want": "整理前也只答对一部分：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/examiner.ts:844",
+  "path": "sleep.examiner.partly",
+  "params": 1,
+  "want": "部分对：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/examiner.ts:851",
+  "path": "sleep.examiner.newRateLow",
+  "params": 5,
+  "want": "今天新要点的题在⟨0⟩层得分 ⟨1⟩，不到 ⟨2⟩（⟨3⟩ 道；没答对的：⟨4⟩）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:859",
+  "path": "sleep.examiner.hiddenRateLow",
+  "params": 5,
+  "want": "暗题在⟨0⟩层得分 ⟨1⟩，不到 ⟨2⟩（⟨3⟩ 道；没答对的：⟨4⟩）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:867",
+  "path": "sleep.examiner.importantWrong",
+  "params": 4,
+  "want": "重要度 ⟨0⟩ 的题整理后没答对：⟨1⟩（⟨2⟩；标准答案：⟨3⟩）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:872",
+  "path": "sleep.examiner.importantWorse",
+  "params": 6,
+  "want": "重要度 ⟨0⟩ 的题整理后比整理前差（整理前⟨1⟩，整理后⟨2⟩）：⟨3⟩（⟨4⟩；标准答案：⟨5⟩）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:884",
+  "path": "sleep.examiner.movedTo",
+  "params": 2,
+  "want": "这一段的改动写了它挪到⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/examiner.ts:884",
+  "path": "sleep.examiner.noPlaceNamed",
+  "want": "（没写哪一处）"
+ },
+ {
+  "at": "src/sleep/examiner.ts:893",
+  "path": "sleep.examiner.graderLayer",
+  "params": 1,
+  "want": "判分：挂着的东西今晚改了，该在⟨0⟩层答出来"
+ },
+ {
+  "at": "src/sleep/final.ts:83",
+  "path": "sleep.final.notFinished",
+  "params": 1,
+  "want": "全天考试没考完：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/final.ts:196",
+  "path": "sleep.final.noReason",
+  "want": "没说原因"
+ },
+ {
+  "at": "src/sleep/final.ts:239",
+  "path": "sleep.final.noPaper",
+  "params": 2,
+  "want": "考生 ⟨0⟩-⟨1⟩ 两次都没交卷"
+ },
+ {
+  "at": "src/sleep/final.ts:240",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/final.ts:244",
+  "path": "sleep.final.refsFound",
+  "want": "出处都查得到"
+ },
+ {
+  "at": "src/sleep/final.ts:244",
+  "path": "sleep.final.refsMissing",
+  "want": "有出处查不到"
+ },
+ {
+  "at": "src/sleep/final.ts:251",
+  "path": "sleep.final.noGrades",
+  "params": 1,
+  "want": "判分 ⟨0⟩ 两次都没交"
+ },
+ {
+  "at": "src/sleep/final.ts:253",
+  "path": "sleep.final.noVerdict",
+  "want": "判分没给这道题判定"
+ },
+ {
+  "at": "src/sleep/final.ts:275",
+  "path": "sleep.final.wrongBefore",
+  "params": 1,
+  "want": "整理前就答不好：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/final.ts:284",
+  "path": "sleep.final.wrongUntraced",
+  "params": 2,
+  "want": "全天考试答错，追不到今晚哪一段：⟨0⟩（标准答案：⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/final.ts:288",
+  "path": "sleep.final.wrongLine",
+  "params": 2,
+  "want": "全天考试答错：⟨0⟩（标准答案：⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/flow.ts:152",
+  "path": "sleep.flow.problems",
+  "params": 2,
+  "want": "流程配置有 ⟨0⟩ 处问题：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/flow.ts:152",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/flow.ts:169",
+  "path": "sleep.flow.notObject",
+  "want": "流程配置不是一个对象。"
+ },
+ {
+  "at": "src/sleep/flow.ts:175",
+  "path": "sleep.flow.badValue",
+  "params": 2,
+  "want": "⟨0⟩的 ⟨1⟩ 取值不对。"
+ },
+ {
+  "at": "src/sleep/flow.ts:184",
+  "path": "sleep.flow.badExam",
+  "params": 1,
+  "want": "⟨0⟩的 exam 取值不对。"
+ },
+ {
+  "at": "src/sleep/flow.ts:185",
+  "path": "sleep.flow.examOf",
+  "params": 1,
+  "want": "⟨0⟩的 exam "
+ },
+ {
+  "at": "src/sleep/flow.ts:187",
+  "path": "sleep.flow.badNewRate",
+  "params": 1,
+  "want": "⟨0⟩的 newRate 取值不对。"
+ },
+ {
+  "at": "src/sleep/flow.ts:191",
+  "path": "sleep.flow.badRate",
+  "params": 2,
+  "want": "⟨0⟩的 newRate.⟨1⟩ 取值不对（要在 0 到 1 之间）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:204",
+  "path": "sleep.flow.minOverMax",
+  "params": 3,
+  "want": "⟨0⟩的 min（⟨1⟩）比 max（⟨2⟩）大。"
+ },
+ {
+  "at": "src/sleep/flow.ts:208",
+  "path": "sleep.flow.global",
+  "want": "全局"
+ },
+ {
+  "at": "src/sleep/flow.ts:209",
+  "path": "sleep.flow.global",
+  "want": "全局",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/flow.ts:212",
+  "path": "sleep.flow.globalBudget",
+  "want": "全局 budget "
+ },
+ {
+  "at": "src/sleep/flow.ts:213",
+  "path": "sleep.flow.globalBudget",
+  "want": "全局 budget ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/flow.ts:215",
+  "path": "sleep.flow.global",
+  "want": "全局",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/flow.ts:216",
+  "path": "sleep.flow.global",
+  "want": "全局",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/flow.ts:220",
+  "path": "sleep.flow.badChecks",
+  "want": "全局的 checks 取值不对。"
+ },
+ {
+  "at": "src/sleep/flow.ts:225",
+  "path": "sleep.flow.badGlobalExam",
+  "want": "全局的 exam 取值不对。"
+ },
+ {
+  "at": "src/sleep/flow.ts:226",
+  "path": "sleep.flow.globalExam",
+  "want": "全局 exam "
+ },
+ {
+  "at": "src/sleep/flow.ts:229",
+  "path": "sleep.flow.badBaseBlock",
+  "params": 2,
+  "want": "⟨0⟩的 baseBlocks 里有不行的路径「⟨1⟩」：要相对路径，不能有 ..。"
+ },
+ {
+  "at": "src/sleep/flow.ts:251",
+  "path": "sleep.flow.emptyMark",
+  "params": 1,
+  "want": "⟨0⟩的 ignoreMarks 里有空的一条。"
+ },
+ {
+  "at": "src/sleep/flow.ts:254",
+  "path": "sleep.flow.markHasRegex",
+  "params": 2,
+  "want": "⟨0⟩的 ignoreMarks 里「⟨1⟩」带着正则的符号，却是照字面找的：要当正则用就在前面写 re:；真要找这几个字，换成全角的写法。"
+ },
+ {
+  "at": "src/sleep/flow.ts:257",
+  "path": "sleep.flow.markNoRegex",
+  "params": 1,
+  "want": "⟨0⟩的 ignoreMarks 里「re:」后面没写正则。"
+ },
+ {
+  "at": "src/sleep/flow.ts:258",
+  "path": "sleep.flow.markBadRegex",
+  "params": 3,
+  "want": "⟨0⟩的 ignoreMarks 里「⟨1⟩」不是能用的正则：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/flow.ts:262",
+  "path": "sleep.flow.badGlob",
+  "params": 3,
+  "want": "⟨0⟩的 ⟨1⟩ 里有不行的写法「⟨2⟩」：要相对工作区的通配，不能以 / 或 ! 开头，不能有 ..。"
+ },
+ {
+  "at": "src/sleep/flow.ts:264",
+  "path": "sleep.flow.deadGlob",
+  "params": 3,
+  "want": "⟨0⟩的 ⟨1⟩ 里有对不上任何文件的写法「⟨2⟩」：不要 ./ 开头、不要 / 结尾，目录写成 dir/** 这样的通配。"
+ },
+ {
+  "at": "src/sleep/flow.ts:272",
+  "path": "sleep.flow.badPersonasFile",
+  "want": "全局的 personasFile 取值不对：要相对 flow.json 所在目录的路径，不能有 ..。"
+ },
+ {
+  "at": "src/sleep/flow.ts:276",
+  "path": "sleep.flow.global",
+  "want": "全局",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/flow.ts:277",
+  "path": "sleep.flow.global",
+  "want": "全局",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/flow.ts:282",
+  "path": "sleep.flow.badCoordinator",
+  "want": "全局的 coordinator 取值不对：要写成 { model, persona?, maxPolish? }，model 是 opus / sonnet / haiku，maxPolish 是 0 到 5 的整数。"
+ },
+ {
+  "at": "src/sleep/flow.ts:292",
+  "path": "sleep.flow.stagesNotArray",
+  "want": "stages 必须是一个数组。"
+ },
+ {
+  "at": "src/sleep/flow.ts:297",
+  "path": "sleep.flow.stageNotObject",
+  "params": 1,
+  "want": "第 ⟨0⟩ 段不是一个对象。"
+ },
+ {
+  "at": "src/sleep/flow.ts:299",
+  "path": "sleep.flow.stageNoId",
+  "params": 1,
+  "want": "第 ⟨0⟩ 段没有 id。"
+ },
+ {
+  "at": "src/sleep/flow.ts:300",
+  "path": "sleep.flow.stageDuplicate",
+  "params": 1,
+  "want": "段 ⟨0⟩ 重名了。"
+ },
+ {
+  "at": "src/sleep/flow.ts:302",
+  "path": "sleep.flow.stage",
+  "params": 1,
+  "want": "段 ⟨0⟩ "
+ },
+ {
+  "at": "src/sleep/flow.ts:303",
+  "path": "sleep.flow.badId",
+  "params": 1,
+  "want": "⟨0⟩的 id 不行：只能用字母、数字、_ 和 -，开头是字母或数字（它会变成文件名）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:305",
+  "path": "sleep.flow.noKind",
+  "params": 1,
+  "want": "⟨0⟩没写 kind。"
+ },
+ {
+  "at": "src/sleep/flow.ts:327",
+  "path": "sleep.flow.agentNoSkill",
+  "params": 1,
+  "want": "⟨0⟩是 agent 段，但没写 skill。"
+ },
+ {
+  "at": "src/sleep/flow.ts:328",
+  "path": "sleep.flow.scriptNoCommand",
+  "params": 1,
+  "want": "⟨0⟩是 script 段，但没写 command。"
+ },
+ {
+  "at": "src/sleep/flow.ts:330",
+  "path": "sleep.flow.builtinNoName",
+  "params": 1,
+  "want": "⟨0⟩是 builtin 段，但没写 builtin 名字。"
+ },
+ {
+  "at": "src/sleep/flow.ts:331",
+  "path": "sleep.flow.unknownBuiltin",
+  "params": 2,
+  "want": "⟨0⟩的 builtin「⟨1⟩」不认识。"
+ },
+ {
+  "at": "src/sleep/flow.ts:333",
+  "path": "sleep.flow.unknownTool",
+  "params": 2,
+  "want": "⟨0⟩的 tools 里有不认识的工具「⟨1⟩」。"
+ },
+ {
+  "at": "src/sleep/flow.ts:334",
+  "path": "sleep.flow.emptyBash",
+  "params": 1,
+  "want": "⟨0⟩的 bash 里有空的一条。"
+ },
+ {
+  "at": "src/sleep/flow.ts:338",
+  "path": "sleep.flow.badRegion",
+  "params": 1,
+  "want": "⟨0⟩的 region 取值不对。"
+ },
+ {
+  "at": "src/sleep/flow.ts:342",
+  "path": "sleep.flow.badAuditModel",
+  "params": 1,
+  "want": "⟨0⟩的 auditModel 取值不对（opus 或 sonnet）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:345",
+  "path": "sleep.flow.badReviewModel",
+  "params": 1,
+  "want": "⟨0⟩的 reviewModel 取值不对。"
+ },
+ {
+  "at": "src/sleep/flow.ts:349",
+  "path": "sleep.flow.badSliceCap",
+  "params": 1,
+  "want": "⟨0⟩的 sliceCap 取值不对：要不小于 0 的整数（字数）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:354",
+  "path": "sleep.flow.badDuty",
+  "params": 1,
+  "want": "⟨0⟩的 duty 取值不对：要写成相对工作区的路径或通配的列表（不要 / 或 ./ 开头，不能有 ..）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:358",
+  "path": "sleep.flow.badValue",
+  "params": 2,
+  "want": "⟨0⟩的 ⟨1⟩ 取值不对。",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/flow.ts:362",
+  "path": "sleep.flow.badIds",
+  "params": 2,
+  "want": "⟨0⟩的 ⟨1⟩ 取值不对（要一个不空的 id 数组）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:364",
+  "path": "sleep.flow.needsPersona",
+  "params": 1,
+  "want": "⟨0⟩是 agent 段，全局写了 personasFile，这一段得写 persona（谁来做）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:365",
+  "path": "sleep.flow.personasNoFile",
+  "params": 1,
+  "want": "⟨0⟩写了 persona / reviewers / fixers，但全局没写 personasFile。"
+ },
+ {
+  "at": "src/sleep/flow.ts:366",
+  "path": "sleep.flow.selfReview",
+  "params": 2,
+  "want": "⟨0⟩的 reviewers 里有做这一段的 ⟨1⟩：自己不审自己。"
+ },
+ {
+  "at": "src/sleep/flow.ts:372",
+  "path": "sleep.flow.flowNoAgent",
+  "want": "engine 是 flow，但没有开着的 agent 段。"
+ },
+ {
+  "at": "src/sleep/flow.ts:374",
+  "path": "sleep.flow.flowNoFinish",
+  "want": "engine 是 flow，但没有开着的 script 段 finish（落地靠它）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:380",
+  "path": "sleep.flow.teamNoAgent",
+  "want": "engine 是 team，但没有开着的 agent 段。"
+ },
+ {
+  "at": "src/sleep/flow.ts:382",
+  "path": "sleep.flow.teamNoFinish",
+  "want": "engine 是 team，但没有开着的 script 段 finish（落地靠它）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:384",
+  "path": "sleep.flow.teamParallel",
+  "want": "engine 是 team，全局的 maxParallel 得写 1（专员一个个做）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:385",
+  "path": "sleep.flow.teamStageExam",
+  "params": 1,
+  "want": "段 ⟨0⟩ 配了 exam，但 engine 是 team（题由领导出，段的 exam 不写）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:386",
+  "path": "sleep.flow.teamPersonasFile",
+  "want": "engine 是 team，不能写 personasFile（交叉审是 flow 的多人模式）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:387",
+  "path": "sleep.flow.teamCoordinator",
+  "want": "engine 是 team，不能写 coordinator（定过不过的是领导）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:389",
+  "path": "sleep.flow.teamFixRounds",
+  "want": "engine 是 team，全局的 maxFixRounds 用不上（写在 team.maxFixRounds 里）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:390",
+  "path": "sleep.flow.teamReviewModel",
+  "want": "engine 是 team，全局的 reviewModel 用不上（team 没有交叉审）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:391",
+  "path": "sleep.flow.teamStageModel",
+  "params": 2,
+  "want": "段 ⟨0⟩ 写了 ⟨1⟩，但 engine 是 team（没有核依据、交叉审的会话）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:392",
+  "path": "sleep.flow.teamNoBaseBlocks",
+  "want": "engine 是 team，但全局 exam.baseBlocks 没写（考生要它）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:394",
+  "path": "sleep.flow.teamNoBlock",
+  "want": "engine 是 team，但没写 team 块（至少要 { lead: { skill } }）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:395",
+  "path": "sleep.flow.badTeam",
+  "want": "全局的 team 取值不对：要写成 { lead: { model?, skill, turnMinutes? }, maxFixRounds?, continuity?, tolerance? }。"
+ },
+ {
+  "at": "src/sleep/flow.ts:400",
+  "path": "sleep.flow.badLead",
+  "want": "team 的 lead 取值不对：要写成 { model?, skill, turnMinutes? }，skill 是相对 flow.json 所在目录的路径（不能有 ..），model 是 opus / sonnet / haiku，turnMinutes 大于 0。"
+ },
+ {
+  "at": "src/sleep/flow.ts:405",
+  "path": "sleep.flow.badTeamFixRounds",
+  "want": "team 的 maxFixRounds 取值不对：要 0 到 2 的整数。"
+ },
+ {
+  "at": "src/sleep/flow.ts:411",
+  "path": "sleep.flow.badTolerance",
+  "want": "team 的 tolerance 取值不对：要 0 到 1 之间的一个数。"
+ },
+ {
+  "at": "src/sleep/flow.ts:417",
+  "path": "sleep.flow.badWithdrawTwoAnswers",
+  "want": "team 的 withdrawTwoAnswers 取值不对：要 true 或 false。"
+ },
+ {
+  "at": "src/sleep/flow.ts:421",
+  "path": "sleep.flow.badWithdrawCap",
+  "want": "team 的 withdrawCap 取值不对：要不小于 0 的整数。"
+ },
+ {
+  "at": "src/sleep/flow.ts:425",
+  "path": "sleep.flow.badDigestCap",
+  "want": "team 的 digestCap 取值不对：要不小于 200 的整数（字数）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:429",
+  "path": "sleep.flow.badTeamSliceCap",
+  "want": "team 的 sliceCap 取值不对：要不小于 0 的整数（字数）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:433",
+  "path": "sleep.flow.badDiffCap",
+  "want": "team 的 diffCap 取值不对：要不小于 500 的整数（字数）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:437",
+  "path": "sleep.flow.badOld",
+  "want": "team 的 old 取值不对：要不小于 0 的整数。"
+ },
+ {
+  "at": "src/sleep/flow.ts:441",
+  "path": "sleep.flow.badContinuityAt",
+  "want": "team 的 continuityAt 取值不对：要写一个 agent 段的 id。"
+ },
+ {
+  "at": "src/sleep/flow.ts:445",
+  "path": "sleep.flow.continuityNotLast",
+  "params": 1,
+  "want": "team 的 continuityAt 得是最后一个开着的专员（⟨0⟩）：固定要问的题在今晚的改动都做完以后才问。"
+ },
+ {
+  "at": "src/sleep/flow.ts:445",
+  "path": "sleep.flow.noneAgent",
+  "want": "没有"
+ },
+ {
+  "at": "src/sleep/flow.ts:455",
+  "path": "sleep.flow.examNoBaseBlocks",
+  "want": "有段要考试，但全局 exam.baseBlocks 没写。"
+ },
+ {
+  "at": "src/sleep/flow.ts:458",
+  "path": "sleep.flow.badAfter",
+  "params": 2,
+  "want": "段 ⟨0⟩ 的 after 指向不存在的段「⟨1⟩」。"
+ },
+ {
+  "at": "src/sleep/flow.ts:475",
+  "path": "sleep.flow.afterCycle",
+  "params": 1,
+  "want": "段之间的 after 绕成了环：⟨0⟩。"
+ },
+ {
+  "at": "src/sleep/flow.ts:475",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/flow.ts:478",
+  "path": "sleep.flow.coordinatorNoFile",
+  "want": "全局的 coordinator 写了 persona，但没写 personasFile。"
+ },
+ {
+  "at": "src/sleep/flow.ts:485",
+  "path": "sleep.flow.badReplayFinish",
+  "want": "全局的 replayFinish 取值不对：要写成命令的列表，每条是不空的字符串数组（argv，{day} 换成日子），比如 [[\"python3\", \"scripts/x.py\", \"{day}\"]]。"
+ },
+ {
+  "at": "src/sleep/flow.ts:490",
+  "path": "sleep.flow.badReplayPrep",
+  "want": "全局的 replayPrep 取值不对：要写成命令的列表，每条是不空的字符串数组（argv，{day} 换成日子），比如 [[\"python3\", \"scripts/x.py\", \"{day}\"]]。"
+ },
+ {
+  "at": "src/sleep/flow.ts:497",
+  "path": "sleep.flow.badReplayOverlay",
+  "want": "全局的 replayOverlay 取值不对：要写成相对工作区的文件路径的列表，不能以 / 或 ./ 开头、不能以 / 结尾、不能有 ..，不能进 .git，比如 [\"scripts/x.py\"]。"
+ },
+ {
+  "at": "src/sleep/flow.ts:508",
+  "path": "sleep.flow.personasNotObject",
+  "want": "personas 不是一个对象。"
+ },
+ {
+  "at": "src/sleep/flow.ts:512",
+  "path": "sleep.flow.personaEmptyId",
+  "want": "personas 里有空的 id。"
+ },
+ {
+  "at": "src/sleep/flow.ts:514",
+  "path": "sleep.flow.personaShape",
+  "params": 1,
+  "want": "persona ⟨0⟩ 要写成 { name, text }，两样都不能空。"
+ },
+ {
+  "at": "src/sleep/flow.ts:519",
+  "path": "sleep.flow.personasTooFew",
+  "want": "personas 至少要两个（一个做、一个审）。"
+ },
+ {
+  "at": "src/sleep/flow.ts:529",
+  "path": "sleep.flow.personaMissing",
+  "params": 2,
+  "want": "段 ⟨0⟩ 点名的 persona「⟨1⟩」在 personas 里没有。"
+ },
+ {
+  "at": "src/sleep/flow.ts:532",
+  "path": "sleep.flow.coordinatorPersonaMissing",
+  "params": 1,
+  "want": "coordinator 的 persona「⟨0⟩」在 personas 里没有。"
+ },
+ {
+  "at": "src/sleep/flow.ts:620",
+  "path": "sleep.flow.planAfter",
+  "params": 1,
+  "want": "等 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/flow.ts:620",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/flow.ts:622",
+  "path": "sleep.flow.planClash",
+  "params": 1,
+  "want": "跟 ⟨0⟩ 改同一个文件"
+ },
+ {
+  "at": "src/sleep/flow.ts:622",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/flow.ts:623",
+  "path": "sleep.flow.planOnly",
+  "params": 1,
+  "want": " 只在：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/flow.ts:623",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/flow.ts:624",
+  "path": "sleep.flow.planWave",
+  "params": 4,
+  "want": "第 ⟨0⟩ 波 ⟨1⟩⟨2⟩⟨3⟩"
+ },
+ {
+  "at": "src/sleep/flow.ts:624",
+  "path": "sleep.flow.planNotes",
+  "params": 1,
+  "want": "（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/flow.ts:624",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/flow.ts:628",
+  "path": "sleep.flow.planOff",
+  "params": 1,
+  "want": "不跑 ⟨0⟩（关了）"
+ },
+ {
+  "at": "src/sleep/flow.ts:638",
+  "path": "sleep.flow.notJson",
+  "want": "流程文件不是合法的 JSON。"
+ },
+ {
+  "at": "src/sleep/flow.ts:648",
+  "path": "sleep.flow.readError",
+  "params": 1,
+  "want": "读流程文件出错：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/flow.ts:652",
+  "path": "sleep.flow.readError",
+  "params": 1,
+  "want": "读流程文件出错：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/flow.ts:655",
+  "path": "sleep.flow.saveGoodError",
+  "params": 1,
+  "want": "存上一份能用的出错：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/flow.ts:661",
+  "path": "sleep.flow.goodBroken",
+  "want": "上一份能用的也坏了。"
+ },
+ {
+  "at": "src/sleep/host.ts:186",
+  "path": "sleep.host.flowBroken",
+  "want": "流程文件有问题，也没有上一份能用的"
+ },
+ {
+  "at": "src/sleep/host.ts:187",
+  "path": "sleep.host.noFlow",
+  "want": "没有流程文件"
+ },
+ {
+  "at": "src/sleep/host.ts:192",
+  "path": "sleep.host.missingFile",
+  "params": 1,
+  "want": "没有 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:194",
+  "path": "sleep.host.missingFile",
+  "params": 1,
+  "want": "没有 ⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/host.ts:203",
+  "path": "sleep.host.missingSkills",
+  "params": 1,
+  "want": "没有 skill 页 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:203",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/host.ts:214",
+  "path": "sleep.host.missingFile",
+  "params": 1,
+  "want": "没有 ⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/host.ts:216",
+  "path": "sleep.host.notJson",
+  "params": 1,
+  "want": "⟨0⟩ 不是合法的 JSON"
+ },
+ {
+  "at": "src/sleep/host.ts:219",
+  "path": "sleep.host.unusable",
+  "params": 1,
+  "want": "⟨0⟩ 不能用"
+ },
+ {
+  "at": "src/sleep/host.ts:320",
+  "path": "sleep.host.notHere",
+  "want": "这个会话不用交这个。"
+ },
+ {
+  "at": "src/sleep/host.ts:322",
+  "path": "sleep.host.checksOut",
+  "params": 1,
+  "want": "把关还没看完（还差 ⟨0⟩ 批），等结论回来照着写完提案再交差"
+ },
+ {
+  "at": "src/sleep/host.ts:324",
+  "path": "sleep.host.checkAfterDone",
+  "want": "已经交差了，这一段不能再交把关"
+ },
+ {
+  "at": "src/sleep/host.ts:362",
+  "path": "sleep.host.bugLine",
+  "params": 1,
+  "want": "- 毛病：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:362",
+  "path": "sleep.host.uncertainLine",
+  "params": 1,
+  "want": "- 拿不准：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:362",
+  "path": "sleep.host.proposalLine",
+  "params": 1,
+  "want": "- 提案：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:366",
+  "path": "sleep.host.noNotes",
+  "want": "（前面的段没有留下毛病、拿不准或提案）"
+ },
+ {
+  "at": "src/sleep/host.ts:369",
+  "path": "sleep.host.noStoreTonight",
+  "want": "（今晚没有事件库，没有写进去的经过）"
+ },
+ {
+  "at": "src/sleep/host.ts:384",
+  "path": "sleep.host.created",
+  "params": 2,
+  "want": "- 创建 ⟨0⟩⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:384",
+  "path": "sleep.host.stanceNote",
+  "params": 1,
+  "want": "（态度：⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/host.ts:386",
+  "path": "sleep.host.field.summary",
+  "want": "摘要"
+ },
+ {
+  "at": "src/sleep/host.ts:386",
+  "path": "sleep.host.field.gist",
+  "want": "要点"
+ },
+ {
+  "at": "src/sleep/host.ts:386",
+  "path": "sleep.host.field.importance",
+  "want": "重要度"
+ },
+ {
+  "at": "src/sleep/host.ts:386",
+  "path": "sleep.host.field.stance",
+  "want": "态度"
+ },
+ {
+  "at": "src/sleep/host.ts:387",
+  "path": "sleep.host.fieldChange",
+  "params": 3,
+  "want": "⟨0⟩：⟨1⟩→⟨2⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:387",
+  "path": "sleep.marks.nothing",
+  "want": "无"
+ },
+ {
+  "at": "src/sleep/host.ts:387",
+  "path": "sleep.marks.nothing",
+  "want": "无"
+ },
+ {
+  "at": "src/sleep/host.ts:388",
+  "path": "sleep.host.retiredWord",
+  "want": "退休"
+ },
+ {
+  "at": "src/sleep/host.ts:389",
+  "path": "sleep.host.updated",
+  "params": 2,
+  "want": "- 更新 ⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:389",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/host.ts:391",
+  "path": "sleep.host.merged",
+  "params": 2,
+  "want": "- 合并 ⟨0⟩ 并入 ⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:392",
+  "path": "sleep.host.superseded",
+  "params": 2,
+  "want": "- 取代 ⟨0⟩ 被 ⟨1⟩ 取代"
+ },
+ {
+  "at": "src/sleep/host.ts:393",
+  "path": "sleep.host.retired",
+  "params": 1,
+  "want": "- 退休 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:398",
+  "path": "sleep.host.split",
+  "params": 2,
+  "want": "- 拆分 ⟨0⟩ 拆出 ⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:408",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/host.ts:409",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/host.ts:414",
+  "path": "sleep.host.nothingWrittenYet",
+  "want": "（今晚过了的段还没有写进事件库的经过）"
+ },
+ {
+  "at": "src/sleep/host.ts:418",
+  "path": "sleep.host.entry",
+  "params": 6,
+  "want": "- ⟨0⟩\n  全文：⟨1⟩\n  要点：⟨2⟩\n  谁：⟨3⟩\n  来源：⟨4⟩⟨5⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:418",
+  "path": "sleep.host.notTagged",
+  "want": "（没标）"
+ },
+ {
+  "at": "src/sleep/host.ts:418",
+  "path": "sleep.marks.none",
+  "want": "（无）"
+ },
+ {
+  "at": "src/sleep/host.ts:418",
+  "path": "sleep.host.corrects",
+  "params": 1,
+  "want": "\n  更正 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:419",
+  "path": "sleep.host.nothingWritten",
+  "want": "（今晚过了的段没有写进事件库的经过）"
+ },
+ {
+  "at": "src/sleep/host.ts:420",
+  "path": "sleep.host.withMoved",
+  "params": 2,
+  "want": "⟨0⟩\n\n## 今晚动过的事\n⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:442",
+  "path": "sleep.host.teamNoCommon",
+  "want": "engine 是 team，但 plan 里没有 common（夜里整理的约定）"
+ },
+ {
+  "at": "src/sleep/host.ts:471",
+  "path": "sleep.host.nightClosed",
+  "want": "这一夜收摊了，不再开会话"
+ },
+ {
+  "at": "src/sleep/host.ts:550",
+  "path": "sleep.host.scratchIsState",
+  "params": 1,
+  "want": "拷贝目录 ⟨0⟩ 就是 stateDir 或数据库所在的目录"
+ },
+ {
+  "at": "src/sleep/host.ts:551",
+  "path": "sleep.host.scratchInWorkspace",
+  "params": 1,
+  "want": "拷贝目录 ⟨0⟩ 在工作区里"
+ },
+ {
+  "at": "src/sleep/host.ts:634",
+  "path": "sleep.host.noSpace",
+  "params": 2,
+  "want": "剩余空间不够：剩 ⟨0⟩，要 ⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:646",
+  "path": "sleep.host.cannotCopy",
+  "params": 1,
+  "want": "拷不出来：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:741",
+  "path": "sleep.host.copyUnopenable",
+  "params": 1,
+  "want": "整理前的事件库拷贝打不开：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:772",
+  "path": "sleep.lead.itemName",
+  "params": 2,
+  "want": "第 ⟨0⟩ 道（⟨1⟩）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/host.ts:774",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:775",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:776",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:782",
+  "path": "sleep.host.opRefused",
+  "params": 3,
+  "want": "⟨0⟩ ⟨1⟩：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:784",
+  "path": "sleep.host.opRefused",
+  "params": 3,
+  "want": "⟨0⟩ ⟨1⟩：⟨2⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/host.ts:785",
+  "path": "sleep.host.opRefused",
+  "params": 3,
+  "want": "⟨0⟩ ⟨1⟩：⟨2⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/host.ts:873",
+  "path": "sleep.host.noCommand",
+  "want": "没有命令"
+ },
+ {
+  "at": "src/sleep/host.ts:874",
+  "path": "sleep.host.scriptsClosed",
+  "want": "这一夜收摊了，不再跑脚本"
+ },
+ {
+  "at": "src/sleep/host.ts:888",
+  "path": "sleep.marks.slice",
+  "params": 2,
+  "want": "【⟨0⟩】\n⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:899",
+  "path": "sleep.marks.noStore",
+  "want": "（今晚没有事件库）"
+ },
+ {
+  "at": "src/sleep/host.ts:1000",
+  "path": "sleep.host.noSlices",
+  "params": 1,
+  "want": "sleep/⟨0⟩/ 下没有切片，也没有 input.md"
+ },
+ {
+  "at": "src/sleep/host.ts:1004",
+  "path": "sleep.host.noSlice",
+  "want": "（这一片今天没有）"
+ },
+ {
+  "at": "src/sleep/host.ts:1004",
+  "path": "sleep.marks.slice",
+  "params": 2,
+  "want": "【⟨0⟩】\n⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:1100",
+  "path": "sleep.host.copyUnopenable",
+  "params": 1,
+  "want": "整理前的事件库拷贝打不开：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/host.ts:1206",
+  "path": "sleep.host.previewExit",
+  "params": 2,
+  "want": "预览脚本退出码 ⟨0⟩⟨1⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:1206",
+  "path": "sleep.host.previewOut",
+  "params": 1,
+  "want": "：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/host.ts:1209",
+  "path": "sleep.host.previewCannotRun",
+  "params": 1,
+  "want": "预览脚本跑不起来：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/ladder.ts:52",
+  "path": "sleep.ladder.cacheMissed",
+  "params": 1,
+  "want": "考试会话 ⟨0⟩ 没吃到缓存"
+ },
+ {
+  "at": "src/sleep/lead.ts:49",
+  "path": "sleep.lead.silent",
+  "want": "领导没回，照考试的结果走"
+ },
+ {
+  "at": "src/sleep/lead.ts:170",
+  "path": "sleep.lead.failedLine",
+  "params": 5,
+  "want": "⟨0⟩（⟨1⟩）：⟨2⟩；标准答案：⟨3⟩；整理后答的：⟨4⟩"
+ },
+ {
+  "at": "src/sleep/lead.ts:170",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/lead.ts:172",
+  "path": "sleep.lead.silentFor",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/lead.ts:173",
+  "path": "sleep.lead.silentFor",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/lead.ts:174",
+  "path": "sleep.lead.note",
+  "params": 2,
+  "want": "领导（⟨0⟩）：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/lead.ts:175",
+  "path": "sleep.lead.fixLine",
+  "params": 2,
+  "want": "⟨0⟩；该怎么改：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/lead.ts:177",
+  "path": "sleep.lead.wantedPass",
+  "params": 1,
+  "want": "领导想让「⟨0⟩」过，但前后一致的考试没过，不算"
+ },
+ {
+  "at": "src/sleep/lead.ts:181",
+  "path": "sleep.lead.failNoFix",
+  "params": 1,
+  "want": "领导不让「⟨0⟩」过，但没写哪里要改，照过"
+ },
+ {
+  "at": "src/sleep/lead.ts:260",
+  "path": "sleep.lead.itemName",
+  "params": 2,
+  "want": "第 ⟨0⟩ 道（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/lead.ts:262",
+  "path": "sleep.lead.cannotCheck",
+  "params": 1,
+  "want": "查不了：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/lead.ts:263",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/lead.ts:264",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/lead.ts:282",
+  "path": "sleep.lead.noneTaken",
+  "params": 1,
+  "want": "一道都没收：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/lead.ts:282",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/lead.ts:286",
+  "path": "sleep.lead.someTaken",
+  "params": 2,
+  "want": "收下 ⟨0⟩ 道；这几道没收：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/lead.ts:286",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/lead.ts:286",
+  "path": "sleep.marks.received",
+  "want": "收到。"
+ },
+ {
+  "at": "src/sleep/lead.ts:309",
+  "path": "sleep.lead.notNow",
+  "want": "现在不用交这个。"
+ },
+ {
+  "at": "src/sleep/lead.ts:311",
+  "path": "sleep.lead.notNow",
+  "want": "现在不用交这个。",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/lead.ts:313",
+  "path": "sleep.marks.received",
+  "want": "收到。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:7",
+  "path": "sleep.leadprompts.coreHead",
+  "want": "这是今晚整理之前的你"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:11",
+  "path": "sleep.leadprompts.role.lead",
+  "want": "【夜里整理·把关】今晚的整理分给几个专员一个个做，你不动手整理，你来把关：每个专员交差以后，我把它实际改了什么给你看，你对着原话看它改得对不对、漏了什么，出题；考完我把前后两次的结果给你，你定过不过、哪几处要它改。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:12",
+  "path": "sleep.leadprompts.role.onlyLook",
+  "want": "你只看、只定：能读文件、能翻原话和事件，不能改任何东西。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:18",
+  "path": "sleep.leadprompts.refused.layer",
+  "want": "layer 只能是 resident 或 searchable"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:19",
+  "path": "sleep.leadprompts.refused.probe",
+  "want": "probe 只能是 keep、new、missed 或 continuity"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:21",
+  "path": "sleep.leadprompts.refused.ownChange",
+  "want": "出处都是这个专员这次自己写的东西：new、missed 的题至少要有一条出处是原话（#序号 / c:序号 / q编号），或者是它动手以前就有的记录（以前的事件、经过，文件里原来就有的那一行）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:22",
+  "path": "sleep.leadprompts.refused.full",
+  "params": 1,
+  "want": "一个专员最多收 ⟨0⟩ 道，已经收满了"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:23",
+  "path": "sleep.leadprompts.refused.must",
+  "want": "continuity 的题要写 must：必须答对的那一件事，只写一件；别的细节写进 extras"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:28",
+  "path": "sleep.leadprompts.nudge.review",
+  "want": "你还没调 lead_review。看完改动就交：intent 和出的题。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:29",
+  "path": "sleep.leadprompts.nudge.verdict",
+  "want": "你还没调 lead_verdict。看完考试结果就交：过不过、哪里要改。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:47",
+  "path": "sleep.leadprompts.review.head",
+  "params": 3,
+  "want": "【专员交差】⟨0⟩「⟨1⟩」⟨2⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:47",
+  "path": "sleep.leadprompts.review.round",
+  "params": 1,
+  "want": "（改过以后第 ⟨0⟩ 次交）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:48",
+  "path": "sleep.leadprompts.review.said",
+  "params": 2,
+  "want": "它说的（⟨0⟩）：\n⟨1⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:48",
+  "path": "sleep.runner.report.notWritten",
+  "want": "（没写）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:49",
+  "path": "sleep.leadprompts.review.uncertain",
+  "params": 1,
+  "want": "它拿不准的：\n⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:50",
+  "path": "sleep.leadprompts.review.changes",
+  "params": 1,
+  "want": "它列的改动：\n⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:50",
+  "path": "sleep.leadprompts.review.changesCut",
+  "params": 1,
+  "want": "⟨0⟩\n…（太长，后面截掉了）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:52",
+  "path": "sleep.leadprompts.review.files",
+  "params": 2,
+  "want": "实际改的文件（⟨0⟩ 个；- 是原来的，+ 是它写的）：\n⟨1⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:53",
+  "path": "sleep.leadprompts.review.ops",
+  "params": 2,
+  "want": "实际写进事件库的（⟨0⟩ 行）：\n⟨1⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:54",
+  "path": "sleep.leadprompts.review.hints",
+  "params": 1,
+  "want": "对账看出来的（它说的和实际改的对不上）：\n⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:55",
+  "path": "sleep.leadprompts.review.continuity",
+  "params": 1,
+  "want": "今天固定要问的题（问法照抄，你来写标准答案和出处；probe 写 continuity，layer 写 resident。must 写必须答对的那一件事——只写一件事（一个人、一件事、一个结果），别把几件事并成一句；别的细节一条条写进 extras，只记答对几条、不影响过不过。这几道题等这个专员自己的题考过以后单独考，考的是今晚都整理完她醒来的样子）：\n⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:57",
+  "path": "sleep.leadprompts.review.handIn",
+  "params": 2,
+  "want": "看完用 lead_review 交，最多 ⟨0⟩ 道题。⟨1⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:58",
+  "path": "sleep.leadprompts.review.intent",
+  "want": "- intent：每一处改动想做什么；你对着原话看出不对的，fix 里写该怎么改。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:59",
+  "path": "sleep.leadprompts.review.questions",
+  "want": "- questions：三种都要想——keep（这次改动碰到的地方，原来记着的还答得出吗）、new（这次改动该带来的，整理后答得出吗）、missed（今天有、它该记却漏掉的）。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:60",
+  "path": "sleep.leadprompts.review.layer",
+  "want": "- 每道题标 layer：resident（不查就该答得出）或 searchable（查一下答得出的细节）。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:61",
+  "path": "sleep.leadprompts.review.gold",
+  "want": "- 标准答案从原话和原来的记录里来，出处至少一条查得到；不要照着它交的改动抄。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:76",
+  "path": "sleep.leadprompts.verdict.notExamined",
+  "want": "没考"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:80",
+  "path": "sleep.leadprompts.verdict.head",
+  "params": 6,
+  "want": "【考完了】⟨0⟩「⟨1⟩」⟨2⟩：⟨3⟩（整理后 ⟨4⟩，整理前 ⟨5⟩）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:80",
+  "path": "sleep.leadprompts.verdict.round",
+  "params": 1,
+  "want": "（第 ⟨0⟩ 次）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:80",
+  "path": "sleep.leadprompts.verdict.broken",
+  "want": "考试没考完，没法判"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:80",
+  "path": "sleep.leadprompts.verdict.consistent",
+  "want": "前后一致，过了"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:80",
+  "path": "sleep.leadprompts.verdict.failed",
+  "want": "没过"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:81",
+  "path": "sleep.leadprompts.verdict.failedQuestions",
+  "params": 1,
+  "want": "没过的题：\n⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:81",
+  "path": "sleep.leadprompts.verdict.failedQuestion",
+  "params": 7,
+  "want": "- ⟨0⟩（⟨1⟩）⟨2⟩\n  标准答案：⟨3⟩\n  整理后答的：⟨4⟩⟨5⟩\n  ⟨6⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:81",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:81",
+  "path": "sleep.leadprompts.verdict.beforeAnswer",
+  "params": 1,
+  "want": "\n  整理前答的：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:81",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:82",
+  "path": "sleep.leadprompts.verdict.notes",
+  "params": 1,
+  "want": "另外：\n⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:83",
+  "path": "sleep.leadprompts.verdict.fixes",
+  "params": 1,
+  "want": "你看改动时记下的要改的地方：\n⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:83",
+  "path": "sleep.leadprompts.verdict.fix",
+  "params": 2,
+  "want": "- ⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:84",
+  "path": "sleep.leadprompts.verdict.twice",
+  "params": 4,
+  "want": "⟨0⟩\n⟨1⟩\n每道在 faults 里判一下：是题的毛病（fault 写 question：标准答案把几件事并成一句，或者明天醒来的开头、事件库里本来就放不下）——⟨2⟩，这道题按新的单独再考，不为它把专员发回去；⟨3⟩；还是答的毛病（fault 写 answer：整理没做到）——照旧在 fixes 里写怎么改。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:84",
+  "path": "sleep.leadprompts.verdict.twiceQuestion",
+  "params": 5,
+  "want": "- ⟨0⟩　⟨1⟩\n  标准答案：⟨2⟩\n  两轮答的：⟨3⟩⟨4⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:84",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:84",
+  "path": "sleep.replay.answerSep",
+  "want": " ／ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:84",
+  "path": "sleep.leadprompts.verdict.source",
+  "params": 2,
+  "want": "\n  出处 ⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:84",
+  "path": "sleep.leadprompts.noOriginal",
+  "want": "（读不出原文）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:85",
+  "path": "sleep.leadprompts.verdict.handIn",
+  "want": "用 lead_verdict 交：pass 过不过；不过的在 fixes 里逐条写哪里要改、怎么改。考试没过的不能过。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:92",
+  "path": "sleep.leadprompts.consist.lost",
+  "want": "整理前答得出，整理后答不出"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:94",
+  "path": "sleep.leadprompts.consist.noCopy",
+  "want": "整理后答不出；整理前的事件库没拷成，没法考整理前，照这次改动碰坏的算"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:95",
+  "path": "sleep.leadprompts.consist.noCopyNote",
+  "want": "整理前的事件库没拷成：整理前那一场没考，整理后答不出的 keep 题照碰坏了算"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:96",
+  "path": "sleep.leadprompts.consist.bothWrong",
+  "params": 1,
+  "want": "整理前、整理后都答不出（不算这次改动的）：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:97",
+  "path": "sleep.leadprompts.consist.beforePartial",
+  "params": 1,
+  "want": "整理后答不出，整理前也只答对一部分（不算这次改动的）：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:98",
+  "path": "sleep.leadprompts.consist.newWrong",
+  "params": 2,
+  "want": "⟨0⟩ 题没答对（得分率够线，不拦）：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:99",
+  "path": "sleep.leadprompts.consist.belowRate",
+  "params": 2,
+  "want": "new / missed 题的得分率 ⟨0⟩%，不到 ⟨1⟩%"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:101",
+  "path": "sleep.leadprompts.consist.belowRoundOne",
+  "params": 2,
+  "want": "第 1 轮出的 new / missed 题的得分率 ⟨0⟩%，不到 ⟨1⟩%（后面几轮新加的题不算进来）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:103",
+  "path": "sleep.leadprompts.consist.continuity",
+  "want": "每晚固定要问的题，整理后没答对（这种题每一道都得答对）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:104",
+  "path": "sleep.leadprompts.consist.broken",
+  "params": 1,
+  "want": "考试没考完，没法判前后一致不一致：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:105",
+  "path": "sleep.leadprompts.consist.noQuestions",
+  "want": "没有题可考，前后一致的考试没考"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:107",
+  "path": "sleep.leadprompts.consist.notExamined",
+  "params": 1,
+  "want": "没考成，改动不落地：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:109",
+  "path": "sleep.leadprompts.consist.noBeforeView",
+  "want": "整理后答不出；整理前的样子拼不出来，没法考整理前，照这次改动碰坏的算"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:110",
+  "path": "sleep.leadprompts.consist.afterPartial",
+  "params": 1,
+  "want": "整理后只答对一部分（照规矩不算前后不一致）：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:111",
+  "path": "sleep.leadprompts.consist.residentOff",
+  "params": 1,
+  "want": "常驻那层没考（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:112",
+  "path": "sleep.leadprompts.consist.archive",
+  "params": 1,
+  "want": "有 ⟨0⟩ 道只在仓库那层的题没考（这种考试只考常驻、查得到两层）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:116",
+  "path": "sleep.leadprompts.fix.noPaste",
+  "want": "只把答案照着写进去、记录里看不出出处（哪句原话、哪件事）的修改不算数：这种的照没过定，fixes 里写「要带出处」。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:117",
+  "path": "sleep.leadprompts.fix.roundNote",
+  "params": 1,
+  "want": "这是它照你上一次说的改过以后再交的。下面只列这一轮新改的（上一轮改的你看过了，全文在上一轮的 .diff 里）；出题只出这一轮新带来的，上一轮没过的题引擎会接着考。⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:119",
+  "path": "sleep.leadprompts.fix.nothingChanged",
+  "want": "它这一次交上来什么都没改（文件、事件库都没动）：没有再考，下面是上一轮的考试结果。你上一次要它改的没改，照这个定。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:121",
+  "path": "sleep.leadprompts.changedAfterHandIn",
+  "params": 2,
+  "want": "交差以后提案又变了（⟨0⟩⟨1⟩）：考的不是现在这一份，不落地"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:121",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:123",
+  "path": "sleep.leadprompts.fix.sessionGone",
+  "params": 1,
+  "want": "「⟨0⟩」的会话已经不在了，没法在原来的会话里改，它的改动整份不要"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:125",
+  "path": "sleep.leadprompts.fix.overBudget",
+  "params": 1,
+  "want": "花费到了绝对线，「⟨0⟩」没过也不再退回去改"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:132",
+  "path": "sleep.leadprompts.fix.head",
+  "want": "【退回修改】你交的这一段考过了：照整理后的样子，下面这几处答不出、或者不对。就在你现在的提案和事件库上接着改，只改这几处，别的不动、不要重做。每一处回到它的出处（原话、原来的记录）去看缺了什么，照出处补，补的地方写上出处："
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:134",
+  "path": "sleep.leadprompts.fix.handIn",
+  "params": 1,
+  "want": "改完再用 stage_done 交一次：changes 只列这一次新改的，report 写这次改了什么。⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:134",
+  "path": "sleep.leadprompts.fix.roundsLeft",
+  "params": 1,
+  "want": "这次还不过，还能再改 ⟨0⟩ 轮。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:134",
+  "path": "sleep.leadprompts.fix.lastRound",
+  "want": "这是最后一次，还不过，这一段今晚的改动就整份不要了。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:139",
+  "path": "sleep.leadprompts.owed.first",
+  "params": 4,
+  "want": "【先补欠着的】这一段在 ⟨0⟩ 没做成，欠着。先把⟨1⟩这一段该做的补上（材料在 ⟨2⟩ 下面，自己去读），照样写进今晚的提案目录；补完再做今天的。交差时在 report 里写明补了哪一天（把日期原样写上，比如「补了 ⟨3⟩」）：写了的那几天才算补上。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:139",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:139",
+  "path": "sleep.leadprompts.owed.these",
+  "want": "这几天"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:139",
+  "path": "sleep.leadprompts.owed.that",
+  "want": "那一天"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:139",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:141",
+  "path": "sleep.leadprompts.owed.hint",
+  "params": 2,
+  "want": "它今晚还要补 ⟨0⟩ 欠着的这一段（材料在 ⟨1⟩ 下面）：看它补了没有，漏了的算 missed"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:141",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:141",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:146",
+  "path": "sleep.leadprompts.cont.mustWrong",
+  "params": 3,
+  "want": "固定要问的题「⟨0⟩」的要点没答对；照整理后醒来的样子答成：⟨1⟩；出处：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:146",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:146",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:146",
+  "path": "sleep.teamrun.noSources",
+  "want": "（题上没写）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:148",
+  "path": "sleep.leadprompts.cont.ratio",
+  "params": 4,
+  "want": "固定要问的题：要点 ⟨0⟩/⟨1⟩，细节 ⟨2⟩/⟨3⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:150",
+  "path": "sleep.leadprompts.cont.buildFailed",
+  "params": 1,
+  "want": "回放里拼不出她醒来的样子（⟨0⟩），固定要问的题没法照真的夜里的样子考，不算过"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:151",
+  "path": "sleep.leadprompts.cont.notExamined",
+  "params": 1,
+  "want": "固定要问的题没考成，不算过：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:153",
+  "path": "sleep.leadprompts.cont.notHandedIn",
+  "params": 1,
+  "want": "固定要问的题领导没交上来（⟨0⟩），没有标准答案没法考，这道关不算过"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:153",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:158",
+  "path": "sleep.leadprompts.revision.same",
+  "want": "新的标准答案是空的，或者跟原来的一样"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:159",
+  "path": "sleep.leadprompts.revision.notNarrower",
+  "want": "新的标准答案不是把原来的收窄：只能从原来的里面留下完整的一句（照逗号、句号分），不能只取一句里的一截、不能加原来没有的、也不能一句都不少"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:161",
+  "path": "sleep.leadprompts.revision.refused",
+  "params": 2,
+  "want": "领导要改「⟨0⟩」的标准答案，没收（⟨1⟩），照答的毛病发回去改"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:164",
+  "path": "sleep.leadprompts.finishTouchedHead",
+  "want": "回放的落地命令动了今晚的提案"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:165",
+  "path": "sleep.leadprompts.finishTouched",
+  "params": 4,
+  "want": "⟨0⟩（sleep/<日>/proposed/ 下的 ⟨1⟩⟨2⟩）：⟨3⟩。这次回放的判定不能信，停下；replayFinish 里的命令只能往工作区里拼，不能改提案"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:165",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:167",
+  "path": "sleep.leadprompts.roundOnRebuilt",
+  "want": "这一轮是在回放里落地命令拼过的工作区上改的"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:170",
+  "path": "sleep.leadprompts.twice.head",
+  "want": "下面这几道题连着两轮没过。再把专员发回去之前先想一下，毛病在题还是在答："
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:173",
+  "path": "sleep.leadprompts.questionRevised",
+  "params": 5,
+  "want": "领导判「⟨0⟩」连着两轮没过是题的毛病，把标准答案收窄了单独再考（这道题不进题库）。原来的：「⟨1⟩」；改成：「⟨2⟩」；她两轮答的：⟨3⟩；理由：⟨4⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:173",
+  "path": "sleep.replay.quoted",
+  "params": 1,
+  "want": "「⟨0⟩」",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:173",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:173",
+  "path": "sleep.replay.answerSep",
+  "want": " ／ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:173",
+  "path": "sleep.runner.report.notWritten",
+  "want": "（没写）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:175",
+  "path": "sleep.leadprompts.twice.how",
+  "want": "给新的标准答案只能把原来的收窄：从原来的里面留下明天的她该答得出的那一句（整句照留：不取一句里的一截、不换说法、不加新的），在 why 里写清为什么只留这一件"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:177",
+  "path": "sleep.leadprompts.readOnDemand",
+  "params": 1,
+  "want": "这一天的材料在 sleep/⟨0⟩/ 下面（原话用 recall 按 #序号 翻）。不要整份读进来：按你要出的题，用 Grep 找到那一段、Read 只读那几十行。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:179",
+  "path": "sleep.leadprompts.graderOpening",
+  "want": "你在给一次记忆体检判分：只照每道题的标准答案和「也算对的说法」判她的回答，不替她补、不查任何东西。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:183",
+  "path": "sleep.leadprompts.duty.bounce",
+  "params": 1,
+  "want": "先别交：这一段该管的这几处你没动，报告里也没说为什么：⟨0⟩。要改的现在改；看过确实不用改的，在 report 里一处写一行「看过、不用改：<那一处>——<为什么>」。弄完再交一次。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:183",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:185",
+  "path": "sleep.leadprompts.duty.left",
+  "params": 2,
+  "want": "该管的 ⟨0⟩ 没动：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:185",
+  "path": "sleep.leadprompts.duty.noReason",
+  "want": "它没说为什么"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:188",
+  "path": "sleep.leadprompts.sliceTooLong",
+  "params": 2,
+  "want": "（这一片 ⟨0⟩ 字，太长，没贴在这里：⟨1⟩，用到再读——按要找的东西 Grep、Read 那一段，不用整份读）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:193",
+  "path": "sleep.leadprompts.digest.head",
+  "want": "【今晚前面几个专员已经定了的】你是这一个专员的把关；前面几个专员的把关是另外的会话做的，定了的在下面，别跟它们打架："
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:198",
+  "path": "sleep.leadprompts.digest.title",
+  "params": 2,
+  "want": "「⟨0⟩」⟨1⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:198",
+  "path": "sleep.teamrun.passed",
+  "want": "过了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:198",
+  "path": "sleep.leadprompts.digest.dropped",
+  "want": "没过，它的改动整份没落地"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:200",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:200",
+  "path": "sleep.leadprompts.digest.notes",
+  "want": "把关留的话"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:200",
+  "path": "sleep.leadprompts.digest.why",
+  "want": "为什么"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:200",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:201",
+  "path": "sleep.leadprompts.digest.changed",
+  "params": 1,
+  "want": "改了：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:201",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:203",
+  "path": "sleep.leadprompts.digest.cut",
+  "params": 1,
+  "want": "⟨0⟩…（太长，后面截掉了）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:208",
+  "path": "sleep.leadprompts.checkGold.head",
+  "want": "先别急，核一遍出处（这一次还没收）："
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:209",
+  "path": "sleep.leadprompts.checkGold.noText",
+  "params": 1,
+  "want": "（⟨0⟩ 读不出原文：换一条读得出的出处，或者自己用 recall / Read 翻出来核）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:209",
+  "path": "sleep.leadprompts.checkGold.noRef",
+  "want": "没写出处"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:212",
+  "path": "sleep.leadprompts.checkGold.question",
+  "params": 4,
+  "want": "第 ⟨0⟩ 道　⟨1⟩\n  标准答案：⟨2⟩\n  出处 ⟨3⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:212",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:213",
+  "path": "sleep.leadprompts.checkGold.refused",
+  "params": 1,
+  "want": "这几道本来就收不了：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:213",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:214",
+  "path": "sleep.leadprompts.checkGold.how",
+  "want": "把每道题标准答案里的每个名字、数字、每个字，对着上面的出处原文核一遍：对不上的改标准答案（照出处的写），出处不对的换出处。核完把整份题再交一次，checked 写 true——那一次才收。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:217",
+  "path": "sleep.leadprompts.checkGold.brief",
+  "want": "new / missed / continuity 的题头一次交不收：引擎会把每道题的出处原文贴回来。你把标准答案里的每个名字、数字、每个字对着原文核一遍（出处写的是哪个字就是哪个字），改好了再交一次，checked 写 true。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:220",
+  "path": "sleep.leadprompts.withdraw.how",
+  "want": "要是标准答案里有一个词写错了（跟这道题自己的出处对不上，她照出处答反而被判错）：action 写 correct，evidence 里 kind 写 gold-wrong、refs 写这道题自己的出处、wrongToken 写标准答案里那个错的词、rightToken 写出处里对的那个词——引擎在出处原文里逐字核过，就把标准答案里那个词改对，让判分的照改过的标准答案重判她这一轮的回答：判对了这道题算对（不进题库），判不对还是答的毛病。固定要问的题不能这样改；这道题自己的出处里有引擎读不出原文的（上面写着读不出原文）也不能这样改"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:223",
+  "path": "sleep.leadprompts.withdraw.noEvidence",
+  "want": "没给证据（evidence 里要有 kind 和一到两条出处；两种说法那一种只收一条）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:224",
+  "path": "sleep.leadprompts.withdraw.twoAnswersOff",
+  "want": "「出处里两种说法都有」这一种没开（team.withdrawTwoAnswers）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:225",
+  "path": "sleep.leadprompts.withdraw.wrongInOwnSource",
+  "want": "说是错的那个词，这道题别的出处原文里有：标准答案有出处撑着"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:226",
+  "path": "sleep.leadprompts.withdraw.rightCommon",
+  "want": "说是对的那个词，题目里或者别的题的标准答案里就有：哪儿都有的词不能当证据"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:227",
+  "path": "sleep.leadprompts.withdraw.keepNotCarried",
+  "want": "这是一道 keep 的题：她整理前的回答里没有那个错的词（旧的记忆本来是对的），不能改"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:228",
+  "path": "sleep.leadprompts.withdraw.aInAnswer",
+  "want": "标准答案的那个说法她也答了：不是两种说法的事"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:229",
+  "path": "sleep.leadprompts.withdraw.stillWrong",
+  "params": 1,
+  "want": "照改过的标准答案「⟨0⟩」重判，她这一轮的回答还是没判对"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:230",
+  "path": "sleep.leadprompts.withdraw.noGrader",
+  "want": "判分的会话不在了，没法照改过的标准答案重判"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:231",
+  "path": "sleep.leadprompts.withdraw.refNotSource",
+  "want": "证据的出处不是这道题自己的出处：只能拿出题时写的出处当证据"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:232",
+  "path": "sleep.leadprompts.withdraw.refUnreadable",
+  "want": "证据的出处读不出原文：只认原始出处（#序号、c:序号、路径:行，照动手前的样子）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:234",
+  "path": "sleep.leadprompts.withdraw.ownUnreadable",
+  "params": 1,
+  "want": "这道题自己的出处里有引擎读不出原文的（⟨0⟩）：标准答案是不是它撑着的核不了，不改"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:234",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:235",
+  "path": "sleep.leadprompts.withdraw.rightElsewhere",
+  "want": "出处里有对的那个词的地方，跟标准答案那一句别的字一个都对不上：说的不像是同一件事"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:236",
+  "path": "sleep.leadprompts.withdraw.tokens",
+  "want": "证据里的两个词不行：要都写、不能一样、不能一个包着另一个，至少两个字（两个都是单个汉字的可以）；数字写法不同（3 / 三）不算两个词"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:237",
+  "path": "sleep.leadprompts.withdraw.noContext",
+  "want": "标准答案里那一句除了错的那个词剩不下两个字：对不上位置，没法核"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:238",
+  "path": "sleep.leadprompts.withdraw.wrongNotInGold",
+  "want": "说是标准答案里错的那个词，标准答案里没有"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:239",
+  "path": "sleep.leadprompts.withdraw.wrongInSource",
+  "want": "说是错的那个词，出处原文里有：标准答案没跟出处对不上"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:240",
+  "path": "sleep.leadprompts.withdraw.rightInGold",
+  "want": "说是对的那个词，标准答案里本来就有"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:241",
+  "path": "sleep.leadprompts.withdraw.rightNotInSource",
+  "want": "说是对的那个词，出处原文里没有"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:242",
+  "path": "sleep.leadprompts.withdraw.rightNotInAnswer",
+  "want": "出处里对的那个词，她两次都没答出来：是答的毛病，不撤"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:243",
+  "path": "sleep.leadprompts.withdraw.notBoth",
+  "want": "两种说法没有都出现在出处原文里"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:244",
+  "path": "sleep.leadprompts.withdraw.aNotInGold",
+  "want": "说是标准答案用的那个说法，标准答案里没有"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:245",
+  "path": "sleep.leadprompts.withdraw.bNotInAnswer",
+  "want": "另一种说法她两次都没答：是答的毛病，不撤"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:246",
+  "path": "sleep.leadprompts.withdraw.continuity",
+  "want": "固定要问的题不能撤"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:247",
+  "path": "sleep.leadprompts.withdraw.capStage",
+  "params": 1,
+  "want": "这个专员已经改、撤了 ⟨0⟩ 道（上限），不再动"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:248",
+  "path": "sleep.leadprompts.withdraw.capNight",
+  "params": 1,
+  "want": "今晚已经改、撤了 ⟨0⟩ 道（上限），不再动"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:250",
+  "path": "sleep.leadprompts.withdraw.refused",
+  "params": 2,
+  "want": "领导要撤「⟨0⟩」，没撤（⟨1⟩），照答的毛病发回去改"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:253",
+  "path": "sleep.leadprompts.withdrawnHead",
+  "want": "撤掉的题（领导判标准答案本身有毛病，引擎在出处原文里核过；不算分、不进题库）："
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:255",
+  "path": "sleep.leadprompts.withdrawn",
+  "params": 8,
+  "want": "⟨0⟩「⟨1⟩」标准答案：「⟨2⟩」；她两轮答的：⟨3⟩；⟨4⟩（⟨5⟩）；出处 ⟨6⟩；理由：⟨7⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:255",
+  "path": "sleep.replay.quoted",
+  "params": 1,
+  "want": "「⟨0⟩」",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:255",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:255",
+  "path": "sleep.replay.answerSep",
+  "want": " ／ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:255",
+  "path": "sleep.replay.quoted",
+  "params": 1,
+  "want": "「⟨0⟩」",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:255",
+  "path": "sleep.replay.answerSep",
+  "want": " ／ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:255",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:255",
+  "path": "sleep.replay.refSep",
+  "want": " ｜ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:255",
+  "path": "sleep.runner.report.notWritten",
+  "want": "（没写）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:258",
+  "path": "sleep.leadprompts.correctedHead",
+  "want": "改了标准答案的题（领导判标准答案里一个词写错了，引擎在出处原文里核过，判分的照改过的重判她的回答判对了；算对、不进题库）："
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:260",
+  "path": "sleep.leadprompts.corrected",
+  "params": 10,
+  "want": "⟨0⟩「⟨1⟩」原来的标准答案：「⟨2⟩」；改成：「⟨3⟩」（「⟨4⟩」→「⟨5⟩」）；她两轮答的：⟨6⟩；出处 ⟨7⟩⟨8⟩；理由：⟨9⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:260",
+  "path": "sleep.replay.quoted",
+  "params": 1,
+  "want": "「⟨0⟩」",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:260",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:260",
+  "path": "sleep.replay.answerSep",
+  "want": " ／ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:260",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:260",
+  "path": "sleep.replay.refSep",
+  "want": " ｜ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:260",
+  "path": "sleep.leadprompts.correctedUnread",
+  "params": 1,
+  "want": "；这道题还有读不出原文、没核到的出处：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:260",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:260",
+  "path": "sleep.runner.report.notWritten",
+  "want": "（没写）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:263",
+  "path": "sleep.leadprompts.nudge.check",
+  "want": "你刚才交的题还没收：每道题的出处原文已经贴回给你了。对着核一遍、要改的改好，把整份题再交一次（checked 写 true）。不交的话就照你头一次交的收，报告里会写没核过出处。"
+ },
+ {
+  "at": "src/sleep/leadprompts.ts:265",
+  "path": "sleep.leadprompts.unchecked",
+  "params": 1,
+  "want": "「⟨0⟩」的题没核过出处：领导头一次交了以后没再交，照头一次交的收了"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:17",
+  "path": "sleep.opsdiff.opLabel.event_create",
+  "want": "新建事件"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:17",
+  "path": "sleep.opsdiff.opLabel.event_update",
+  "want": "更新事件"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:17",
+  "path": "sleep.opsdiff.opLabel.entry_add",
+  "want": "加经过"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:17",
+  "path": "sleep.opsdiff.opLabel.entry_correct",
+  "want": "更正经过"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:17",
+  "path": "sleep.opsdiff.opLabel.link",
+  "want": "连上"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:17",
+  "path": "sleep.opsdiff.opLabel.unlink",
+  "want": "断开"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:18",
+  "path": "sleep.opsdiff.opLabel.merge",
+  "want": "合并"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:18",
+  "path": "sleep.opsdiff.opLabel.split",
+  "want": "拆分"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:18",
+  "path": "sleep.opsdiff.opLabel.supersede",
+  "want": "取代"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:18",
+  "path": "sleep.opsdiff.opLabel.retire",
+  "want": "退休"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:18",
+  "path": "sleep.opsdiff.opLabel.range",
+  "want": "时间范围"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:19",
+  "path": "sleep.opsdiff.opLabel.entity_upsert",
+  "want": "人和东西"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:19",
+  "path": "sleep.opsdiff.opLabel.entity_merge",
+  "want": "合并人和东西"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:19",
+  "path": "sleep.opsdiff.opLabel.entity_tag",
+  "want": "挂上"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:19",
+  "path": "sleep.opsdiff.opLabel.entity_drop",
+  "want": "删掉人和东西"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:20",
+  "path": "sleep.opsdiff.opLabel.impression_set",
+  "want": "人物卡"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:20",
+  "path": "sleep.opsdiff.opLabel.impression_pin",
+  "want": "钉原话"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:20",
+  "path": "sleep.opsdiff.opLabel.impression_approve",
+  "want": "批准人物卡"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:20",
+  "path": "sleep.opsdiff.opLabel.impression_reject",
+  "want": "驳回人物卡"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:21",
+  "path": "sleep.opsdiff.opLabel.revert_conflict",
+  "want": "撤回冲突"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:24",
+  "path": "sleep.opsdiff.field.title",
+  "want": "标题"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:24",
+  "path": "sleep.opsdiff.field.summary",
+  "want": "摘要"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:24",
+  "path": "sleep.opsdiff.field.gist",
+  "want": "要点"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:24",
+  "path": "sleep.opsdiff.field.why",
+  "want": "为什么"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:24",
+  "path": "sleep.opsdiff.field.importance",
+  "want": "重要度"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:24",
+  "path": "sleep.opsdiff.field.status",
+  "want": "状态"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:24",
+  "path": "sleep.opsdiff.field.pinned",
+  "want": "钉住"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:24",
+  "path": "sleep.opsdiff.field.superseded_by",
+  "want": "被谁取代"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:25",
+  "path": "sleep.opsdiff.field.thread_path",
+  "want": "事件线"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:25",
+  "path": "sleep.opsdiff.field.next_at",
+  "want": "下次"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:25",
+  "path": "sleep.opsdiff.field.parent",
+  "want": "属于"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:25",
+  "path": "sleep.opsdiff.field.stance",
+  "want": "态度"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:25",
+  "path": "sleep.opsdiff.field.started_at",
+  "want": "开始"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:25",
+  "path": "sleep.opsdiff.field.ended_at",
+  "want": "结束"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:26",
+  "path": "sleep.opsdiff.field.event_id",
+  "want": "事件"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:26",
+  "path": "sleep.opsdiff.field.at",
+  "want": "时间"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:26",
+  "path": "sleep.opsdiff.field.until",
+  "want": "到"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:26",
+  "path": "sleep.opsdiff.field.kind",
+  "want": "种类"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:26",
+  "path": "sleep.opsdiff.field.full",
+  "want": "全文"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:26",
+  "path": "sleep.opsdiff.field.source",
+  "want": "出处"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:26",
+  "path": "sleep.opsdiff.field.corrects",
+  "want": "更正的是"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:27",
+  "path": "sleep.opsdiff.field.name",
+  "want": "名字"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:27",
+  "path": "sleep.opsdiff.field.aliases",
+  "want": "别名"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:27",
+  "path": "sleep.opsdiff.field.person_key",
+  "want": "名单 key"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:27",
+  "path": "sleep.opsdiff.field.note",
+  "want": "备注"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:28",
+  "path": "sleep.opsdiff.field.about",
+  "want": "关于"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:28",
+  "path": "sleep.opsdiff.field.section",
+  "want": "段"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:28",
+  "path": "sleep.opsdiff.field.text",
+  "want": "正文"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:28",
+  "path": "sleep.opsdiff.field.quote_id",
+  "want": "原话编号"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:28",
+  "path": "sleep.opsdiff.field.visibility",
+  "want": "谁看得到"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:28",
+  "path": "sleep.opsdiff.field.supersedes",
+  "want": "替换的是"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:28",
+  "path": "sleep.opsdiff.field.sources",
+  "want": "依据"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:29",
+  "path": "sleep.opsdiff.field.rel",
+  "want": "关系"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:29",
+  "path": "sleep.opsdiff.field.role",
+  "want": "角色"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:29",
+  "path": "sleep.opsdiff.field.entity_id",
+  "want": "人和东西"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:29",
+  "path": "sleep.opsdiff.field.entry_id",
+  "want": "经过"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:29",
+  "path": "sleep.opsdiff.field.created_by",
+  "want": "谁连的"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:40",
+  "path": "sleep.opsdiff.rowCut",
+  "want": "…（这一行太长，截掉了）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:43",
+  "path": "sleep.marks.nothing",
+  "want": "无"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:47",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:50",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:68",
+  "path": "sleep.opsdiff.noMoreChanges",
+  "want": "（这一轮没有再动事件库）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:68",
+  "path": "sleep.opsdiff.noChanges",
+  "want": "（这一批没有动事件库）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:72",
+  "path": "sleep.opsdiff.titled",
+  "params": 2,
+  "want": "⟨0⟩「⟨1⟩」"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:72",
+  "path": "sleep.marks.none",
+  "want": "（无）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:80",
+  "path": "sleep.opsdiff.fieldValue",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:80",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:83",
+  "path": "sleep.opsdiff.fieldChanged",
+  "params": 3,
+  "want": "⟨0⟩：⟨1⟩ → ⟨2⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:83",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:83",
+  "path": "sleep.opsdiff.onlyBookkeeping",
+  "want": "（只动了记账的时间）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:94",
+  "path": "sleep.opsdiff.event",
+  "params": 1,
+  "want": "事件 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:94",
+  "path": "sleep.opsdiff.titled",
+  "params": 2,
+  "want": "⟨0⟩「⟨1⟩」",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:95",
+  "path": "sleep.opsdiff.deleted",
+  "want": "删掉了"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:96",
+  "path": "sleep.opsdiff.mergedInto",
+  "params": 1,
+  "want": "（并进 / 让给 ⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:97",
+  "path": "sleep.opsdiff.nowUnder",
+  "params": 1,
+  "want": "（现在属于 ⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:102",
+  "path": "sleep.opsdiff.entry",
+  "params": 1,
+  "want": "经过 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:104",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:105",
+  "path": "sleep.opsdiff.entryAdded",
+  "params": 3,
+  "want": "在 ⟨0⟩；⟨1⟩⟨2⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:105",
+  "path": "sleep.opsdiff.entryWho",
+  "params": 1,
+  "want": "；谁：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:107",
+  "path": "sleep.opsdiff.movedEntry",
+  "params": 2,
+  "want": "从 ⟨0⟩ 挪到 ⟨1⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:109",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:110",
+  "path": "sleep.opsdiff.entryDeleted",
+  "params": 2,
+  "want": "删掉了（原来在 ⟨0⟩：⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:115",
+  "path": "sleep.opsdiff.linked",
+  "want": "连上了"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:115",
+  "path": "sleep.opsdiff.linkedNote",
+  "params": 1,
+  "want": "连上了：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:115",
+  "path": "sleep.opsdiff.unlinked",
+  "want": "断开了"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:119",
+  "path": "sleep.opsdiff.entity",
+  "params": 2,
+  "want": "人和东西 ⟨0⟩ ⟨1⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:120",
+  "path": "sleep.opsdiff.created",
+  "want": "新建"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:120",
+  "path": "sleep.opsdiff.deleted",
+  "want": "删掉了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:124",
+  "path": "sleep.opsdiff.role",
+  "params": 1,
+  "want": "（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:125",
+  "path": "sleep.opsdiff.tagged",
+  "want": "挂上了"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:125",
+  "path": "sleep.opsdiff.untagged",
+  "want": "摘掉了"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:129",
+  "path": "sleep.opsdiff.entityEntry",
+  "params": 2,
+  "want": "⟨0⟩ ↔ 经过 ⟨1⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:130",
+  "path": "sleep.opsdiff.tagged",
+  "want": "挂上了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:130",
+  "path": "sleep.opsdiff.untagged",
+  "want": "摘掉了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:134",
+  "path": "sleep.opsdiff.card",
+  "params": 4,
+  "want": "人物卡 ⟨0⟩（关于 ⟨1⟩，⟨2⟩「⟨3⟩」）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:134",
+  "path": "sleep.opsdiff.cardQuote",
+  "want": "原话"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:134",
+  "path": "sleep.opsdiff.cardSection",
+  "want": "段"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:135",
+  "path": "sleep.opsdiff.deleted",
+  "want": "删掉了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:141",
+  "path": "sleep.opsdiff.deletedFields",
+  "params": 1,
+  "want": "删掉了：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:144",
+  "path": "sleep.opsdiff.reason",
+  "params": 1,
+  "want": "（理由：⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:145",
+  "path": "sleep.opsdiff.opLine",
+  "params": 4,
+  "want": "- 【⟨0⟩】⟨1⟩⟨2⟩⟨3⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:145",
+  "path": "sleep.opsdiff.opBody",
+  "params": 1,
+  "want": "：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:147",
+  "path": "sleep.opsdiff.batchHead",
+  "params": 2,
+  "want": "事件库这一批（⟨0⟩）一共 ⟨1⟩ 行变化："
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:162",
+  "path": "sleep.opsdiff.cut",
+  "params": 2,
+  "want": "…（太长：一共 ⟨0⟩ 行变化，这里只列了前 ⟨1⟩ 行）"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:195",
+  "path": "sleep.opsdiff.specialist",
+  "params": 2,
+  "want": "# 文件\n⟨0⟩\n\n# 事件库\n⟨1⟩\n"
+ },
+ {
+  "at": "src/sleep/opsdiff.ts:198",
+  "path": "sleep.opsdiff.fullAt",
+  "params": 1,
+  "want": "\n（全文在 ⟨0⟩，要看用 Read）"
+ },
+ {
+  "at": "src/sleep/replay.ts:37",
+  "path": "sleep.replay.noCheck",
+  "want": "回放：不送把关"
+ },
+ {
+  "at": "src/sleep/replay.ts:39",
+  "path": "sleep.replay.notHere",
+  "want": "回放里不用"
+ },
+ {
+  "at": "src/sleep/replay.ts:42",
+  "path": "sleep.replay.skippedOut",
+  "want": "回放：跳过（材料现成，不准备；决不落地）"
+ },
+ {
+  "at": "src/sleep/replay.ts:97",
+  "path": "sleep.replay.openaiBlocked",
+  "params": 2,
+  "want": "⟨0⟩ OpenAI（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/replay.ts:286",
+  "path": "sleep.replay.gitFailed",
+  "params": 3,
+  "want": "git ⟨0⟩ 没成（退出码 ⟨1⟩）：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:316",
+  "path": "sleep.replay.noLandingCommit",
+  "params": 1,
+  "want": "找不到主题以「睡眠整理 ⟨0⟩」开头的提交，用 --base 指定基准提交"
+ },
+ {
+  "at": "src/sleep/replay.ts:326",
+  "path": "sleep.replay.noFlowDir",
+  "params": 1,
+  "want": "流程目录 ⟨0⟩ 不在"
+ },
+ {
+  "at": "src/sleep/replay.ts:329",
+  "path": "sleep.replay.flowDir",
+  "want": "流程目录"
+ },
+ {
+  "at": "src/sleep/replay.ts:335",
+  "path": "sleep.replay.noFlowFile",
+  "params": 1,
+  "want": "流程目录里没有 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:346",
+  "path": "sleep.replay.dayMaterial",
+  "want": "那一天的材料"
+ },
+ {
+  "at": "src/sleep/replay.ts:355",
+  "path": "sleep.replay.noMaterial",
+  "params": 1,
+  "want": "⟨0⟩ 下没有材料（input.md、slices/）"
+ },
+ {
+  "at": "src/sleep/replay.ts:371",
+  "path": "sleep.replay.noEmbedder",
+  "params": 1,
+  "want": "⟨0⟩向量服务：事件记忆必须 embedder: null"
+ },
+ {
+  "at": "src/sleep/replay.ts:397",
+  "path": "sleep.replay.noWorkspaceEnv",
+  "want": "回放不知道子进程按哪个环境变量找工作区：配置里写 sleep.workspaceEnv（或 kernel.env 里写工作区的路径）"
+ },
+ {
+  "at": "src/sleep/replay.ts:485",
+  "path": "sleep.replay.vectorService",
+  "params": 1,
+  "want": "⟨0⟩向量服务"
+ },
+ {
+  "at": "src/sleep/replay.ts:506",
+  "path": "sleep.replay.cannotResolve",
+  "params": 3,
+  "want": "⟨0⟩在回放工作区里的位置 ⟨1⟩ 解不开：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:507",
+  "path": "sleep.replay.linksOut",
+  "params": 3,
+  "want": "⟨0⟩在回放工作区里的位置 ⟨1⟩ 经链接指到工作区外面（⟨2⟩），不跑"
+ },
+ {
+  "at": "src/sleep/replay.ts:519",
+  "path": "sleep.replay.overlayNoGit",
+  "params": 2,
+  "want": "流程目录 ⟨0⟩ 不在 git 仓库里，replayOverlay 的文件都没盖上：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:529",
+  "path": "sleep.replay.overlaySkipped",
+  "params": 2,
+  "want": "回放要用的新版脚本 ⟨0⟩ ⟨1⟩，没盖上"
+ },
+ {
+  "at": "src/sleep/replay.ts:533",
+  "path": "sleep.replay.overlayMissing",
+  "params": 1,
+  "want": "在 ⟨0⟩ 里没有"
+ },
+ {
+  "at": "src/sleep/replay.ts:534",
+  "path": "sleep.replay.overlayLink",
+  "want": "是链接"
+ },
+ {
+  "at": "src/sleep/replay.ts:535",
+  "path": "sleep.replay.overlayNotFile",
+  "want": "不是文件"
+ },
+ {
+  "at": "src/sleep/replay.ts:537",
+  "path": "sleep.replay.overlayOutside",
+  "params": 1,
+  "want": "在 ⟨0⟩ 外面"
+ },
+ {
+  "at": "src/sleep/replay.ts:538",
+  "path": "sleep.replay.overlayEscapes",
+  "want": "要拷到回放的工作区外面"
+ },
+ {
+  "at": "src/sleep/replay.ts:540",
+  "path": "sleep.replay.overlayEscapes",
+  "want": "要拷到回放的工作区外面",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:542",
+  "path": "sleep.replay.overlayEscapes",
+  "want": "要拷到回放的工作区外面",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:545",
+  "path": "sleep.replay.overlayTargetLink",
+  "want": "在回放的工作区里是链接或目录"
+ },
+ {
+  "at": "src/sleep/replay.ts:549",
+  "path": "sleep.replay.overlayCopyFailed",
+  "params": 1,
+  "want": "拷不过去（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/replay.ts:570",
+  "path": "sleep.replay.prepFailed",
+  "params": 3,
+  "want": "回放的准备「⟨0⟩」没跑成（退出码 ⟨1⟩），材料给整份 input.md：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:574",
+  "path": "sleep.replay.prepLine",
+  "params": 1,
+  "want": "回放的准备：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:577",
+  "path": "sleep.replay.slices",
+  "params": 1,
+  "want": "切片：⟨0⟩ 片"
+ },
+ {
+  "at": "src/sleep/replay.ts:583",
+  "path": "sleep.replay.flowUnusable",
+  "params": 2,
+  "want": "流程用不了：⟨0⟩⟨1⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:583",
+  "path": "sleep.replay.problemsNote",
+  "params": 1,
+  "want": "（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/replay.ts:583",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/replay.ts:614",
+  "path": "sleep.replay.unfinished",
+  "params": 2,
+  "want": "回放没跑完（⟨0⟩：⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/replay.ts:614",
+  "path": "sleep.replay.phase.aborted",
+  "want": "中止了"
+ },
+ {
+  "at": "src/sleep/replay.ts:614",
+  "path": "sleep.replay.phase.failed",
+  "want": "出错停了"
+ },
+ {
+  "at": "src/sleep/replay.ts:632",
+  "path": "sleep.replay.noReportYet",
+  "want": "（这一天的报告还没写出来）\n"
+ },
+ {
+  "at": "src/sleep/replay.ts:644",
+  "path": "sleep.replay.compareFailed",
+  "params": 2,
+  "want": "# 回放对比 ⟨0⟩\n\n对比没做成：⟨1⟩\n"
+ },
+ {
+  "at": "src/sleep/replay.ts:663",
+  "path": "sleep.replay.notSet",
+  "want": "（还没定）"
+ },
+ {
+  "at": "src/sleep/replay.ts:705",
+  "path": "sleep.replay.compare.title",
+  "params": 1,
+  "want": "# 回放对比 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:708",
+  "path": "sleep.replay.compare.base",
+  "params": 1,
+  "want": "- 基准提交：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:709",
+  "path": "sleep.replay.compare.landing",
+  "params": 1,
+  "want": "- 旧的整理落地的提交：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:709",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:709",
+  "path": "sleep.replay.compare.noneParen",
+  "want": "（没有）"
+ },
+ {
+  "at": "src/sleep/replay.ts:710",
+  "path": "sleep.replay.compare.dir",
+  "params": 2,
+  "want": "- 回放目录：⟨0⟩；流程：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:711",
+  "path": "sleep.replay.compare.result",
+  "params": 1,
+  "want": "- 回放结果：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:711",
+  "path": "sleep.replay.compare.resultLine",
+  "params": 4,
+  "want": "⟨0⟩⟨1⟩；落地（拷贝里）⟨2⟩；没落地 ⟨3⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:711",
+  "path": "sleep.replay.errorNote",
+  "params": 1,
+  "want": "（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/replay.ts:711",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:711",
+  "path": "sleep.replay.compare.none",
+  "want": "没有"
+ },
+ {
+  "at": "src/sleep/replay.ts:711",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:711",
+  "path": "sleep.replay.compare.none",
+  "want": "没有",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:711",
+  "path": "sleep.replay.compare.notFinished",
+  "want": "没跑完"
+ },
+ {
+  "at": "src/sleep/replay.ts:712",
+  "path": "sleep.replay.compare.skipped",
+  "params": 1,
+  "want": "- 跳过的脚本段：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:712",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:712",
+  "path": "sleep.replay.compare.none",
+  "want": "没有",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:713",
+  "path": "sleep.replay.compare.overlaid",
+  "params": 1,
+  "want": "- 回放用了新版的脚本（不算回放的改动）：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:713",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:716",
+  "path": "sleep.replay.compare.filesHead",
+  "want": "## 文件（旧的整理 vs 回放的提案；不算 sleep/ 下面的）"
+ },
+ {
+  "at": "src/sleep/replay.ts:717",
+  "path": "sleep.replay.compare.filesCols",
+  "want": "| 文件 | 旧的整理 | 回放 | |"
+ },
+ {
+  "at": "src/sleep/replay.ts:722",
+  "path": "sleep.replay.compare.both",
+  "want": "两边都改"
+ },
+ {
+  "at": "src/sleep/replay.ts:722",
+  "path": "sleep.replay.compare.legacyOnly",
+  "want": "只有旧的整理"
+ },
+ {
+  "at": "src/sleep/replay.ts:722",
+  "path": "sleep.replay.compare.replayOnly",
+  "want": "只有回放"
+ },
+ {
+  "at": "src/sleep/replay.ts:725",
+  "path": "sleep.replay.compare.noFiles",
+  "want": "| （两边都没改文件） | | | |"
+ },
+ {
+  "at": "src/sleep/replay.ts:726",
+  "path": "sleep.replay.compare.patches",
+  "want": "完整的改动：legacy.patch（旧的整理）、replay.patch（回放的提案）。"
+ },
+ {
+  "at": "src/sleep/replay.ts:733",
+  "path": "sleep.replay.compare.storeHead",
+  "want": "## 事件库（写了几行）"
+ },
+ {
+  "at": "src/sleep/replay.ts:734",
+  "path": "sleep.replay.compare.storeNotCopied",
+  "want": "- 旧的整理：事件库还没拷，没撤任何东西"
+ },
+ {
+  "at": "src/sleep/replay.ts:735",
+  "path": "sleep.replay.compare.legacyOps",
+  "params": 2,
+  "want": "- 旧的整理：⟨0⟩ 行（⟨1⟩；拷贝里撤了）"
+ },
+ {
+  "at": "src/sleep/replay.ts:735",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:736",
+  "path": "sleep.replay.compare.noLegacyBatch",
+  "want": "- 旧的整理：没找到老整理那一批，没撤任何东西（拷贝里是事件库现在的样子，旧的整理写的还在里面）"
+ },
+ {
+  "at": "src/sleep/replay.ts:737",
+  "path": "sleep.replay.compare.replayOps",
+  "params": 2,
+  "want": "- 回放：⟨0⟩ 行（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/replay.ts:737",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:737",
+  "path": "sleep.replay.compare.noBatches",
+  "want": "没有提交的批次"
+ },
+ {
+  "at": "src/sleep/replay.ts:738",
+  "path": "sleep.replay.compare.after",
+  "params": 4,
+  "want": "- after the night, not reverted（那一夜以后事件库又动过的，拷贝里留着）：⟨0⟩ 批 ⟨1⟩ 行：⟨2⟩⟨3⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:738",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:738",
+  "path": "sleep.replay.compare.moreInFile",
+  "want": "……（全部见 reverted.json）"
+ },
+ {
+  "at": "src/sleep/replay.ts:739",
+  "path": "sleep.replay.compare.conflicts",
+  "params": 1,
+  "want": "- 撤的时候没撤动的：⟨0⟩ 处（见 reverted.json）"
+ },
+ {
+  "at": "src/sleep/replay.ts:743",
+  "path": "sleep.replay.compare.stagesHead",
+  "want": "## 各段"
+ },
+ {
+  "at": "src/sleep/replay.ts:743",
+  "path": "sleep.replay.compare.stagesCols",
+  "want": "| 段 | 脑区 | 谁做 | 结果 | 次数 | 审 | 协调 | 考试（前→后，暗题，题数） | 单位 |"
+ },
+ {
+  "at": "src/sleep/replay.ts:746",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:751",
+  "path": "sleep.replay.skipPrefix",
+  "want": "回放：跳过"
+ },
+ {
+  "at": "src/sleep/replay.ts:751",
+  "path": "sleep.replay.compare.skippedWord",
+  "want": "跳过"
+ },
+ {
+  "at": "src/sleep/replay.ts:751",
+  "path": "sleep.replay.compare.script",
+  "params": 1,
+  "want": "脚本 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:753",
+  "path": "sleep.replay.compare.exam",
+  "params": 4,
+  "want": "⟨0⟩→⟨1⟩，⟨2⟩，⟨3⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:753",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/replay.ts:755",
+  "path": "sleep.replay.compare.redone",
+  "params": 1,
+  "want": "（重做 ⟨0⟩ 轮）"
+ },
+ {
+  "at": "src/sleep/replay.ts:757",
+  "path": "sleep.replay.compare.noStages",
+  "want": "| （没有段的记账） | | | | | | | | |"
+ },
+ {
+  "at": "src/sleep/replay.ts:759",
+  "path": "sleep.replay.role.do",
+  "want": "做"
+ },
+ {
+  "at": "src/sleep/replay.ts:759",
+  "path": "sleep.replay.role.lead",
+  "want": "领导"
+ },
+ {
+  "at": "src/sleep/replay.ts:759",
+  "path": "sleep.replay.role.exam",
+  "want": "考试"
+ },
+ {
+  "at": "src/sleep/replay.ts:764",
+  "path": "sleep.replay.examined.no",
+  "want": "没考"
+ },
+ {
+  "at": "src/sleep/replay.ts:764",
+  "path": "sleep.replay.examined.yes",
+  "want": "考了"
+ },
+ {
+  "at": "src/sleep/replay.ts:764",
+  "path": "sleep.replay.examined.failed",
+  "want": "没考成"
+ },
+ {
+  "at": "src/sleep/replay.ts:780",
+  "path": "sleep.replay.compare.costHead",
+  "want": "## 花费（按角色，单位）"
+ },
+ {
+  "at": "src/sleep/replay.ts:780",
+  "path": "sleep.replay.compare.costCols",
+  "params": 2,
+  "want": "| 段 | ⟨0⟩ | 考了没有 | 题（⟨1⟩） |"
+ },
+ {
+  "at": "src/sleep/replay.ts:782",
+  "path": "sleep.replay.compare.costSum",
+  "params": 1,
+  "want": "| 合计 | ⟨0⟩ | | |"
+ },
+ {
+  "at": "src/sleep/replay.ts:786",
+  "path": "sleep.replay.compare.revised",
+  "params": 7,
+  "want": "- ⟨0⟩ ⟨1⟩⟨2⟩：原来的「⟨3⟩」→ 改成「⟨4⟩」；她两轮答的：⟨5⟩；理由：⟨6⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:786",
+  "path": "sleep.replay.quoted",
+  "params": 1,
+  "want": "「⟨0⟩」"
+ },
+ {
+  "at": "src/sleep/replay.ts:786",
+  "path": "sleep.replay.quoted",
+  "params": 1,
+  "want": "「⟨0⟩」",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:786",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/replay.ts:786",
+  "path": "sleep.replay.answerSep",
+  "want": " ／ "
+ },
+ {
+  "at": "src/sleep/replay.ts:786",
+  "path": "sleep.replay.notNoted",
+  "want": "（没记）"
+ },
+ {
+  "at": "src/sleep/replay.ts:786",
+  "path": "sleep.runner.report.notWritten",
+  "want": "（没写）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:788",
+  "path": "sleep.replay.compare.revisedHead",
+  "want": "改过标准答案的题（领导判连着两轮没过是题的毛病；这些题不进题库）："
+ },
+ {
+  "at": "src/sleep/replay.ts:793",
+  "path": "sleep.replay.compare.withdrawn",
+  "params": 9,
+  "want": "- ⟨0⟩ ⟨1⟩「⟨2⟩」标准答案「⟨3⟩」；她两轮答的：⟨4⟩；⟨5⟩（⟨6⟩）；出处 ⟨7⟩；理由：⟨8⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:793",
+  "path": "sleep.replay.quoted",
+  "params": 1,
+  "want": "「⟨0⟩」",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:793",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/replay.ts:793",
+  "path": "sleep.replay.answerSep",
+  "want": " ／ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:793",
+  "path": "sleep.replay.quoted",
+  "params": 1,
+  "want": "「⟨0⟩」",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:793",
+  "path": "sleep.replay.answerSep",
+  "want": " ／ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:793",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:793",
+  "path": "sleep.replay.refSep",
+  "want": " ｜ "
+ },
+ {
+  "at": "src/sleep/replay.ts:793",
+  "path": "sleep.runner.report.notWritten",
+  "want": "（没写）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:796",
+  "path": "sleep.replay.compare.withdrawnHead",
+  "want": "撤掉的题（领导判标准答案本身有毛病，引擎在出处原文里核过；不算分、不进题库）："
+ },
+ {
+  "at": "src/sleep/replay.ts:801",
+  "path": "sleep.replay.compare.corrected",
+  "params": 9,
+  "want": "- ⟨0⟩ ⟨1⟩「⟨2⟩」原来的标准答案「⟨3⟩」→ 改成「⟨4⟩」；她两轮答的：⟨5⟩；出处 ⟨6⟩⟨7⟩；理由：⟨8⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:801",
+  "path": "sleep.replay.quoted",
+  "params": 1,
+  "want": "「⟨0⟩」",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:801",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/replay.ts:801",
+  "path": "sleep.replay.answerSep",
+  "want": " ／ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:801",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:801",
+  "path": "sleep.replay.refSep",
+  "want": " ｜ ",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:801",
+  "path": "sleep.replay.compare.unchecked",
+  "params": 1,
+  "want": "；没核到的出处：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:801",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:801",
+  "path": "sleep.runner.report.notWritten",
+  "want": "（没写）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:804",
+  "path": "sleep.replay.compare.correctedHead",
+  "want": "改了标准答案的题（领导判标准答案里一个词写错了，引擎在出处原文里核过，判分的照改过的重判判对了；算对、不进题库）："
+ },
+ {
+  "at": "src/sleep/replay.ts:808",
+  "path": "sleep.replay.sessionRole.specialist",
+  "want": "专员"
+ },
+ {
+  "at": "src/sleep/replay.ts:808",
+  "path": "sleep.replay.sessionRole.lead",
+  "want": "领导"
+ },
+ {
+  "at": "src/sleep/replay.ts:808",
+  "path": "sleep.replay.sessionRole.exam",
+  "want": "考试"
+ },
+ {
+  "at": "src/sleep/replay.ts:809",
+  "path": "sleep.replay.compare.openingHead",
+  "want": "## 各会话的开头（第一次调用的输入 token）"
+ },
+ {
+  "at": "src/sleep/replay.ts:809",
+  "path": "sleep.replay.compare.openingCols",
+  "want": "| 会话 | 角色 | 开头 |"
+ },
+ {
+  "at": "src/sleep/replay.ts:821",
+  "path": "sleep.replay.keysRead",
+  "params": 2,
+  "want": "⟨0⟩ 个 key，共 ⟨1⟩ tokens"
+ },
+ {
+  "at": "src/sleep/replay.ts:821",
+  "path": "sleep.replay.notRead",
+  "want": "（没读到）"
+ },
+ {
+  "at": "src/sleep/replay.ts:824",
+  "path": "sleep.replay.noOpenai.head",
+  "params": 2,
+  "want": "回放 ⟨0⟩（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/replay.ts:828",
+  "path": "sleep.replay.noOpenai.children",
+  "params": 1,
+  "want": "子进程发的请求（段的会话里的 Bash、核对脚本、准备命令）闸不算：它们跑的时候 OpenAI 的环境变量清空、HH_CONFIG 指到回放自己的 state（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/replay.ts:843",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:857",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:895",
+  "path": "sleep.replay.badDay",
+  "params": 1,
+  "want": "日子要写成 YYYY-MM-DD：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:896",
+  "path": "sleep.replay.busy",
+  "params": 2,
+  "want": "已经有一个回放在跑（⟨0⟩，⟨1⟩），等它跑完再开"
+ },
+ {
+  "at": "src/sleep/replay.ts:927",
+  "path": "sleep.replay.neverRun",
+  "want": "还没回放过"
+ },
+ {
+  "at": "src/sleep/replay.ts:931",
+  "path": "sleep.replay.restarted",
+  "want": "\n（hhd 重启过，这一个没跑完）"
+ },
+ {
+  "at": "src/sleep/replay.ts:932",
+  "path": "sleep.replay.statusUnreadable",
+  "params": 2,
+  "want": "最近一个回放（⟨0⟩）的 status.json 读不了：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:953",
+  "path": "sleep.replay.notRunning",
+  "want": "没有在跑的回放"
+ },
+ {
+  "at": "src/sleep/replay.ts:956",
+  "path": "sleep.replay.stoppedWhy",
+  "params": 1,
+  "want": "停了：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:961",
+  "path": "sleep.replay.stopped",
+  "params": 2,
+  "want": "回放停了（⟨0⟩）：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:966",
+  "path": "sleep.replay.minutes",
+  "params": 1,
+  "want": "⟨0⟩ 分钟"
+ },
+ {
+  "at": "src/sleep/replay.ts:967",
+  "path": "sleep.replay.phaseWord.workspace",
+  "want": "在准备工作区"
+ },
+ {
+  "at": "src/sleep/replay.ts:967",
+  "path": "sleep.replay.phaseWord.store",
+  "want": "在拷事件库"
+ },
+ {
+  "at": "src/sleep/replay.ts:967",
+  "path": "sleep.replay.phaseWord.run",
+  "want": "在跑"
+ },
+ {
+  "at": "src/sleep/replay.ts:967",
+  "path": "sleep.replay.phaseWord.output",
+  "want": "在写结果"
+ },
+ {
+  "at": "src/sleep/replay.ts:967",
+  "path": "sleep.replay.phaseWord.done",
+  "want": "跑完了"
+ },
+ {
+  "at": "src/sleep/replay.ts:967",
+  "path": "sleep.replay.phase.failed",
+  "want": "出错停了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:967",
+  "path": "sleep.replay.phase.aborted",
+  "want": "中止了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:969",
+  "path": "sleep.replay.status.head",
+  "params": 3,
+  "want": "回放 ⟨0⟩：⟨1⟩⟨2⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:969",
+  "path": "sleep.replay.errorNote",
+  "params": 1,
+  "want": "（⟨0⟩）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:970",
+  "path": "sleep.replay.status.dir",
+  "params": 1,
+  "want": "目录：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:971",
+  "path": "sleep.replay.status.base",
+  "params": 2,
+  "want": "基准：⟨0⟩；流程：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:971",
+  "path": "sleep.replay.notSet",
+  "want": "（还没定）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:972",
+  "path": "sleep.replay.status.started",
+  "params": 2,
+  "want": "开始：⟨0⟩，⟨1⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:972",
+  "path": "sleep.replay.status.took",
+  "params": 1,
+  "want": "用了 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:972",
+  "path": "sleep.replay.status.running",
+  "params": 1,
+  "want": "跑了 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:973",
+  "path": "sleep.replay.status.blocked",
+  "params": 1,
+  "want": "OpenAI 请求：拦下 ⟨0⟩ 次"
+ },
+ {
+  "at": "src/sleep/replay.ts:975",
+  "path": "sleep.replay.status.reverted",
+  "params": 1,
+  "want": "撤掉旧的整理的批次：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:975",
+  "path": "sleep.replay.status.batch",
+  "params": 3,
+  "want": "⟨0⟩（⟨1⟩ 行，冲突 ⟨2⟩）"
+ },
+ {
+  "at": "src/sleep/replay.ts:975",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:976",
+  "path": "sleep.replay.status.skipped",
+  "params": 1,
+  "want": "跳过的脚本段：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:976",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:977",
+  "path": "sleep.replay.status.after",
+  "params": 1,
+  "want": "那一夜以后事件库又动过、没撤的：⟨0⟩ 批"
+ },
+ {
+  "at": "src/sleep/replay.ts:979",
+  "path": "sleep.replay.status.spending",
+  "params": 3,
+  "want": "花费：约周额度 ⟨0⟩%（目标线 ⟨1⟩%，绝对线 ⟨2⟩%）"
+ },
+ {
+  "at": "src/sleep/replay.ts:984",
+  "path": "sleep.replay.status.stagesHead",
+  "want": "各段："
+ },
+ {
+  "at": "src/sleep/replay.ts:984",
+  "path": "sleep.replay.status.stage",
+  "params": 4,
+  "want": "- ⟨0⟩ 第 ⟨1⟩ 次：⟨2⟩⟨3⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:984",
+  "path": "sleep.replay.status.units",
+  "params": 1,
+  "want": "（⟨0⟩ 单位）"
+ },
+ {
+  "at": "src/sleep/replay.ts:987",
+  "path": "sleep.replay.status.sessions",
+  "params": 1,
+  "want": "开着的会话：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:987",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:988",
+  "path": "sleep.replay.status.result",
+  "params": 2,
+  "want": "结果：⟨0⟩；落地（拷贝里）⟨1⟩"
+ },
+ {
+  "at": "src/sleep/replay.ts:988",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/replay.ts:988",
+  "path": "sleep.replay.compare.none",
+  "want": "没有",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/replay.ts:989",
+  "path": "sleep.replay.status.see",
+  "params": 1,
+  "want": "看结果：⟨0⟩（report.md、compare.md、ledger.json、records/、no-openai.txt）"
+ },
+ {
+  "at": "src/sleep/review.ts:10",
+  "path": "sleep.review.notReviewed",
+  "want": "审查没做完"
+ },
+ {
+  "at": "src/sleep/review.ts:46",
+  "path": "sleep.review.noFilesChanged",
+  "want": "（没改文件）"
+ },
+ {
+  "at": "src/sleep/review.ts:58",
+  "path": "sleep.review.diffCut",
+  "want": "…（diff 太长，后面截掉了）"
+ },
+ {
+  "at": "src/sleep/review.ts:95",
+  "path": "sleep.marks.received",
+  "want": "收到。"
+ },
+ {
+  "at": "src/sleep/review.ts:112",
+  "path": "sleep.review.problemChange",
+  "params": 1,
+  "want": "（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/review.ts:112",
+  "path": "sleep.review.problemFix",
+  "params": 1,
+  "want": "；该怎么改：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/review.ts:114",
+  "path": "sleep.review.redoWithoutItems",
+  "want": "交叉审打回了，但没写是哪几条"
+ },
+ {
+  "at": "src/sleep/runner.ts:148",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/runner.ts:148",
+  "path": "sleep.runner.moreProblems",
+  "params": 1,
+  "want": "…（还有 ⟨0⟩ 条）"
+ },
+ {
+  "at": "src/sleep/runner.ts:150",
+  "path": "sleep.runner.moreChars",
+  "params": 2,
+  "want": "⟨0⟩…（还有 ⟨1⟩ 字）"
+ },
+ {
+  "at": "src/sleep/runner.ts:154",
+  "path": "sleep.runner.check.audit",
+  "want": "核依据"
+ },
+ {
+  "at": "src/sleep/runner.ts:154",
+  "path": "sleep.runner.check.review",
+  "want": "交叉审"
+ },
+ {
+  "at": "src/sleep/runner.ts:154",
+  "path": "sleep.runner.check.exam",
+  "want": "考试"
+ },
+ {
+  "at": "src/sleep/runner.ts:180",
+  "path": "sleep.validate.notDone",
+  "want": "核依据没做完",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:183",
+  "path": "sleep.runner.overCalls",
+  "params": 1,
+  "want": "调用次数到了上限（⟨0⟩ 次），推迟，不重做"
+ },
+ {
+  "at": "src/sleep/runner.ts:191",
+  "path": "sleep.runner.bounced",
+  "params": 1,
+  "want": "当场退回 ⟨0⟩ 次"
+ },
+ {
+  "at": "src/sleep/runner.ts:192",
+  "path": "sleep.teamrun.passedWith",
+  "params": 1,
+  "want": "过了（⟨0⟩）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:192",
+  "path": "sleep.teamrun.passed",
+  "want": "过了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:193",
+  "path": "sleep.runner.noteSep",
+  "params": 1,
+  "want": "⟨0⟩；"
+ },
+ {
+  "at": "src/sleep/runner.ts:193",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/runner.ts:341",
+  "path": "sleep.runner.oneNight",
+  "want": "一个 SleepRunner 只跑一夜，再跑请新建一个"
+ },
+ {
+  "at": "src/sleep/runner.ts:372",
+  "path": "sleep.runner.stoppedOnError",
+  "params": 1,
+  "want": "出错停下：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:373",
+  "path": "sleep.runner.notLandedDays",
+  "params": 1,
+  "want": "没落地：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:373",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/runner.ts:374",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/runner.ts:446",
+  "path": "sleep.teamrun.failed",
+  "params": 1,
+  "want": "出错了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:478",
+  "path": "sleep.runner.dayNotLanded",
+  "params": 1,
+  "want": "这一天没落地，下一晚从头来：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:505",
+  "path": "sleep.runner.withdrawAfterRestart",
+  "want": "重启后撤回这一天上一跑的事件库批次"
+ },
+ {
+  "at": "src/sleep/runner.ts:517",
+  "path": "sleep.runner.withdrawDay",
+  "want": "这一天不落地，撤回今晚的事件库批次"
+ },
+ {
+  "at": "src/sleep/runner.ts:532",
+  "path": "sleep.runner.conflicts",
+  "params": 4,
+  "want": "⟨0⟩时有 ⟨1⟩ 处没撤动：⟨2⟩⟨3⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:532",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/runner.ts:556",
+  "path": "sleep.runner.prepareFailed",
+  "params": 3,
+  "want": "准备「⟨0⟩」没过（退出码 ⟨1⟩）：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:580",
+  "path": "sleep.teamrun.failed",
+  "params": 1,
+  "want": "出错了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:618",
+  "path": "sleep.runner.stageOverBudget",
+  "params": 2,
+  "want": "⟨0⟩ 段⟨1⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:618",
+  "path": "sleep.runner.stageCoordDeferred",
+  "params": 1,
+  "want": "⟨0⟩ 段前额叶定了推迟"
+ },
+ {
+  "at": "src/sleep/runner.ts:618",
+  "path": "sleep.runner.stageFailedTwice",
+  "params": 1,
+  "want": "⟨0⟩ 段两次都没过"
+ },
+ {
+  "at": "src/sleep/runner.ts:618",
+  "path": "sleep.runner.stageFailedN",
+  "params": 2,
+  "want": "⟨0⟩ 段 ⟨1⟩ 次都没过"
+ },
+ {
+  "at": "src/sleep/runner.ts:628",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/runner.ts:630",
+  "path": "sleep.runner.polishOverHard",
+  "params": 2,
+  "want": "前额叶要「⟨0⟩」再修一次，花费到了绝对线，没修：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:631",
+  "path": "sleep.runner.line.hard",
+  "want": "绝对线"
+ },
+ {
+  "at": "src/sleep/runner.ts:635",
+  "path": "sleep.runner.polishOverTarget",
+  "params": 2,
+  "want": "花费到了目标线，前额叶要的打磨没做：⟨0⟩（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:636",
+  "path": "sleep.runner.line.target",
+  "want": "目标线"
+ },
+ {
+  "at": "src/sleep/runner.ts:640",
+  "path": "sleep.runner.polishCapped",
+  "params": 4,
+  "want": "前额叶要「⟨0⟩」再修一次，今晚已经打磨了 ⟨1⟩ 次（上限 ⟨2⟩），没修：⟨3⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:641",
+  "path": "sleep.runner.line.cap",
+  "want": "上限"
+ },
+ {
+  "at": "src/sleep/runner.ts:645",
+  "path": "sleep.runner.polishAsked",
+  "want": "前额叶叫再修一次"
+ },
+ {
+  "at": "src/sleep/runner.ts:653",
+  "path": "sleep.runner.notDone",
+  "params": 1,
+  "want": "（没做：⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:664",
+  "path": "sleep.runner.notReached",
+  "want": "没轮到"
+ },
+ {
+  "at": "src/sleep/runner.ts:666",
+  "path": "sleep.runner.followedUpstream",
+  "params": 2,
+  "want": "⟨0⟩ 段跟着「⟨1⟩」推迟了"
+ },
+ {
+  "at": "src/sleep/runner.ts:724",
+  "path": "sleep.teamrun.noStageDone",
+  "want": "没交 stage_done",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:726",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:738",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:775",
+  "path": "sleep.runner.withdrawTry",
+  "params": 2,
+  "want": "撤回「⟨0⟩」第 ⟨1⟩ 次的事件库批次"
+ },
+ {
+  "at": "src/sleep/runner.ts:819",
+  "path": "sleep.runner.deferredByRule",
+  "params": 2,
+  "want": "⟨0⟩ 第 ⟨1⟩ 次没过、没有轮数了，按规矩推迟（没问前额叶）"
+ },
+ {
+  "at": "src/sleep/runner.ts:847",
+  "path": "sleep.runner.noSkillPageWhy",
+  "params": 2,
+  "want": "找不到 skill 页 ⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:848",
+  "path": "sleep.runner.noSkillPage",
+  "params": 1,
+  "want": "找不到 skill 页 ⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:850",
+  "path": "sleep.runner.materialUnreadable",
+  "params": 1,
+  "want": "材料读不出来：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:859",
+  "path": "sleep.runner.otherYou",
+  "want": "另一个你"
+ },
+ {
+  "at": "src/sleep/runner.ts:876",
+  "path": "sleep.runner.upstreamReport",
+  "params": 2,
+  "want": "【⟨0⟩】⟨1⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:909",
+  "path": "sleep.teamrun.sessionFailed",
+  "params": 1,
+  "want": "会话开不起来：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:930",
+  "path": "sleep.teamrun.noStageDone",
+  "want": "没交 stage_done",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:950",
+  "path": "sleep.teamrun.handedIn",
+  "want": "收到，这一段交了。",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:963",
+  "path": "sleep.runner.callLimit",
+  "params": 1,
+  "want": "调用次数到了上限（⟨0⟩ 次）"
+ },
+ {
+  "at": "src/sleep/runner.ts:970",
+  "path": "sleep.teamrun.cannotWake",
+  "params": 1,
+  "want": "叫不醒：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:976",
+  "path": "sleep.teamrun.cannotWake",
+  "params": 1,
+  "want": "叫不醒：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:979",
+  "path": "sleep.teamrun.nudgedNoStageDone",
+  "want": "催了一次还是没交 stage_done",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:979",
+  "path": "sleep.teamrun.roundFailed",
+  "params": 1,
+  "want": "这一轮出错了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:979",
+  "path": "sleep.final.noReason",
+  "want": "没说原因",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:981",
+  "path": "sleep.teamrun.cannotWake",
+  "params": 1,
+  "want": "叫不醒：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:984",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:984",
+  "path": "sleep.teamrun.timedOut",
+  "params": 1,
+  "want": "超时了（⟨0⟩ 分钟）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:984",
+  "path": "sleep.teamrun.sessionEnded",
+  "params": 1,
+  "want": "会话自己结束了（⟨0⟩）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:985",
+  "path": "sleep.teamrun.sessionError",
+  "params": 1,
+  "want": "会话出错了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:987",
+  "path": "sleep.teamrun.cannotWake",
+  "params": 1,
+  "want": "叫不醒：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:1007",
+  "path": "sleep.runner.check.mechanical",
+  "want": "机械检查"
+ },
+ {
+  "at": "src/sleep/runner.ts:1007",
+  "path": "sleep.runner.failedWith",
+  "params": 1,
+  "want": "没过：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1007",
+  "path": "sleep.teamrun.passed",
+  "want": "过了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:1018",
+  "path": "sleep.runner.checkFailed",
+  "params": 3,
+  "want": "⟨0⟩ 段的「⟨1⟩」出错了，没验完：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1019",
+  "path": "sleep.runner.checkError",
+  "params": 1,
+  "want": "出错了，没验完：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1023",
+  "path": "sleep.runner.checkBy",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1023",
+  "path": "sleep.teamrun.passedWith",
+  "params": 1,
+  "want": "过了（⟨0⟩）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:1023",
+  "path": "sleep.teamrun.passed",
+  "want": "过了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:1023",
+  "path": "sleep.runner.failedWith",
+  "params": 1,
+  "want": "没过：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:1023",
+  "path": "sleep.runner.noReasonWritten",
+  "want": "没写原因"
+ },
+ {
+  "at": "src/sleep/runner.ts:1025",
+  "path": "sleep.runner.notRun",
+  "want": "没跑（前面没过）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1026",
+  "path": "sleep.runner.checkNotPassed",
+  "params": 1,
+  "want": "「⟨0⟩」没过"
+ },
+ {
+  "at": "src/sleep/runner.ts:1028",
+  "path": "sleep.runner.stageNotAudited",
+  "params": 1,
+  "want": "⟨0⟩ 段没核依据"
+ },
+ {
+  "at": "src/sleep/runner.ts:1029",
+  "path": "sleep.runner.stageNotExamined",
+  "params": 1,
+  "want": "⟨0⟩ 段没考完"
+ },
+ {
+  "at": "src/sleep/runner.ts:1030",
+  "path": "sleep.runner.stageNotReviewed",
+  "params": 1,
+  "want": "⟨0⟩ 段没审"
+ },
+ {
+  "at": "src/sleep/runner.ts:1031",
+  "path": "sleep.runner.stageProblems",
+  "params": 3,
+  "want": "⟨0⟩ 段「⟨1⟩」：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1031",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/runner.ts:1054",
+  "path": "sleep.runner.dayExamOverHard",
+  "want": "花费到了绝对线，全天考试没考"
+ },
+ {
+  "at": "src/sleep/runner.ts:1060",
+  "path": "sleep.runner.dayExamFailed",
+  "params": 1,
+  "want": "全天考试出错了，没考完：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1068",
+  "path": "sleep.runner.dayExamRedoOverHard",
+  "params": 2,
+  "want": "⟨0⟩：全天考试要它重做，花费到了绝对线，没重做：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1068",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/runner.ts:1077",
+  "path": "sleep.runner.dayExamAfterRedoOverHard",
+  "want": "花费到了绝对线，重做以后的全天考试没考"
+ },
+ {
+  "at": "src/sleep/runner.ts:1078",
+  "path": "sleep.runner.dayExamStillFails",
+  "params": 2,
+  "want": "⟨0⟩：全天考试还没过：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1078",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/runner.ts:1101",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:1102",
+  "path": "sleep.runner.stoppedAfterLanding",
+  "params": 2,
+  "want": "落地以后叫停了（⟨0⟩），后面的「⟨1⟩」等没跑"
+ },
+ {
+  "at": "src/sleep/runner.ts:1109",
+  "path": "sleep.runner.afterLandFailed",
+  "params": 3,
+  "want": "落地以后的「⟨0⟩」没过（退出码 ⟨1⟩）：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1110",
+  "path": "sleep.runner.landFailed",
+  "params": 3,
+  "want": "落地的「⟨0⟩」没过（退出码 ⟨1⟩）：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1112",
+  "path": "sleep.runner.noFinish",
+  "want": "没有跑 finish（配置里没有、关着或今天不跑）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1147",
+  "path": "sleep.runner.cannotRun",
+  "params": 1,
+  "want": "跑不起来：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1168",
+  "path": "sleep.runner.why.off",
+  "want": "关着"
+ },
+ {
+  "at": "src/sleep/runner.ts:1170",
+  "path": "sleep.runner.why.sundays",
+  "want": "只在周日跑"
+ },
+ {
+  "at": "src/sleep/runner.ts:1171",
+  "path": "sleep.runner.why.material",
+  "want": "材料不完整"
+ },
+ {
+  "at": "src/sleep/runner.ts:1172",
+  "path": "sleep.runner.why.backlog",
+  "params": 1,
+  "want": "积压了 ⟨0⟩ 天"
+ },
+ {
+  "at": "src/sleep/runner.ts:1174",
+  "path": "sleep.runner.why.saving",
+  "want": "省电模式"
+ },
+ {
+  "at": "src/sleep/runner.ts:1175",
+  "path": "sleep.runner.why.materialTalk",
+  "want": "材料不完整，这一段要对话"
+ },
+ {
+  "at": "src/sleep/runner.ts:1210",
+  "path": "sleep.runner.watchdogDue",
+  "want": "看门狗到点了"
+ },
+ {
+  "at": "src/sleep/runner.ts:1279",
+  "path": "sleep.runner.afterDayExam",
+  "want": "全天考试后重做"
+ },
+ {
+  "at": "src/sleep/runner.ts:1283",
+  "path": "sleep.runner.redoReport",
+  "params": 2,
+  "want": "（⟨0⟩）⟨1⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1291",
+  "path": "sleep.runner.followed",
+  "params": 1,
+  "want": "跟着「⟨0⟩」推迟"
+ },
+ {
+  "at": "src/sleep/runner.ts:1292",
+  "path": "sleep.runner.notOpenedOverHard",
+  "want": "花费到了绝对线，没开"
+ },
+ {
+  "at": "src/sleep/runner.ts:1304",
+  "path": "sleep.runner.report.title",
+  "params": 1,
+  "want": "# ⟨0⟩ 夜里整理"
+ },
+ {
+  "at": "src/sleep/runner.ts:1306",
+  "path": "sleep.runner.dayNotLanded",
+  "params": 1,
+  "want": "这一天没落地，下一晚从头来：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:1309",
+  "path": "sleep.runner.report.accounts",
+  "want": "## 记账"
+ },
+ {
+  "at": "src/sleep/runner.ts:1310",
+  "path": "sleep.runner.report.savingMode",
+  "want": "- 省电模式：只跑省电模式点名的段，落地但不标完成"
+ },
+ {
+  "at": "src/sleep/runner.ts:1311",
+  "path": "sleep.runner.report.materialMode",
+  "want": "- 材料不完整：要对话的段不跑，落地但不标完成"
+ },
+ {
+  "at": "src/sleep/runner.ts:1313",
+  "path": "sleep.runner.report.spending",
+  "params": 5,
+  "want": "- 花费：这一天 ⟨0⟩ 单位（约周额度 ⟨1⟩%）；这一夜到现在约 ⟨2⟩%（目标线 ⟨3⟩%，绝对线 ⟨4⟩%）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1316",
+  "path": "sleep.runner.report.prepared",
+  "params": 2,
+  "want": "- ⟨0⟩（准备）：退出码 ⟨1⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1317",
+  "path": "sleep.runner.report.prepareSkipped",
+  "params": 2,
+  "want": "- ⟨0⟩（准备）：今天不跑（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1322",
+  "path": "sleep.runner.report.cost",
+  "params": 2,
+  "want": "⟨0⟩ 次，⟨1⟩ 单位"
+ },
+ {
+  "at": "src/sleep/runner.ts:1325",
+  "path": "sleep.runner.report.stageRegion",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1326",
+  "path": "sleep.runner.report.passed",
+  "params": 2,
+  "want": "- ⟨0⟩：过了（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1327",
+  "path": "sleep.runner.report.deferred",
+  "params": 3,
+  "want": "- ⟨0⟩：推迟了（⟨1⟩）：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1327",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/runner.ts:1328",
+  "path": "sleep.runner.report.followed",
+  "params": 2,
+  "want": "- ⟨0⟩：跟着「⟨1⟩」推迟"
+ },
+ {
+  "at": "src/sleep/runner.ts:1329",
+  "path": "sleep.runner.report.overHard",
+  "params": 1,
+  "want": "- ⟨0⟩：花费到了绝对线，没开"
+ },
+ {
+  "at": "src/sleep/runner.ts:1330",
+  "path": "sleep.runner.report.notToday",
+  "params": 2,
+  "want": "- ⟨0⟩：今天不跑（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1331",
+  "path": "sleep.runner.report.unfinished",
+  "params": 3,
+  "want": "- ⟨0⟩：没做完（⟨1⟩⟨2⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1331",
+  "path": "sleep.runner.report.costSuffix",
+  "params": 1,
+  "want": "；⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1337",
+  "path": "sleep.runner.report.carry",
+  "params": 1,
+  "want": "- 欠着的（下一晚先补）：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1337",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/runner.ts:1338",
+  "path": "sleep.runner.report.dropped",
+  "params": 1,
+  "want": "- 推迟了不补（每晚重写）：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1338",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/runner.ts:1346",
+  "path": "sleep.runner.report.stages",
+  "want": "## 各段"
+ },
+ {
+  "at": "src/sleep/runner.ts:1347",
+  "path": "sleep.runner.report.notWritten",
+  "want": "（没写）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1353",
+  "path": "sleep.runner.report.deferredWho",
+  "params": 1,
+  "want": "⟨0⟩（推迟了）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1356",
+  "path": "sleep.runner.report.item",
+  "params": 2,
+  "want": "- ⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1359",
+  "path": "sleep.runner.report.unsure",
+  "want": "## 拿不准"
+ },
+ {
+  "at": "src/sleep/runner.ts:1360",
+  "path": "sleep.runner.report.proposals",
+  "want": "## 给主人的提案"
+ },
+ {
+  "at": "src/sleep/runner.ts:1361",
+  "path": "sleep.runner.report.bugs",
+  "want": "## 毛病"
+ },
+ {
+  "at": "src/sleep/runner.ts:1365",
+  "path": "sleep.runner.decision.pass",
+  "want": "过"
+ },
+ {
+  "at": "src/sleep/runner.ts:1365",
+  "path": "sleep.runner.decision.polish",
+  "want": "过了，再修一次"
+ },
+ {
+  "at": "src/sleep/runner.ts:1365",
+  "path": "sleep.runner.decision.redo",
+  "want": "重做"
+ },
+ {
+  "at": "src/sleep/runner.ts:1365",
+  "path": "sleep.runner.decision.defer",
+  "want": "推迟"
+ },
+ {
+  "at": "src/sleep/runner.ts:1365",
+  "path": "sleep.runner.decision.keep",
+  "want": "留着上一次过了的"
+ },
+ {
+  "at": "src/sleep/runner.ts:1365",
+  "path": "sleep.runner.decision.abort",
+  "want": "中止"
+ },
+ {
+  "at": "src/sleep/runner.ts:1368",
+  "path": "sleep.runner.costLine",
+  "params": 5,
+  "want": "做 ⟨0⟩ / 审 ⟨1⟩ / 核 ⟨2⟩ / 考 ⟨3⟩ / 协调 ⟨4⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1376",
+  "path": "sleep.runner.regionNote",
+  "params": 1,
+  "want": "（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1378",
+  "path": "sleep.runner.who.did",
+  "want": "做"
+ },
+ {
+  "at": "src/sleep/runner.ts:1378",
+  "path": "sleep.runner.who.fixed",
+  "want": "修"
+ },
+ {
+  "at": "src/sleep/runner.ts:1378",
+  "path": "sleep.runner.who.doing",
+  "want": "做"
+ },
+ {
+  "at": "src/sleep/runner.ts:1379",
+  "path": "sleep.runner.rev.skipped",
+  "want": "没改东西，没请人审"
+ },
+ {
+  "at": "src/sleep/runner.ts:1379",
+  "path": "sleep.runner.rev.by",
+  "params": 1,
+  "want": "⟨0⟩审"
+ },
+ {
+  "at": "src/sleep/runner.ts:1379",
+  "path": "sleep.runner.rev.none",
+  "want": "没人审"
+ },
+ {
+  "at": "src/sleep/runner.ts:1380",
+  "path": "sleep.teamrun.passed",
+  "want": "过了",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:1380",
+  "path": "sleep.runner.failedWith",
+  "params": 1,
+  "want": "没过：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/runner.ts:1380",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/runner.ts:1381",
+  "path": "sleep.runner.polishNotDone",
+  "params": 1,
+  "want": "过了，前额叶要再修一次、没做（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1382",
+  "path": "sleep.runner.tryLine",
+  "params": 6,
+  "want": "- 第 ⟨0⟩ 次：⟨1⟩，⟨2⟩；⟨3⟩；定：⟨4⟩（⟨5⟩）"
+ },
+ {
+  "at": "src/sleep/runner.ts:1382",
+  "path": "sleep.runner.by.coord",
+  "want": "前额叶"
+ },
+ {
+  "at": "src/sleep/runner.ts:1382",
+  "path": "sleep.runner.by.rule",
+  "want": "规矩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1384",
+  "path": "sleep.runner.spent",
+  "params": 1,
+  "want": "- 花费：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1389",
+  "path": "sleep.runner.dayCost",
+  "params": 1,
+  "want": "- 不归哪一段的（全天考试）：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/runner.ts:1390",
+  "path": "sleep.runner.report.team",
+  "want": "## 谁做的、谁审的"
+ },
+ {
+  "at": "src/sleep/session.ts:67",
+  "path": "sleep.session.stageRole",
+  "want": "你在夜里整理自己的记忆；这一段要做什么，下一条消息里写着。"
+ },
+ {
+  "at": "src/sleep/session.ts:75",
+  "path": "sleep.session.badChars",
+  "want": "命令里不能出现这些字符：; & | > < ` $ ( ) { } [ ] * ? ~ ! \\ # 和换行。"
+ },
+ {
+  "at": "src/sleep/session.ts:99",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/session.ts:99",
+  "path": "sleep.marks.none",
+  "want": "（无）"
+ },
+ {
+  "at": "src/sleep/session.ts:100",
+  "path": "sleep.session.scriptOnly",
+  "params": 1,
+  "want": "这一段的命令只能是单独一条脚本调用：⟨0⟩；写法是「[python3] scripts/脚本名 参数…」，脚本前不能夹别的词，也不能拼接、重定向或管道；"
+ },
+ {
+  "at": "src/sleep/session.ts:104",
+  "path": "sleep.session.noPath",
+  "want": "没有给出要写的路径。"
+ },
+ {
+  "at": "src/sleep/session.ts:111",
+  "path": "sleep.session.writeProposed",
+  "params": 1,
+  "want": "夜里整理不直接改原文件：改动先写到 proposed 目录，这个文件请写到 ⟨0⟩。"
+ },
+ {
+  "at": "src/sleep/session.ts:113",
+  "path": "sleep.session.writesOnly",
+  "params": 2,
+  "want": "这一段只能写 proposed 下这些路径：⟨0⟩；⟨1⟩ 不在其中。"
+ },
+ {
+  "at": "src/sleep/session.ts:113",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/session.ts:113",
+  "path": "sleep.marks.none",
+  "want": "（无）"
+ },
+ {
+  "at": "src/sleep/session.ts:117",
+  "path": "sleep.session.toolNotHere",
+  "params": 1,
+  "want": "这一段不能用 ⟨0⟩。"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:202",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:206",
+  "path": "sleep.teamrun.failed",
+  "params": 1,
+  "want": "出错了：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:221",
+  "path": "sleep.teamrun.noSession",
+  "want": "会话开不起来"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:221",
+  "path": "sleep.teamrun.noSession",
+  "want": "会话开不起来",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:238",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:239",
+  "path": "sleep.teamrun.noStageDone",
+  "want": "没交 stage_done"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:243",
+  "path": "sleep.teamrun.reportAgain",
+  "params": 3,
+  "want": "⟨0⟩\n（第 ⟨1⟩ 次交）⟨2⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:248",
+  "path": "sleep.teamrun.cannotGoOn",
+  "params": 1,
+  "want": "做不下去：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:248",
+  "path": "sleep.teamrun.noBlockedWhy",
+  "want": "没说卡在哪"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:259",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:260",
+  "path": "sleep.teamrun.leadFailed",
+  "want": "领导没让过"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:266",
+  "path": "sleep.marks.noStore",
+  "want": "（今晚没有事件库）"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:299",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:306",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:307",
+  "path": "sleep.lead.silentFor",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:315",
+  "path": "sleep.teamrun.nothingChanged",
+  "params": 1,
+  "want": "「⟨0⟩」什么都没改，考试没考成，照过"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:436",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:468",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:470",
+  "path": "sleep.marks.labeled",
+  "params": 2,
+  "want": "⟨0⟩：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:471",
+  "path": "sleep.teamrun.leadFailed",
+  "want": "领导没让过",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:482",
+  "path": "sleep.teamrun.failedQuestion",
+  "params": 4,
+  "want": "「⟨0⟩」⟨1⟩；整理后答成：⟨2⟩；出处：⟨3⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:482",
+  "path": "sleep.marks.noAnswer",
+  "want": "（没答）"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:482",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:482",
+  "path": "sleep.teamrun.noSources",
+  "want": "（题上没写）"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:503",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:510",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:511",
+  "path": "sleep.final.noReason",
+  "want": "没说原因",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:571",
+  "path": "sleep.teamrun.fixedNotSet",
+  "params": 1,
+  "want": "固定要问的题领导没出：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:624",
+  "path": "sleep.teamrun.passedWith",
+  "params": 1,
+  "want": "过了（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:624",
+  "path": "sleep.teamrun.passed",
+  "want": "过了"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:624",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:624",
+  "path": "sleep.teamrun.rebuiltNote",
+  "params": 1,
+  "want": "（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:683",
+  "path": "sleep.teamrun.withdrawBatch",
+  "params": 1,
+  "want": "撤回「⟨0⟩」的事件库批次"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:688",
+  "path": "sleep.teamrun.notLanded",
+  "params": 2,
+  "want": "「⟨0⟩」的改动整份没落地：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:688",
+  "path": "sleep.marks.clauseSep",
+  "want": "；"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:690",
+  "path": "sleep.teamrun.dropped",
+  "params": 1,
+  "want": "⟨0⟩ 没过，它的改动整份不要"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:713",
+  "path": "sleep.teamrun.sessionFailed",
+  "params": 1,
+  "want": "会话开不起来：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:722",
+  "path": "sleep.teamrun.notYet",
+  "want": "现在不用交：等叫你的时候再交。"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:732",
+  "path": "sleep.teamrun.handedIn",
+  "want": "收到，这一段交了。"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:741",
+  "path": "sleep.teamrun.callCap",
+  "params": 1,
+  "want": "调用次数到了上限（⟨0⟩ 次），没交 stage_done"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:744",
+  "path": "sleep.teamrun.cannotWake",
+  "params": 1,
+  "want": "叫不醒：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:747",
+  "path": "sleep.teamrun.nudgedNoStageDone",
+  "want": "催了一次还是没交 stage_done"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:747",
+  "path": "sleep.teamrun.roundFailed",
+  "params": 1,
+  "want": "这一轮出错了：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:747",
+  "path": "sleep.final.noReason",
+  "want": "没说原因",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:749",
+  "path": "sleep.teamrun.cannotWake",
+  "params": 1,
+  "want": "叫不醒：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:752",
+  "path": "sleep.teamrun.aborted",
+  "params": 1,
+  "want": "中止了：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:752",
+  "path": "sleep.teamrun.sessionEnded",
+  "params": 1,
+  "want": "会话自己结束了（⟨0⟩）"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:753",
+  "path": "sleep.teamrun.sessionError",
+  "params": 1,
+  "want": "会话出错了：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:767",
+  "path": "sleep.teamrun.noStageDone",
+  "want": "没交 stage_done",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:774",
+  "path": "sleep.teamrun.timedOut",
+  "params": 1,
+  "want": "超时了（⟨0⟩ 分钟）"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:780",
+  "path": "sleep.teamrun.cannotWake",
+  "params": 1,
+  "want": "叫不醒：⟨0⟩",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/teamrun.ts:783",
+  "path": "sleep.teamrun.closed",
+  "want": "关了"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:871",
+  "path": "sleep.teamrun.needsTeam",
+  "want": "assembleTeamNight 要 engine: team 的流程"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:878",
+  "path": "sleep.teamrun.noHosts",
+  "want": "team 的夜里没有考场或领导的 host"
+ },
+ {
+  "at": "src/sleep/teamrun.ts:927",
+  "path": "sleep.teamrun.finishFailed",
+  "params": 3,
+  "want": "⟨0⟩ 退出码 ⟨1⟩：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/tools.ts:25",
+  "path": "sleep.tools.change.target",
+  "want": "改的是什么：文件路径（可带「小节」），或事件库编号（e0013、n0004、t0128、i0002、l0003）"
+ },
+ {
+  "at": "src/sleep/tools.ts:26",
+  "path": "sleep.tools.change.op",
+  "want": "怎么改：add / change / remove / merge 等"
+ },
+ {
+  "at": "src/sleep/tools.ts:27",
+  "path": "sleep.tools.change.before",
+  "want": "改之前的样子（新增写空）"
+ },
+ {
+  "at": "src/sleep/tools.ts:28",
+  "path": "sleep.tools.change.after",
+  "want": "改之后的样子（删除写空）"
+ },
+ {
+  "at": "src/sleep/tools.ts:29",
+  "path": "sleep.tools.change.evidence",
+  "want": "依据：原话、事件编号、材料里的位置"
+ },
+ {
+  "at": "src/sleep/tools.ts:30",
+  "path": "sleep.tools.change.why",
+  "want": "为什么这样改"
+ },
+ {
+  "at": "src/sleep/tools.ts:36",
+  "path": "sleep.tools.change.affects",
+  "want": "这条改动让哪几道旧题换层（题号和新的层：resident 常驻 / searchable 查得到 / archive 只在仓库）；只写挂在这一处上的题，一次只挪一层"
+ },
+ {
+  "at": "src/sleep/tools.ts:41",
+  "path": "sleep.tools.notDone",
+  "params": 1,
+  "want": "没做成：⟨0⟩"
+ },
+ {
+  "at": "src/sleep/tools.ts:49",
+  "path": "sleep.tools.stageDone.description",
+  "want": "这一段干完了就调一次：说清楚改了什么（每条带依据）。changes 必须列全：你改的每一个文件（target 写提案目录下的相对路径，后面可以跟「段名」）、写进事件库的每一个编号（e… / n… / t… / i… / l…），一条都不能漏；引擎会核对你说的和实际改的是不是一致。"
+ },
+ {
+  "at": "src/sleep/tools.ts:51",
+  "path": "sleep.tools.stageDone.status",
+  "want": "done 做了；nothing 没什么要做；blocked 做不下去"
+ },
+ {
+  "at": "src/sleep/tools.ts:52",
+  "path": "sleep.tools.stageDone.blockedWhy",
+  "want": "blocked 时写卡在哪"
+ },
+ {
+  "at": "src/sleep/tools.ts:54",
+  "path": "sleep.tools.stageDone.report",
+  "want": "这一段做了什么、没做什么"
+ },
+ {
+  "at": "src/sleep/tools.ts:55",
+  "path": "sleep.tools.stageDone.uncertain",
+  "want": "拿不准的地方"
+ },
+ {
+  "at": "src/sleep/tools.ts:56",
+  "path": "sleep.tools.stageDone.proposals",
+  "want": "建议（不在这一段改）"
+ },
+ {
+  "at": "src/sleep/tools.ts:57",
+  "path": "sleep.tools.stageDone.bugs",
+  "want": "发现的毛病"
+ },
+ {
+  "at": "src/sleep/tools.ts:74",
+  "path": "sleep.tools.auditDone.description",
+  "want": "把关做完了调一次：通过（pass）或打回重做（redo），有问题逐条写。"
+ },
+ {
+  "at": "src/sleep/tools.ts:78",
+  "path": "sleep.tools.auditDone.change",
+  "want": "哪一条改动（target）"
+ },
+ {
+  "at": "src/sleep/tools.ts:79",
+  "path": "sleep.tools.auditDone.what",
+  "want": "问题是什么"
+ },
+ {
+  "at": "src/sleep/tools.ts:103",
+  "path": "sleep.tools.reviewDone.description",
+  "want": "审完了调一次：通过（pass）或打回（redo）。打回要逐条写问题：哪一条改动、哪里不对、该怎么改——会交给另一个你照着修。"
+ },
+ {
+  "at": "src/sleep/tools.ts:107",
+  "path": "sleep.tools.auditDone.change",
+  "want": "哪一条改动（target）",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/tools.ts:108",
+  "path": "sleep.tools.auditDone.what",
+  "want": "问题是什么",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/tools.ts:109",
+  "path": "sleep.tools.reviewDone.fix",
+  "want": "该怎么改"
+ },
+ {
+  "at": "src/sleep/tools.ts:160",
+  "path": "sleep.tools.coordinate.description",
+  "want": "看完一份简报调一次：这一段过（pass）、换一个你重做（redo）、还是推迟（defer）。why 写为什么；redo 的 why 就是交给修的人的问题，要写清楚改什么。notes 是想让主人在报告最上面看到的。"
+ },
+ {
+  "at": "src/sleep/tools.ts:163",
+  "path": "sleep.tools.coordinate.why",
+  "want": "为什么这样定；redo 时写要改什么"
+ },
+ {
+  "at": "src/sleep/tools.ts:164",
+  "path": "sleep.tools.coordinate.notes",
+  "want": "写进报告最上面的话"
+ },
+ {
+  "at": "src/sleep/tools.ts:181",
+  "path": "sleep.tools.question.q",
+  "want": "问题，照平时有人问你的口吻写"
+ },
+ {
+  "at": "src/sleep/tools.ts:182",
+  "path": "sleep.tools.question.gold",
+  "want": "标准答案"
+ },
+ {
+  "at": "src/sleep/tools.ts:183",
+  "path": "sleep.tools.question.accept",
+  "want": "也算对的说法"
+ },
+ {
+  "at": "src/sleep/tools.ts:184",
+  "path": "sleep.tools.question.sources",
+  "want": "出处：#序号（c:序号 也行）/ q编号 / e、n、t、i 编号 / 路径:行"
+ },
+ {
+  "at": "src/sleep/tools.ts:187",
+  "path": "sleep.tools.question.tags",
+  "want": "标签：人、事件、文件、教训，各一组"
+ },
+ {
+  "at": "src/sleep/tools.ts:188",
+  "path": "sleep.tools.question.importance",
+  "want": "重要度 1–5"
+ },
+ {
+  "at": "src/sleep/tools.ts:189",
+  "path": "sleep.tools.question.kind",
+  "want": "类型"
+ },
+ {
+  "at": "src/sleep/tools.ts:190",
+  "path": "sleep.tools.question.layer",
+  "want": "这条该放哪一层；archive 只在仓库的出处里至少要有一条 路径:行"
+ },
+ {
+  "at": "src/sleep/tools.ts:191",
+  "path": "sleep.tools.question.isNew",
+  "want": "是不是今天新来的"
+ },
+ {
+  "at": "src/sleep/tools.ts:198",
+  "path": "sleep.tools.examQuestions.description",
+  "want": "交题：读完材料和你要改的那几处，想想每个要点能回答什么问题。每道题写：问题（照平时有人问你的口吻）、标准答案、也算对的说法、出处（#序号或 c:序号 / q编号 / e、n、t、i 编号 / 路径:行）、标签、重要度 1–5、类型、层、是不是今天新来的。要压缩、变淡、合并、改写的每一处，都要先出题，交了题才能动手。题只能补，不能删、不能改；retire 只用在确认是记错了的题上，revise 用来补标准答案。"
+ },
+ {
+  "at": "src/sleep/tools.ts:217",
+  "path": "sleep.tools.examAnswers.description",
+  "want": "答题：每道题按编号交你的答案，凭你现在记得的答，不要去翻材料。"
+ },
+ {
+  "at": "src/sleep/tools.ts:218",
+  "path": "sleep.tools.examAnswers.id",
+  "want": "题号"
+ },
+ {
+  "at": "src/sleep/tools.ts:231",
+  "path": "sleep.tools.examGrades.description",
+  "want": "判分：每道题按编号判 right / partial / wrong 并写理由；顺便判每道旧题现在该放哪一层（layers）。"
+ },
+ {
+  "at": "src/sleep/tools.ts:248",
+  "path": "sleep.tools.leadQuestion.layer",
+  "want": "这道题考哪一层：resident 不查就该答得出（一直在眼前的）/ searchable 查一下答得出（细节）"
+ },
+ {
+  "at": "src/sleep/tools.ts:249",
+  "path": "sleep.tools.leadQuestion.isNew",
+  "want": "不用写：照 probe 定"
+ },
+ {
+  "at": "src/sleep/tools.ts:250",
+  "path": "sleep.tools.leadQuestion.must",
+  "want": "只有 continuity 的题写：必须答对的那一件事，只写一件（一个人、一件事或者一个结果）。这一件错了就算没过"
+ },
+ {
+  "at": "src/sleep/tools.ts:251",
+  "path": "sleep.tools.leadQuestion.extras",
+  "want": "只有 continuity 的题写：别的细节，一条一件；只记答对几条，不影响过不过"
+ },
+ {
+  "at": "src/sleep/tools.ts:252",
+  "path": "sleep.tools.leadQuestion.probe",
+  "want": "这道题查什么：keep 这次改动不该碰坏的（整理前答得出，整理后也得答得出）/ new 这次改动该带来的 / missed 今天有、专员漏掉的 / continuity 只用在简报里点名的固定要问的题上"
+ },
+ {
+  "at": "src/sleep/tools.ts:258",
+  "path": "sleep.tools.leadReview.description",
+  "want": "看完一个专员的改动调一次：intent 写它这次改动想做什么、你看出哪里不对该怎么改（没有不对的 fix 写空）；questions 出题，每道题写清问题、标准答案、也算对的说法、出处、标签、重要度、类型，再标 layer 和 probe。标准答案要从原话和原来的记录里来，出处至少一条查得到，不能照着专员交的改动抄。"
+ },
+ {
+  "at": "src/sleep/tools.ts:261",
+  "path": "sleep.tools.leadReview.target",
+  "want": "哪一处：文件路径或事件库编号"
+ },
+ {
+  "at": "src/sleep/tools.ts:262",
+  "path": "sleep.tools.leadReview.what",
+  "want": "这一处改动想做什么"
+ },
+ {
+  "at": "src/sleep/tools.ts:263",
+  "path": "sleep.tools.leadReview.fix",
+  "want": "哪里不对、该怎么改；没有不对的写空"
+ },
+ {
+  "at": "src/sleep/tools.ts:266",
+  "path": "sleep.tools.leadReview.checked",
+  "want": "头一次交不写；引擎把每道题的出处原文贴回来，你对着核过（要改的改好）再交一次时写 true"
+ },
+ {
+  "at": "src/sleep/tools.ts:279",
+  "path": "sleep.tools.leadVerdict.description",
+  "want": "看完前后两场考试的结果调一次：pass 这个专员的改动过不过；不过的在 fixes 里逐条写哪里要改、怎么改；notes 是想写进报告最上面的话。前后不一致（整理前答得出、整理后答不出）的不能过。"
+ },
+ {
+  "at": "src/sleep/tools.ts:282",
+  "path": "sleep.tools.leadVerdict.fixWhat",
+  "want": "哪里要改"
+ },
+ {
+  "at": "src/sleep/tools.ts:282",
+  "path": "sleep.tools.leadVerdict.fixHow",
+  "want": "怎么改"
+ },
+ {
+  "at": "src/sleep/tools.ts:283",
+  "path": "sleep.tools.coordinate.notes",
+  "want": "写进报告最上面的话",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/tools.ts:285",
+  "path": "sleep.tools.examAnswers.id",
+  "want": "题号",
+  "shared": true
+ },
+ {
+  "at": "src/sleep/tools.ts:286",
+  "path": "sleep.tools.leadVerdict.fault",
+  "want": "question 题的毛病（标准答案把几件事并成一句、明天醒来的开头和事件库里本来就放不下）/ answer 答的毛病（整理没做到）"
+ },
+ {
+  "at": "src/sleep/tools.ts:287",
+  "path": "sleep.tools.leadVerdict.gold",
+  "want": "题的毛病时写：新的标准答案，只留该答得出的那一件事"
+ },
+ {
+  "at": "src/sleep/tools.ts:288",
+  "path": "sleep.tools.leadVerdict.why",
+  "want": "为什么这样判"
+ },
+ {
+  "at": "src/sleep/tools.ts:289",
+  "path": "sleep.tools.leadVerdict.action",
+  "want": "题的毛病怎么办：narrow 收窄标准答案（默认）/ correct 标准答案里有一个词跟出处对不上——给 evidence，引擎核过以后把那个词改对、让判分的照改过的重判她这一轮的回答 / withdraw 出处里两种说法都有（默认不开）"
+ },
+ {
+  "at": "src/sleep/tools.ts:291",
+  "path": "sleep.tools.leadVerdict.evidenceKind",
+  "want": "gold-wrong 标准答案跟出处对不上 / two-answers 出处里两种说法都有"
+ },
+ {
+  "at": "src/sleep/tools.ts:292",
+  "path": "sleep.tools.leadVerdict.refs",
+  "want": "这道题自己的出处里的原始出处，最多两条：#序号（c:序号）或 路径:行"
+ },
+ {
+  "at": "src/sleep/tools.ts:293",
+  "path": "sleep.tools.leadVerdict.wrongToken",
+  "want": "gold-wrong：标准答案里那个错的词（出处里没有它）"
+ },
+ {
+  "at": "src/sleep/tools.ts:294",
+  "path": "sleep.tools.leadVerdict.rightToken",
+  "want": "gold-wrong：出处里对的那个词（她答的里有它）"
+ },
+ {
+  "at": "src/sleep/tools.ts:295",
+  "path": "sleep.tools.leadVerdict.answerA",
+  "want": "two-answers：出处里有、标准答案用的那个说法"
+ },
+ {
+  "at": "src/sleep/tools.ts:296",
+  "path": "sleep.tools.leadVerdict.answerB",
+  "want": "two-answers：出处里也有、她答的那个说法"
+ },
+ {
+  "at": "src/sleep/tools.ts:297",
+  "path": "sleep.tools.leadVerdict.evidence",
+  "want": "withdraw 时必须写：引擎照它在出处原文里逐字核对，对不上就不撤"
+ },
+ {
+  "at": "src/sleep/tools.ts:298",
+  "path": "sleep.tools.leadVerdict.faults",
+  "want": "简报里点名连着两轮没过的题才写：每道判一下是题的毛病还是答的毛病"
+ },
+ {
+  "at": "src/sleep/validate.ts:45",
+  "path": "sleep.validate.blocked",
+  "params": 1,
+  "want": "这一段说自己做不下去：⟨0⟩。"
+ },
+ {
+  "at": "src/sleep/validate.ts:45",
+  "path": "sleep.validate.noReason",
+  "want": "没写原因"
+ },
+ {
+  "at": "src/sleep/validate.ts:50",
+  "path": "sleep.validate.noSuchCheck",
+  "params": 1,
+  "want": "没有这个检查：⟨0⟩。"
+ },
+ {
+  "at": "src/sleep/validate.ts:53",
+  "path": "sleep.validate.checkCannotRun",
+  "params": 2,
+  "want": "检查 ⟨0⟩ 跑不起来：⟨1⟩"
+ },
+ {
+  "at": "src/sleep/validate.ts:54",
+  "path": "sleep.validate.checkFailed",
+  "params": 3,
+  "want": "检查 ⟨0⟩ 没过（退出码 ⟨1⟩）：⟨2⟩"
+ },
+ {
+  "at": "src/sleep/validate.ts:69",
+  "path": "sleep.validate.offLimits",
+  "params": 1,
+  "want": "改了不该碰的文件 ⟨0⟩（不在这一段的 writes 里）。"
+ },
+ {
+  "at": "src/sleep/validate.ts:70",
+  "path": "sleep.validate.unreported",
+  "params": 1,
+  "want": "文件 ⟨0⟩ 实际改了，但 changes 里没有说到。"
+ },
+ {
+  "at": "src/sleep/validate.ts:74",
+  "path": "sleep.validate.notChanged",
+  "params": 1,
+  "want": "changes 说改了 ⟨0⟩，但实际没有改这个文件。"
+ },
+ {
+  "at": "src/sleep/validate.ts:78",
+  "path": "sleep.validate.memUnreported",
+  "params": 1,
+  "want": "事件库实际动了 ⟨0⟩ 次，但 changes 里没有说到任何事件 / 条目 / 人和东西 / 印象 / 教训编号。"
+ },
+ {
+  "at": "src/sleep/validate.ts:79",
+  "path": "sleep.validate.memNotTouched",
+  "params": 1,
+  "want": "changes 说改了 ⟨0⟩，但事件库实际没有动。"
+ },
+ {
+  "at": "src/sleep/validate.ts:79",
+  "path": "sleep.marks.listSep",
+  "want": "、"
+ },
+ {
+  "at": "src/sleep/validate.ts:95",
+  "path": "sleep.validate.diffCut",
+  "want": "…（diff 太长，后面截掉了）"
+ },
+ {
+  "at": "src/sleep/validate.ts:99",
+  "path": "sleep.validate.noFilesChanged",
+  "want": "（这一段没改文件）"
+ },
+ {
+  "at": "src/sleep/validate.ts:110",
+  "path": "sleep.validate.diffFileHead",
+  "params": 2,
+  "want": "=== ⟨0⟩（⟨1⟩）===\n"
+ },
+ {
+  "at": "src/sleep/validate.ts:118",
+  "path": "sleep.validate.notDone",
+  "want": "核依据没做完"
+ },
+ {
+  "at": "src/sleep/validate.ts:138",
+  "path": "sleep.marks.received",
+  "want": "收到。"
+ },
+ {
+  "at": "src/sleep/validate.ts:158",
+  "path": "sleep.validate.problemWithTail",
+  "params": 2,
+  "want": "⟨0⟩（⟨1⟩）"
+ },
+ {
+  "at": "src/sleep/validate.ts:160",
+  "path": "sleep.validate.redoWithoutItems",
+  "want": "核依据打回了，但没写是哪几条"
+ }
+]

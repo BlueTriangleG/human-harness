@@ -1,0 +1,58 @@
+/* 设置 → 系统权限: one group per program, one row per permission; a missing one says how to give it */
+#settingsview { overflow: auto; min-height: 0; padding: 14px 20px 40px; }
+#perms { max-width: 880px; }
+.sblock { font-size: var(--fs-3); font-weight: 600; margin: 4px 0 8px; color: var(--ink); }
+#langs + .sblock { margin-top: 28px; }
+.phead { display: flex; align-items: baseline; gap: 16px; }
+.phead .hint { margin: 0; }
+.precheck, .pcopy { border: 1px solid var(--grid); background: none; border-radius: 6px; padding: 1px 10px; font-size: var(--fs-2); color: var(--muted); cursor: pointer; white-space: nowrap; }
+.precheck:hover, .pcopy:hover { color: var(--ink); border-color: var(--muted); }
+.pgroup { margin-top: 22px; }
+.pprog { font: 600 var(--fs-2) var(--mono); color: var(--ink); margin: 0 0 6px; overflow-wrap: anywhere; }
+.prow { display: grid; grid-template-columns: 92px 200px minmax(0, 1fr); gap: 2px 14px; align-items: baseline; padding: 8px 0; border-top: 1px solid var(--grid); }
+.pstate { font-size: var(--fs-2); font-weight: 600; }
+.prow.granted .pstate { color: var(--say); }
+.prow.missing .pstate { color: var(--err); }
+.prow.unknown .pstate { color: var(--muted); }
+.pname { font-size: var(--fs-3); }
+.pwhy, .pextra { margin: 0; font-size: var(--fs-2); color: var(--muted); }
+.pextra { grid-column: 3; }
+.pextra a { color: var(--say); }
+.pfix { grid-column: 2 / -1; margin-top: 6px; padding: 8px 12px; border-left: 3px solid var(--err); background: var(--panel); }
+.popen { display: inline-block; padding: 4px 14px; border-radius: 6px; background: var(--ink); color: var(--paper); font-size: var(--fs-2); font-weight: 600; text-decoration: none; }
+.popen:hover { opacity: .85; }
+.ppath { margin: 8px 0 0; font-size: var(--fs-2); display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; }
+.ppath code { font: var(--fs-2) var(--mono); overflow-wrap: anywhere; }
+.pfix .hint { margin-top: 4px; }
+
+/* 设置 → memory and learning: the role's OpenAI key (js/openai.js) */
+#okey { max-width: 720px; }
+#okey + .sblock { margin-top: 28px; }
+#langs + #okeyhead { margin-top: 28px; }
+.okey-lead { margin: 0 0 10px; max-width: 46em; }
+.okey-now { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 3px 18px; margin: 0 0 14px; font-size: var(--fs-sm); }
+.okey-now dt { color: var(--muted); }
+.okey-now dd { margin: 0; }
+.okey-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.okey-input { flex: 1; min-width: 16em; font: var(--fs-sm) var(--mono); padding: 5px 10px; border: 1px solid var(--grid); border-radius: 6px; background: var(--panel); color: var(--ink); }
+.okey button { border: 1px solid var(--grid); background: none; border-radius: 6px; padding: 4px 12px; font-size: var(--fs-sm); color: var(--ink); cursor: pointer; white-space: nowrap; }
+.okey button:hover:not(:disabled) { border-color: var(--muted); }
+.okey button.primary { background: var(--ink); border-color: var(--ink); color: var(--paper); font-weight: 600; }
+.okey button:disabled { opacity: .5; cursor: default; }
+.okey .hint { margin: 6px 0 0; }
+.okey-items { list-style: none; margin: 12px 0 4px; padding: 0; font-size: var(--fs-sm); }
+.okey-items li { padding: 2px 0 2px 16px; position: relative; color: var(--muted); }
+.okey-items li::before { content: ""; position: absolute; left: 2px; top: .7em; width: 7px; height: 7px; border-radius: 50%; background: var(--grid); }
+.okey-items li.ok::before { background: var(--say); }
+.okey-items li.bad::before { background: var(--err); }
+.okey-items b { color: var(--ink); font-weight: 600; }
+.okey-verdict { margin: 4px 0 0; font-weight: 600; }
+.okey-verdict.bad, .okey .status.bad { color: var(--err); }
+.okey .status { margin: 8px 0 0; font-size: var(--fs-sm); }
+.okey-remove { margin-top: 14px; }
+#nav button.keyhint::after { content: ""; display: inline-block; width: 6px; height: 6px; margin-left: 6px; border-radius: 50%; background: var(--think); vertical-align: middle; }
+@media (max-width: 720px) {
+  #settingsview { padding: 10px 14px 24px; }
+  .prow { grid-template-columns: 80px minmax(0, 1fr); }
+  .pwhy, .pextra, .pfix { grid-column: 1 / -1; }
+}

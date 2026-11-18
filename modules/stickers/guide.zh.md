@@ -1,0 +1,1 @@
+表情包：回人时可以配一张，用 sticker 工具（mood 写情绪词，默认发给正在跟你聊的人；指定哪几张用 ref）。整理自己的表情库用 `sticker` 命令：`browse`、`search`、`grab` 找新的，`inbox` 看候选，`add` 收进库，`edit`、`remove` 改，`feedback` 记对方的反应，`stats` 看概况。详细的翻手册 聊天/sticker-lib。

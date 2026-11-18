@@ -1,0 +1,3 @@
+#!/bin/sh
+# helper: start, talk to, show, list or stop a Claude Code helper session (cc.py), under this module's own environment
+exec "$HH_BIN" modules run helpers cc.py "$@"

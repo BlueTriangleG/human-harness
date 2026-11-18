@@ -1,0 +1,73 @@
+/* 笔记：三层从上到下（浅、中、深），每一本一竖条，一页一个点；右边是点开的那一页，或者最该看的几样 */
+/* 左边是图、右边是名单，各滚各的：名单再长，图也一直在眼前（点名单里的一页，要看得见它在图上哪儿） */
+#notebookview { overflow: hidden; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 328px; grid-template-rows: minmax(0, 1fr); }
+#nbmain { min-width: 0; min-height: 0; overflow: auto; padding: 14px 20px 40px; }
+#nbside { min-height: 0; overflow-y: auto; padding: 14px 20px 40px 16px; border-left: 1px solid var(--grid); }
+#nbsum { margin: 0 0 10px; }
+#nbscroll { overflow-x: auto; padding-bottom: 6px; }
+/* 图比这一块宽的时候：还能往哪边滑，那一边压一道淡出 */
+#nbwrap { position: relative; }
+#nbwrap::before, #nbwrap::after { content: ""; position: absolute; top: 0; bottom: 6px; width: 34px; pointer-events: none; opacity: 0; transition: opacity .15s; }
+#nbwrap::before { left: 0; background: linear-gradient(to left, transparent, var(--paper)); }
+#nbwrap::after { right: 0; background: linear-gradient(to right, transparent, var(--paper)); }
+#nbwrap.more-left::before, #nbwrap.more-right::after { opacity: 1; }
+#nbmore { margin: 2px 0 0; text-align: right; }
+#nbmap { display: block; }
+#nbmap text { font-family: var(--sans); font-size: var(--fs-xs); fill: var(--muted); }
+/* 层：越往下底色越深 */
+.nbband rect { fill: var(--nb-band-1); }
+.nbband.mid rect { fill: var(--nb-band-2); }
+.nbband.deep rect { fill: var(--nb-band-3); }
+#nbmap .nbband .nbl { font-size: var(--fs-m); font-weight: 600; fill: var(--ink); }
+#nbmap .nbband .nbn { fill: var(--faint); }
+#nbmap .nbband .nbempty { font-size: var(--fs-s); }
+#nbmap .nbcat text { font-size: var(--fs-s); font-weight: 600; fill: var(--ink); }
+.nbcat line { stroke: var(--sulcus); stroke-width: 1; }
+.nbbook line { stroke: var(--grid); stroke-width: 1; }
+/* 线：整张图上看的是点。同一件事里用到的画清楚，页里互相指的很淡，一起被翻的不画（很多，画出来是一团网）；点开一页，它的三种线才都亮 */
+.nbline { fill: none; stroke: var(--muted); stroke-opacity: .14; }
+.nbline.event { stroke: var(--l-side); stroke-opacity: .6; }
+.nbline.co { stroke: var(--l-perception); stroke-opacity: 0; }
+.nbline.on { stroke-opacity: .95; }
+.nbline.off { stroke-opacity: .03; }
+.nbline.co.off { stroke-opacity: 0; }
+#nbmap.quiet .nbline { display: none; }
+/* 点：大小是重要度；描边是「重要」（不往深层放）；越久没翻越淡；从没翻过的是空心虚线；红圈是重要但很久没翻 */
+.nbnode { cursor: pointer; outline: none; }
+.nbnode .dot { fill: var(--l-main); stroke: var(--l-main); stroke-width: 1; stroke-opacity: .6; }   /* 颜色淡下去了，边还在：沉到深层的也找得到 */
+.nbnode.important .dot { stroke: var(--ink); stroke-width: 1.8; stroke-opacity: 1; }
+.nbnode.never .dot { fill: none; stroke: var(--l-main); stroke-width: 1.3; stroke-opacity: 1; stroke-dasharray: 2.4 2; }
+.nbnode.never.important .dot { stroke: var(--ink); stroke-width: 1.8; }
+.nbnode .halo { fill: none; stroke: var(--err); stroke-width: 1.6; }
+.nbnode .selring { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-dasharray: 3 2.5; }
+.nbnode.dim { opacity: .16; }
+.nbnode:hover .dot, .nbnode:focus-visible .dot { stroke: var(--l-side); stroke-width: 2.4; stroke-opacity: 1; stroke-dasharray: none; }
+/* 页名：写在点旁边，底下垫一圈纸色，压在线和别的点上也看得清 */
+#nbmap .nbname { font-size: var(--fs-s); fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 3.5px; stroke-linejoin: round; pointer-events: none; }
+#nbmap .nbname.sel { font-weight: 600; }
+#nbmap .nbname.dim { opacity: .3; }
+/* 图例 */
+#nblegend { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 12px 0 0; font-size: var(--fs-s); color: var(--muted); }
+.nbkey { display: inline-flex; align-items: center; gap: 6px; }
+.nbkey svg { flex: none; }
+.nbkey .nbnode { cursor: default; pointer-events: none; }
+#nbnote { margin: 10px 0 0; max-width: 760px; }
+/* 右边 */
+#nbside h3 { margin: 0 0 4px; }
+#nbside h4 { margin: 16px 0 4px; }
+.nbgroup > p.hint { margin: 0 0 4px; }
+.nbitem { display: block; width: 100%; text-align: left; background: none; border: none; border-top: 1px solid var(--grid); border-radius: 0; padding: 5px 0; font: inherit; font-size: var(--fs-sm); color: var(--ink); cursor: pointer; }
+.nbitem:hover .t, .nbitem:focus-visible .t { color: var(--l-main); text-decoration: underline; }
+.nbitem small { display: block; color: var(--faint); font-size: var(--fs-xs); }
+.nbback { font-size: var(--fs-s); margin: 0 0 10px; }
+.nbfacts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 14px; margin: 8px 0 6px; font-size: var(--fs-sm); }
+.nbfacts dt { color: var(--muted); }
+.nbfacts dd { margin: 0; }
+.nbfacts dd small { display: block; color: var(--faint); font-size: var(--fs-xs); }
+.nbfile { margin: 0; font-family: var(--mono); font-size: var(--fs-xs); color: var(--faint); overflow-wrap: anywhere; }
+/* 窄屏：整页一起滚；图在上面横着滑，名单挪到下面 */
+@media (max-width: 820px) {
+  #notebookview { display: block; overflow: visible; }
+  #nbmain { overflow: visible; padding: 12px 16px 8px; }
+  #nbside { overflow: visible; padding: 12px 16px 32px; border-left: none; }
+}

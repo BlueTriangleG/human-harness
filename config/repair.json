@@ -1,0 +1,18 @@
+{
+  "allowedRoots": ["src/", "test/", "docs/"],
+  "autoload": "(^|/)(claude(\\.local)?\\.md|agents\\.md|\\.mcp\\.json)$|(^|/)\\.claude/",
+  "protected": ["config/", "ops/", "package.json", "package-lock.json", "tsconfig.json", "src/repair/", "src/regions/specs.ts", "src/kernel/", "src/gateway/", "src/memory/situation.ts", "src/persona/people.ts", "relay/", ".gitignore"],
+  "capability": [
+    { "id": "process", "re": "child_process|\\bspawn\\(|\\bexecFile(Sync)?\\(|\\bexec(Sync)?\\(|\\b(ctx|this|deps|d|o)\\.run\\(|\\brunProcess\\(" },
+    { "id": "network", "re": "\\bfetch\\(|https?://|new WebSocket|node:https?\\b|node:net\\b" },
+    { "id": "path", "re": "[\"'`](/Users/|/etc/|/Library/|/private/|~/Library)" }
+  ],
+  "toolDef": "^\\s*name:\\s*\"[a-z_]+\"",
+  "size": { "maxFiles": 6, "maxLines": 200, "coreFiles": ["src/brain.ts", "src/hhd.ts", "src/store/db.ts", "src/memory/central.ts"], "coreMaxLines": 60 },
+  "migration": "ALTER TABLE|CREATE TABLE|CREATE INDEX|DROP ",
+  "prefix": { "files": ["src/lang/", "src/persona/persona.ts", "src/tools/"], "maxChars": 800 },
+  "tests": { "slowerRatio": 1.5, "slowerMinMs": 20000 },
+  "restart": { "quiet": ["02:50", "03:40"], "calmChecks": 3 },
+  "watch": { "restartWaitMs": 604800000, "bootTimeoutMs": 180000, "healthyMs": 120000, "healthyTicks": 3, "turnWaitMs": 43200000 },
+  "heavyLock": { "path": "/Users/Shared/hh-heavy/lock", "waitMs": 600000 }
+}

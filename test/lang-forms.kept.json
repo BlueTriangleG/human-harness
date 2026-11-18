@@ -1,0 +1,417 @@
+[
+ {
+  "file": "relay/logic.mjs",
+  "why": "protected path (relay/): the attachment mark in the old gateway's inbound text",
+  "res": [
+   "/\\[附件\\s*[:：]/g"
+  ]
+ },
+ {
+  "file": "src/basal/lifecycle.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/(?<![%\\w.\\-\\u4e00-\\u9fff])(?:[\\w.\\-\\u4e00-\\u9fff]+\\/)?[\\w.\\-\\u4e00-\\u9fff]+\\.(?:md|txt|json|py|ts|js|html|css|png|jpe?g|webp|gif|svg|mp4|mov|webm|wav|mp3|m4a|srt|ass|psd|pdf)\\b/g"
+  ]
+ },
+ {
+  "file": "src/basal/lifecycle.ts",
+  "why": "the head of a helper's report as the helpers module's script writes it (modules/helpers/scripts: one language)",
+  "res": [
+   "/Claude Code「([^」]+)」/"
+  ]
+ },
+ {
+  "file": "src/basal/tasks.ts",
+  "why": "Chinese numerals in an amount; whether they occur at all is the pack's number pattern (brain.tasks.numberPattern)",
+  "res": [
+   "/^([一二两三四五六七八九])([一二两三四五六七八九])十$/"
+  ]
+ },
+ {
+  "file": "src/brain.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/(?<=[。；，;,])/",
+   "/[。.]+$/",
+   "/[，,；;\\s]+$/"
+  ]
+ },
+ {
+  "file": "src/brain.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/[\\u4e00-\\u9fff]+/g",
+   "/[\\u4e00-\\u9fff]/"
+  ]
+ },
+ {
+  "file": "src/brain.ts",
+  "why": "the head of a helper's report as the helpers module's script writes it (modules/helpers/scripts: one language)",
+  "res": [
+   "/^Claude Code「([^」]+)」(.*)$/",
+   "/^[^：]*：(.*)$/",
+   "/（它最后回你的消息.*$/"
+  ]
+ },
+ {
+  "file": "src/brain.ts",
+  "why": "the time mark 〔…〕 that memory/central.ts puts before a line: a mark, the same in every pack",
+  "res": [
+   "/^〔[^〕]*〕/"
+  ]
+ },
+ {
+  "file": "src/channels/bridge.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[\\s:：]+$/",
+   "/^\\s*[/／]cc\\b/i"
+  ]
+ },
+ {
+  "file": "src/console/memory.ts",
+  "why": "the wording of replies stored before the reference pack changed: the console still reads old records by it (today's wording comes from the pack, console/packtext.ts)",
+  "res": [
+   "/^(自己的记忆里没找到|没有 #|没想起和|不认识「|没有「|没有事件|没有原话|时间段看不懂)|记忆里还没有和.*有关的事|没有记下的事。$|还没有出现在哪件事里/"
+  ]
+ },
+ {
+  "file": "src/gate/fixed.ts",
+  "why": "lines of the senses and phone modules' scripts and the platforms' own notifications (modules/senses, modules/phone: one language), read as written",
+  "res": [
+   "/：请求添加你为朋友/"
+  ]
+ },
+ {
+  "file": "src/gate/outbound.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[A-Za-z][A-Za-z'’-]*/g",
+   "/^\\s*(\\d+[.、)]|[-•*])\\s+/",
+   "/^\\s*(⚠️|⚠|⏳|🔁|✅|❌|🦞|🔄|🛑)/u",
+   "/。+\\s*$/"
+  ]
+ },
+ {
+  "file": "src/gate/outbound.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/[\\u3040-\\u30ff\\u3400-\\u9fff\\uf900-\\ufaff]/"
+  ]
+ },
+ {
+  "file": "src/gate/parse.ts",
+  "why": "lines of the senses and phone modules' scripts and the platforms' own notifications (modules/senses, modules/phone: one language), read as written",
+  "res": [
+   "/ ?私信你$/",
+   "/^(.+?) ?私信你：/",
+   "/^- \\[[\\w-]+ id=[0-9a-f]+\\] [^：\\n]*：(?:\\[\\d+条\\])?\\[有人@我\\]/",
+   "/^B站 (.+?) 私信你：/",
+   "/^\\s*┄{6,}\\s*$/"
+  ]
+ },
+ {
+  "file": "src/gate/parse.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/Claude Code「([^」]+)」/"
+  ]
+ },
+ {
+  "file": "src/learning/cli.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[\\s。．.，,；;、]+$/",
+   "/^(?:[-*+]\\s+|\\d+[.)、]\\s*)(?:\\[[ xX]\\]\\s*)?/"
+  ]
+ },
+ {
+  "file": "src/learning/cli.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/^\\uFEFF/",
+   "/^\\uFEFF/"
+  ]
+ },
+ {
+  "file": "src/learning/graph.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/(?<![^\\s`「」（）()\\[\\]<>\"'，。、：；|])[^\\s`「」（）()\\[\\]<>\"'，。、：；|]+?\\.md\\b/g"
+  ]
+ },
+ {
+  "file": "src/learning/ids.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/^﻿/"
+  ]
+ },
+ {
+  "file": "src/learning/layers.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/^\\uFEFF/"
+  ]
+ },
+ {
+  "file": "src/learning/notebook.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[、，,]/",
+   "/[、，,]/",
+   "/[：:]$/",
+   "/[：:]$/",
+   "/[：:]$/",
+   "/^(?:[-*+]\\s+|\\d+(?:[.)]\\s+|[、）]\\s*))(.*)$/",
+   "/^\\s+(?:[-*+]\\s+|\\d+(?:[.)]\\s+|[、）]\\s*))(.*)$/"
+  ]
+ },
+ {
+  "file": "src/learning/notebook.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/[０-５]/g",
+   "/^\\uFEFF/",
+   "/^\\uFEFF/"
+  ]
+ },
+ {
+  "file": "src/learning/score.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/^﻿/"
+  ]
+ },
+ {
+  "file": "src/learning/score.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/✓\\s*(\\d{4}-\\d{2}-\\d{2})/g"
+  ]
+ },
+ {
+  "file": "src/learning/shelf.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/^(?:[-*+]|\\d+[.)、])\\s+(.*)$/"
+  ]
+ },
+ {
+  "file": "src/learning/shelf.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/^\\uFEFF/"
+  ]
+ },
+ {
+  "file": "src/learning/words.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/[㐀-鿿]+/g"
+  ]
+ },
+ {
+  "file": "src/memory/events/index.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[\\s，。！？、；：,.!?;:「」『』“”\"'（）()【】\\[\\]<>《》~～…\\-—|/]+/u"
+  ]
+ },
+ {
+  "file": "src/memory/events/index.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/[^\\x00-\\x7f]/",
+   "/[^\\x00-\\x7f]/",
+   "/^[\\x00-\\x7f]+$/"
+  ]
+ },
+ {
+  "file": "src/memory/events/memory.ts",
+  "why": "the suffix in brackets of a speaker label stored in mem_quote.who (我（笔记）): stored data, parsed back",
+  "res": [
+   "/（.*$/"
+  ]
+ },
+ {
+  "file": "src/memory/events/people.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[。！？!?]/",
+   "/（.*$/"
+  ]
+ },
+ {
+  "file": "src/memory/events/people.ts",
+  "why": "an event or entry id in the brackets the pack's own lines put it in (（e0123）, （n0123→n0456）): a mark, the same in every pack",
+  "res": [
+   "/（(e\\d{4,})）/g"
+  ]
+ },
+ {
+  "file": "src/memory/events/recall.ts",
+  "why": "an event or entry id in the brackets the pack's own lines put it in (（e0123）, （n0123→n0456）): a mark, the same in every pack",
+  "res": [
+   "/(e\\d{4,})（/g",
+   "/（(n\\d{4,})(?:→(n\\d{4,}))?）/g"
+  ]
+ },
+ {
+  "file": "src/memory/events/recall.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/[\\p{P}\\p{S}\\s\\u200d\\ufe0f]/gu"
+  ]
+ },
+ {
+  "file": "src/memory/events/recall.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/^\\s*\\[(?:WhatsApp|QQ)[^\\]]*\\]\\s*[^:：\\n]{0,40}[:：]\\s*/u"
+  ]
+ },
+ {
+  "file": "src/memory/events/schema.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[《》〈〉「」『』“”‘’\"'()（）【】[\\]\\s]/g",
+   "/[《》〈〉「」『』“”‘’\"'()（）【】[\\]]/g"
+  ]
+ },
+ {
+  "file": "src/memory/events/store.ts",
+  "why": "the speaker label stored in mem_quote.who (I→X, a suffix in brackets): stored data, parsed back",
+  "res": [
+   "/（.*$/"
+  ]
+ },
+ {
+  "file": "src/memory/situation.ts",
+  "why": "the type marks and the rules heading of the old profile files (a person who still has a profile file, not a card in the event store): files written before, read as they are",
+  "res": [
+   "/^<!-- 类型：(\\S+) -->/",
+   "/^<!-- 类型：/",
+   "/^维护规则/"
+  ]
+ },
+ {
+  "file": "src/memory/tokens.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/[　-鿿가-힯＀-￯]/g"
+  ]
+ },
+ {
+  "file": "src/persona/persona.ts",
+  "why": "headings and lines of the ledger snapshot as the night module's script writes it (modules/night: one language)",
+  "res": [
+   "/^\\s*-\\s*他最近\\s*3\\s*天(直接)?说的/"
+  ]
+ },
+ {
+  "file": "src/persona/skills.ts",
+  "why": "notes on code mode in the manuals a role brought from OpenClaw, as they were written; what replaces them is pack text (brain.skills)",
+  "res": [
+   "/^code mode 里：\\s*$/gm",
+   "/code mode 里 ?/g",
+   "/code mode 里工具名是驼峰|API\\.read\\(\"mcp\\/|MCP\\.\\w+\\.\\$api/",
+   "/code mode 里是 `?MCP\\.(\\w+)\\.\\*`?/g",
+   "/（code mode 里是 MCP\\.(\\w+)\\.\\*）/g"
+  ]
+ },
+ {
+  "file": "src/regions/specs.ts",
+  "why": "protected path; the guard on what the framework says of its own structure lists the words of both packs",
+  "res": [
+   "/另一头|后台|主线|副线|meanwhile|\\bside\\b|几条线|最多同时|前台|分身|另一个我/"
+  ]
+ },
+ {
+  "file": "src/repair/range.ts",
+  "why": "protected path (src/repair/): the approval and deployment protocol, left for the chairman (#mwicfbnecz)",
+  "res": [
+   "/(^|\\s)通过\\s*$/",
+   "/[不未没]通过/"
+  ]
+ },
+ {
+  "file": "src/repair/watchdog.ts",
+  "why": "protected path (src/repair/): the approval and deployment protocol, left for the chairman (#mwicfbnecz)",
+  "res": [
+   "/\\u0001(\\d)/g"
+  ]
+ },
+ {
+  "file": "src/sleep/exam.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[\\s「#:]/"
+  ]
+ },
+ {
+  "file": "src/sleep/examiner.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/[\\uff01-\\uff5e]/g"
+  ]
+ },
+ {
+  "file": "src/sleep/examiner.ts",
+  "why": "recognises the verb a stage wrote in a change's op; it reads the English verbs too, and keeps the Chinese ones so that what a stage of the reference pack writes is still read",
+  "res": [
+   "/^(compress|fade|merge|rewrite|remove|archive|shorten|change|改写|降一级|挪进档案|压缩|合并|删|缩短|淡)/"
+  ]
+ },
+ {
+  "file": "src/sleep/lead.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[\\s，。；！？、,.;!?：:「」『』“”\"'‘’（）()《》〈〉<>—\\-…·]/g",
+   "/[，。；！？、,.;!?\\n]/"
+  ]
+ },
+ {
+  "file": "src/sleep/lead.ts",
+  "why": "a class of characters (CJK text, non-ASCII, a byte-order mark, a control character); no word of a language",
+  "res": [
+   "/[〇零一二两三四五六七八九]/g"
+  ]
+ },
+ {
+  "file": "src/sleep/teamrun.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[\\s「#]/"
+  ]
+ },
+ {
+  "file": "src/sleep/things.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[\\s「#]/"
+  ]
+ },
+ {
+  "file": "src/sleep/validate.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[\\s「#]/",
+   "/^[^\\s「#]+\\.(md|json|txt)/"
+  ]
+ },
+ {
+  "file": "src/tools/stickers.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[\\s,，、]+/"
+  ]
+ },
+ {
+  "file": "src/tools/wordlist.ts",
+  "why": "marks and punctuation, read in either width; no word of a language",
+  "res": [
+   "/[｜|]/"
+  ]
+ }
+]

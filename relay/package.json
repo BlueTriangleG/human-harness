@@ -1,0 +1,11 @@
+{
+  "name": "openclaw-hh-relay",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "peerDependencies": { "openclaw": ">=2026.10.1" },
+  "openclaw": {
+    "extensions": ["./index.js"],
+    "compat": { "pluginApi": ">=2026.10.1", "minGatewayVersion": "2026.10.1" }
+  }
+}

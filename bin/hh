@@ -1,0 +1,14 @@
+#!/bin/sh
+# The hh command, for scripts that are given its path (HH_BIN): the CLI of this checkout.
+# hh modules run <module> <script> …: when hhd has left that module's environment (env.sh in its state dir, written at
+# start by Modules.writeEnv) the script runs from here as the CLI would run it, without starting node
+if [ "$1" = modules ] && [ "$2" = run ] && [ -n "$4" ] && [ -f "$HH_STATE_DIR/modules/$3/env.sh" ]; then
+  . "$HH_STATE_DIR/modules/$3/env.sh"
+  f=$HH_MODULE_DIR/scripts/$4; shift 4
+  cd "$HH_WORKSPACE" || exit 1
+  case $f in *.py) exec "$HH_PYTHON" "$f" "$@" ;; *) exec "$f" "$@" ;; esac
+fi
+# on the node HH runs on (HH_NODE), else the Node of its own that setup put in node/ (when the computer's was too old),
+# else whichever comes first on the caller's PATH
+own="$(dirname "$0")/../node/bin/node"; [ -x "$own" ] || own=node
+exec "${HH_NODE:-$own}" "$(dirname "$0")/../src/cli.ts" "$@"

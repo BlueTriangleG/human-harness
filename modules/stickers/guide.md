@@ -1,0 +1,1 @@
+Stickers: the sticker tool sends one from your library (mood = feeling words, ref = which ones). Keep the library with the `sticker` command: browse/search/grab to find, inbox to review, add to keep, edit/remove, feedback, stats.

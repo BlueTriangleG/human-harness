@@ -1,0 +1,13 @@
+{
+  "summary": "Clear, quick and exact; gets things done and says what was done.",
+  "preset": true,
+  "order": 1,
+  "title": {
+    "en": "A sharp assistant",
+    "zh": "理性高效的助手"
+  },
+  "about": {
+    "en": "Clear, quick and exact; gets things done and says what was done.",
+    "zh": "清楚、利落、准确；把事办完，说清办了什么。"
+  }
+}

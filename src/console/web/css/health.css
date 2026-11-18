@@ -1,0 +1,66 @@
+/* 顺不顺：按小时的三样数 */
+#healthview { overflow: auto; min-height: 0; padding: 14px 20px 40px; }
+#hbody { max-width: 980px; }
+/* 这一周：五个数一天一行 */
+.wrow { display: grid; grid-template-columns: 110px 60px 70px minmax(110px, 1fr) minmax(90px, .8fr) 90px minmax(200px, 1.6fr); gap: 0 14px; align-items: baseline; padding: 5px 8px; border-top: 1px solid var(--grid); font-size: var(--fs-m); font-variant-numeric: tabular-nums; }
+.wrow.whead { border-top: none; font-size: var(--fs-s); color: var(--muted); }
+.wrow.wtotal, .wrow.wprev { font-weight: 600; background: var(--panel); border-top: none; border-radius: 6px; margin-top: 4px; }
+.wrow.wprev { font-weight: 400; color: var(--muted); }
+.wrow .wday { color: var(--muted); white-space: nowrap; }
+.wrow.wtoday .wday { color: var(--l-main); }
+.wrow small { color: var(--faint); font-size: var(--fs-xs); margin-left: 4px; font-weight: 400; }
+.wrow .wuse small, .wrow .wwake small { display: block; margin-left: 0; }   /* 数在上一行，分项在下一行 */
+/* 有归档走的记录读不到：这个数只会比真的少 */
+.wrow .wpart { margin-left: 6px; padding: 0 5px; border: 1px solid var(--err); border-radius: 4px; color: var(--err); font-size: var(--fs-xs); font-weight: 400; white-space: nowrap; }
+p.hint.wwarn { color: var(--err); }
+#hbody .wnotes { margin: 14px 8px 0; padding-left: 18px; color: var(--muted); font-size: var(--fs-s); }
+#hbody .wnotes li { margin: 2px 0; }
+.hrow { display: grid; grid-template-columns: 140px minmax(120px, 1.4fr) 110px 70px minmax(150px, 1fr); gap: 0 14px; align-items: center; padding: 4px 8px; border-top: 1px solid var(--grid); font-size: var(--fs-m); font-variant-numeric: tabular-nums; }
+.hrow.hhead { border-top: none; font-size: var(--fs-s); color: var(--muted); }
+.hrow.htotal { font-weight: 600; border-top: none; background: var(--panel); border-radius: 6px; padding: 6px 8px; margin: 2px 0 6px; }
+.hrow.hnow .ht { color: var(--l-main); }
+#hbody h3 { margin: 22px 8px 2px; }
+#hbody h3:first-child { margin-top: 0; }
+#hbody > p.hint { margin: 2px 8px 8px; }
+/* 每次上线之后：一段一行，下面跟着这一段上线了什么 */
+.hstretch { border-top: 1px solid var(--grid); padding-bottom: 6px; }
+.hstretch .hrow, .hrow.hwide { grid-template-columns: 230px minmax(120px, 1.4fr) 110px 120px minmax(150px, 1fr); }
+.hsmall { margin-left: 6px; font-weight: 400; font-size: var(--fs-xs); color: var(--muted); }
+.hstretch > p.hconfig { color: var(--ink); }
+.hstretch .hrow { border-top: none; }
+.hrow.hhead + .hstretch { border-top: none; }
+.hstretch > p.hint { margin: 0 8px 2px 252px; }
+.hchange { margin: 0 8px 2px 252px; font-size: var(--fs-sm); }
+.hchange summary { cursor: pointer; color: var(--muted); overflow-wrap: anywhere; }
+.hchange .hitem { margin: 4px 0 4px 14px; color: var(--ink); overflow-wrap: anywhere; }
+.hpending { margin: 4px 8px 10px; padding: 6px 10px; border: 1px dashed var(--grid); border-radius: 8px; }
+.hpending .hchange { margin-left: 0; margin-right: 0; }
+.hpending > p.hint { margin: 0 0 4px; }
+.hday { margin: 12px 8px 2px; font-size: var(--fs-s); color: var(--muted); }
+.hrow .ht { color: var(--muted); white-space: nowrap; }
+.hreq { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 8px; align-items: center; }
+.hreq .num { text-align: right; }
+.hbar { height: 8px; background: color-mix(in srgb, var(--grid) 55%, transparent); border-radius: 4px; overflow: hidden; }
+.hbar b { display: block; height: 100%; background: var(--faint); border-radius: 4px; overflow: hidden; }
+.hbar i { display: block; height: 100%; background: var(--err); }
+.hinc, .hrate, .hblk { color: var(--faint); }
+.hinc.bad, .hrate.bad { color: var(--err); font-weight: 600; }
+.hblk.slow { color: var(--ink); }
+@media (max-width: 720px) {
+  .wrow { grid-template-columns: 1fr 1fr 1fr; gap: 2px 10px; }
+  .wrow .wday { grid-column: 1 / -1; font-weight: 600; }
+  .wrow.whead { display: none; }
+  .wrow > [data-label]::before { content: attr(data-label) " "; color: var(--faint); font-size: var(--fs-xs); }
+  .wrow .wuse, .wrow .wwake { grid-column: 1 / -1; }
+  .wrow .wuse small, .wrow .wwake small { display: inline; margin-left: 4px; }
+  #healthview { padding: 10px 16px 32px; }
+  .hrow { grid-template-columns: 64px minmax(0, 1fr) auto; gap: 2px 10px; }
+  .hrow .hrate, .hrow .hrun { display: none; }
+  .hrow .hblk { grid-column: 2 / -1; font-size: var(--fs-s); }
+  .hrow .hblk:not(.slow) { display: none; }                 /* 没卡过的小时不占一行 */
+  .hrow.htotal .ht, .hstretch .hrow .ht { grid-column: 1 / -1; }
+  .hrow.htotal .hreq, .hstretch .hrow .hreq { grid-column: 1 / 3; }
+  .hstretch .hrow, .hrow.hwide { grid-template-columns: 64px minmax(0, 1fr) auto; }
+  .hstretch > p.hint, .hchange { margin-left: 8px; }
+  .hrow.hhead div:nth-child(4), .hrow.hhead div:nth-child(5) { display: none; }
+}

@@ -1,0 +1,9 @@
+#!/bin/bash
+# 命令行调 B站 工具：bili list / bili help <工具> / bili <工具> key=value …（经 hh modules run，带这个模块的环境）
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# Called from outside this module (the role's shell, another module's script): come back through hh with this module's environment
+[ "${HH_MODULE_DIR:-}" = "$ROOT" ] || exec "${HH_BIN:?}" modules run bilibili ../bin/bili "$@"
+export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+export PYTHONUTF8=1
+# the Python environment: BILI_VENV (HH resolves the config's venv, ModuleSpec.env), else <module state>/venv (bin/setup.sh)
+exec "${BILI_VENV:-$HH_MODULE_STATE/venv}/bin/python" -E -s "$ROOT/server/cli.py" "$@"

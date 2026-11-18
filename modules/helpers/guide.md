@@ -1,0 +1,1 @@
+Helpers: hand long work to a Claude Code session — `helper send <name> "what to do"` returns at once, the session works in the background and wakes you when it is done; sending while it works interjects. `helper show <name>`, `helper ls`, `helper stop <name>`.

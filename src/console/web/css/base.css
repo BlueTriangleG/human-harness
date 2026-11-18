@@ -1,0 +1,174 @@
+/* The console's design tokens: every page takes its colours and sizes from here.
+   A control room for watching the role and talking to it. Quiet surfaces, hairline rules, no shadows; the one thing that
+   stands out is the four kinds of row, each with one colour everywhere (talk pane, activity): what the role says,
+   thinks, the tools it calls, errors. Every colour of text is at least 4.5:1 on the page in both schemes. */
+:root {
+  /* five sizes of text; the old names map onto them */
+  --fs-1: 12px;        /* small print: hints, table heads, times */
+  --fs-2: 13px;        /* secondary text, buttons, small headings */
+  --fs-3: 14px;        /* body */
+  --fs-4: 16px;        /* the title of a block */
+  --fs-5: 20px;        /* the role's name, the page's title */
+  --fs-xxs: var(--fs-1); --fs-xs: var(--fs-1); --fs-s: var(--fs-1);
+  --fs-sm: var(--fs-2); --fs-m: var(--fs-2);
+  --fs-l: var(--fs-3); --fs-xl: var(--fs-4); --fs-title: var(--fs-4);
+  --paper: #f6f7f9;    /* the page */
+  --panel: #edf0f3;    /* set-in areas: code, the owner's lines, side columns */
+  --grid: #dce1e7;     /* rules */
+  --tissue: #e4e8ec;   /* the brain map */
+  --sulcus: #c6cdd5;
+  --ink: #1b2430;
+  --muted: #5c6773;
+  --faint: #5f6a76;
+  /* the four kinds of row */
+  --say: #2f6f64;
+  --think: #6b5ca5;
+  --tool: #7f6129;
+  --err: #b3261e;
+  /* one colour per brain region (the map, the timeline's lanes) */
+  --l-main: #2f45a8;
+  --l-perception: #2f6f64;
+  --l-side: #7f6129;
+  --l-hippo: #6b5ca5;
+  --l-deep: #9a3f5f;
+  --l-speech: #46701c;
+  --l-outer: #3f4a56;
+  --l-system: #5f6873;
+  /* the notebook's three layers, shallow to deep */
+  --nb-band-1: #f6f7f9; --nb-band-2: #e8ecf0; --nb-band-3: #d9dfe6;
+  --sans: "PingFang SC", -apple-system, "SF Pro Text", "Hiragino Sans GB", system-ui, sans-serif;
+  --serif: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+  --mono: "SF Mono", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+/* English pages: the system's Latin faces first (PingFang's Latin is a fallback design, its middle dot full width) */
+html:lang(en) {
+  --sans: -apple-system, "SF Pro Text", system-ui, "PingFang SC", "Hiragino Sans GB", sans-serif;
+  --serif: "New York", "Iowan Old Style", Georgia, "Songti SC", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #12171d;
+    --panel: #182029;
+    --grid: #2a3540;
+    --tissue: #1f2832;
+    --sulcus: #33404d;
+    --ink: #dce3ea;
+    --muted: #9aa6b2;
+    --faint: #85919d;
+    --say: #6cc3b3;
+    --think: #b3a6ea;
+    --tool: #d9b06a;
+    --err: #ff8a80;
+    --l-main: #93a6ff;
+    --l-perception: #6cc3b3;
+    --l-side: #d9b06a;
+    --l-hippo: #b3a6ea;
+    --l-deep: #e39ab4;
+    --l-speech: #9ccb64;
+    --l-outer: #aab5c1;
+    --l-system: #8c96a1;
+    --nb-band-1: #182029; --nb-band-2: #151c24; --nb-band-3: #10161c;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: var(--fs-3)/1.6 var(--sans);
+  display: grid;
+  grid-template: "top top" auto "nav content" minmax(0, 1fr) / 148px minmax(0, 1fr);
+  height: 100dvh;
+  overflow: hidden;
+}
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--say); outline-offset: 2px; }
+
+/* top bar: who, and how it is right now; the interface language */
+#top { grid-area: top; display: flex; align-items: center; gap: 16px; padding: 10px 20px; border-bottom: 1px solid var(--grid); }
+#top h1 { margin: 0; font-size: var(--fs-5); font-weight: 600; flex: none; white-space: nowrap; }
+.state { font-size: var(--fs-2); color: var(--muted); display: flex; align-items: center; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.state::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--say); flex: none; margin-right: 7px; }
+.state.dim::before { background: var(--faint); }
+.state b { font-weight: 600; color: var(--ink); }
+.offline, .state.offline { color: var(--err); }
+.state.offline::before { background: var(--err); }
+.quota { color: var(--muted); font-size: var(--fs-2); }
+#corner { margin-left: auto; display: flex; gap: 8px; align-items: center; flex: none; white-space: nowrap; }
+#langs { display: flex; gap: 4px; }
+/* the bell: warnings and errors as notifications; a count of unread kinds, red when one of them is an error */
+#bell { position: relative; border: 1px solid var(--grid); background: none; border-radius: 999px; width: 30px; height: 26px; cursor: pointer; color: var(--muted); }
+#bell:hover, #bell[aria-expanded="true"] { color: var(--ink); border-color: var(--muted); }
+.bico { display: block; width: 12px; height: 12px; margin: 0 auto; background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1.5a4.5 4.5 0 0 0-4.5 4.5v3L2 11.5h12L12.5 9V6A4.5 4.5 0 0 0 8 1.5zM6.2 13a1.8 1.8 0 0 0 3.6 0z'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1.5a4.5 4.5 0 0 0-4.5 4.5v3L2 11.5h12L12.5 9V6A4.5 4.5 0 0 0 8 1.5zM6.2 13a1.8 1.8 0 0 0 3.6 0z'/%3E%3C/svg%3E") center / contain no-repeat; }
+#bellcount { position: absolute; top: -6px; right: -6px; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px; background: var(--muted); color: var(--paper); font-size: var(--fs-1); line-height: 16px; font-weight: 600; }
+#bell.bad #bellcount { background: var(--err); }
+#notes { position: fixed; top: 46px; right: 16px; z-index: 20; width: min(440px, calc(100vw - 32px)); max-height: 70vh; overflow: auto; background: var(--paper); border: 1px solid var(--muted); border-radius: 8px; padding: 10px 14px; }
+#notes .nhead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+#notesread { border: 1px solid var(--grid); background: none; border-radius: 6px; padding: 1px 10px; font-size: var(--fs-1); color: var(--muted); cursor: pointer; }
+.note { padding: 6px 0 6px 8px; border-top: 1px solid var(--grid); border-left: 3px solid transparent; font-size: var(--fs-1); }
+.note.unread { border-left-color: var(--tool); }
+.note.error.unread { border-left-color: var(--err); }
+.note .nh { display: flex; gap: 8px; align-items: baseline; }
+.note .lv { font-weight: 600; color: var(--tool); }
+.note.error .lv { color: var(--err); }
+.note .t, .note .times { color: var(--muted); }
+.note .msg { overflow-wrap: anywhere; color: var(--ink); }
+#demo { border: 1px solid var(--tool); color: var(--tool); border-radius: 999px; padding: 0 10px; font-size: var(--fs-1); font-weight: 600; white-space: nowrap; }
+#langs button { border: 1px solid var(--grid); background: none; border-radius: 999px; padding: 0 10px; font-size: var(--fs-1); cursor: pointer; color: var(--muted); }
+#langs button[aria-pressed="true"] { color: var(--ink); border-color: var(--ink); }
+
+/* the five pages */
+#nav { grid-area: nav; display: flex; flex-direction: column; gap: 2px; padding: 14px 0; border-right: 1px solid var(--grid); }
+#nav button { text-align: left; border: 0; border-left: 3px solid transparent; background: none; padding: 7px 18px 7px 17px; font-size: var(--fs-3); color: var(--muted); cursor: pointer; }
+#nav button:hover { color: var(--ink); }
+#nav button[aria-current="page"] { color: var(--ink); font-weight: 600; border-left-color: var(--say); background: var(--panel); }
+#nav button[data-page="settings"] { margin-top: auto; }   /* settings sit at the foot of the column, apart from the five */
+
+/* the open page: its title, its views, one line on what it shows; then the page itself */
+#content { grid-area: content; display: grid; grid-template-rows: auto minmax(0, 1fr); min-width: 0; min-height: 0; }
+#content > section { min-height: 0; }
+#content:focus { outline: none; }   /* the skip link lands here; the page itself needs no ring */
+/* skip links: out of sight until a keyboard reaches them */
+/* hidden until the keyboard reaches it: moved up alone, the one in the talk column sat over the page's title */
+.skip { position: absolute; left: 8px; top: 8px; z-index: 30; padding: 6px 12px; border-radius: 6px; background: var(--ink); color: var(--paper); font-size: var(--fs-2); text-decoration: none; }
+.skip:not(:focus) { width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+#pagehead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; padding: 14px 20px 10px; border-bottom: 1px solid var(--grid); }
+#ptitle { margin: 0; font-size: var(--fs-5); font-weight: 600; color: var(--ink); }
+#intro { flex: 0 0 100%; margin: 0; font-size: var(--fs-2); color: var(--muted); max-width: 80ch; }
+#views { display: flex; flex-wrap: wrap; gap: 6px 14px; min-width: 0; }
+#views > div { display: flex; flex-wrap: wrap; gap: 6px; }
+#views button { border: 1px solid var(--grid); background: none; border-radius: 999px; padding: 1px 13px; font-size: var(--fs-2); cursor: pointer; color: var(--muted); white-space: nowrap; }
+#views button:hover { border-color: var(--muted); color: var(--ink); }
+#views button[aria-pressed="true"] { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+/* a page's own views are tabs next to its title; the views inside one of them (event memory's, the input's regions) stay round */
+#views :is(#pviews, #nviews, #hviews) { gap: 2px; }
+#views :is(#pviews, #nviews, #hviews) button { border: 0; border-bottom: 2px solid transparent; border-radius: 0; padding: 2px 10px; font-size: var(--fs-3); }
+#views :is(#pviews, #nviews, #hviews) button[aria-pressed="true"] { color: var(--ink); background: none; border-bottom-color: var(--say); font-weight: 600; }
+/* 完整输入的脑区：钮前面带它那一条的颜色 */
+#pregions button::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--lane); margin-right: 6px; vertical-align: 1px; }
+
+/* activity: brain | timeline | helpers */
+#brainview { display: grid; grid-template-columns: 340px minmax(0, 1fr) 250px; min-height: 0; }
+#brainpane { border-right: 1px solid var(--grid); overflow: auto; min-height: 0; padding: 10px 18px 24px; background: var(--panel); }
+#side { border-left: 1px solid var(--grid); padding: 14px 16px; overflow: auto; min-height: 0; }
+
+/* phone width: the five pages become a bar along the bottom */
+@media (max-width: 720px) {
+  body { grid-template: "top" auto "content" minmax(0, 1fr) "nav" auto / minmax(0, 1fr); }
+  #top { padding: 8px 14px; gap: 10px; }
+  #top h1 { font-size: var(--fs-4); }
+  #demo { display: none; }
+  #nav { flex-direction: row; padding: 0; border-right: 0; border-top: 1px solid var(--grid); }
+  #nav button { flex: 1; text-align: center; padding: 10px 0 12px; border-left: 0; border-top: 3px solid transparent; font-size: var(--fs-2); }
+  #nav button[aria-current="page"] { border-top-color: var(--say); }
+  #pagehead { padding: 10px 14px 8px; }
+  #intro { display: none; }
+}
+/* 标题两级，各页一样：h3 = 这一页 / 这一块的题目；h2、h4 = 里面一节的小标题 */
+h3 { margin: 0; font-size: var(--fs-title); font-weight: 600; }
+h2, h4 { font-size: var(--fs-m); font-weight: 600; margin: 18px 0 6px; color: var(--muted); }
+#side h2:first-child { margin-top: 0; }
+.hint { font-size: var(--fs-s); color: var(--muted); margin: 8px 0 0; }
+

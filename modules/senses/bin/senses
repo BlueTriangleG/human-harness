@@ -1,0 +1,3 @@
+#!/bin/sh
+# senses: one round of sense collection by hand (--dry, --list, --ack <ids>), under this module's own environment
+exec "$HH_BIN" modules run senses senses.py "$@"

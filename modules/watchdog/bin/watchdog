@@ -1,0 +1,3 @@
+#!/bin/sh
+# watchdog: the channel watchdog (watchdog.py) for the role's shell and the senses collector, under this module's own environment
+exec "$HH_BIN" modules run watchdog watchdog.py "$@"

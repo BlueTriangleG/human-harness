@@ -1,0 +1,1 @@
+Phone (`phone-start`): an Android emulator the role uses as its own phone; boot it with `phone-start`, then drive it with `adb -s emulator-<port> …` (screenshots, taps, swipes, apps) and close it with `adb emu kill` when done. Logins and verification codes are done by a person.
